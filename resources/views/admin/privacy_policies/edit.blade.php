@@ -1,0 +1,171 @@
+@extends('admin.layouts.app')
+
+@section('admin_css')
+    <link href="{{ asset('dashboard_files/assets/plugins/data-tables/datatables.bootstrap4.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dashboard_files/assets/css/sleek.min.css') }}">
+@endsection
+
+@section('content')
+    <div class="content-wrapper">
+        <div class="content">
+            {{-- ============================================== --}}
+            {{-- ================== Header ==================== --}}
+            {{-- ============================================== --}}
+            <div class="breadcrumb-wrapper breadcrumb-contacts">
+                <div>
+                    <h1>Edit Privacy Policy</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb p-0">
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('super_admin.dashboard') }}">
+                                    <span class="mdi mdi-home"></span> Dashboard
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('super_admin.privacy_policies-index') }}">
+                                    <i class="fas fa-user-secret"></i> List  Privacy Policy
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">Edit</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card card-default">
+                                    <div class="card-header justify-content-between " style="background-color: #4c84ff;">
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="{{ route('super_admin.privacy_policies-update', $privacy_policy->id) }}"
+                                            method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="form-row">
+
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3"
+                                                        for="validationServer01">Title AR: <strong class="text-danger"> *
+                                                            @error('privacy_policy_title_ar') -
+                                                                {{ $message }}
+                                                            @enderror</strong></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-format-title"
+                                                                id="inputGroupPrepend2"></span>
+                                                        </div>
+                                                        <input type="text" name="privacy_policy_title_ar"
+                                                            class="form-control @error('privacy_policy_title_ar') is-invalid @enderror"
+                                                            id="validationServer01" placeholder="Title AR"
+                                                            value="{!! isset($privacy_policy->privacy_policy_title_ar) ? $privacy_policy->privacy_policy_title_ar : "<span style='color:red;'>Undefined</span>" !!}">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3"
+                                                        for="validationServer01">Title EN : <strong class="text-danger"> *
+                                                            @error('privacy_policy_title_en') -
+                                                                {{ $message }}
+                                                            @enderror</strong></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-format-title"
+                                                                id="inputGroupPrepend2"></span>
+                                                        </div>
+                                                        <input type="text" name="privacy_policy_title_en"
+                                                            class="form-control @error('privacy_policy_title_en') is-invalid @enderror"
+                                                            id="validationServer01" placeholder="Title EN"
+
+
+
+                                                            value="{!! isset($privacy_policy->privacy_policy_title_en) ? $privacy_policy->privacy_policy_title_en : "<span style='color:red;'>Undefined</span>" !!}">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3"
+                                                        for="validationServer01">Status : <strong class="text-danger">
+                                                            * @error('privacy_policy_status') - {{ $message }}
+                                                            @enderror</strong></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-account-check"></span>
+                                                        </div>
+                                                        <select name="privacy_policy_status" class="custom-select my-1 mr-sm-2 "
+                                                            id="inlineFormCustomSelectPref">
+                                                            <option value="" selected>Choose Status...</option>
+                                                            <option value="1" @if ($privacy_policy->privacy_policy_status == 'Active') selected @endif>Active</option>
+                                                            <option value="2" @if ($privacy_policy->privacy_policy_status == 'Not Active') selected @endif>Not Active</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="col-12">
+                                                    <label class="text-dark font-weight-medium mb-3"
+                                                        for="validationServer01"> Privacy Policy Details AR : <strong
+                                                            class="text-danger">
+                                                            * @error('privacy_policy_des_ar') - {{ $message }}
+                                                            @enderror</strong></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-book-open"
+                                                                id="inputGroupPrepend2"></span>
+                                                        </div>
+                                                        <textarea style="width: 90% !important" id="privacy_policy_des_ar" name="privacy_policy_des_ar"
+                                                            class="form-control "
+                                                            rows="10">{!! isset($privacy_policy->privacy_policy_des_ar) ? $privacy_policy->privacy_policy_des_ar : "<span style='color:red;'>Undefined</span>" !!} </textarea>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <label class="text-dark font-weight-medium mb-3"
+                                                        for="validationServer01"> Privacy Policy Details EN : <strong
+                                                            class="text-danger">
+                                                            * @error('privacy_policy_des_en') - {{ $message }}
+                                                            @enderror</strong></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-book-open"
+                                                                id="inputGroupPrepend2"></span>
+                                                        </div>
+                                                        <textarea style="width: 90% !important" id="privacy_policy_des_en" name="privacy_policy_des_en"
+                                                            class="form-control "
+                                                            rows="10">{!! isset($privacy_policy->privacy_policy_des_en) ? $privacy_policy->privacy_policy_des_en : "<span style='color:red;'>Undefined</span>" !!}  </textarea>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Save Updates</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.ckeditor.com/4.7.3/full/ckeditor.js"></script>
+
+        <script>
+                CKEDITOR.replace( 'privacy_policy_des_en',{
+                    fullPage: true,
+                    allowedContent: true,
+                    height : '800px'
+                });
+                CKEDITOR.replace( 'privacy_policy_des_ar',{
+                    fullPage: true,
+                    allowedContent: true,
+                    height : '800px'
+                });
+
+        </script>
+    @endsection

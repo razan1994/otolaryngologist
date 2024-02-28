@@ -1,0 +1,131 @@
+@extends('admin.layouts.app')
+
+@section('admin_css')
+    {{-- <link href="{{ asset('dashboard_files/assets/plugins/data-tables/datatables.bootstrap4.min.css') }}"
+        rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('dashboard_files/assets/css/sleek.min.css') }}"> --}}
+    {{-- <link href="{{ asset('dashboard_files/assets/css/sleek.css') }}"> --}}
+
+@endsection
+
+@section('content')
+    <div class="content-wrapper">
+        <div class="content">
+            {{-- =========================================================== --}}
+            {{-- ================== Sweet Alert Section ==================== --}}
+            {{-- =========================================================== --}}
+            <div>
+                @if (session()->has('success'))
+                    <script>
+                        swal("Great Job !!!", "{!! Session::get('success') !!}", "success", {
+                            button: "OK",
+                        });
+                    </script>
+                @endif
+                @if (session()->has('danger'))
+                    <script>
+                        swal("Oops !!!", "{!! Session::get('danger') !!}", "error", {
+                            button: "Close",
+                        });
+                    </script>
+                @endif
+            </div>
+
+            {{-- ============================================== --}}
+            {{-- ================== Header ==================== --}}
+            {{-- ============================================== --}}
+            <div class="breadcrumb-wrapper breadcrumb-contacts">
+                <div>
+                    <h1><i class="fas fa-user-md"></i> All Sliders Archived</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb p-0">
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('super_admin.dashboard') }}">
+                                    <i class="mdi  mdi-home"></i> Dashboard
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('super_admin.sliders-index') }}">
+                                    <i class="fas fa-spell-check"></i> All Sliders
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page"><i
+                                class="mdi mdi-delete"></i> All Sliders Archived
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+            </div>
+
+            {{-- ============================================== --}}
+            {{-- =================== Body ===================== --}}
+            {{-- ============================================== --}}
+            <div class="card card-default">
+                <div class="card-header justify-content-between " style="background-color: #4c84ff;">
+                    {{-- <h2 style="color:white;"><i class="mdi mdi-star mdi-spin"></i> طلبات سحب الرصيد : </h2> --}}
+                </div>
+                <div class="card-body">
+                    <table id="hoverable-data-table" class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th><i class="mdi mdi-account"></i> Title Ar</th>
+                                <th><i class="mdi mdi-account"></i> Title EN</th>
+                                <th><i class="mdi mdi-account"></i>Sub Title Ar</th>
+                                <th><i class="mdi mdi-account"></i>Sub Title EN</th>
+                                <th><i class="mdi mdi-email"></i> Desc AR</th>
+                                <th><i class="mdi mdi-email"></i> Desc EN</th>
+                                <th><i class="mdi mdi-image"></i> Image</th>
+                                <th><i class="mdi mdi-account-switch"></i> Status</th>
+                                <th><i class="mdi mdi-settings mdi-spin"></i> Control</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (isset($sliders))
+                                @if ($sliders->count() > 0)
+                                    @foreach ($sliders as $index => $slider)
+                                        <tr>
+                                            <td>{!! isset($slider->id) ? $slider->id : "<span style='color:red;'>Undefined</span>" !!}</td>
+                                            <td>{!! isset($slider->title_ar) ? $slider->title_ar : "<span style='color:red;'>Undefined</span>" !!}</td>
+                                            <td>{!! isset($slider->title_en) ? $slider->title_en : "<span style='color:red;'>Undefined</span>" !!}</td>
+                                            <td>{!! isset($slider->sub_title_ar) ? $slider->sub_title_ar : "<span style='color:red;'>Undefined</span>" !!}</td>
+                                            <td>{!! isset($slider->sub_title_en) ? $slider->sub_title_en : "<span style='color:red;'>Undefined</span>" !!}</td>
+                                            <td>{!! isset($slider->description_ar) ? $slider->description_ar : "<span style='color:red;'>Undefined</span>" !!}</td>
+                                            <td>{!! isset($slider->description_en) ? $slider->description_en : "<span style='color:red;'>Undefined</span>" !!}</td>
+                                            <td>
+                                                @if (isset($slider->image) && $slider->image && file_exists($slider->image))
+                                                    <img src="{{ asset($slider->image) }}" width="70" height="70" style="border-radius: 10px; border:solid 1px black;">
+                                                @else
+                                                    <img src="{{ asset('images_default\default_parts.png') }}" width="70" height="50">
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if (isset($slider->status))
+                                                    @if ($slider->status == 'Active')
+                                                        <span style="color: green;">{{ isset($slider->status) ? $slider->status : "<span style='color:red;'>Undefined</span>" }}</span>
+                                                    @else
+                                                        <span style="color: red;">{{ isset($slider->status) ? $slider->status : "<span style='color:red;'>Undefined</span>" }}</span>
+                                                    @endif
+                                                @else
+                                                    <span style='color:red;'>Undefined</span>
+                                                @endif
+                                            </td>
+                                            <td style="text-align: center">
+                                                <a href="{{ route('super_admin.sliders-softDeleteRestore', $slider->id) }}" class="unarchive mb-1 btn btn-sm btn-success"><i class="mdi mdi-redo-variant"></i></a>
+                                                <a href="{{ route('super_admin.sliders-destroy', [$slider->id]) }}" title="Permanently Delete" class="confirm mb-1 btn btn-sm btn-danger"><i class="mdi mdi-delete"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        @endsection
+
+        @section('admin_javascript')
+            
+
+        @endsection

@@ -1,0 +1,2828 @@
+.top-header-information {
+    padding-right: 0;
+
+    li {
+        margin-left: 15px;
+        margin-right: 0;
+        padding-right: 22px;
+        padding-left: 0;
+
+        &:last-child {
+            margin-left: 0;
+        }
+        i {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.top-header-optional {
+    padding-right: 0;
+    text-align: left;
+
+    li {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+    .languages-list {
+        .nice-select {
+            .list {
+                .option {
+                    margin-left: 0;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+.middle-header-content {
+    text-align: left;
+    padding-right: 0;
+
+    li {
+        text-align: right;
+        padding-right: 55px;
+        padding-left: 0;
+        margin-left: 30px;
+        margin-right: 0;
+
+        &:last-child {
+            margin-left: 0;
+        }
+        i {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.main-navbar {
+    .navbar {
+        ul {
+            padding-right: 0;
+        }
+        .navbar-nav {
+            margin-left: auto;
+            margin-right: 0;
+
+            .nav-item {
+                a {
+                    &::before {
+                        left: 0;
+                        right: auto;
+                    }
+                    &:hover, &:focus, &.active {
+                        &::before {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+                &:first-child {
+                    margin-right: 0;
+                    margin-left: 20px;
+                }
+                &:last-child {
+                    margin-left: 0;
+                    margin-right: 20px;
+                }
+                .dropdown-menu {
+                    right: 0;
+                    left: auto;
+                    text-align: right;
+                }                
+            }
+        }
+        .others-options {
+            .option-item {
+                margin-left: 25px;
+                margin-right: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+.modal-open {
+    .modal {
+        padding-left: 0 !important;
+    }
+}
+.searchmodal {
+    .modal-header {
+        button {
+            &.close {
+                left: 25px;
+                right: auto;
+            }
+        }
+    }
+}
+.modal-search-form {
+    button {
+        left: 10px;
+        right: auto;
+    } 
+}
+.main-slides-content {
+    .slides-btn {
+        .checkup-content {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+    }
+}
+.single-features {
+    .content {
+        padding-right: 90px;
+        padding-left: 0;
+
+        .icon {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.section-warp-btn {
+    text-align: left;
+}
+.single-services {
+    .services-image {
+        .icon {
+            left: 20px;
+            right: auto;
+        }
+    }
+}
+.appointment-overview-contact {
+    .appointment-info {
+        .call-info {
+            padding-right: 0;
+
+            li {
+                text-align: right;
+                padding-right: 55px;
+                padding-left: 0;
+
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        } 
+    }   
+}
+.about-image {
+    text-align: left;
+}
+.about-content {
+    .about-list {
+        padding-right: 0;
+
+        li {
+            padding-right: 35px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }    
+    .about-info {
+        padding-right: 100px;
+        padding-left: 0;
+
+        i {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.single-review-item {
+    .icon {
+        right: 30px;
+        left: auto;
+    }
+    .review-info {
+        padding-right: 75px;
+        padding-left: 0;
+
+        img {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.single-blog {
+    .blog-image {
+        .tag {
+            left: 20px;
+            right: auto;
+        }
+        .tag-two {
+            right: 20px;
+            left: auto;
+        }
+    }
+    .blog-content {
+        .entry-meta {
+            padding-right: 0;
+
+            li {
+                margin-left: 20px;
+                margin-right: 0;
+                padding-right: 22px;
+                padding-left: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+.single-footer-widget {
+    .footer-information {
+        padding-right: 0;
+
+        li {
+            text-align: right;
+            padding-right: 55px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    .footer-widget-blog {
+        .item {
+            .thumb {
+                float: right;
+                margin-left: 15px;
+                margin-right: 0;
+            }
+        }
+    }
+    .quick-links {
+        padding-right: 0;
+
+        li {
+            a {
+                &::before {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+    .footer-info {
+        padding-right: 75px;
+        padding-left: 0;
+
+        img {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.go-top {
+    left: 20px;
+    right: auto;
+}
+.appointment-overview-box {
+    .content {
+        .box-image {
+            .video-btn {
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+.main-slides-content {
+    .slides-btn {
+        .optional-btn {
+            margin-right: 20px;
+            margin-left: 0;
+        } 
+    }   
+}
+.about-image {
+    .about-inner-box {
+        text-align: right;
+        left: 10px;
+        right: auto;
+
+        .content {
+            padding-right: 75px;
+            padding-left: 0;
+
+            .icon {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+.main-banner-item {
+    .container-fluid {
+        padding-left: 0;
+    }
+}
+.main-banner-content {
+    margin-right: auto;
+    margin-left: 0;
+
+    .banner-btn {
+        .optional-btn {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+    }
+}
+.single-services-item {
+    .services-image {
+        .icon {
+            left: 20px;
+            right: auto;
+        }
+    }
+}
+.page-banner-content {
+    .pages-list {
+        padding-right: 0;
+
+        li {
+            margin-right: 30px;
+            margin-left: 0;
+
+            &:first-child {
+                margin-right: 0;
+            }
+            &::before {
+                right: -22px;
+                left: auto;
+            }
+        }
+    }
+}
+.pricing-list-tab {
+    .tabs {
+        padding-right: 0;
+
+        li {
+            &:nth-child(1) {
+                a {
+                    border-radius: 0 30px 30px 0;
+                }
+            }
+            &:nth-child(2) {
+                a {
+                    border-radius: 30px 0 0 30px;
+                }
+            }
+        }
+    }
+}
+.single-pricing-table {
+    .pricing-features {
+        padding-right: 0;
+    }    
+}
+.widget-area {
+    .widget_search {
+        form {
+            button {
+                left: 5px;
+                right: auto;
+            }
+        }
+    }
+    .widget_archive {
+        ul {
+            padding-right: 0;
+
+            li {
+                padding-right: 20px;
+                padding-left: 0;
+
+                &::before {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+    .widget_categories {
+        ul {
+            padding-right: 0;
+
+            li {
+                padding-right: 20px;
+                padding-left: 0;
+
+                &::before {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+    .widget_grin_posts_thumb {
+        .item {
+            .thumb {
+                float: right;
+                margin-left: 15px;
+                margin-right: 0;
+            }
+        }
+    }
+    .widget_instagram {
+        ul {
+            padding-right: 0;
+        }
+    }
+}
+.services-details-list {
+    padding-right: 0;
+
+    li {
+        padding-right: 45px;
+        padding-left: 0;
+
+        i {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.login-form {
+    form {
+        .form-group {
+            .form-control {
+                padding: 0 15px 0 15px;
+            }
+        }
+        .lost-your-password {
+            text-align: left;
+        }
+    }
+}
+.register-form {
+    form {
+        .form-group {
+            .form-control {
+                padding: 0 15px 0 15px;
+            }
+        }
+    }
+}
+.faq-accordion {
+    .accordion {
+        .accordion-title {
+            padding: 25px 25px 25px 40px;
+
+            i {
+                left: 25px;
+                right: auto;
+            }
+        }
+    }
+}
+.blog-details-desc {
+    .article-content {
+        .entry-meta {
+            ul {
+                padding-right: 0;
+
+                li {
+                    margin-left: 20px;
+                    margin-right: 0;
+
+                    &:last-child {
+                        margin-left: 0;
+                    }
+                    &::before {
+                        left: -15px;
+                        right: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+blockquote, .blockquote {
+    border-right: 3px solid #06a3da;
+    border-left: none;
+}
+.comments-area .comment-respond input[type="date"], .comments-area .comment-respond input[type="time"], .comments-area .comment-respond input[type="datetime-local"], .comments-area .comment-respond input[type="week"], .comments-area .comment-respond input[type="month"], .comments-area .comment-respond input[type="text"], .comments-area .comment-respond input[type="email"], .comments-area .comment-respond input[type="url"], .comments-area .comment-respond input[type="password"], .comments-area .comment-respond input[type="search"], .comments-area .comment-respond input[type="tel"], .comments-area .comment-respond input[type="number"], .comments-area .comment-respond textarea {
+    padding: 15px;
+    text-align: right;
+}
+.comments-area {
+    .comment-body {
+        padding-right: 70px;
+        padding-left: 0;
+    }
+    .comment-author {
+        .avatar {
+            right: -65px;
+            left: auto;
+        }
+    }
+    .comment-respond {
+        .comment-form-cookies-consent {
+            padding-right: 20px;
+            padding-left: 0;
+
+            input {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    .children {
+        margin-right: 20px;
+        margin-left: 0;
+    }
+}
+.contact-form {
+    form {
+        .form-group {
+            .form-control {
+                text-align: right;
+            }
+        }
+    }
+}
+.contact-info {
+    .contact-info-content {
+        .social {
+            padding-right: 0;
+        }
+    }
+}
+
+// New Three Demo RTL CSS
+.top-dental-tourism-optional {
+    li {
+        margin-left: 5px;
+        margin-right: 0;
+
+        &:last-child {
+            margin-left: 0;
+        }
+    }
+}
+.top-dental-tourism-information {
+    &.with-left {
+        margin-right: 290px;
+        margin-left: 0;
+    }
+    li {
+        margin-left: 15px;
+        margin-right: 0;
+        padding-right: 22px;
+        padding-left: 0;
+
+        &:last-child {
+            margin-left: 0;
+        }
+        i {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.dental-tourism-navbar {
+    .main-navbar {
+        .navbar {
+            ul {
+                margin-right: 225px;
+                margin-left: auto;
+            }
+            .navbar-brand {
+                margin-right: 0;
+            }
+            .navbar-nav {
+                .nav-item {
+                    &:first-child {
+                        margin-right: 0;
+                        margin-left: 20px;
+                    }
+                    &:last-child {
+                        margin-left: 0;
+                        margin-right: 20px;
+                    }
+                    .dropdown-menu {
+                        margin-right: 0;
+
+                        .nav-item {
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.single-dental-tourism-features {
+    .content {
+        padding-right: 125px;
+        padding-left: 0;
+
+        .icon-image {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.dental-tourism-about-content {
+    padding-right: 50px;
+    padding-left: 0;
+
+    .list {
+        li {
+            padding-right: 22px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+.dental-tourism-services-area {
+    .container-fluid {
+        right: calc((100% - 1320px)/2);
+        left: auto;
+    }
+}
+.dental-tourism-services-card {
+    .services-image {
+        .icon {
+            right: 25px;
+            left: auto;
+        }
+    }
+}
+.dental-tourism-choose-content {
+    .choose-inner-content {
+        padding-right: 35px;
+        padding-left: 0;
+
+        i {
+           right: 0;
+           left: auto;
+        } 
+    }
+}
+.dental-tourism-appointment-form {
+    form {
+        .form-group {
+            .nice-select {
+                padding-right: 15px;
+                padding-left: 20px;
+                text-align: right !important;
+
+                &::after {
+                    left: 15px;
+                    right: auto;
+                }
+                .list {
+                    .option {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+.dental-tourism-dentist-card {
+    .dentist-image {
+        .share-link {
+            li {
+                margin-left: 8px;
+                margin-right: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+.dental-tourism-tourists-content {
+    .list {
+        li {
+            padding-right: 22px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+.dental-tourism-review-card {
+    .review-info {
+        padding-right: 85px;
+        padding-left: 0;
+
+       img {
+           right: 0;
+           left: auto;
+       } 
+    }
+    .icon-quote {
+        left: 45px;
+        right: auto;
+    }
+}
+.dental-tourism-blog-card {
+    .blog-image {
+        .tag {
+            right: 25px;
+            left: auto;
+        }
+    }
+    .blog-content {
+        padding-right: 20px;
+        padding-left: 0;
+
+        .entry-meta {
+            li {
+                margin-left: 10px;
+                margin-right: 0;
+                padding-right: 22px;
+                padding-left: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+.dental-tourism-footer-widget {
+    .share-link {
+        li {
+            margin-left: 10px;
+            margin-right: 0;
+
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+    }
+    .quick-links {
+        li {
+            padding-right: 22px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    .newsletter-form {
+        .form-group {
+            button {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+}
+.skin-care-banner-area {
+    .container-fluid {
+        padding-right: 30px;
+        padding-left: 0;
+    }
+}
+.top-information-wrap {
+    li {
+        margin-left: 15px;
+        margin-right: 0;
+        padding-right: 22px;
+        padding-left: 0;
+
+        &:last-child {
+            margin-left: 0;
+        }
+        i {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.top-optional-wrap {
+    li {
+        margin-left: 5px;
+        margin-right: 0;
+
+        &:last-child {
+            margin-left: 0;
+        }
+    }
+}
+.grin-care-navbar {
+    .main-navbar {
+        .navbar {
+            .navbar-brand {
+                margin-right: 0;
+            }
+            .navbar-nav {
+                .nav-item {
+                    &:first-child {
+                        margin-right: 0;
+                        margin-left: 20px;
+                    }
+                    &:last-child {
+                        margin-left: 0;
+                        margin-right: 20px;
+                    }
+                    .dropdown-menu {
+                        margin-right: 0;
+
+                        .nav-item {
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .others-options {
+            .option-item {
+                .cart-btn {
+                    span {
+                        left: -5px;
+                        right: auto;
+                    }
+                }
+                &::before {
+                    left: -15px;
+                    right: auto;
+                }
+            }
+        }
+    }
+}
+.skin-care-features-card {
+    .features-title {
+        padding-right: 100px;
+        padding-left: 0;
+
+        .icon-image {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+.skin-care-about-content {
+    padding-right: 45px;
+    padding-left: 0;
+
+    .about-btn-with-info {
+        li {
+            margin-left: 20px;
+            margin-right: 0;
+            padding-right: 50px;
+            padding-left: 0;
+
+            &:last-child {
+                margin-left: 0;
+            }
+            &:first-child {
+                padding-right: 0;
+            }
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+.skin-care-services-card {
+    .services-image {
+        .icon {
+            right: 25px;
+            left: auto;
+        }
+    }
+}
+.skin-care-dry-content {
+    .list {
+        li {
+            padding-right: 32px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    .dry-list {
+        li {
+            margin-left: -20px;
+            margin-right: 0;
+
+            &.title {
+                margin-right: 30px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+.skin-care-appointment-form {
+    h4 {
+        i {
+            margin-left: 5px;
+            margin-right: 0;
+        }
+    }
+    form {
+        .form-group {
+            .nice-select {
+                padding-right: 15px;
+                padding-left: 20px;
+                text-align: right !important;
+
+                &::after {
+                    left: 15px;
+                    right: auto;
+                }
+                .list {
+                    .option {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+.skin-care-review-card {
+    .review-info {
+        padding-right: 85px;
+        padding-left: 0;
+
+       img {
+           right: 0;
+           left: auto;
+       } 
+    }
+    .icon-quote {
+        left: 45px;
+        right: auto;
+    }
+}
+.skin-care-before-after-slides {
+    &.owl-rtl {
+        .owl-item {
+            float: left;
+        }
+    }
+}
+.skin-care-blog-card {
+    .blog-image {
+        .tag {
+            right: 25px;
+            left: auto;
+        }
+    }
+    .blog-content {
+        padding-right: 20px;
+        padding-left: 0;
+        
+        .entry-meta {
+            li {
+                margin-left: 10px;
+                margin-right: 0;
+                padding-right: 22px;
+                padding-left: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+.skin-care-footer-widget {
+    .share-link {
+        li {
+            margin-left: 10px;
+            margin-right: 0;
+
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+    }
+    .quick-links {
+        li {
+            padding-right: 22px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    .newsletter-form {
+        .form-group {
+            button {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+}
+.eye-care-banner-area {
+    .container-fluid {
+        padding-right: 30px;
+        padding-left: 0;
+    }
+}
+.eye-care-banner-content {
+    margin-left: -145px;
+    margin-right: 0;
+
+    .banner-btn-with-info {
+        li {
+            margin-left: -20px;
+            margin-right: 0;
+
+            &.banner-btn {
+                margin-left: 10px;
+                margin-right: 0;
+            }
+            &.title {
+                margin-right: 30px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+.eye-care-features-card {
+    &::before {
+        left: -20px;
+        right: auto;
+    }
+}
+.eye-care-about-content {
+    padding-right: 45px;
+    padding-left: 0;
+
+    p {
+        padding-right: 10px;
+        padding-left: 0;
+
+        &::before {
+            right: 0;
+            left: auto;
+        }
+    }
+    .list {
+        li {
+            padding-right: 32px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+.eye-care-services-card {
+    .number {
+        left: 20px;
+        right: auto;
+    }
+}
+.eye-care-solutions-image {
+    padding-right: 25px;
+    padding-left: 0;
+}
+.eye-care-solutions-content {
+    .solutions-inner-content {
+        &.bg-F7F7FD {
+            border-right: 2px solid #1DBFCC;
+            border-left: none;
+        }
+    }
+}
+.eye-care-team-card {
+    .team-image {
+        .share-link {
+            li {
+                margin-left: 8px;
+                margin-right: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+.eye-care-review-slides {
+    margin-right: -100px;
+    margin-left: 0;
+
+    &.owl-theme {
+        .owl-nav.disabled + .owl-dots {
+            left: 45px;
+            right: auto;
+        }
+    }
+}
+.eye-care-review-card {
+    .review-info {
+        padding-right: 85px;
+        padding-left: 0;
+
+        img {
+            right: 0;
+            left: auto;
+        }
+    }
+    .icon-quote {
+        left: 50px;
+        right: auto;
+    }
+}
+.eye-care-treatment-content {
+    padding-right: 25px;
+    padding-left: 0;
+
+    .treatment-inner-content {
+        padding: 25px 82px 25px 25px;
+
+        .number {
+            right: 25px;
+            left: auto;
+        }
+    }
+}
+.eye-care-blog-card {
+    .blog-content {
+        .entry-meta {
+            li {
+                margin-left: 10px;
+                margin-right: 0;
+                padding-right: 22px;
+                padding-left: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+.newsletter-inner-box {
+    .newsletter-form {
+        button {
+            left: 4px;
+            right: auto;
+        }
+    }
+}
+.eye-care-footer-widget {
+    .share-link {
+        li {
+            margin-left: 10px;
+            margin-right: 0;
+
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+    }
+    .quick-links {
+        li {
+            padding-right: 22px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    .newsletter-form {
+        .form-group {
+            button {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+}
+
+/* Start "Covid 19 Vaccination Center RTL CSS" & "Hospital Website RTL CSS" */
+
+.covid-navbar-area {
+    .main-navbar {
+        .navbar {
+            .navbar-brand {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.covid-banner-content {
+    .banner-btn {
+        li {
+            margin-left: 25px;
+            margin-right: 0;
+
+            &:last-child {
+                margin-left: 0;
+            }
+            .video-btn {
+                span {
+                    margin-right: 10px;
+                    margin-left: 0;
+                    padding-left: 30px;
+                    padding-right: 0;
+
+                    &::before {
+                        left: 0;
+                        right: auto;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+    .banner-btn-with-info {
+        li {
+            margin-left: -20px;
+            margin-right: 0;
+
+            &.title {
+                margin-right: 30px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.covid-check-form {
+    .form-group {
+        .checkbox-check {
+            .form-check-label {
+                right: 5px;
+                left: auto;
+            }
+        }
+    }
+}
+
+.covid-about-content {
+    padding-right: 35px;
+    padding-left: 0;
+
+    .list {
+        li {
+            padding-right: 40px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+.covid-registration-form {
+    .country-select {
+        &.inside {
+            .flag-dropdown {
+                left: auto;
+                right: 0;
+            }
+            input, .covid-registration-form .country-select .country-select.inside input[type=text] {
+                padding-left: 15px;
+                padding-right: 90px;
+            }
+        }
+        .selected-flag {
+            padding: 0 20px 0 50px;
+            border-left: 1px solid #CCCCCC;
+            border-right: none;
+        }
+        .selected-flag {
+            .flag {
+                left: 25px;
+            }
+        }
+        .country-list {
+            text-align: right;
+
+            .flag {
+                margin-left: 6px;
+                margin-right: 0;
+            }
+        }
+    }
+    .nice-select {
+        padding-right: 20px;
+        padding-left: 35px;
+        text-align: right !important;
+
+        &::after {
+            left: 18px;
+            right: auto;
+        }
+        .list {
+            .option {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.covid-registration-image {
+    padding-right: 30px;
+    padding-left: 0;
+}
+
+.covid-protection-content {
+    .protection-faq-accordion {
+        .accordion {
+            .accordion-title {
+                padding: 15px 70px 15px 55px;
+
+                i {
+                    left: 20px;
+                    right: auto;
+                }
+                .number {
+                    right: 20px;
+                    left: auto;
+                }
+            }
+            .accordion-content {
+                padding: 0 70px 20px 20px;
+            }
+        }
+    }
+}
+.covid-protection-fun-fact {
+    margin-left: -230px;
+    margin-right: 0;
+}
+
+.covid-blog-card {
+    .blog-content {
+        span {
+            padding-right: 25px;
+            padding-left: 0;
+
+            &::before {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+.ps-5 {
+    padding-right: 3rem !important;
+    padding-left: 0 !important;
+}
+
+.covid-footer-widget {
+    .share-link {
+        li {
+            margin-left: 5px;
+            margin-right: 0;
+
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.covid-page-banner-content {
+    .list {
+        li {
+            margin-right: 25px;
+            margin-left: 0;
+
+            &:first-child {
+                margin-right: 0;
+            }
+            &::before {
+                right: -15px;
+                left: auto;
+            }
+        }
+    }
+}
+
+.covid-information-card {
+    .title {
+        padding: 0 70px 0 0;
+
+        img {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+
+.covid-doctors-card {
+    .doctors-content {
+        .social-wrap {
+            li {
+                margin-left: 5px;
+                margin-right: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.covid-testimonials-wrap-card {
+    .info {
+        .title {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+    }
+}
+
+.how-vaccines-work-sidebar {
+    .sidebar-box {
+        .list {
+            li {
+                a {
+                    padding-left: 25px;
+                    padding-right: 0;
+
+                    &::before {
+                        left: 0;
+                        right: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.covid-faq-accordion {
+    .accordion {
+        .accordion-title {
+            padding: 15px 70px 15px 55px;
+
+            i {
+                left: 20px;
+                right: auto;
+            }
+            .number {
+                right: 20px;
+                left: auto;
+            }
+        }
+        .accordion-content {
+            padding: 0 70px 20px 20px;
+        }
+    }
+}
+
+.covid-appointment-form {
+    .nice-select {
+        padding-right: 20px;
+        padding-left: 35px;
+        text-align: right !important;
+
+        &::after {
+            left: 18px;
+            right: auto;
+        }
+        .list {
+            .option {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.covid-blog-details-desc {
+    padding-left: 35px;
+    padding-right: 0;
+
+    .content {
+        span {
+            padding-right: 25px;
+            padding-left: 0;
+
+            &::before {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    .article-tag {
+        span {
+            margin-left: 5px;
+            margin-right: 0;
+        }
+    }
+    .comments-area {
+        .comment-body {
+            padding-left: 70px;
+            padding-right: 0;
+
+            .reply {
+                left: 0;
+                right: auto;
+            }
+            .comment-meta {
+                padding-right: 65px;
+            }
+        }
+    }
+}
+
+.covid-widget-area {
+    .widget_categories {
+        ul {
+            li {
+                padding-right: 0;
+
+                a {
+                    padding-right: 28px;
+                    padding-left: 0;
+
+                    &::before {
+                        right: 0;
+                        left: auto;
+                    }
+                }
+            }
+        }
+    }
+    .tagcloud {
+        a {
+            margin-left: 5px;
+            margin-right: 0;
+        }
+    }
+}
+.list-unstyled {
+    padding-right: 0;
+}
+
+.hospital-top-area {
+    .top-optional-wrap {
+        li {
+            margin-left: 10px;
+            margin-right: 0;
+            border-left: 1px solid #355370;
+            border-right: none;
+            padding-left: 12px;
+            padding-right: 0;
+
+            &:last-child {
+                margin-left: 0;
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+    }
+    .top-information-wrap {
+        li {
+            border-left: 1px solid #355370;
+            border-right: none;
+            padding-right: 22px;
+            padding-left: 15px;
+
+            &:last-child {
+                border-left: none;
+                padding-right: 22px;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.hospital-navbar-area {
+    .main-navbar {
+        .navbar {
+            .navbar-brand {
+                margin-right: 0;
+            }
+            .navbar-nav {
+                margin-right: auto !important;
+                margin-left: 0 !important;
+
+                nav-item {
+                    a {
+                        i {
+                            top: 2px;
+                        }
+                    }
+                }
+            }
+            .others-options {
+                margin-right: 30px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.hospital-specialist-card {
+    .specialist-content {
+        padding: 25px 90px 25px 0;
+
+        img {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+
+.hospital-about-content {
+    .list {
+        li {
+            padding-right: 30px;
+            padding-left: 0;
+
+            &::before {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+.hospital-about-shape {
+    left: 5%;
+    right: auto;
+    transform: translateX(-5%);
+}
+
+.hospital-appointment-form {
+    .nice-select {
+        padding-right: 20px;
+        padding-left: 35px;
+        text-align: right !important;
+
+        &::after {
+            left: 18px;
+            right: auto;
+        }
+        .list {
+            .option {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.hospital-services-card {
+    .title {
+        padding: 20px 82px 20px 0;
+
+        img {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+
+.hospital-skills-content {
+    .skills {
+        .skill-item {
+            .skill-header {
+                .skill-percentage {
+                    left: 0;
+                    right: auto;
+                }
+            }
+            .skill-bar {
+                .bar-inner {
+                    .bar {
+                        right: 10px;
+                        left: auto;
+
+                        &::before {
+                            left: -1px;
+                            right: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.hospital-skills-image {
+    padding-right: 50px;
+    padding-left: 0;
+}
+
+.hospital-fun-fact {
+    h3 {
+        .plus {
+            right: -10px;
+            left: auto;
+        }
+    }
+}
+
+.hospital-team-card {
+    .team-image {
+        .share-link {
+            a {
+                margin-left: 5px;
+                margin-right: 0;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.hospital-app-content {
+    padding-right: 30px;
+    padding-left: 0;
+
+    .list {
+        li {
+            padding: 25px 75px 25px 20px;
+
+            img {
+                right: 20px;
+                left: auto;
+            }
+        }
+    }
+    .app-btn-list {
+        li {
+            margin-left: 20px;
+            margin-right: 0;
+        }
+    }
+}
+
+.hospital-call-to-action-content {
+    .action-btn-list {
+        li {
+            margin-left: 20px;
+            margin-right: 0;
+
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.hospital-testimonials-card {
+    p {
+        &::before {
+            right: 25px;
+            left: auto;
+        }
+        &::after {
+            left: 20px;
+            right: auto;
+        }
+    }
+    .info-content {
+        .info {
+            .title {
+                margin-right: 15px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.text-start {
+    text-align: right !important;
+}
+
+.hospital-testimonials-slides {
+    &.owl-theme {
+        .owl-nav {
+            left: 0;
+            right: auto;
+        }
+    }
+}
+
+.hospital-blog-card {
+    .blog-content {
+        .meta {
+            li {
+                margin-left: 15px;
+                margin-right: 0;
+                padding-right: 22px;
+                padding-left: 0;
+
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+}
+
+.hospital-information-card {
+    .content {
+        padding-right: 105px;
+        padding-left: 0;
+
+        .icon {
+            right: 0;
+            left: auto;
+        }
+    }
+    .shape {
+        left: 0;
+        right: auto;
+    }
+}
+
+.hospital-footer-widget {
+    .share-link {
+        li {
+            margin-left: 5px;
+            margin-right: 0;
+
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.hospital-page-banner-content {
+    .list {
+        li {
+            margin-right: 25px;
+            margin-left: 0;
+
+            &::before {
+                right: -15px;
+                left: auto;
+            }
+            &:first-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.hospital-choice-content {
+    .list {
+        li {
+            padding-right: 25px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+.hospital-services-details-desc {
+    padding-right: 25px;
+    padding-left: 0;
+
+    .services-details-card {
+        padding-right: 65px;
+        padding-left: 0;
+
+        .number {
+            right: 0;
+            left: auto;
+        }
+    }
+    .services-details-inner-content {
+        .list {
+            li {
+                padding-right: 25px;
+                padding-left: 0;
+
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+    .hospital-faq-accordion {
+        .accordion {
+            .accordion-title {
+                padding: 20px 20px 20px 55px;
+
+                i {
+                    left: 20px;
+                    right: auto;
+                }
+            }
+        }
+    }
+}
+
+.hospital-widget-area {
+    .widget_download_file {
+        .download-file-list {
+            li {
+                padding-right: 50px;
+                padding-left: 0;
+
+                img {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+    .widget_services_info {
+        .info {
+            padding-right: 62px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+.hospital-portfolio-details-info {
+    .list {
+        li {
+            padding-right: 20px;
+            padding-left: 0;
+
+            &::before {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+.hospital-blog-details-desc {
+    padding-right: 25px;
+    padding-left: 0;
+
+    .article-content {
+        .meta {
+            li {
+                margin-left: 15px;
+                margin-right: 0;
+                padding-right: 22px;
+                padding-left: 0;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+                i {
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+    .article-quote {
+        padding: 30px 30px 30px 90px;
+
+        p {
+            &::before {
+                left: -50px;
+                right: auto;
+            }
+        }
+    }
+    .list {
+        li {
+            padding-right: 25px;
+            padding-left: 0;
+
+            i {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+    .blog-details-inner-content {
+        padding-right: 20px;
+        padding-left: 0;
+    }
+    .article-tag {
+        .share-list {
+            span {
+                margin-left: 5px;
+                margin-right: 0;
+            }
+        }
+        .tag-list {
+            span {
+                margin-left: 5px;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.hospital-contact-information-content {
+    .info {
+        padding-right: 100px;
+        padding-left: 0;
+
+        .icon {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+
+/* End "Covid 19 Vaccination Center RTL CSS" & "Hospital Website RTL CSS" */
+
+
+/** Responsive Area
+==============================**/
+@media only screen and (max-width: 767px) {
+    .mean-container {
+        a {
+            &.meanmenu-reveal {
+                left: 0 !important;
+                right: auto !important;
+            }
+        }
+        .mean-nav {
+            ul {
+                li {
+                    a {
+                        text-align: right;
+
+                        &.mean-expand {
+                            width: 85%;
+                            text-align: left;
+                            left: 0;
+                            right: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .others-option-for-responsive {
+        .dot-menu {
+            left: 60px;
+            right: auto;
+            z-index: 999;
+        }
+        .container {
+            .container {
+                left: 10px;
+                right: auto;
+            }
+        }
+        .option-inner {
+            .others-options {
+                .option-item {
+                    margin-left: 10px;
+                    margin-right: 0;
+
+                    .languages-list {
+                        .nice-select {
+                            .list {
+                                .option {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                }
+                .search-box {
+                    margin-right: 25px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .main-banner-content {
+        margin: auto;
+    }
+    .login-form {
+        form {
+            .lost-your-password {
+                text-align: right;
+            }
+        }
+    }
+    .top-header-optional {
+        text-align: center;
+    }
+    .middle-header-content {
+        text-align: center;
+
+        li {
+            padding-right: 0;
+            margin-right: 10px;
+            text-align: center;
+        }
+    }
+    .main-slides-content {
+        .slides-btn {
+            .checkup-content {
+                margin-right: 0;
+            }
+        }
+    }
+    .single-features {
+        .content {
+            padding-right: 0;
+        }
+    }
+    .about-image {
+        text-align: center;
+    }
+    .main-slides-content {
+        .slides-btn {
+            .optional-btn {
+                margin-right: 0;
+            }
+        }
+    }
+    .main-banner-content {
+        .banner-btn{
+            .optional-btn {
+                margin-right: 0;
+            }
+        }
+    }
+    .main-banner-item {
+        .container-fluid {
+            padding-left: 15px;
+        }
+    }
+
+    // New Three Demo Responsive CSS
+    .top-dental-tourism-information {
+        &.with-left {
+            margin-right: 0;
+        }
+    }
+    .single-dental-tourism-features {
+        .content {
+            padding-right: 0;
+        }
+    }
+    .dental-tourism-banner-area {
+        overflow: hidden;
+    }
+    .dental-tourism-about-content {
+        padding-right: 0;
+    }
+    .dental-tourism-services-area {
+        .container-fluid {
+            right: 0;
+        }
+    }
+    .dental-tourism-blog-card {
+        .blog-content {
+            padding-right: 0;
+
+            .entry-meta {
+                li {
+                    margin-left: 8px;
+                    padding-right: 18px;
+                }
+            }
+        }
+    }
+    .skin-care-banner-area {
+        .container-fluid {
+            padding-right: var(--bs-gutter-x, 0.75rem);
+        }
+    }
+    .skin-care-features-card {
+        .features-title {
+            padding-right: 0;
+        }
+    }
+    .skin-care-about-content {
+        padding-right: 0;
+    }
+    .skin-care-blog-card {
+        .blog-content {
+            padding-right: 0;
+
+            .entry-meta {
+                li {
+                    margin-left: 8px;
+                    padding-right: 18px;
+                }
+            }
+        }
+    }
+    .eye-care-banner-area {
+        .container-fluid {
+            padding-right: var(--bs-gutter-x, 0.75rem);
+            padding-left: var(--bs-gutter-x, 0.75rem);
+        }
+    }
+    .eye-care-banner-content {
+        margin-left: 0;
+    }
+    .eye-care-about-content {
+        padding-right: 0;
+    }
+    .eye-care-solutions-image {
+        padding-right: 0;
+    }
+    .eye-care-review-slides {
+        margin-right: 0;
+    }
+    .eye-care-treatment-content {
+        padding-right: 0;
+    }
+
+    /* Start "Covid 19 Vaccination Center RTL Responsive" & "Hospital Website RTL Responsive" */
+
+    .covid-banner-area {
+        overflow: hidden;
+    }
+    .covid-banner-content {
+        .banner-btn-with-info {
+            li {
+                &.title {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .covid-about-content {
+        padding-right: 0;
+    }
+    .covid-registration-image {
+        padding-right: 0;
+    }
+    .covid-protection-fun-fact {
+        margin-left: 0;
+    }
+    .ps-5 {
+        padding-right: 0 !important;
+    }
+    .covid-information-card {
+        .title {
+            padding: 0 0 0 0;
+        }
+    
+    }
+    .covid-blog-details-desc {
+        padding-left: 0;
+
+        .comments-area {
+            .comment-body {
+                .comment-meta {
+                    padding-right: 0;
+                }
+                .comment-author {
+                    .avatar {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .hospital-skills-image {
+        padding-right: 0;
+    }
+    .hospital-app-content {
+        padding-right: 0;
+    }
+    .hospital-call-to-action-content {
+        .action-btn-list {
+            li {
+                margin-left: 5px;
+            }
+        }
+    }
+    .hospital-information-card {
+        .content {
+            padding-right: 80px;
+        }
+    }
+    .hospital-services-details-desc {
+        padding-right: 0;
+    }
+    .hospital-blog-details-desc {
+        padding-right: 0;
+    }
+    .hospital-contact-information-content {
+        .info {
+            padding-right: 0;
+        }
+    }
+
+    /* End "Covid 19 Vaccination Center RTL Responsive" & "Hospital Website RTL Responsive" */
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .login-form form {
+        .lost-your-password {
+            text-align: left;
+        }
+    }
+
+    .hospital-specialist-card {
+        .specialist-content {
+            padding: 25px 65px 25px 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .mean-container {
+        a {
+            &.meanmenu-reveal {
+                left: 0 !important;
+                right: auto !important;
+            }
+        }
+        .mean-nav {
+            ul {
+                li {
+                    a {
+                        text-align: right;
+
+                        &.mean-expand {
+                            width: 85%;
+                            text-align: left;
+                            left: 0;
+                            right: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .others-option-for-responsive {
+        .dot-menu {
+            left: 60px;
+            right: auto;
+            z-index: 999;
+        }
+        .container {
+            .container {
+                left: 10px;
+                right: auto;
+            }
+        }
+        .option-inner {
+            .others-options {
+                .option-item {
+                    margin-left: 10px;
+                    margin-right: 0;
+
+                    .languages-list {
+                        .nice-select {
+                            .list {
+                                .option {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                }
+                .search-box {
+                    margin-right: 25px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .main-banner-content {
+        margin: auto;
+    }
+    .login-form {
+        form {
+            .lost-your-password {
+                text-align: right;
+            }
+        }
+    }
+    .top-header-optional {
+        text-align: center;
+    }
+    .middle-header-content {
+        text-align: center;
+
+        li {
+            padding-right: 0;
+            margin-right: 10px;
+            text-align: center;
+        }
+    }
+    .single-features {
+        .content {
+            padding-right: 0;
+        }
+    }
+    .appointment-overview-contact {
+        .appointment-info {
+            right: 0;
+            left: auto;
+        }
+    }
+    .about-image {
+        text-align: center;
+    }
+    .main-banner-item {
+        .container-fluid {
+            padding-left: 15px;
+        }
+    }
+
+    // New Three Demo Responsive CSS
+    .top-dental-tourism-information {
+        &.with-left {
+            margin-right: 0;
+        }
+    }
+    .single-dental-tourism-features {
+        .content {
+            padding-right: 0;
+        }
+    }
+    .dental-tourism-banner-area {
+        overflow: hidden;
+    }
+    .dental-tourism-about-content {
+        padding-right: 0;
+    }
+    .dental-tourism-services-area {
+        .container-fluid {
+            right: 0;
+        }
+    }
+    .dental-tourism-blog-card {
+        .blog-content {
+            padding-right: 0;
+
+            .entry-meta {
+                li {
+                    margin-left: 8px;
+                    padding-right: 18px;
+                }
+            }
+        }
+    }
+    .skin-care-banner-area {
+        .container-fluid {
+            padding-right: var(--bs-gutter-x, 0.75rem);
+        }
+    }
+    .skin-care-features-card {
+        .features-title {
+            padding-right: 0;
+        }
+    }
+    .skin-care-about-content {
+        padding-right: 0;
+    }
+    .skin-care-blog-card {
+        .blog-content {
+            padding-right: 0;
+
+            .entry-meta {
+                li {
+                    margin-left: 8px;
+                    padding-right: 18px;
+                }
+            }
+        }
+    } 
+    .eye-care-banner-area {
+        .container-fluid {
+            padding-right: var(--bs-gutter-x, 0.75rem);
+            padding-left: var(--bs-gutter-x, 0.75rem);
+        }
+    }
+    .eye-care-banner-content {
+        margin-left: 0;
+    }
+    .eye-care-about-content {
+        padding-right: 0;
+    }
+    .eye-care-solutions-image {
+        padding-right: 0;
+    }
+    .eye-care-review-slides {
+        margin-right: 0;
+    }
+    .eye-care-treatment-content {
+        padding-right: 0;
+    }
+
+    /* Start "Covid 19 Vaccination Center RTL Responsive" & "Hospital Website RTL Responsive" */
+
+    .covid-banner-area {
+        overflow: hidden;
+    }
+    .covid-about-content {
+        padding-right: 0;
+    }
+    .covid-registration-image {
+        padding-right: 0;
+    }
+    .covid-protection-fun-fact {
+        margin-left: 0;
+    }
+    .ps-5 {
+        padding-right: 0 !important;
+    }
+    .covid-blog-details-desc {
+        padding-left: 0;
+    }
+    .hospital-skills-image {
+        padding-right: 0;
+    }
+    .hospital-app-content {
+        padding-right: 0;
+    }
+    
+    .hospital-services-details-desc {
+        padding-right: 0;
+    }
+    
+    .hospital-blog-details-desc {
+        padding-right: 0;
+    }
+    .hospital-contact-information-content {
+        .info {
+            padding-right: 0;
+        }
+    }
+
+    /* End "Covid 19 Vaccination Center RTL Responsive" & "Hospital Website RTL Responsive" */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-features {
+        .content {
+            padding-right: 65px;
+        }
+    }
+
+    // New Three Demo Responsive CSS
+    .top-dental-tourism-information {
+        &.with-left {
+            margin-right: 100px;
+        }
+    }
+    .dental-tourism-navbar {
+        .main-navbar {
+            .navbar {
+                ul {
+                    margin-right: 35px;
+                }
+                .navbar-brand {
+                    &::before {
+                        left: -12px;
+                    }
+                }
+            }
+        }
+    }
+    .dental-tourism-banner-area {
+        overflow: hidden;
+    }
+    .single-dental-tourism-features {
+        .content {
+            padding-right: 90px;
+        }
+    }
+    .dental-tourism-services-area {
+        .container-fluid {
+            right: calc((100% - 950px)/2);
+        }
+    }
+    .dental-tourism-footer-widget {
+        .share-link {
+            li {
+                margin-left: 5px;
+            }
+        }
+    }
+    .grin-care-navbar {
+        .main-navbar {
+            .navbar {
+                .others-options {
+                    .option-item {
+                        &::before {
+                            right: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .skin-care-features-card {
+        .features-title {
+            padding-right: 75px;
+        }
+    }
+    .skin-care-footer-widget {
+        .share-link {
+            li {
+                margin-left: 5px;
+            }
+        }
+    }
+    .eye-care-treatment-content {
+        .treatment-inner-content {
+            padding: 25px 55px 25px 25px;
+
+            .number {
+                right: 15px;
+            }
+        }
+    }
+    .eye-care-footer-widget {
+        .share-link {
+            li {
+                margin-left: 5px;
+            }
+        }
+    }
+
+
+    /* Start "Covid 19 Vaccination Center RTL Responsive" & "Hospital Website RTL Responsive" */
+
+    .ps-5 {
+        padding-right: 0 !important;
+    }
+
+    .hospital-specialist-card {
+        .specialist-content {
+            padding: 25px 60px 25px 0;
+        }
+    }
+
+    .hospital-app-content {
+        padding-right: 0;
+
+        .list {
+            li {
+                padding: 15px 50px 15px 15px;
+
+                img {
+                    right: 10px;
+                }
+            }
+        }
+    }
+
+    .hospital-information-card {
+        .content {
+            padding-right: 80px;
+        }
+    }
+
+    /* End "Covid 19 Vaccination Center RTL Responsive" & "Hospital Website RTL Responsive" */
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    // New Three Demo Responsive CSS
+    .top-dental-tourism-information {
+        &.with-left {
+            margin-right: 100px;
+        }
+    }
+    .dental-tourism-navbar {
+        .main-navbar {
+            .navbar {
+                ul {
+                    margin-right: 35px;
+                }
+                .navbar-brand {
+                    &::before {
+                        left: -12px;
+                    }
+                }
+            }
+        }
+    }
+    .dental-tourism-banner-area {
+        overflow: hidden;
+    }
+    .single-dental-tourism-features {
+        .content {
+            padding-right: 90px;
+        }
+    }
+    .dental-tourism-services-area {
+        .container-fluid {
+            right: calc((100% - 1135px)/2);
+        }
+    }
+    .dental-tourism-footer-widget {
+        .share-link {
+            li {
+                margin-left: 5px;
+            }
+        }
+    }
+    .grin-care-navbar {
+        .main-navbar {
+            .navbar {
+                .others-options {
+                    .option-item {
+                        &::before {
+                            right: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .skin-care-features-card {
+        .features-title {
+            padding-right: 75px;
+        }
+    }
+
+    /* Start "Covid 19 Vaccination Center RTL Responsive" & "Hospital Website RTL Responsive" */
+
+    .hospital-information-card {
+        .content {
+            padding-right: 80px;
+        }
+    }
+
+    /* End "Covid 19 Vaccination Center RTL Responsive" & "Hospital Website RTL Responsive" */
+
+}
+
+@media only screen and (min-width: 1550px) {
+    .skin-care-banner-area {
+        .container-fluid {
+            padding-right: 100px;
+            padding-left: 0;
+        }
+    }
+    .eye-care-banner-area {
+        .container-fluid {
+            padding-right: 100px;
+            padding-left: 0;
+        }
+    }
+}
