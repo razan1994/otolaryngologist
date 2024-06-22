@@ -26,7 +26,11 @@
         {{$seo_operation?->h2_val}}
     @endsection
 
-
+    <style>
+      .hidden {
+      display: none;
+       }
+        </style>
 
 
 @section('content')
@@ -317,6 +321,33 @@
         </div>
     @endif
     <!-- End Skin Care Services Area -->
+
+    <div style="opacity: 0;" class="skin-care-services-area ptb-100 pb-75">
+        <div class="container">
+
+            <button style="opacity: 0;"  class="btn wow animate__animated animate__fadeInLeft" id="toggleButton">{{ __('front_end.Toggle_Title') }} </button>
+            <div id="toggleContent" class="hidden">
+                 {{ __('front_end.Toggle_Content') }}
+
+                 {{ __('front_end.Toggle_Keywords') }}
+            </div>
+
+
+    <script>
+    document.getElementById("toggleButton").addEventListener("click", function() {
+    var content = document.getElementById("toggleContent");
+    if (content.classList.contains("hidden")) {
+        content.classList.remove("hidden");
+    } else {
+        content.classList.add("hidden");
+    }
+});
+    </script>
+
+
+        </div>
+    </div>
+
 
 
 
