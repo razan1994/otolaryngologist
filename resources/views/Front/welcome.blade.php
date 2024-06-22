@@ -27,6 +27,8 @@
     @endsection
 
 
+
+
 @section('content')
 
 
@@ -187,13 +189,15 @@
                                 </li> --}}
                         </ul>
 
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Skin Care About Area -->
+
+
 
     <!-- Start Skin Care Before and After Area -->
     <div dir="{{ App::isLocale('ar') ? 'ltr' : 'ltr' }}" class="skin-care-before-after-area ptb-100 pb-75">
@@ -208,15 +212,19 @@
                 <div class="skin-care-before-after-slides owl-carousel owl-theme" dir="ltr">
                     @foreach ($photos as $blog )
                     <div class="skin-care-before-after-card">
-                        <img src="{{ asset($blog->image_after) }}" alt="image"> 
+                        <img src="{{ asset($blog->image_after) }}" alt="image">
                     </div>
                     @endforeach
-                    
+
                 </div>
             @endif
         </div>
     </div>
     <!-- End Skin Care Before and After Area -->
+
+
+
+
 
     <!-- Start Skin Care Dry Area -->
     <div class="skin-care-dry-area ptb-100 pb-75 ">
@@ -450,5 +458,7 @@
         </div>
     </div>
     <!-- End Skin Care Partner Area -->
-    
+
+
+
 @endsection
