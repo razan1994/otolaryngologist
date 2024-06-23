@@ -491,7 +491,7 @@ return [
     ###==========================================================================================================###
 
 
-    'Toggle_Title' => 'best ear, nose and throat doctor in Jordan',
+   'Toggle_Title' => 'Ear, Nose, and Throat Diseases - Best ENT Doctor in Jordan - Dr. Anas Abu Shamleh',
     'Toggle_Content' => 'In medical literature, the Ear, Nose, and Throat (ENT) unit is referred to as Otolaryngology, commonly abbreviated as ENT. This specialty focuses on diagnosing and treating diseases affecting the ears, nose, throat, facial nerves, external and middle ear, pharynx, and vocal cords. Additionally, it includes the examination and management of diseases related to the brain and inner ear, covering the entire head and neck region.
 
 Specializations in Otolaryngology

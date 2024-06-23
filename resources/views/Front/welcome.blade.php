@@ -227,9 +227,6 @@
     <!-- End Skin Care Before and After Area -->
 
 
-
-
-
     <!-- Start Skin Care Dry Area -->
     <div class="skin-care-dry-area ptb-100 pb-75 ">
         <div class="container">
@@ -280,6 +277,40 @@
     </div>
     <!-- End Skin Care Dry Area -->
 
+
+    <!-- Start Covid FAQ Area -->
+    <div dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}" class="covid-faq-area">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="covid-faq-accordion">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-title active">
+                                    <i class='bx bx-caret-down'></i>
+                                    {{ __('front_end.Toggle_Title') }}
+
+                                </div>
+
+                                <div class="accordion-content">
+                                    <p>
+                                        {{ __('front_end.Toggle_Content') }}
+                                    </p>
+                                    <p>{{ __('front_end.Toggle_Keywords') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End Covid FAQ Area -->
+
     <!-- Start Skin Care Services Area -->
     @if (isset($treatments) && $treatments->count() > 0)
         <div class="skin-care-services-area ptb-100 pb-75">
@@ -325,11 +356,9 @@
     <div style="opacity: 0;" class="skin-care-services-area ptb-100 pb-75">
         <div class="container">
 
-            <button style="opacity: 0;"  class="btn wow animate__animated animate__fadeInLeft" id="toggleButton">{{ __('front_end.Toggle_Title') }} </button>
+            <button style="opacity: 0;"  class="btn wow animate__animated animate__fadeInLeft" id="toggleButton"> </button>
             <div id="toggleContent" class="hidden">
-                 {{ __('front_end.Toggle_Content') }}
 
-                 {{ __('front_end.Toggle_Keywords') }}
             </div>
 
 
