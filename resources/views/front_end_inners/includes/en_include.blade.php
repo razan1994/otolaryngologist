@@ -1,4 +1,38 @@
 <p style="display: none;direction: rtl;">
+    Dr. Anas Abu Shamleh,
+    Consultant in ENT and Nasal Surgery,
+    Best ENT Specialist in AmmanJordan - Jabal Al-Nasr - Madinah Street,
+    ENT Doctor in Amman Jordan,
+    Ear, Nose, and Throat Diseases,
+    ENT Diseases and Treatments with Dr.Anas Abu Shamleh,
+    Best Treatment Methods for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh,
+    Diagnosis and Treatment of Ear, Nose, and Throat Issues at Dr. Anas Abu Shamleh's Clinic,
+    Treatment for Hearing Loss and Ear Infections with Dr. Anas Abu Shamleh,
+    Effective Solutions for Nasal Blockage and Sinus Infections with Dr. Anas Abu Shamleh,
+    Medical Consultations for Voice, Ear, and Nose Issues at Dr. Anas Abu Shamleh's Clinic,
+    Causes and Treatment of Breathing Problems Due to Nasal and Throat Issues with Dr. Anas Abu Shamleh,
+    Methods for Treating Middle and Outer Ear Infections at Dr. Anas Abu Shamleh's Clinic,
+    Comprehensive Care for Ear, Nose, and Throat Problems with ENT Specialist Dr. Anas Abu Shamleh,
+    Treatment for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh,
+    Nasal Cosmetic Surgery with Dr. Anas Abu Shamleh,
+    Nasal Aesthetics in Amman with Dr. Anas Abu Shamleh,
+    Best Nasal Cosmetic Surgeon in Jordan,
+    Laser Treatment for Nasal Problems with Dr. Anas Abu Shamleh,
+    Non-Surgical Nasal Cosmetic Surgery at Dr. Anas Abu Shamleh's Clinic,
+    Medical Consultation for Nasal Aesthetics with Nasal Cosmetic
+    Surgeon Dr. Anas Abu Shamleh, Nasal Cosmetic Results in Amman with Dr. Anas Abu Shamleh,
+    Repair of Nasal DeformitiesAfter Accidents with Dr. Anas Abu Shamleh,
+    Nasal Cosmetic Surgery for Aesthetic and Medical Purposes at Dr. Anas AbuShamleh's Clinic,
+    Improving Nasal Appearance Without Surgery with Dr. Anas Abu Shamleh,
+    Endoscopic Nasal and Sinus Cosmetic Surgery with Dr. Anas Abu Shamleh,
+    Best ENT Doctor in Amman, Jordan, Dr. Anas Abu Shamleh,
+    ENT Specialist in Jabal Al-Nasr,
+    Dr. Anas Abu Shamleh's ENT Clinic on Madinah Street - Specialized Eye Hospital,
+    ENT Specialist in Amman, Jordan,
+    Dr. Anas Abu Shamleh, Nasal Cosmetic Surgeon in Jordan,
+    Improving Nasal, Ear, and Throat Function with Dr. Anas Abu Shamleh,
+    Advanced Treatments for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh,
+    Medical Consultations for Breathing Problems and Infections of the Nose, Ear, and Throat
     ,Rhinoplasty
     ,Ear, Nose and Throat
     ,rhinoplasty
@@ -28,9 +62,9 @@
     ,nasal dryness
     ,Nasal burning
     ,the nose
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Rhinoplasty
     ,Ear, Nose and Throat
     ,rhinoplasty
@@ -57,9 +91,9 @@
     ,Treating a stuffy nose when sleeping due to a cold
     ,Causes of nasal obstruction
     ,Treating a stuffy nose on one side
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,nasal dryness
     ,Nasal burning
     ,the nose
@@ -84,9 +118,9 @@
     ,Treating chronic nasal congestion
     ,Nasal allergy symptoms
     ,A natural way to open the nose
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Rhinoplasty prices
     ,What is nasal congestion
     ,Watery runny nose
@@ -124,9 +158,9 @@
     ,Burning in the nose
     ,Treating allergic rhinitis
     ,Opening a blocked nose
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Rhinitis treatment
     ,nose operation
     ,The difference between allergic rhinitis and sinusitis
@@ -154,9 +188,9 @@
     ,Types of nasal drops
     ,Dry rhinitis
     ,Inflammation of the nasal mucosa
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Chronic allergic rhinitis
     ,Causes of nosebleeds
     ,Causes of nosebleeds in children while sleeping
@@ -184,9 +218,9 @@
     ,Ear, Nose and Throat Specialist
     ,Cause of stuffy nose when sleeping
     ,Symptoms of rhinitis
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nose surgery
     ,Nose plasters after plastic surgery
     ,Nasal congestion treatment
@@ -224,9 +258,9 @@
     ,bulging nose
     ,Nasal corneas
     ,Ointment for the treatment of dry nose
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,nose anatomy
     ,Ear, nose and throat doctor
     ,Causes of nosebleeds while sleeping
@@ -254,9 +288,9 @@
     ,Treating a stuffy nose for pregnant women
     ,nasal speculum
     ,A lump in the nostril
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,swollen nose
     ,nasal sinuses
     ,Ear, nose and throat diseases and their treatment pdf
@@ -284,9 +318,9 @@
     ,What are the causes of nosebleeds?
     ,Nose operations
     ,perforation of manakhs
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,perforation of manakhs
     ,Runny nose medicine
     ,Drops to stop nosebleeds
@@ -324,9 +358,9 @@
     ,Treatment of polyps in the nose
     ,What is the cause of nasal obstruction?
     ,One month after rhinoplasty
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Plastic surgery center
     ,Runny nose on one side
     ,Nasal decongestant medications
@@ -354,9 +388,9 @@
     ,nose components
     ,Wounds inside the nose
     ,Causes of stuffy nose during sleep
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nose scales from the outside
     ,The price of the double labiaplasty
     ,Treating nasal and throat congestion
@@ -384,9 +418,9 @@
     ,Plastic surgery doctor
     ,Treatment for nasal polyps in children
     ,External treatment of rhinitis
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,itchy nose
     ,blocked nose
     ,How to clear a blocked nose when you have a cold
@@ -424,9 +458,9 @@
     ,Allergic rhinitis
     ,Sinus dryness
     ,Treating a stuffy nose after sleeping
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Drops for stuffy nose for pregnant women
     ,Clearing the nose of mucus
     ,What is the treatment for a stuffy nose?
@@ -454,9 +488,9 @@
     ,Old burn surgeries
     ,Correction of the tilt of the nose without surgery
     ,Treatment of enlarged nasal corneas with herbs
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Treating nasal pain from the inside
     ,Breast surgery
     ,Plastic surgery for men
@@ -484,9 +518,9 @@
     ,Best nose drops for pregnant women
     ,Rhinitis from the inside
     ,Nose wound from the inside
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,The cost of plastic surgery
     ,Swelling inside the nostril
     ,Ear, Nose and Throat
@@ -524,9 +558,9 @@
     ,adenoids;
     ,Burning in the nose and throat
     ,Causes of nasal deviation
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Bad breath from the nose
     ,Treatment of enlarged sinuses
     ,Facelift without operations
@@ -554,9 +588,9 @@
     ,pruritus
     ,Facial plastic surgeries
     ,Breast reduction operations
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,The fastest way to open a blocked nose
     ,Blockage of one side of the nose
     ,Nose hair benefits
@@ -584,9 +618,9 @@
     ,Symptoms of nosebleeds
     ,Runny nose solution
     ,What is nasal congestion
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nose pain
     ,Olive oil for the nose
     ,Nasal heat treatment from the inside
@@ -624,9 +658,9 @@
     ,Rhinoplasty doctor
     ,Nose swelling from the inside
     ,Types of flesh of the nose
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Facial plastic surgery
     ,Nose stickers after plastic surgery
     ,Treating cracks in the nose from the inside
@@ -654,9 +688,9 @@
     ,Cosmetic surgery prices
     ,Swelling of the nose from the outside
     ,Rhinitis from the outside
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Rhinoplasty before and after
     ,Facial plastic surgery for men
     ,Treatment of swelling of the nose from the inside
@@ -684,9 +718,9 @@
     ,nose doctor
     ,The cause of nasal congestion
     ,Symptoms of diseases of the ear, nose and throat
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Symptoms of allergic rhinitis
     ,Symptoms of enlarged nasal corneas
     ,Causes of dry nose
@@ -724,9 +758,9 @@
     ,Nose piercing from the middle
     ,What causes a stuffy nose when sleeping?
     ,Sinus operation experiments
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Air coming out of one nostril
     ,Cause of nosebleeds while sleeping
     ,How to stop runny nose
@@ -754,9 +788,9 @@
     ,Nasal obstruction at bedtime
     ,Nasal allergy symptoms
     ,nasal bacteria
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,An ear, nose and throat doctor in El Haram
     ,Laser nose operation
     ,Nose cleaning solution
@@ -784,9 +818,9 @@
     ,Aesthetics without surgery
     ,Types of plastic surgery for the vagina
     ,Bad nose odor and treatment
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Otoplasty with threads
     ,Sneezing and runny nose
     ,Nose diet in children
@@ -824,9 +858,9 @@
     ,Nose and throat doctor
     ,Treating obstructed nostrils alternately
     ,Labia cutting process
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Treatment of sudden itchy nose from the outside
     ,Ear, nose and throat hospitals
     ,The cause of nosebleeds in children
@@ -854,9 +888,9 @@
     ,Ear, Nose and Throat Centre
     ,Nosebleeds for no reason
     ,Chronic rhinitis
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Treatment of enlarged corneas of the nose
     ,Nose diet for children
     ,The tip of the nose after plastic surgery
@@ -884,9 +918,9 @@
     ,Nose cautery process
     ,Treatment of inflammation of the nasal mucosa
     ,Chin augmentation before and after
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Treating allergic rhinitis and sinusitis
     ,What are the causes of nasal obstruction?
     ,Ear and nose doctor
@@ -914,9 +948,9 @@
     ,The heat of the nose
     ,Ear, Nose and Throat Specialist
     ,Inner nasal wounds
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nasal obstruction in children due to the common cold
     ,Sinus cleaner
     ,Causes of adenoids in the nose
@@ -954,9 +988,9 @@
     ,Sinus effect on voice
     ,Benefits of olive oil for the nose
     ,A topic about plastic surgery
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Treatment of colds and sinusitis for pregnant women
     ,Rhinoplasty price
     ,Causes of enlarged nasal cartilage
@@ -984,9 +1018,9 @@
     ,Causes of deviated nasal septum
     ,Deviation of the nasal septum
     ,Nasal congestion solution
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Inflammation of the nose and throat
     ,Eye surgery before and after
     ,Treatment of pericingitis of the nose
@@ -1014,9 +1048,9 @@
     ,Ear, nose and throat specialty
     ,Nasal deviation and headache
     ,Runny water from the nose
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Do sinuses affect the ear?
     ,Sinus bleeding
     ,rhinoplasty
@@ -1054,9 +1088,9 @@
     ,Nose correction without surgery
     ,Nasal congestion drops
     ,Nose flesh removal
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nose flesh removal
     ,Vitamin D and the sinuses
     ,Moisturizing nasal drops
@@ -1091,9 +1125,9 @@
     ,Haifa Wehbe plastic surgery
     ,Treatment of corneal hyperplasia with herbs
     ,Chin augmentation
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Rhinoplasty with threads before and after
     ,Treating a stuffy nose from the outside
     ,for nasal congestion
@@ -1129,9 +1163,9 @@
     ,Ear and nose doctor
     ,olive oil in the nose
     ,Opening the blocked nose from the runny nose
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Clean the nose with salt water
     ,nasal nerves
     ,Nasal damage
@@ -1187,9 +1221,9 @@
     ,Causes of nose pain
     ,Nasal moisturizing drops
     ,Symptoms of nasal polyps
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Breathing through the nose is better than the mouth
     ,Simple nasal deviation
     ,How much does rhinoplasty cost for Bashar Al-Bazrah?
@@ -1228,9 +1262,9 @@
     ,Treatment of chronic sinus obstruction
     ,Posterior nosebleed
     ,nosebleeds
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Pills to stop runny nose
     ,Do sinuses cause phlegm?
     ,What are the symptoms of allergic rhinitis
@@ -1268,9 +1302,9 @@
     ,Nose obstruction treatment
     ,Causes of a stuffy nose without a cold
     ,nasal pressure
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Chin augmentation without surgery
     ,smell from the nose
     ,Laser vaginal tightening price
@@ -1310,9 +1344,9 @@
     ,Signs of allergic rhinitis
     ,Is nosebleed dangerous?
     ,Professor of Ear, Nose and Throat
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Iron the nose
     ,Nose treatment without surgery
     ,Ear and nose doctor, Nasr City
@@ -1349,9 +1383,9 @@
     ,Nose correction surgery
     ,Nose hair benefit
     ,Blade cutting cost
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,The method of opening the nose
     ,Nose cleaning drops
     ,Ear, nose and throat doctor
@@ -1410,9 +1444,9 @@
     ,Endoscopy center of the ear, nose and throat
     ,Cosmetic nose
     ,Dr. Hatem Al-Sahar is a plastic surgeon
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Cosmetic vaginal surgeries
     ,Dry the nose from the inside
     ,The cost of the operation to adjust the nasal septum
@@ -1455,9 +1489,9 @@
     ,Pediatric ear and nose doctor
     ,How to reduce the nose without operations
     ,Nasal congestion
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Causes of nasal heat from the inside
     ,Mucus coming out of the nose
     ,way to open the mouth
@@ -1494,9 +1528,9 @@
     ,Laser blade reduction
     ,Nose after plastic surgery
     ,Rhinoplasty without surgery
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Wearing glasses after rhinoplasty
     ,Facial plastic surgeries for men before and after
     ,The best ear, nose and throat doctor in Al-Jedani Hospital
@@ -1524,9 +1558,9 @@
     ,Hand surgery
     ,How long do nose strips last after plastic surgery?
     ,Ear, Nose and Throat Doctors in Al Habib Al Olaya
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,How much does a nose reduction surgery cost?
     ,Nefertiti plastic surgery
     ,Ear, nose and throat doctor
@@ -1549,9 +1583,9 @@
     ,Lip surgery
     ,The nearest ear, nose and ear doctor
     ,Successful plastic surgeries
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Lower eyelid surgery
     ,Lined eyelid surgery
     ,Doctor of ear, nose and throat in Marj
@@ -1585,9 +1619,9 @@
     ,Vaginal plastic surgery
     ,Nose surgery prices
     ,Rhinoplasty method
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Chin reduction surgery
     ,Blade reduction process
     ,How much does rhinoplasty cost with Dr. Mamdouh Ashy?
@@ -1624,9 +1658,9 @@
     ,Plastic hand surgery
     ,Ear, Nose and Throat doctor
     ,Back plastic surgeries
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Rhinoplasty before and after for men
     ,Clitoris surgery
     ,Long face reduction surgery
@@ -1658,9 +1692,9 @@
     ,Toe surgery cost
     ,Sweet rhinoplasty
     ,How much is rhinoplasty?
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Professor of Ear, Nose and Throat
     ,Wound surgery
     ,How to apply nose stickers after plastic surgery
@@ -1687,9 +1721,9 @@
     ,Remove the hump of the nose naturally
     ,Ear, nose and throat clinic
     ,My experience with labiaplasty
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Study plastic surgery
     ,Eyelid surgery before and after
     ,Eyelid lift without surgery
@@ -1717,9 +1751,9 @@
     ,Prominent frontal surgery
     ,What is the price of rhinoplasty?
     ,Dr. Mostafa Hamida is a plastic surgeon
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Laser rhinoplasty
     ,Rhinoplasty from how old
     ,Nostrils after plastic surgery
@@ -1748,9 +1782,9 @@
     ,Ear, nose and throat specialist
     ,Labiaplasty
     ,Chin surgery for men
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Eyelid surgery before and after
     ,The cost of vaginoplasty
     ,Ear, nose and throat doctor online
@@ -1780,9 +1814,9 @@
     ,Laser nose correction
     ,Hand plastic surgeon
     ,Nose and throat doctor
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nose reduction without plastic surgery
     ,Dr. Rami Al-Anani is a plastic surgeon
     ,How to paste the nose after plastic surgery
@@ -1828,9 +1862,9 @@
     ,Rhinoplasty doctor
     ,What is the price of a nose job?
     ,Types of plastic surgeries for men
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Ear, nose and throat diseases
     ,The cost of rhinoplasty
     ,How to reduce the nose without plastic surgery
@@ -1892,9 +1926,9 @@
     ,Before and after rhinoplasty
     ,Ear, Nose and Throat
     ,Re-rhinoplasty
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Chronic rhinitis
     ,What are the causes of nasal obstruction?
     ,Ear and nose doctor
@@ -1949,9 +1983,9 @@
     ,Nasal swelling treatment
     ,Sinus opening
     ,Nose wound
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,How to clear a stuffy nose when you have a cold
     ,Allergic rhinitis treatment
     ,Persistent nasal obstruction
@@ -2002,9 +2036,9 @@
     ,Moisturizing the sinuses
     ,Nose wounds in children
     ,isomar nasal spray
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Causes of nose wounds from the inside
     ,Sinus deviation
     ,What is the cause of nosebleeds in children?
@@ -2066,9 +2100,9 @@
     ,Vaginal labiaplasty
     ,Open the nose to breathe
     ,Nose itching from the inside
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,The cause of itchy nose
     ,Otoplasty cost
     ,Meaty nose operation
@@ -2107,9 +2141,9 @@
     ,Best Ear, Nose and Throat doctor in El Habib El Rayan
     ,Meaty nose surgery
     ,Causes of nose odor
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Causes of nose odor
     ,What is the cause of bad breath
     ,swelling of the cheeks
@@ -2178,9 +2212,9 @@
     ,Runny nose treatment
     ,Treatment of mucus in the nose
     ,Nose tip reduction surgery
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Causes of nose odor after plastic surgery
     ,Nasal congestion when sleeping
     ,What causes itchy nose from the inside?
@@ -2219,9 +2253,9 @@
     ,The cause of dry nose from the inside
     ,Causes of obstruction of nostrils alternately
     ,What is nasal obstruction?
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Ear, Nose and Throat Specialist
     ,Wide rhinoplasty
     ,Symptoms of chronic nasal obstruction
@@ -2277,9 +2311,9 @@
     ,Prominent ear surgery
     ,Sinus enlargement treatment
     ,For his flesh
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,The best nose doctor
     ,Treatment of burning nose and throat
     ,The cost of vaginal tightening surgery
@@ -2379,9 +2413,9 @@
     ,plug the nose
     ,Benefits of nasal cartilage
     ,Nosebleeds from one nostril
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Otoplasty
     ,Cauterize the cartilages of the nose
     ,Nose sugar treatment
@@ -2500,9 +2534,9 @@
     ,Ear and nose doctor in Faisal
     ,Ear Nose Throat Doctor
     ,Ear, Nose and Throat Hospital
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Oral plastic surgery
     ,Vaginal reconstructive surgery
     ,Nose cartilage modification surgery
@@ -2543,9 +2577,9 @@
     ,Clinics Etoile Ear, Nose and Throat
     ,Eye plastic surgery
     ,Vaginal reconstructive surgery cost
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Dr. Shadi Rahma is a plastic surgeon
     ,Meaty nose after plastic surgery
     ,Nose before and after plastic surgery
@@ -2584,9 +2618,9 @@
     ,Book an ear, nose and throat doctor
     ,Stickers after rhinoplasty
     ,Eyelid surgery
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Vagina reduction operations
     ,Ear, nose and throat endoscope
     ,External labiaplasty
@@ -2637,9 +2671,9 @@
     ,Nose splint after the operation
     ,Dr. Mamoun Ismail plastic surgery
     ,want an ear, nose and throat doctor
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Laser nose cartilage removal
     ,Nose lift operation
     ,Toe surgery cost
@@ -2727,9 +2761,9 @@
     ,Labiaplasty
     ,Chin surgery for men
     ,Eyelid surgery before and after
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,The cost of vaginoplasty
     ,Ear, nose and throat doctor online
     ,Doctor of Ear, Nose and Throat, Ibn Al-Haytham Hospital
@@ -2840,9 +2874,9 @@
     ,Vaginoplasty before and after
     ,Plastic surgery after natural childbirth
     ,Reduction of vaginal labia
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Dr. Hassan Ali, nose and ears
     ,Nose after plastic surgery
     ,Nose opening surgery
@@ -2914,9 +2948,9 @@
     ,Ear, nose and throat clinic
     ,Otoplasty before and after
     ,Cleft lip surgery
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nose surgery prices
     ,An ear and nose doctor in Ain Shams
     ,Eyelid lift laser
@@ -2989,9 +3023,9 @@
     ,Big rhinoplasty
     ,The best nose and throat doctor
     ,Reducing the cheekbones
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Duration of tape application after rhinoplasty
     ,encryption process
     ,Before rhinoplasty
@@ -3061,9 +3095,9 @@
     ,The best ear, nose and throat doctor
     ,Filler to reduce the nose
     ,My experience with labia reduction
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,The cost of rhinoplasty at Dr. Hossam Fouda
     ,Ear, Nose and Throat Surgeon
     ,Rhinoplasty how much does it cost?
@@ -3120,9 +3154,9 @@
     ,Otoplasty
     ,Department of plastic surgery
     ,Nose reduction prices
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,The most famous ear, nose and throat doctor
     ,Cosmetic surgery costs
     ,Laser eyelid surgery
@@ -3202,9 +3236,9 @@
     ,Laser skin reduction
     ,Dr. Nader Saab, the cost of rhinoplasty
     ,Eye augmentation surgery
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nose after plastic surgery
     ,Non-surgical facelift
     ,Ear and Nose Doctor in El Hosary
@@ -3272,9 +3306,9 @@
     ,Cast after rhinoplasty
     ,Nose reduction surgery costs
     ,An ear, nose and ear doctor in El-Marg
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Dr. Hossam Fouda, rhinoplasty
     ,I want an ear, nose and throat doctor
     ,Eyelid surgery before and after
@@ -3367,9 +3401,9 @@
     ,Nose correction surgery
     ,Dr. Wael Ghanem, plastic surgeon
     ,Adel Ajami, plastic surgeon
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Facial burn surgery
     ,Plastic surgery to remove scars
     ,Skin slimming operation
@@ -3451,9 +3485,9 @@
     ,Scalp modification without surgery
     ,Abdominoplasty
     ,Dr. Muhammad Al-Qahtani, plastic surgeon
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Nose shape before and after plastic surgery
     ,Haifa Hassouni rhinoplasty
     ,Fleshy rhinoplasty
@@ -3529,9 +3563,9 @@
     ,Ear, nose and throat medical consultations
     ,Vaginal narrowing prices
     ,Men's nose job
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,Inner nasal splint
     ,Laser operation for the nose
     ,The plastic surgery of the cheekbones
@@ -3640,9 +3674,9 @@
     ,Ear modification without surgery
     ,The cost of the operation to remove the bone of the nose
     ,Dr. Wael Saqr is a plastic surgeon
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,labiaplasty process
     ,Burn plastic surgery
     ,Nose surgery prices
@@ -3751,9 +3785,9 @@
     ,Doctor of Ear, Nose and Throat, Ain Shams University
     ,Rhinoplasty before and after
     ,Haifa Hassouni plastic surgery
-    </p>
-    <h6 style="display: none;direction: rtl;">Doctors</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">Doctors</h6>
+<p style="display: none;direction: rtl;">
     ,fleshy nose operation
     ,The best ear and nose doctor
     ,My experience in rhinoplasty
@@ -3839,5 +3873,4 @@
     ,Dr. Mohamed Suleiman, plastic surgeon
     ,Rhinoplasty Mamdouh Ashi
     ,The cost of rhinoplasty Jamal Juma
-    </p>
-    
+</p>

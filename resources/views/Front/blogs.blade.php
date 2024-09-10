@@ -44,120 +44,147 @@
 @endif
 
 
-@section('h1_val'){{$seo_operation?->h1_val}}@endsection
-@section('h2_val'){{$seo_operation?->h2_val}}@endsection
+@section('h1_val')
+    {{ $seo_operation?->h1_val }}
+@endsection
+@section('h2_val')
+    {{ $seo_operation?->h2_val }}
+@endsection
 
 @section('content')
 
 
-              <!-- Start Skin Care Banner Area -->
-              <div class="skin-care-banner-area">
-                <div class="container-fluid">
-                    <div style="padding-top: 125px;
-                    padding-bottom: 130px;" class="page-banner-content">
-                        <h2><span class="banner-title">{{__('front_end.footer_Blogs')}}</span></h2>
-
-                        <ul class="pages-list">
-                            <li><a href="{{route('welcome')}}">{{__('front_end.nav_home')}}</a></li>
-                            <li>{{__('front_end.footer_Blogs')}}</li>
-                        </ul>
-                    </div>
-                </div>
 
 
-            </div>
-            <!-- End Skin Care Banner Area -->
+    <!-- Start Breadcrumb Section -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('welcome') }}">{{ __('front_end.nav_home') }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ __('front_end.footer_Blogs') }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- End Breadcrumb Section section -->
 
+    <!-- Start Blog Standard Left Sidebar section -->
+    <div class="blog-standard-left-sidebar-section mt-40 mb-40">
+        <div class="container-md container-fluid">
+            <div class="row g-lg-4 gy-5">
+                <div class="col-lg-4 order-lg-1 order-2">
+                    <div class="sidebar-area">
+                        <div class="shop-widget mb-30">
+                            <h5 class="shop-widget-title">{{ __('front_end.Recent_Post') }}</h5>
 
-        <!-- Start  Blog Area -->
-        <div class="hospital-blog-area-without-color pt-100 pb-100">
-            <div class="container">
-                <div class="row justify-content-center">
-                    @if (isset($blogs) && $blogs->count() > 0)
-                            @foreach ($blogs as $blog )
-                            <div class="col-lg-4 col-md-12">
-                                <div class="hospital-blog-card">
-                                    @if(isset($blog->image) && file_exists($blog->image))
-                                    <div class="blog-image">
-                                        <a href="{{ route('blog-details', $blog->alias_name) }}"><img style="height: 256px; width: 416px;" src="{{ asset($blog->image) }}"  alt="image"></a>
-
-                                        <div class="date">{!! \Carbon\Carbon::parse($blog->created_at->toFormattedDateString())->translatedFormat(' j F Y ') !!}</div>
+                            @foreach ($recentBlogs as $recentBlog)
+                                <div class="recent-post-widget mb-20">
+                                    <div class="recent-post-img">
+                                        <a href="{{ route('blog-details', $recentBlog->alias_name) }}">
+                                            <img src="{{ asset($recentBlog->image) }}"
+                                                alt="{{ $recentBlog->alt_text_en }}">
+                                        </a>
                                     </div>
-                                    @endif
-                                    <div class="blog-content">
-
-                                        <h3>
-                                            <a href="{{ route('blog-details', $blog->alias_name) }}">{{ Str::limit($blog->title, 60) }}</a>
-                                        </h3>
-                                        <a href="{{ route('blog-details', $blog->alias_name) }}" class="blog-btn">{{__('front_end.btn_ReadMore')}}</a>
+                                    <div class="recent-post-content">
+                                        <a href="{{ route('blog-details', $recentBlog->alias_name) }}">
+                                            {{ $recentBlog->created_at->format('d F, Y') }}
+                                        </a>
+                                        <h6>
+                                            <a href="{{ route('blog-details', $recentBlog->alias_name) }}">
+                                                {{ Str::limit($recentBlog->title, 50) }}
+                                            </a>
+                                        </h6>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
 
-                            <div class="col-lg-12 col-md-12">
-                                 {{ $blogs->links('vendor.pagination.custom') }}
-
-                            </div>
-
-                    @endif
-                </div>
-            </div>
-        </div>
-        <!-- End Blog Area -->
-
-        <!-- Start Hospital Information Area -->
-        <div class="hospital-information-area pt-100 pb-75" style="background-color: #36495c">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hospital-information-card">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class='bx bx-map'></i>
-                                </div>
-                                <h3>{{__('front_end.Eardisease_OfficeAddress')}}</h3>
-                                <p>{{__('front_end.Eardisease_OfficeAddress1')}}</p>
-                            </div>
-
                         </div>
-                    </div>
+                        @if (isset($blogs) && $blogs->count() > 0)
+                            <div class="shop-widget">
+                                <h5 class="shop-widget-title">{{ __('front_end.Tags') }}</h5>
+                                <ul class="tag-list">
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hospital-information-card">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class='bx bx-envelope'></i>
-                                </div>
-                                <h3>{{__('front_end.Eardisease_EmailUs')}}</h3>
-                                <p>
-                                    <a href="mailto:info@grin54364.com">dranasabushamleh82@gmail.com</a>
-
-                                </p>
+                                        <li>
+                                            <a href="#">الدكتور أنس ابوشملة</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> اختصاصي الأنف والأذن والحنجرة</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">مقالات طبية</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                نصائح طبية
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                معلومات طبية
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                مقالات طبية متخصصة
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                صحة الأذن والأنف والحنجرة
+                                            </a>
+                                        </li>
+                                </ul>
                             </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hospital-information-card">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class='bx bx-phone-call'></i>
-                                </div>
-                                <h3>{{__('front_end.Eardisease_ContactUs')}}</h3>
-                                <p>
-                                    <a href="tel:00874847348734">+962799559157</a>
-
-                                </p>
-                            </div>
-
-                        </div>
+                        @endif
                     </div>
                 </div>
+                @if (isset($blogs) && $blogs->count() > 0)
+                    <div class="col-lg-8 order-lg-2 order-1">
+                        <div class="row g-4 mb-80">
+                            @foreach ($blogs as $blog)
+                                <div class="col-md-12">
+                                    <div class="article-card style-3">
+                                        <div class="article-image">
+                                            <a href="{{ route('blog-details', $blog->alias_name) }}"
+                                                class="article-card-img">
+                                                @if (isset($blog->image) && file_exists($blog->image))
+                                                    <img src="{{ asset($blog->image) }}" alt="">
+                                                @endif
+                                            </a>
+                                            <div class="blog-date">
+                                                <a href="{{ route('blog-details', $blog->alias_name) }}">
+                                                    {!! \Carbon\Carbon::parse($blog->created_at->toFormattedDateString())->translatedFormat(' j F Y ') !!}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="article-card-content">
+
+                                            <h5><a href="{{ route('blog-details', $blog->alias_name) }}"
+                                                    class="hover-underline">
+                                                    {{ Str::limit($blog->title, 60) }}
+                                                </a>
+                                            </h5>
+                                            <p>{!! \Illuminate\Support\Str::limit(strip_tags($blog->description), 150) !!}</p>
+                                            <a
+                                                href="{{ route('blog-details', $blog->alias_name) }}">{{ __('front_end.btn_ReadMore') }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <nav class="shop-pagination">
+                            <nav class="shop-pagination">
+                                {{ $blogs->links('vendor.pagination.custom') }}
+                            </nav>
+                        </nav>
+                    </div>
+                @endif
             </div>
+
         </div>
-        <!-- End Hospital Information Area -->
+    </div>
+    <!-- End Blog Standard Left Sidebar section -->
 
 
-        @endsection
+@endsection

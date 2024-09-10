@@ -90,7 +90,7 @@
                                                 {{-- Title EN --}}
                                                 <div class="col-md-6 mb-3">
                                                     <label class="text-dark font-weight-medium mb-3"
-                                                        for="validationServer01">Titl EN <strong
+                                                        for="validationServer01">Title EN <strong
                                                             class="text-danger"> * @error('title_en') -
                                                                 {{ $message }}
                                                             @enderror</strong></label>
@@ -105,7 +105,23 @@
                                                     </div>
                                                 </div>
 
-                                                
+                                                {{-- Main Image --}}
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3"
+                                                        for="validationServer01"> Image <strong
+                                                            class="text-danger">
+                                                            * @error('image') - {{ $message }}
+                                                            @enderror</strong></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-cloud-upload"></span>
+                                                        </div>
+                                                        <input type="file" name="image" class="form-control"
+                                                            id="validationServer01" placeholder="image">
+                                                    </div>
+                                                </div>
+
+
 
 
                                                 <div class="col-md-12 mb-3">

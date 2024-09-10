@@ -104,6 +104,33 @@
                                                         </div>
                                                     </div>
 
+                                                    {{-- Main Image --}}
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3"
+                                                        for="validationServer01"> Image <strong
+                                                            class="text-danger">
+                                                            * @error('image') - {{ $message }}
+                                                            @enderror</strong></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-cloud-upload"></span>
+                                                        </div>
+                                                        <input type="file" name="image" class="form-control"
+                                                            id="validationServer01" placeholder="image">
+                                                    </div>
+                                                    <div style="text-align: center">
+                                                        @if ($treatments->image && file_exists($treatments->image))
+                                                            <img src="{{ asset($treatments->image) }}"
+                                                                width="100" height="100"
+                                                                style="border-radius: 10px; border:solid 1px black;">
+                                                        @else
+                                                            <img src="{{ asset('images_default/default.jpg') }}"
+                                                                width="100" height="100"
+                                                                style="border-radius: 10px; border:solid 1px black;">
+                                                        @endif
+                                                    </div>
+                                                </div>
+
 
                                                 <div class="col-md-12 mb-3">
                                                     <div class="input-group">

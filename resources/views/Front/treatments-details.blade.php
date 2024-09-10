@@ -33,97 +33,144 @@
 
 
 
-              <!-- Start Skin Care Banner Area -->
-              <div class="skin-care-banner-area">
-                <div class="container-fluid">
-                    <div style="padding-top: 125px;
-                    padding-bottom: 130px;" class="page-banner-content">
-                        <h2>{{__('front_end.treatment_details')}}</h2>
-
-                        <ul class="pages-list">
-                            <li><a href="{{route('welcome')}}">{{__('front_end.nav_home')}}</a></li>
-                            <li>{{__('front_end.treatment_details')}}</li>
-                        </ul>
-                    </div>
-                </div>
-
-
-            </div>
-            <!-- End Skin Care Banner Area -->
-
-            <!-- Start Hospital Blog Details Area -->
-            <div class="hospital-blog-details-area pt-100 pb-100" style="  background: #36495c;">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="hospital-blog-details-desc">
-                                <div class="article-content">
-                                    <h3>{!! $treats->title !!}</h3>
-                                </div>
-                                <div class="article-image">
-                                    <img style="height: 435px; width: 831px;" src="{{ asset($treats->image) }}" alt="image">
-
-                                    {{-- <div class="date">{!!  \Carbon\Carbon::parse($treats->created_at->toFormattedDateString())->translatedFormat(' j F Y ') !!}</div>
-                                </div> --}}
-                                <p style="text-align: justify;text-justify: inter-word;">{!! $treats->description !!}</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Hospital Blog Details Area -->
-
-        <!-- Start Hospital Information Area -->
-        <div class="hospital-information-area pt-100 pb-75">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hospital-information-card">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class='bx bx-map'></i>
-                                </div>
-                                <h3>{{__('front_end.Eardisease_OfficeAddress')}}</h3>
-                                <p>{{__('front_end.Eardisease_OfficeAddress1')}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hospital-information-card">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class='bx bx-envelope'></i>
-                                </div>
-                                <h3>{{__('front_end.Eardisease_EmailUs')}}</h3>
-                                <p>
-                                    <a href="mailto:info@grin54364.com">dranasabushamleh82@gmail.com</a>
-
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hospital-information-card">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class='bx bx-phone-call'></i>
-                                </div>
-                                <h3>{{__('front_end.Eardisease_ContactUs')}}</h3>
-                                <p>
-                                    <a href="tel:00874847348734">+962799559157</a>
-
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Start Breadcrumb Section -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{route('welcome')}}">{{__('front_end.nav_home')}}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{!! $treats->title !!}</li>
+                </ol>
+            </nav>
         </div>
-        <!-- End Hospital Information Area -->
+    </div>
+    <!-- End Breadcrumb Section section -->
+
+    <!-- Start Blog Details section -->
+    <div class="blog-details-section mt-40 mb-40">
+        <div class="container">
+            <div class="row g-lg-4 gy-5">
+                <div class="col-lg-8">
+
+                   <div class="blog-thumb">
+                        <img src="{{ asset($treats->image) }}" alt="">
+                        <a href="#">{!!  \Carbon\Carbon::parse($treats->created_at->toFormattedDateString())->translatedFormat(' j F Y ') !!}</a>
+                   </div>
+                   <div class="blog-content">
+                    <h4>{!! $treats->title !!}</h4>
+                    <p>{!! $treats->description !!}</p>
+
+                   </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar-area">
+                        <div class="shop-widget mb-30">
+                            <h5 class="shop-widget-title">{{__('front_end.treatment_Recent_Treatment')}}</h5>
+                            @foreach($recent_treatments as $treatment)
+                                <div class="recent-post-widget mb-20">
+                                    <div class="recent-post-img">
+                                        <a href="{{ route('treatments-details', [$treatment->alias_name]) }}">
+                                            <img src="{{ asset($treatment->image) }}" alt="{{ $treatment->title_en }}">
+                                        </a>
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <a href="{{ route('treatments-details', [$treatment->alias_name]) }}">
+                                            {{ $treatment->created_at->format('d F, Y') }}
+                                        </a>
+                                        <h6>
+                                            <a href="{{ route('treatments-details', [$treatment->alias_name]) }}">
+                                                {{ Config::get('app.locale') == 'en' ? Str::limit($treatment->title_en, 50) : Str::limit($treatment->title_ar, 50) }}
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </div>
+@endforeach
+                        </div>
+
+                        <!-- Existing tags section -->
+                        <div class="shop-widget">
+                            <h5 class="shop-widget-title">{{__('front_end.treatment_Tags')}}</h5>
+                            <ul class="tag-list">
+                                <li>
+                                    <a href="#"> {{ $treats->tags }}</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="blog-tag-and-social">
+                <div class="social">
+                    <h6>Share On:</h6>
+                    <ul class="social-list">
+                        <li>
+                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mb-110">
+                <div class="col-lg-12">
+                    <div class="blog-details-navigation">
+                        @if($previous)
+                            <div class="single-navigation">
+                                <div class="content">
+                                    <a href="{{ route('treatments-details', [$treatment->alias_name]) }}">
+                                        Previous
+                                    </a>
+                                    <h4>
+                                        <a href="{{ route('treatments-details', [$treatment->alias_name]) }}">
+                                            {{ $previous->title_en }}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <a href="{{ route('treatments-details', [$treatment->alias_name]) }}" class="nav-icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 17.4854L1.51472 9.00007M1.51472 9.00007L10 0.514789M1.51472 9.00007L17.4246 9.35362" />
+                                    </svg>
+                                </a>
+                            </div>
+                        @endif
+
+                        @if($next)
+                            <div class="single-navigation two">
+                                <a href="{{ route('treatments-details', [$treatment->alias_name]) }}" class="nav-icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 0.514648L16.4853 8.99993M16.4853 8.99993L8 17.4852M16.4853 8.99993L0.575379 8.64638" />
+                                    </svg>
+                                </a>
+                                <div class="content">
+                                    <a href="{{ route('treatments-details', [$treatment->alias_name]) }}">
+                                        NEXT
+                                    </a>
+                                    <h4>
+                                        <a href="{{ route('treatments-details', [$treatment->alias_name]) }}">
+                                            {{ $next->title_en }}
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- End Blog Details section -->
+
 
 
         @endsection

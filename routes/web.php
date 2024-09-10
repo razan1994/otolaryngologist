@@ -268,8 +268,8 @@ Route::prefix('super_admin')->name('super_admin.')->group(function () {
             Route::get('softDeleteRestore/{id}', [PhotosController::class, 'softDeleteRestore'])->name('Photo-softDeleteRestore');
 
         });
-        
-        
+
+
 
 
     });

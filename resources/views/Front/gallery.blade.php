@@ -50,226 +50,212 @@
 {{$seo_operation?->h2_val}}
 @endsection
 
+<style>
+    .wrapper {
+        position: relative;
+        height: 190px;
+        width: 100%;
+        /* max-width: 250px; */
+        overflow: hidden;
+        background: #fff;
+        border: 7px solid #fff;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .wrapper .images {
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+
+    .wrapper .images .img-1 {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .wrapper .images .img-2 {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .wrapper .slider {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .wrapper .slider input[type="range"] {
+        width: 100%;
+        outline: none;
+        background: none;
+        appearance: none;
+        position: relative;
+        z-index: 2;
+    }
+
+    .wrapper .slider input[type="range"]::-webkit-slider-thumb {
+        height: 486px;
+        width: 3px;
+        background: none;
+        appearance: none;
+        cursor: col-resize;
+    }
+
+    .slider .drag-line {
+        width: 3px;
+        height: 190px;
+        position: absolute;
+        left: 50%;
+        pointer-events: none;
+        z-index: 5;
+    }
+
+    .slider .drag-line::before,
+    .slider .drag-line::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 222px;
+        background: #fff;
+    }
+
+    .slider .drag-line::before {
+        top: 0;
+    }
+
+    .slider .drag-line::after {
+        bottom: 0;
+    }
+
+    .slider .drag-line span {
+        height: 42px;
+        width: 42px;
+        border: 3px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .slider .drag-line span::before,
+    .slider .drag-line span::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        border: 10px solid transparent;
+        border-bottom-width: 0px;
+        border-right-width: 0px;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .slider .drag-line span::before {
+        left: 40%;
+        border-left-color: #fff;
+    }
+
+    .slider .drag-line span::after {
+        left: 60%;
+        border-top-color: #fff;
+    }
+
+
+</style>
+
 @section('content')
 
 
-    <!-- Start Skin Care Banner Area -->
-    <div class="skin-care-banner-area">
-        <div class="container-fluid">
-            <div style="padding-top: 125px;
-                    padding-bottom: 130px;" class="page-banner-content">
-                <h2><span class="banner-title">{{ __('front_end.BeforeandAfter') }}</span> </h2>
 
-                <ul class="pages-list">
-                    <li><a href="{{route('welcome')}}">{{ __('front_end.nav_home') }}</a></li>
-                    <li>{{ __('front_end.home_BeforeandAfter') }}</li>
-                </ul>
-            </div>
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('welcome') }}">{{ __('front_end.nav_home') }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ __('front_end.BeforeandAfter') }}</li>
+                </ol>
+            </nav>
         </div>
-
-
     </div>
-    <!-- End Skin Care Banner Area -->
 
-    <!-- Start Gallery Area -->
-    @if (isset($photos) && $photos->count() > 0)
-        <section class="gallery-area pt-100 pb-100">
-            <div class="container">
-
-
-                <div class="row">
-
-
-                    @foreach ($photos as $blog )
-                        <div class="col-lg-4 col-md-12">
-                            <div class="hospital-blog-card">
-                                @if(isset($blog->image_after) && file_exists($blog->image_after))
-                                <div class="blog-image">
-                                    <section class="image-comparison" data-component="image-comparison-slider">
-                                        <div class="image-comparison__slider-wrapper">
+    <!-- Start Blog Grid Left Sidebar section -->
+    <div dir="{{ App::isLocale('ar') ? 'ltr' : 'ltr' }}" class="blog-masonary-section mt-40 mb-40">
+        <div class="container-xl container-fluid">
+            <div class="blog-masonary mb-80">
+                <div class="row justify-content-center g-4 mb-50">
+                    @foreach ($photos as $photo)
+                        <div class="col-lg-3 col-sm-10">
 
 
-                                            <div class="image-comparison__image-wrapper  image-comparison__image-wrapper--overlay"
-                                                data-image-comparison-overlay="">
-                                                <figure class="image-comparison__figure image-comparison__figure--overlay">
-                                                    <picture class="image-comparison__picture">
-                                                        <source media="(max-width: 40em)"
-                                                            srcset="{{ asset($blog->image_before) }}">
-                                                        <source media="(min-width: 40.0625em) and (max-width: 48em)"
-                                                            srcset="{{ asset($blog->image_before) }}">
-                                                        <img src="{{ asset($blog->image_before) }}"
-                                                            alt="Mojave desert in the sun" class="image-comparison__image">
-                                                    </picture>
-
-                                                    <figcaption class="image-comparison__caption image-comparison__caption--before">
-                                                        <span class="image-comparison__caption-body">{{ __('front_end.gallary_Before') }}</span>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-
-                                            <div class="image-comparison__slider" data-image-comparison-slider="">
-
-                                            </div>
-
-                                            <div class="image-comparison__image-wrapper">
-                                                <figure class="image-comparison__figure">
-                                                    <picture class="image-comparison__picture">
-                                                        <source media="(max-width: 40em)"
-                                                            srcset="{{ asset($blog->image_after) }}">
-                                                        <source media="(min-width: 40.0625em) and (max-width: 48em)"
-                                                            srcset="{{ asset($blog->image_after) }}">
-                                                        <img src="{{ asset($blog->image_after) }}"
-                                                            alt="Mojave desert in the dark" class="image-comparison__image">
-                                                    </picture>
-
-                                                    <figcaption class="image-comparison__caption image-comparison__caption--after">
-                                                        <span class="image-comparison__caption-body">{{ __('front_end.gallary_After') }}</span>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
+                            <div style="border: none" class="article-card">
+                                <div style="padding: 0px" class="article-card-content style-3">
+                                    <div class="wrapper">
+                                        <div class="images">
+                                            @if (isset($photo->image_before) &&
+                                                    isset($photo->image_after) &&
+                                                    file_exists(public_path($photo->image_before)) &&
+                                                    file_exists(public_path($photo->image_after)))
+                                                <div class="img-1"
+                                                    style="background-image: url('{{ asset($photo->image_after) }}');">
+                                                </div>
+                                                <div class="img-2"
+                                                    style="background-image: url('{{ asset($photo->image_before) }}');">
+                                                </div>
+                                            @endif
                                         </div>
-                                    </section>
-
-                                </div>
-                                @endif
-                                <div class="blog-content">
-
-                                    <h3>
-                                        <a href="{{ route('gallery-details', $blog->alias_name) }}">{{ Str::limit($blog->title, 80) }}</a>
-                                    </h3>
-                                    <a href="{{ route('gallery-details', $blog->alias_name) }}" class="blog-btn">{{__('front_end.btn_ReadMore')}}</a>
+                                        <div class="slider">
+                                            <div class="drag-line">
+                                                <span></span>
+                                            </div>
+                                            <input type="range" min="0" max="100" value="50">
+                                        </div>
+                                    </div>
+                                    <div class="article-card-content">
+                                    <h6 dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}">{{ Str::limit($photo->title, 80) }}</h6>
+                                    <a href="{{ route('gallery-details', $photo->alias_name) }}" dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}" class="read-more">
+                                        <p>{{ __('front_end.btn_ReadMore') }}</p>
+                                    </a>
+                                    </div>
                                 </div>
                             </div>
+
+
+
+
+
                         </div>
                     @endforeach
-                    {{-- <div class="col-lg-4 col-md-6">
-                        <div class="single-gallery">
-                            <img src="{{ asset('/front_end_style/assets/images/gallery/gallery-7.jpg') }}" alt="image">
 
-                            <div class="content">
 
-                                <span>nasal deviation</span>
 
-                                <div class="icon">
-                                    <a href="#"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-gallery">
-                            <img src="{{ asset('/front_end_style/assets/images/gallery/gallery-7.jpg') }}" alt="image">
-
-                            <div class="content">
-
-                                <span>nasal deviation</span>
-
-                                <div class="icon">
-                                    <a href="#"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-gallery">
-                            <img src="{{ asset('/front_end_style/assets/images/gallery/gallery-7.jpg') }}" alt="image">
-
-                            <div class="content">
-
-                                <span>nasal deviation</span>
-
-                                <div class="icon">
-                                    <a href="#"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-gallery">
-                            <img src="{{ asset('/front_end_style/assets/images/gallery/gallery-7.jpg') }}" alt="image">
-
-                            <div class="content">
-
-                                <span>nasal deviation</span>
-
-                                <div class="icon">
-                                    <a href="#"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-gallery">
-                            <img src="{{ asset('/front_end_style/assets/images/gallery/gallery-7.jpg') }}" alt="image">
-
-                            <div class="content">
-
-                                <span>nasal deviation</span>
-
-                                <div class="icon">
-                                    <a href="#"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-gallery">
-                            <img src="{{ asset('/front_end_style/assets/images/gallery/gallery-7.jpg') }}" alt="image">
-
-                            <div class="content">
-
-                                <span>nasal deviation</span>
-
-                                <div class="icon">
-                                    <a href="#"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-gallery">
-                            <img src="{{ asset('/front_end_style/assets/images/gallery/gallery-7.jpg') }}" alt="image">
-
-                            <div class="content">
-
-                                <span>nasal deviation</span>
-
-                                <div class="icon">
-                                    <a href="#"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-gallery">
-                            <img src="{{ asset('/front_end_style/assets/images/gallery/gallery-7.jpg') }}" alt="image">
-
-                            <div class="content">
-
-                                <span>nasal deviation</span>
-
-                                <div class="icon">
-                                    <a href="#"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    <div class="col-lg-12 col-md-12">
-                        {{ $photos->links('vendor.pagination.custom') }}
-
-                   </div>
                 </div>
-            </div>
-        </section>
-    @endif
-    <!-- End Gallery Area -->
 
+            </div>
+        </div>
+    </div>
+    <!-- End Blog Grid Left Sidebar section -->
+
+    <script>
+        document.querySelectorAll('.wrapper').forEach(wrapper => {
+            const range = wrapper.querySelector('input[type="range"]');
+            const img2 = wrapper.querySelector('.img-2');
+            const dragLine = wrapper.querySelector('.drag-line');
+
+            range.addEventListener('input', () => {
+                const value = range.value;
+                img2.style.width = `${value}%`;
+                dragLine.style.left = `${value}%`;
+            });
+
+            const initialValue = range.value;
+            img2.style.width = `${initialValue}%`;
+            dragLine.style.left = `${initialValue}%`;
+        });
+    </script>
 @endsection

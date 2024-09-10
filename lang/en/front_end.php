@@ -3,7 +3,8 @@
 return [
 
 
-
+    'top_nav_phone' => '+962799559157',
+    'top_nav_text' => 'Dr. Anas Abushamleh - Specialist in Ear, Nose, and Throat and Rhinoplasty',
     'nav_home' => 'Home',
     'nav_AboutUs' => 'About Us',
     'nav_Dr_Anas' => 'Dr.Anas Abu Shamleh',
@@ -11,11 +12,12 @@ return [
     'nav_Certified' => 'Certified Insurance Companies',
     'nav_Treatments' => 'Treatments',
     'nav_Blogs' => 'Blogs',
-    'nav_Gallery' => 'Before&After',
+    'nav_Gallery' => 'Before & After',
     'nav_ContactUs' => 'Contact Us',
     'nav_Expert' => 'Expert care for your ear, nose and throat.',
     'nav_OurTreatments' => 'Our Treatments',
     'btn_ReadMore' => 'Read More',
+    'btn_Read_More' => 'Read More',
     'home_AboutClinic' => 'About Clinic',
     'home_BeforeandAfter' => 'Before and After',
     'home_Noseplastic' => 'Nose plastic surgery ',
@@ -44,14 +46,14 @@ return [
     'footer_Gallery' => 'Before&After',
     'footer_website' => 'All Rights Reserved © 2023 ',
     'footer_website1' => ' Dr.Anas Abu-Shamlah',
-    'footer_terms' =>'Terms and Conditions',
+    'footer_terms' => 'Terms and Conditions',
 
     ###============================= Slider =======================================================###
     ###============================= ٍSlider =======================================================###
     ###============================= ٍSlider =======================================================###
 
     'slider_title' => 'Dr.Anas Abu Shamleh',
-    'slider_title2'=>'ENT Clinic',
+    'slider_title2' => 'ENT Clinic',
     'slider_desc' => 'Dr. Anas Abu Shamleh is an ENT specialist and rhinoplasty surgeon.holds the Jordanian Board of Otolaryngology, and he is a member of the Jordanian Surgeons Association, a member of the Jordanian Medical Association.',
     'slider_btn' => 'Ear, Nose, Throat and Rhinoplasty Specialist',
 
@@ -99,6 +101,9 @@ return [
     'DrAnas_Surgery' => 'Adult Ear Nose and throat Surgery',
     'DrAnas_Rhinoplastic' => 'Rhinoplastic Surgery',
     'treatment_details' => 'treatment_details',
+    'treatment_Recent_Treatment'=>'Recent Treatment',
+    'treatment_Tags'=>'Tags',
+    'Recent_Before_&_After'=>'Recent Cases',
 
 
     ###============================= End Dr.Anas =======================================================###
@@ -122,7 +127,7 @@ return [
     ###============================= ٍstart Rhinoplasty Before and After =======================================================###
     ###============================= ٍstart Rhinoplasty Before and After =======================================================###
 
-    'BeforeandAfter' => ' Rhinoplasty Before and After',
+    'BeforeandAfter' => ' Rhinoplasty Before & After',
 
     ###============================= End  Rhinoplasty Before and After =======================================================###
     ###============================= End Rhinoplasty Before and After=======================================================###
@@ -162,7 +167,7 @@ return [
 
 
 
-   ###==========================================================================================================###
+    ###==========================================================================================================###
     ###============================= End Certified Insurance Companies =======================================================###
     ###==========================================================================================================###
 
@@ -176,7 +181,7 @@ return [
 
 
 
-   ###==========================================================================================================###
+    ###==========================================================================================================###
     ###============================= End Privacy Policy =======================================================###
     ###==========================================================================================================###
 
@@ -193,9 +198,9 @@ return [
     'ContactUs_Subject' => 'Subject',
     'ContactUs_YourMessage' => 'Your Message',
     'ContactUs_YourMessage1' => 'Contact Us by Phone Number or Email Address',
-    'ContactUs_YourMessage2' =>'Location :',
-    'west_amman'=>'West Amman - Eye Specialist Hospital',
-    'east_amman'=>'East Amman - Al-Nasr Medical Clinics',
+    'ContactUs_YourMessage2' => 'Location :',
+    'west_amman' => 'West Amman - Eye Specialist Hospital',
+    'east_amman' => 'East Amman - Al-Nasr Medical Clinics',
     'ContactUs_OR' => 'OR',
     'ContactUs_SendMessage' => 'Send Message',
     'ContactUs_error_name' => 'Please enter your ',
@@ -203,7 +208,7 @@ return [
 
 
 
-   ###==========================================================================================================###
+    ###==========================================================================================================###
     ###============================= End Contact Us =======================================================###
     ###==========================================================================================================###
 
@@ -218,7 +223,7 @@ return [
 
 
 
-   ###==========================================================================================================###
+    ###==========================================================================================================###
     ###============================= End our Treatments =======================================================###
     ###==========================================================================================================###
 
@@ -232,14 +237,14 @@ return [
     'Eardisease_AllServices' => 'All Services',
     'Eardisease_Contact' => 'Contact Us Free',
     'Eardisease_Contact1' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout the point of using.',
-    'Eardisease_OfficeAddress' => 'Office Address',
+    'Eardisease_OfficeAddress' => 'Address',
     'Eardisease_OfficeAddress1' => 'Amman، Madeena Street',
     'Eardisease_EmailUs' => 'Email Us',
     'Eardisease_ContactUs' => 'Contact Us Free',
 
 
 
-   ###==========================================================================================================###
+    ###==========================================================================================================###
     ###============================= End Ear disease =======================================================###
     ###==========================================================================================================###
 
@@ -283,7 +288,7 @@ return [
     'Features_Desc3' => 'Diseases of the larynx and throat | Here is comprehensive information about the most common diseases and their symptoms
     Diseases affecting the larynx and throat vary between infections and tumors, and they are among the common diseases that patients are exposed to with all symptoms.',
 
-    'Features_ReadMore1' => ' Here we shed light on common nose and sinus diseases and when you should go to an ear, nose and throat doctor. The 5 most common diseases affecting the nose and sinuses
+    'Features_ReadMore1' => 'Here we shed light on common nose and sinus diseases and when you should go to an ear, nose and throat doctor. The 5 most common diseases affecting the nose and sinuses
     There are many diseases and injuries that may affect the nose and sinuses, and perhaps the most famous of them are the following diseases:
     1. Sinusitis:
     Sinusitis is the most common disease that affects the sinuses, and it may occur temporarily or become chronic. Statistics indicate that chronic sinusitis is the most common. It should be noted that there is a close association between nasal and chest allergies and chronic sinusitis.
@@ -366,6 +371,10 @@ return [
 
     'Features_btn' => 'Read More',
 
+    'keywords_nose_diseases' => 'Dr. Anas Abu Shama | Consultant of Ear, Nose, and Throat Surgery and Rhinoplasty | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Madinah Al-Munawwarah Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | Nose Diseases | Nasal Congestion Treatment | Sinus Infection | Causes of Nosebleeds | Loss of Smell Symptoms | Nasal Polyps Removal | Deviated Septum Surgery | Sinus Headache Treatment | Smell Disorder Treatment | Chronic Sinusitis Treatment | Turbinate Reduction Procedure | Deviated Septum Surgery | Nasal Obstruction Removal | Pediatric ENT Care',
+'keywords_ear_diseases' => 'Dr. Anas Abu Shamleh | Consultant in Ear, Nose, and Throat Surgery and Rhinoplasty | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Al-Madina Al-Munawara Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | Ear Diseases | Ear Infection Treatment | Causes of Hearing Loss | Earwax Removal | Ear Pain Symptoms | Ear Canal Infection Treatment | Middle Ear Infection Symptoms | Outer Ear Infection Treatment | Auditory Nerve Inflammation Symptoms | Irritated Ear Treatment | Hearing Loss Treatment in Children | Auditory Nerve Inflammation | Ear and Head Infections | Pediatric ENT Care | Hearing Loss Treatment in the Elderly',
+'keywords_throat_diseases' => 'Dr. Anas Abu Shamleh | Consultant in Ear, Nose, and Throat Surgery and Rhinoplasty | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Al-Madina Al-Munawara Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | Throat Diseases | Treatment of Sore Throat | Tonsillitis Treatment | Causes of Chronic Cough | Throat Cancer Diagnosis | Laryngitis Treatment | Vocal Cord Nodules | Symptoms of Throat Ulcers | Gastroesophageal Reflux Disease | Throat Abscess Treatment | Vocal Cord Tumors | Treatment of Throat Polyps | Chronic Throat Irritation | Antibiotics for Sore Throat | Tonsil Stones Removal | Causes of Throat Discomfort | Vocal Cord Paralysis',
+    'keywords_home_blog' => 'Dr. Anas Abu Shamleh | Consultant in ENT and Nasal Surgery | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Madinah Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | ENT Diseases and Treatments with Dr. Anas Abu Shamleh | Best Treatment Methods for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh | Diagnosis and Treatment of Ear, Nose, and Throat Issues at Dr. Anas Abu Shamleh\'s Clinic | Treatment for Hearing Loss and Ear Infections with Dr. Anas Abu Shamleh | Effective Solutions for Nasal Blockage and Sinus Infections with Dr. Anas Abu Shamleh | Medical Consultations for Voice, Ear, and Nose Issues at Dr. Anas Abu Shamleh\'s Clinic | Causes and Treatment of Breathing Problems Due to Nasal and Throat Issues with Dr. Anas Abu Shamleh | Methods for Treating Middle and Outer Ear Infections at Dr. Anas Abu Shamleh\'s Clinic | Comprehensive Care for Ear, Nose, and Throat Problems with ENT Specialist Dr. Anas Abu Shamleh | Treatment for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh | Nasal Cosmetic Surgery with Dr. Anas Abu Shamleh | Nasal Aesthetics in Amman with Dr. Anas Abu Shamleh | Best Nasal Cosmetic Surgeon in Jordan | Laser Treatment for Nasal Problems with Dr. Anas Abu Shamleh | Non-Surgical Nasal Cosmetic Surgery at Dr. Anas Abu Shamleh\'s Clinic | Medical Consultation for Nasal Aesthetics with Nasal Cosmetic Surgeon Dr. Anas Abu Shamleh | Nasal Cosmetic Results in Amman with Dr. Anas Abu Shamleh | Repair of Nasal Deformities After Accidents with Dr. Anas Abu Shamleh | Nasal Cosmetic Surgery for Aesthetic and Medical Purposes at Dr. Anas Abu Shamleh\'s Clinic | Improving Nasal Appearance Without Surgery with Dr. Anas Abu Shamleh | Endoscopic Nasal and Sinus Cosmetic Surgery with Dr. Anas Abu Shamleh | Best ENT Doctor in Amman, Jordan | Dr. Anas Abu Shamleh, ENT Specialist in Jabal Al-Nasr | Dr. Anas Abu Shamleh\'s ENT Clinic on Madinah Street, Specialized Eye Hospital | ENT Specialist in Amman, Jordan | Dr. Anas Abu Shamleh, Nasal Cosmetic Surgeon in Jordan | Improving Nasal, Ear, and Throat Function with Dr. Anas Abu Shamleh | Advanced Treatments for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh | Medical Consultations for Breathing Problems and Infections of the Nose, Ear, and Throat',    ###==========================================================================================================###
 
     ###==========================================================================================================###
     ###============================= End Features =======================================================###
@@ -378,7 +387,7 @@ return [
     'HomeBlog_Title' => 'All you need to know about the specialty of ear, nose , throat and Nose surgery!!',
     'HomeBlog_Desc' => 'The ear, nose and throat specialty is one of the delicate surgical specialties, and its adoption as a separate surgical specialty dates back to the beginnings of the nineteenth century, in which doctors study internal diseases and special surgeries related to the nose, ear, throat, head and neck.
 
-    What are the diseases, surgeries and critical cases that require consulting a specialist in ear, nose and throat? This is what we will know in the following paragraphs.
+    What are the diseases, surgeries and critical cases that require consulting a specialist in ear, nose and throat?
     ',
     'HomeBlog_Readmore' => 'When should I go to an otolaryngologist?
     An otolaryngologist deals with diseases and injuries related to the ear, nose and throat. Some of the most common examples of these diseases are:
@@ -486,12 +495,12 @@ return [
 
 
 
-     ###==========================================================================================================###
+    ###==========================================================================================================###
     ###============================= Toggle Blog Homepage =======================================================###
     ###==========================================================================================================###
 
 
-   'Toggle_Title' => 'Ear, Nose, and Throat Diseases - Best ENT Doctor in Jordan - Dr. Anas Abu Shamleh',
+    'Toggle_Title' => 'Ear, Nose, and Throat Diseases - Best ENT Doctor in Jordan - Dr. Anas Abu Shamleh',
     'Toggle_Content' => 'In medical literature, the Ear, Nose, and Throat (ENT) unit is referred to as Otolaryngology, commonly abbreviated as ENT. This specialty focuses on diagnosing and treating diseases affecting the ears, nose, throat, facial nerves, external and middle ear, pharynx, and vocal cords. Additionally, it includes the examination and management of diseases related to the brain and inner ear, covering the entire head and neck region.
 
 Specializations in Otolaryngology
@@ -519,7 +528,7 @@ Treatment for ENT diseases depends on the type and severity of the condition. Me
 Clinic and Services Offered
 In our clinic, we provide an advanced medical environment with a specialized medical team equipped with state-of-the-art technologies for diagnosing and treating ENT diseases. We are committed to delivering personalized and specialized care to each patient, ensuring the best health outcomes and peace of mind.',
 
-'Toggle_Keywords' => 'Ear, Nose, and Throat Doctor,
+    'Toggle_Keywords' => 'Ear, Nose, and Throat Doctor,
 Nasal Cosmetic Specialist,
 Nose Cosmetic Surgery,
 Sinus Surgery,
@@ -616,4 +625,21 @@ Nosebleeds,',
     ###============================= End Toggle Blog Homepage ===================================================###
     ###==========================================================================================================###
 
+    'instagramfeeds_title' => 'instagram feeds',
+    'instagramfeeds_SubTitle' => 'Follow us on',
+    'instagramfeeds_Account' => '@dr.anasabushamleh',
+
+    'Recent_Post' => 'Recent Post',
+    'Tags' => 'Tags',
+    'Previous' => 'السابق',
+    'NEXT' => 'التالي',
+
+    'To_Know_More' => 'To Know More',
+    'Email' => 'Email',
+    'Location'=>'Location',
+    'View_Map' => 'View Map',
+    'west_amman_location' => 'West Amman',
+    'east_amman_location' => 'East Amman ',
+    'contct_title'=> 'We leave the choice to our dear patients to contact us in any way that suits them from the following options or by visiting us at the clinic at the address provided below.',
+'View_All' => 'View All',
 ];

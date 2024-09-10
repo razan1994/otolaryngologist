@@ -74,6 +74,7 @@
                             <tr>
                                 <th style="text-align: center"><i class="mdi mdi-format-title"></i> Titl EN </th>
                                 <th style="text-align: center"><i class="mdi mdi-format-title"></i>Title AR </th>
+                                <th style="text-align: center"><i class="mdi mdi-image"></i> Main Image </th>
                                 <th  style="text-align: center"><i class="mdi mdi-clock-outline mdi-spin"></i> Date_Time </th>
                                 <th style="text-align: center"><i class="mdi mdi-settings mdi-spin"></i> Control </th>
                             </tr>
@@ -84,6 +85,13 @@
                                     <tr>
                                         <td  style="text-align: center">{{ isset($treatments->title_ar) ? $treatments->title_ar : 'Undefined' }}</td>
                                         <td  style="text-align: center">{{ isset($treatments->title_en) ? $treatments->title_en : 'Undefined' }}</td>
+                                        @if ($treatments->image && file_exists($treatments->image))
+                                        <td  style="text-align: center"><img src="{{ asset($treatments->image) }}" width="70" height="70"
+                                                style="border-radius: 10px; border:solid 1px black;"></th>
+                                        @else
+                                        <td  style="text-align: center"><img src="{{ asset('images_default/default.jpg') }}" width="70" height="70"
+                                                style="border-radius: 10px; border:solid 1px black;"></th>
+                                    @endif
                                         <td style="text-align: center">
                                             {{ isset($treatments->created_at) ? $treatments->created_at : "<span style='color:red;'>Undefined</span>" }}
                                         </td>

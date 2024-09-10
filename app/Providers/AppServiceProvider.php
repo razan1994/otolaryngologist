@@ -29,13 +29,13 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         session()->put('locale', 'ar');
 
-        app()->setLocale(session()->get('locale'));
+        // app()->setLocale(session()->get('locale'));
 
-        $services2=Service::latest()->limit(4)->get();
-        view()->share([
-            'services2' => $services2,
+        // $services2=Service::latest()->limit(4)->get();
+        // view()->share([
+        //     'services2' => $services2,
 
-        ]);
+        // ]);
 
     }
 }

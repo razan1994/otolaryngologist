@@ -97,16 +97,16 @@ class InsuranceController extends Controller
     {
         try {
             // Upload Image Section :
-            if (isset($request->image)) {
-                $orginal_image = $request->file('image');
+            if ($request->hasFile('image')) {
+                $original_image = $request->file('image');
                 $upload_location = 'storage/insurances/';
-                $original_name = $orginal_image->getClientOriginalName();
-                $last_image = $this->saveFile($orginal_image, $upload_location);
-                // $last_image = $this->saveFileWithCompression('sliders', 'image', $orginal_image, $original_name, $upload_location);
+                $original_name = $original_image->getClientOriginalName();
+                $last_image = $this->saveFile($original_image, $upload_location);
             } else {
                 $last_image = null;
             }
 
+            // Create the data array for the new insurance record
             $created_data = [
                 'title_ar' => $request->title_ar,
                 'title_en' => $request->title_en,
@@ -114,22 +114,27 @@ class InsuranceController extends Controller
                 'created_by' => auth()->user()->id,
             ];
 
+            // Use a transaction to ensure data consistency
             DB::transaction(function () use ($created_data) {
                 Insurance::create($created_data);
             });
 
-            return redirect()->route('super_admin.insurances-index')->with('success', 'The data has been successfully updated');
+            // Redirect back with success message
+            return redirect()->route('super_admin.insurances-index')->with('success', 'The data has been successfully created');
         } catch (\Throwable $th) {
-            $function_name =  $route->getActionName();
-            $check_old_errors = new SupportTicket();
-            $check_old_errors = $check_old_errors->select('*')->where([
+            // Capture the function name where the error occurred
+            $function_name = $route->getActionName();
+
+            // Check if this error has been recorded before
+            $check_old_errors = SupportTicket::where([
                 'error_location' => $th->getFile(),
                 'error_description' => $th->getMessage(),
                 'function_name' => $function_name,
                 'error_line' => $th->getLine(),
             ])->get();
 
-            if ($check_old_errors->count() == 0) {
+            // If the error is new, create a new support ticket
+            if ($check_old_errors->isEmpty()) {
                 $new_error_ticket = SupportTicket::create([
                     'error_location' => $th->getFile(),
                     'error_description' => $th->getMessage(),
@@ -140,6 +145,8 @@ class InsuranceController extends Controller
             } else {
                 $end_error_ticket = $check_old_errors->first();
             }
+
+            // Show a custom error view
             return view('errors.support_tickets', compact('th', 'function_name', 'end_error_ticket'));
         }
     }
@@ -225,55 +232,61 @@ class InsuranceController extends Controller
     // ======================= Update Function ========================
     // ================================================================
     public function update($treatment_id, UpdateSliderFormRequest $request, Route $route)
-    {
-        try {
-            $treatment = Insurance::find($treatment_id);
+{
+    try {
+        $treatment = Insurance::find($treatment_id);
 
-            if ($treatment) {
-                // Standard Updated Data :
-                $update_data['title_ar'] = $request->title_ar;
-                $update_data['title_en'] = $request->title_en;
+        if ($treatment) {
 
-                // Upload Image Section :
-                if (isset($request->image)) {
-                    $orginal_image = $request->file('image');
-                    $upload_location = 'storage/insurances/';
-                    $original_name = $orginal_image->getClientOriginalName();
-                    $last_image = $this->saveFileWithCompression('insurances','image',$orginal_image,$original_name, $upload_location);
-                    $update_data['image'] = $last_image;
-                    File::delete($treatment_id->image);
+            $update_data['title_ar'] = $request->title_ar;
+            $update_data['title_en'] = $request->title_en;
+
+
+            if ($request->hasFile('image')) {
+                $orginal_image = $request->file('image');
+                $upload_location = 'storage/insurances/';
+                $original_name = $orginal_image->getClientOriginalName();
+                $last_image = $this->saveFileWithCompression('insurances','image',$orginal_image,$original_name, $upload_location);
+
+
+                if ($treatment->image) {
+                    File::delete(public_path($treatment->image));
                 }
 
-                DB::table('insurances')->where('id', $treatment_id)->update($update_data);
-
-                return redirect()->route('super_admin.insurances-index')->with('success', 'The data has been successfully updated');
-            } else {
-                return redirect()->route('super_admin.insurances-index')->with('danger', 'This record does not exist in the records');
+                $update_data['image'] = $last_image;
             }
-        } catch (\Throwable $th) {
-            $function_name =  $route->getActionName();
-            $check_old_errors = new SupportTicket();
-            $check_old_errors = $check_old_errors->select('*')->where([
+
+            // Update the record
+            DB::table('insurances')->where('id', $treatment_id)->update($update_data);
+
+            return redirect()->route('super_admin.insurances-index')->with('success', 'The data has been successfully updated');
+        } else {
+            return redirect()->route('super_admin.insurances-index')->with('danger', 'This record does not exist in the records');
+        }
+    } catch (\Throwable $th) {
+        $function_name =  $route->getActionName();
+        $check_old_errors = SupportTicket::where([
+            'error_location' => $th->getFile(),
+            'error_description' => $th->getMessage(),
+            'function_name' => $function_name,
+            'error_line' => $th->getLine(),
+        ])->get();
+
+        if ($check_old_errors->count() == 0) {
+            $new_error_ticket = SupportTicket::create([
                 'error_location' => $th->getFile(),
                 'error_description' => $th->getMessage(),
                 'function_name' => $function_name,
-                'error_line' => $th->getLine(),
-            ])->get();
-
-            if ($check_old_errors->count() == 0) {
-                $new_error_ticket = SupportTicket::create([
-                    'error_location' => $th->getFile(),
-                    'error_description' => $th->getMessage(),
-                    'function_name' => $function_name,
-                    'error_line' =>  $th->getLine(),
-                ]);
-                $end_error_ticket = $new_error_ticket;
-            } else {
-                $end_error_ticket = $check_old_errors->first();
-            }
-            return view('errors.support_tickets', compact('th', 'function_name', 'end_error_ticket'));
+                'error_line' =>  $th->getLine(),
+            ]);
+            $end_error_ticket = $new_error_ticket;
+        } else {
+            $end_error_ticket = $check_old_errors->first();
         }
+        return view('errors.support_tickets', compact('th', 'function_name', 'end_error_ticket'));
     }
+}
+
 
 
     // ================================================================

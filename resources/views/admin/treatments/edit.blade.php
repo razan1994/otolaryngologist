@@ -120,6 +120,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    
                                                 {{-- Main Image --}}
                                                 <div class="col-md-6 mb-3">
                                                     <label class="text-dark font-weight-medium mb-3"

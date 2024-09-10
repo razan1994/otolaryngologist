@@ -1,742 +1,878 @@
-jQuery(function ($) {
-    'use strict';
-	
-	// Header Sticky
-	$(window).on('scroll',function() {
-		if ($(this).scrollTop() > 120){  
-			$('.navbar-area').addClass("is-sticky");
-		}
-		else{
-			$('.navbar-area').removeClass("is-sticky");
-		}
-	});
+(function ($) {
+  "use strict";
 
-	// Mean Menu
-	jQuery('.mean-menu').meanmenu({
-		meanScreenWidth: "991"
-	});
-	
-	// Others Option For Responsive JS
-	$(".others-option-for-responsive .dot-menu").on("click", function(){
-		$(".others-option-for-responsive .container .container").toggleClass("active");
-	});
+  // mobile dropdown
 
-	// Home Slides
-	$('.home-slides').owlCarousel({
-		loop: true,
-		nav: true,
-		dots: false,
-		rtl: true,
-		autoplayHoverPause: false,
-		autoplay: false,
-		items: 1,
-		navText: [
-			"<i class='flaticon-left-arrow-1'></i>",
-			"<i class='flaticon-next'></i>"
-		]
-	});
-	$(".home-slides").on("translate.owl.carousel", function(){
-		$(".main-slides-content .sub-title").removeClass("animated fadeInDown").css("opacity", "0");
-		$(".main-slides-content h1").removeClass("animated animate__animated animate__fadeInUp").css("opacity", "0");
-		$(".main-slides-content p").removeClass("animated animate__animated animate__fadeInUp").css("opacity", "0");
-		$(".main-slides-content .slides-btn .default-btn").removeClass("animated animate__animated animate__fadeInUp").css("opacity", "0");
-		$(".main-slides-content .slides-btn .optional-btn").removeClass("animated animate__animated animate__fadeInUp").css("opacity", "0");
-		$(".main-slides-content .slides-btn .checkup-content").removeClass("animated animate__animated animate__fadeInUp").css("opacity", "0");
-	});
-	$(".home-slides").on("translated.owl.carousel", function(){
-		$(".main-slides-content .sub-title").addClass("animated fadeInDown").css("opacity", "1");
-		$(".main-slides-content h1").addClass("animated animate__animated animate__fadeInUp").css("opacity", "1");
-		$(".main-slides-content p").addClass("animated animate__animated animate__fadeInUp").css("opacity", "1");
-		$(".main-slides-content .slides-btn .default-btn").addClass("animated animate__animated animate__fadeInUp").css("opacity", "1");
-		$(".main-slides-content .slides-btn .optional-btn").addClass("animated animate__animated animate__fadeInUp").css("opacity", "1");
-		$(".main-slides-content .slides-btn .checkup-content").addClass("animated animate__animated animate__fadeInUp").css("opacity", "1");
-	});
+  jQuery(".dropdown-icon").on("click", function () {
+    // alert()
+    // $(this).next('.mob-submenu').slideToggle();
+    jQuery(this).toggleClass("active").next("ul, .mega-menu, .mega-menu2").slideToggle();
+    jQuery(this).parent().siblings().children("ul, .mega-menu, .mega-menu2").slideUp();
+    jQuery(this).parent().siblings().children(".active").removeClass("active");
+  });
+  // sticky header
 
-	// Review Slides
-	$('.review-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		dots: true,
-		rtl: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 30,
-
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
-	
-	// Tabs
-	$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
-	$('.tab ul.tabs li a').on('click', function (g) {
-		var tab = $(this).closest('.tab'), 
-		index = $(this).closest('li').index();
-		tab.find('ul.tabs > li').removeClass('current');
-		$(this).closest('li').addClass('current');
-		tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
-		tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
-		g.preventDefault();
-	});
-
-	// FAQ Accordion
-	$('.accordion').find('.accordion-title').on('click', function(){
-		$(this).toggleClass('active');
-		$(this).next().slideToggle('fast');
-		$('.accordion-content').not($(this).next()).slideUp('fast');
-		$('.accordion-title').not($(this)).removeClass('active');		
-	});
-
-	// Subscribe form
-	$(".newsletter-form").validator().on("submit", function (event) {
-		if (event.isDefaultPrevented()) {
-			formErrorSub();
-			submitMSGSub(false, "Please enter your email correctly.");
-		} 
-		else {
-			event.preventDefault();
-		}
-	});
-	function callbackFunction (resp) {
-		if (resp.result === "success") {
-			formSuccessSub();
-		}
-		else {
-			formErrorSub();
-		}
-	}
-	function formSuccessSub(){
-		$(".newsletter-form")[0].reset();
-		submitMSGSub(true, "Thank you for subscribing!");
-		setTimeout(function() {
-			$("#validator-newsletter").addClass('hide');
-		}, 4000)
-	}
-	function formErrorSub(){
-		$(".newsletter-form").addClass("animated shake");
-		setTimeout(function() {
-			$(".newsletter-form").removeClass("animated shake");
-		}, 1000)
-	}
-	function submitMSGSub(valid, msg){
-		if(valid){
-			var msgClasses = "validation-success";
-		} 
-		else {
-			var msgClasses = "validation-danger";
-		}
-		$("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
-	}
-
-	// AJAX MailChimp
-	$(".newsletter-form").ajaxChimp({
-		url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", 
-		callback: callbackFunction
-	});
-
-	// Count Time 
-	function makeTimer() {
-		var endTime = new Date("September 13, 2025 18:00:00 PDT");			
-		var endTime = (Date.parse(endTime)) / 1000;
-		var now = new Date();
-		var now = (Date.parse(now) / 1000);
-		var timeLeft = endTime - now;
-		var days = Math.floor(timeLeft / 86400); 
-		var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-		var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
-		var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
-		if (hours < "10") { hours = "0" + hours; }
-		if (minutes < "10") { minutes = "0" + minutes; }
-		if (seconds < "10") { seconds = "0" + seconds; }
-		$("#days").html(days + "<span>Days</span>");
-		$("#hours").html(hours + "<span>Hours</span>");
-		$("#minutes").html(minutes + "<span>Minutes</span>");
-		$("#seconds").html(seconds + "<span>Seconds</span>");
-	}
-	setInterval(function() { makeTimer(); }, 0);
-
-	// Nice Select JS
-	$('select').niceSelect();
-	
-	// Popup Video
-	$('.popup-youtube').magnificPopup({
-		disableOn: 320,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false
-	});
-
-	// Odometer JS
-	$('.odometer').appear(function(e) {
-		var odo = $(".odometer");
-		odo.each(function() {
-			var countNumber = $(this).attr("data-count");
-			$(this).html(countNumber);
-		});
-	});
-	
-	// Go to Top
-	$(window).on('scroll', function(){
-		var scrolled = $(window).scrollTop();
-		if (scrolled > 600) $('.go-top').addClass('active');
-		if (scrolled < 600) $('.go-top').removeClass('active');
-	});  
-	$('.go-top').on('click', function() {
-		$("html, body").animate({ scrollTop: "0" },  500);
-	});
-	
-	// WOW JS
-	$(window).on ('load', function (){
-		if ($(".wow").length) { 
-			var wow = new WOW({
-			boxClass:     'wow',      // animated element css class (default is wow)
-			animateClass: 'animated', // animation css class (default is animated)
-			offset:       20,          // distance to the element when triggering the animation (default is 0)
-			mobile:       true, // trigger animations on mobile devices (default is true)
-			live:         true,       // act on asynchronously loaded content (default is true)
-			});
-			wow.init();
-		}
-	});
-	
-	// Preloader
-	$(window).on('load', function () {
-		$('.preloader').fadeOut();
-	});
-
-	// New Three Demo JS
-
-	// Dental Tourism Services JS
-	$('.dental-tourism-services-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		rtl: true,
-		dots: false,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 30,
-
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 4,
-			}
-		}
-	});
-
-	// Dental Tourism Dentist JS
-	$('.dental-tourism-dentist-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		rtl: true,
-		dots: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 30,
-
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
-
-	// Dental Tourism Review JS
-	$('.dental-tourism-review-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		rtl: true,
-		dots: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 30,
-
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 2,
-			}
-		}
-	});
-
-	// Skin Care Review JS
-	$('.skin-care-review-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		dots: true,
-		rtl: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 30,
-
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
-
-	// Skin Care Before and After JS
-	$('.skin-care-before-after-slides').owlCarousel({
-		stagePadding: 200,
-		loop: true,
-		margin: 10,
-		nav: true,
-		rtl: true,
-		dots: false,
-		items: 1,
-		lazyLoad: true,
-		navText: [
-			"<i class='bx bx-left-arrow-alt'></i>",
-			"<i class='bx bx-right-arrow-alt'></i>"
-		],
-		responsive:{
-			0:{
-				items: 1,
-				stagePadding: 60
-			},
-			600:{
-				items:1,
-				stagePadding: 100
-			},
-			1000:{
-				items: 1,
-				stagePadding: 200
-			},
-			1200:{
-				items: 1,
-				stagePadding: 250
-			},
-			1400:{
-				items: 1,
-				stagePadding: 300
-			},
-			1600:{
-				items: 1,
-				stagePadding: 350
-			},
-			1800:{
-				items:1,
-				stagePadding: 400
-			}
-		}
-	});
-
-	// Skin Care Partner Slides
-	$('.skin-care-partner-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		rtl: true,
-		dots: false,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 3,
-			},
-			1200: {
-				items: 5,
-			}
-		}
-	});
-
-	// Skin Care Services Slides
-	$('.eye-care-services-slides').owlCarousel({
-		loop: true,
-		nav: true,
-		rtl: true,
-		dots: false,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-		navText: [
-			"<i class='bx bx-left-arrow-alt'></i>",
-			"<i class='bx bx-right-arrow-alt'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
-
-	// Eye Care Team JS
-	$('.eye-care-team-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		rtl: true,
-		dots: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 30,
-
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
-
-	// Eye Care Review JS
-	$('.eye-care-review-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		rtl: true,
-		dots: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 30,
-		items: 1,
-	});
-
-	// Buy Now Btn
-    $('body').append("<a href='https://themeforest.net/checkout/from_item/30448689?license=regular&support=bundle_6month&_ga=2.244106885.1464546313.1649253347-1356931366.1645330919&_gac=1.253162875.1649351773.Cj0KCQjwl7qSBhD-ARIsACvV1X34Yvc4XKSYFq60iQ6auDlKjNhJLJW5j_1joCsZJCKQ-4m75Uw8RNcaArtlEALw_wcB' target='_blank' class='buy-now-btn'><img src='assets/images/envato.png' alt='envato'/>Buy Now</a>");
-
-	// Switch Btn
-	$('body').append("<div class='switch-box'><label id='switch' class='switch'><input type='checkbox' onchange='toggleTheme()' id='slider'><span class='slider round'></span></label></div>");
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('header.header-area');
+    header.classList.toggle("sticky", window.scrollY > 0);
+  });
+  // popup on load
+  $(document).ready(function () {
+    setTimeout(function () {
+      $("#myModal").modal("show");
+    }, 500);
+  });
 
 
-	/* Start "Covid 19 Vaccination Center Demo JS" */
+  // img hover zoom in
+  $(".product-img--main")
+    // tile mouse actions
+    .on("mouseover", function () {
+      $(this)
+        .children(".product-img--main__image")
+        .css({ transform: "scale(" + $(this).attr("data-scale") + ")" });
+    })
+    .on("mouseout", function () {
+      $(this)
+        .children(".product-img--main__image")
+        .css({ transform: "scale(1)" });
+    })
+    .on("mousemove", function (e) {
+      $(this)
+        .children(".product-img--main__image")
+        .css({
+          "transform-origin":
+            ((e.pageX - $(this).offset().left) / $(this).width()) * 100 +
+            "% " +
+            ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +
+            "%",
+        });
+    })
+    .each(function () {
+      $(this)
+        // add a image container
+        .append('<div class="product-img--main__image"></div>')
+        // set up a background image for each tile based on data-image attribute
+        .children(".product-img--main__image")
+        .css({ "background-image": "url(" + $(this).attr("data-image") + ")" });
+    });
 
-	// Country Select
-	try {
-		$("#country_selector").countrySelect({
-			preferredCountries: ['ca', 'gb', 'us']
-		});
-	} catch (err) {}
+  //list grid view
+  $(".grid-view li").on("click", function () {
+    // Get the class of the clicked li element
+    var clickedClass = $(this).attr("class");
+    // Extract the class name without "item-" prefix
+    var className = clickedClass.replace("item-", "");
+    // Add a new class to the target div and remove old classes
+    var targetDiv = $(".all-products");
+    targetDiv.removeClass().addClass("all-products list-grid-product-wrap " + className + "-wrapper");
+    // Remove the 'selected' class from siblings and add it to the clicked element
+    $(this).siblings().removeClass("active");
+    $(this).addClass("active");
+  });
 
-	// Covid Tracker JS
-	$('.covid-tracker-slides').owlCarousel({
-		loop: true,
-		nav: true,
-		rtl: true,
-		dots: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-		navText: [
-			"<i class='bx bx-left-arrow-alt'></i>",
-			"<i class='bx bx-right-arrow-alt'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
+  // sidebar
+  $(".filter").on("click", function (e) {
+    e.stopPropagation();
+    $(".filter-sidebar, .filter-top").toggleClass("slide");
+  });
 
-	// Covid Testimonials JS
-	$('.covid-testimonials-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		rtl: true,
-		dots: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-		items: 1,
-	});
-	$('.covid-testimonials-wrap-slides').owlCarousel({
-		loop: true,
-		nav: false,
-		rtl: true,
-		dots: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-		navText: [
-			"<i class='bx bx-left-arrow-alt'></i>",
-			"<i class='bx bx-right-arrow-alt'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
-
-	// Covid Blog JS
-	$('.covid-blog-slides').owlCarousel({
-		loop: true,
-		nav: true,
-		rtl: true,
-		dots: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-		navText: [
-			"<i class='bx bx-left-arrow-alt'></i>",
-			"<i class='bx bx-right-arrow-alt'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
-
-	// Covid Doctors JS
-	$('.covid-doctors-slides').owlCarousel({
-		loop: true,
-		nav: true,
-		dots: true,
-		rtl: true,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-		navText: [
-			"<i class='bx bx-left-arrow-alt'></i>",
-			"<i class='bx bx-right-arrow-alt'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
-
-	/* End "Covid 19 Vaccination Center Demo JS" */
+  // password-hide and show
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+  if(togglePassword){
+  togglePassword.addEventListener('click', function (e) {
+  // toggle the type attribute
+  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+  // toggle the eye / eye slash icon
+  this.classList.toggle('bi-eye');
+  });
+  }
+  // confirm-password
+  const togglePassword2= document.getElementById('togglePassword2');
+  const password2 = document.querySelector('#password2');
+  if (togglePassword2){
+  togglePassword2.addEventListener('click', function (e) {
+  // toggle the type attribute
+  const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+  password2.setAttribute('type', type);
+  // toggle the eye / eye slash icon
+  this.classList.toggle('bi-eye');
+  });
+  }
+  // confirm-password
+  const togglePassword3= document.getElementById('togglePassword3');
+  const password3 = document.querySelector('#password3');
+  if (togglePassword3){
+  togglePassword3.addEventListener('click', function (e) {
+  // toggle the type attribute
+  const type = password3.getAttribute('type') === 'password' ? 'text' : 'password';
+  password3.setAttribute('type', type);
+  // toggle the eye / eye slash icon
+  this.classList.toggle('bi-eye');
+  });
+  }
+  // confirm-password
+  const togglePassword4= document.getElementById('togglePassword4');
+  const password4 = document.querySelector('#password4');
+  if (togglePassword4){
+  togglePassword4.addEventListener('click', function (e) {
+  // toggle the type attribute
+  const type = password4.getAttribute('type') === 'password' ? 'text' : 'password';
+  password4.setAttribute('type', type);
+  // toggle the eye / eye slash icon
+  this.classList.toggle('bi-eye');
+  });
+  }
+  // confirm-password
+  const togglePassword5= document.getElementById('togglePassword5');
+  const password5 = document.querySelector('#password5');
+  if (togglePassword5){
+  togglePassword5.addEventListener('click', function (e) {
+  // toggle the type attribute
+  const type = password5.getAttribute('type') === 'password' ? 'text' : 'password';
+  password5.setAttribute('type', type);
+  // toggle the eye / eye slash icon
+  this.classList.toggle('bi-eye');
+  });
+  }
 
 
-	/* Start "Hospital Website Demo JS" */
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".filter-sidebar, .filter-top, .filter").length) {
+      $(".filter-sidebar, .filter-top").removeClass("slide");
+    }
+  });
 
-	// Hospital Services JS
-	$('.hospital-services-slides').owlCarousel({
-		loop: true,
-		nav: true,
-		rtl: true,
-		dots: false,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-		navText: [
-			"<i class='bx bx-chevron-left'></i>",
-			"<i class='bx bx-chevron-right'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			576: {
-				items: 2,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 4,
-			}
-		}
-	});
+  $(".price-selector").on("click", function (e) {
+    e.stopPropagation();
+    $(".range-wrap.style-2, .price-selector").toggleClass("slide");
+  });
 
-	// Progress Bar
-	if($('.progress-line').length){
-		$('.progress-line').appear(function(){
-			var el = $(this);
-			var percent = el.data('width');
-			$(el).css('width',percent+'%');
-		},{accY: 0});
-	}
-	if($('.count-box').length){
-		$('.count-box').appear(function(){
-			var $t = $(this),
-				n = $t.find(".count-text").attr("data-stop"),
-				r = parseInt($t.find(".count-text").attr("data-speed"), 10);
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".range-wrap.style-2, .price-selector").length) {
+      $(".range-wrap.style-2, .price-selector").removeClass("slide");
+    }
+  });
+  /* ---------------------------------------------
+     NiceSelect
+--------------------------------------------- */
 
-			if (!$t.hasClass("counted")) {
-				$t.addClass("counted");
-				$({
-					countNum: $t.find(".count-text").text()
-				}).animate({
-					countNum: n
-				}, {
-					duration: r,
-					easing: "linear",
-					step: function() {
-						$t.find(".count-text").text(Math.floor(this.countNum));
-					},
-					complete: function() {
-						$t.find(".count-text").text(this.countNum);
-					}
-				});
-			}
-			
-		},{accY: 0});
-	}
+  $("select").niceSelect();
+  // cart menu
 
-	// Hospital Team JS
-	$('.hospital-team-slides').owlCarousel({
-		loop: true,
-		nav: true,
-		rtl: true,
-		dots: false,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 25,
-		navText: [
-			"<i class='bx bx-chevron-left'></i>",
-			"<i class='bx bx-chevron-right'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 3,
-			}
-		}
-	});
+  $(".header-cart-btn, .search-btn").on("click", function (e) {
 
-	// Hospital Testimonials JS
-	$('.hospital-testimonials-slides').owlCarousel({
-		loop: true,
-		nav: true,
-		rtl: true,
-		dots: false,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 35,
-		navText: [
-			"<i class='bx bx-chevron-left'></i>",
-			"<i class='bx bx-chevron-right'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 2,
-			}
-		}
-	});
-	$('.hospital-testimonials-wrap-slides').owlCarousel({
-		loop: true,
-		rtl: true,
-		nav: true,
-		dots: false,
-		autoplayHoverPause: true,
-		autoplay: false,
-		margin: 35,
-		navText: [
-			"<i class='bx bx-chevron-left'></i>",
-			"<i class='bx bx-chevron-right'></i>"
-		],
-		responsive: {
-			0: {
-				items: 1,
-			},
-			768: {
-				items: 2,
-			},
-			1200: {
-				items: 2,
-			}
-		}
-	});
+        let parent  = $(this).parent();
 
-	/* End "Hospital Website Demo JS" */
+        parent.find(".cart-menu, .search-input").toggleClass("active");
 
-}(jQuery));
+    e.stopPropagation();
+    // $(".cart-menu, .search-input").toggleClass("active");
 
-// function to set a given theme/color-scheme
-function setTheme(themeName) {
-	localStorage.setItem('grin_theme', themeName);
-	document.documentElement.className = themeName;
-}
-// function to toggle between light and dark theme
-function toggleTheme() {
-	if (localStorage.getItem('grin_theme') === 'theme-dark') {
-		setTheme('theme-light');
-	} else {
-		setTheme('theme-dark');
-	}
-}
-// Immediately invoked function to set the theme on initial load
-(function () {
-	if (localStorage.getItem('grin_theme') === 'theme-dark') {
-		setTheme('theme-dark');
-		document.getElementById('slider').checked = false;
-	} else {
-		setTheme('theme-light');
-	document.getElementById('slider').checked = true;
-	}
-})();
+
+
+  });
+
+
+
+
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".cart-menu, .header-cart-btn, .search-input, .search-btn" ).length) {
+      $(".cart-menu, .search-input").removeClass("active");
+    }
+  });
+
+
+
+  //category menu
+  $(".category-button").on("click", function (e) {
+    e.stopPropagation();
+    $(".category-menu").toggleClass("active");
+  });
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".category-menu, .category-button").length) {
+      $(".category-menu").removeClass("active");
+    }
+  });
+  $(".serch-close").on("click", function (e) {
+      $(".search-input").removeClass("active");
+  });
+
+  var swiper = new Swiper(".banner1-slider", {
+    slidesPerView: "auto",
+    speed: 1500,
+    loop: true,
+    autoplay: true,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    pagination: {
+      el: ".swiper-pagination1",
+      clickable: true,
+    },
+  });
+
+  var swiper = new Swiper(".banner2-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    speed: 2000,
+    loop: true,
+    autoplay: true,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    pagination: {
+      el: ".swiper-pagination2",
+      clickable: true,
+    },
+  });
+
+  var swiper = new Swiper(".product-banner-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    speed: 1500,
+    autoplay: true,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    navigation: {
+      nextEl: ".pd-banner-next-btn",
+      prevEl: ".pd-banner-prev-btn",
+    },
+  });
+  var swiper = new Swiper(".newest-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: ".next-btn",
+      prevEl: ".prev-btn",
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    },
+  });
+  var swiper = new Swiper(".face-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    draggable: true,
+    navigation: {
+      nextEl: ".face-next",
+      prevEl: ".face-prev",
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    },
+  });
+  var swiper = new Swiper(".body-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    draggable: true,
+    navigation: {
+      nextEl: ".body-next",
+      prevEl: ".body-prev",
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    },
+  });
+  var swiper = new Swiper(".hair-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    draggable: true,
+    navigation: {
+      nextEl: ".hair-next",
+      prevEl: ".hair-prev",
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    },
+  });
+  var swiper = new Swiper(".makeup-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    draggable: true,
+    navigation: {
+      nextEl: ".makeup-next",
+      prevEl: ".makeup-prev",
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    },
+  });
+  var swiper = new Swiper(".category-top-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: ".ct-top-next-btn",
+      prevEl: ".ct-top-prev-btn",
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      350: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      500: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 5,
+      },
+      1400: {
+        slidesPerView: 6,
+      },
+    },
+  });
+  var swiper = new Swiper(".pt-thumb-bottom-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: ".ct-top-next-btn",
+      prevEl: ".ct-top-prev-btn",
+    },
+  });
+  var swiper = new Swiper(".product-full-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: ".pt-full-next-btn",
+      prevEl: ".pt-full-prev-btn",
+    },
+    autoplay: {
+      delay: 2500,
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      380: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      576: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    },
+  });
+  //home 2 Suggest slider
+  var swiper = new Swiper(".sg-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    speed: 1000,
+    loop: true,
+    navigation: {
+      nextEl: ".sg-next-btn",
+      prevEl: ".sg-prev-btn",
+    },
+  });
+  //home 2 Top Sell slider
+  var swiper = new Swiper(".top-selling-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: ".top-sell-next-btn",
+      prevEl: ".top-sell-prev-btn",
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    },
+  });
+//home 2 Testimonial slide
+var swiper = new Swiper(".testimonial-slider", {
+    loop: true,
+    spaceBetween: 30,
+    speed: 2000,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".testimonial-next-btn",
+      prevEl: ".testimonial-prev-btn",
+    },
+    autoplay: false, // Disable autoplay
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+      },
+      386: {
+        slidesPerView: 1,
+      },
+      576: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 1.5,
+      },
+      992: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 2,
+      },
+      1400: {
+        slidesPerView: 2,
+      },
+    },
+  });
+
+
+
+  $("#slick2").slick({
+    rows: 2,
+    dots: false,
+    arrows: true,
+    arrows: true,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          arrows: true,
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          arrows: false,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 350,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+        },
+      },
+    ],
+  });
+  var swiper = new Swiper(".exclusive-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    speed: 1000,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    navigation: {
+      nextEl: ".exclusive-next-btn",
+      prevEl: ".exclusive-prev-btn",
+    },
+  });
+  var swiper = new Swiper(".brand-slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    speed: 2500,
+    autoplay: {
+      delay: 2000,
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      576: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 6,
+      },
+      1400: {
+        slidesPerView: 7,
+      },
+    },
+  });
+
+  var swiper = new Swiper(".say-about-slider", {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    loop: true,
+    navigation: {
+      nextEl: ".about-next-btn",
+      prevEl: ".about-prev-btn",
+    },
+    pagination: {
+      el: ".swiper-pagination2",
+      clickable: true,
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      576: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+      1400: {
+        slidesPerView: 3,
+      },
+    },
+  });
+  var swiper = new Swiper(".instagram-slider", {
+    spaceBetween: 15,
+    loop: true,
+    speed: 2500,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: true,
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      386: {
+        slidesPerView: 2,
+      },
+      576: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 5,
+        spaceBetween: 15,
+      },
+      992: {
+        slidesPerView: 6,
+        spaceBetween: 15,
+      },
+      1200: {
+        slidesPerView: 7,
+      },
+      1400: {
+        slidesPerView: 8,
+      },
+    },
+  });
+
+ /// active sidebar item added active class
+
+/// active  slider item
+$(".swiper-slide .nav-item .nav-link ").on("click",function(){
+  $('.swiper-slide .nav-item .nav-link').removeClass('active');
+    $(this).addClass("active");
+})
+
+
+
+  //Video popup
+  $('[data-fancybox="popup-video"]').fancybox({
+    buttons: [
+      //   "slideShow",
+      //   "thumbs",
+      //   "zoom",
+      //   "fullScreen",
+      //   "share",
+      "close",
+    ],
+    loop: false,
+    protect: true,
+  });
+
+  $(".sidebar-button").on("click", function () {
+    $(this).toggleClass("active");
+  });
+  document
+    .querySelector(".sidebar-button")
+    .addEventListener("click", () =>
+      document
+        .querySelector(".main-menu, .sidebar-menu")
+        .classList.toggle("show-menu")
+    );
+
+  $(".menu-close-btn").on("click", function () {
+    $(".sidebar-menu").removeClass("show-menu");
+  });
+  //Quantity
+  $(".quantity__minus").on("click", function (e) {
+    e.preventDefault();
+    var input = $(this).siblings(".quantity__input");
+    var value = parseInt(input.val());
+    if (value > 1) {
+      value--;
+    }
+    input.val(value.toString().padStart(2, "0"));
+  });
+  $(".quantity__plus").on("click", function (e) {
+    e.preventDefault();
+    var input = $(this).siblings(".quantity__input");
+    var value = parseInt(input.val());
+    value++;
+    input.val(value.toString().padStart(2, "0"));
+  });
+
+  $(function() {
+    $('.payment-methods .payment-list li').on('click', function() {
+      $('.payment-methods .payment-list li').removeClass('active'); // Remove active class from all list items
+      if ($(this).hasClass('check-payment')) {
+        $('#strip-payment').hide();
+        $(this).addClass('active'); // Add active class to the clicked list item
+      }
+      else if ($(this).hasClass('cash-delivary')) {
+        $('#strip-payment').hide();
+        $(this).addClass('active'); // Add active class to the clicked list item
+      }
+      else if ($(this).hasClass('paypal')) {
+        $('#strip-payment').hide();
+        $(this).addClass('active'); // Add active class to the clicked list item
+      }
+      else if ($(this).hasClass('stripe')) {
+        $('#strip-payment').show();
+        $(this).addClass('active'); // Add active class to the clicked list item
+      }
+      else {
+        $('#strip-payment').hide();
+      }
+    });
+  });
+
+  //Select wrap
+  $(".select-wrap").on("click", function () {
+    $(this).addClass("selected").siblings().removeClass("selected");
+  });
+
+  // timer start
+  $("[data-countdown]").each(function () {
+    var $deadline = new Date($(this).data("countdown")).getTime();
+    var $dataDays = $(this).children("[data-days]");
+    var $dataHours = $(this).children("[data-hours]");
+    var $dataMinutes = $(this).children("[data-minutes]");
+    var $dataSeconds = $(this).children("[data-seconds]");
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var t = $deadline - now;
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((t % (1000 * 60)) / 1000);
+      $dataDays.html(`${days} <span>Days</span> <span>D</span>`);
+      $dataHours.html(`${hours} <span>Hours</span> <span>H</span>`);
+      $dataMinutes.html(`${minutes} <span>Minutes</span> <span>M</span>`);
+      $dataSeconds.html(`${seconds} <span>Seconds</span> <span>S</span>`);
+      if (t <= 0) {
+        clearInterval(x);
+        $dataDays.html("00 <span>Days</span> <span>D</span>");
+        $dataHours.html("00 <span>Hours</span> <span>H</span>");
+        $dataMinutes.html("00 <span>Minutes</span> <span>M</span>");
+        $dataSeconds.html("00 <span>Seconds</span> <span>S</span>");
+      }
+    }, 1000);
+  });
+})(jQuery);

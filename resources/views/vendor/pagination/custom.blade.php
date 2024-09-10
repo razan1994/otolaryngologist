@@ -1,41 +1,39 @@
 @if ($paginator->hasPages())
-<nav aria-label="Page navigation example">
-    <ul class="pagination-area hospital-pagination">
+<nav class="shop-pagination">
+    <ul class="pagination-list">
+        {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="prev page-numbers disabled">
-                <a class="page-link" href="#" tabindex="-1"><i class='flaticon-left-arrow'></i></a>
-            </li>
+            <li class="disabled"><span><i class="bi bi-chevron-left"></i></span></li>
         @else
-            <li class="page-numbers"><a class="page-link" href="{{ $paginator->previousPageUrl() }}"><i class='flaticon-left-arrow'></i></a></li>
+            <li><a href="{{ $paginator->previousPageUrl() }}" class="shop-pagi-btn"><i class="bi bi-chevron-left"></i></a></li>
         @endif
 
+        {{-- Pagination Elements --}}
         @foreach ($elements as $element)
+            {{-- "Three Dots" Separator --}}
             @if (is_string($element))
-                <li class="page-numbers disabled">{{ $element }}</li>
+                <li class="disabled"><span>{{ $element }}</span></li>
             @endif
+
+            {{-- Array Of Links --}}
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
-                        <li class="page-numbers current">
-                            <a class="page-link">{{ $page }}</a>
-                        </li>
+                        <li><a class="active">{{ $page }}</a></li>
                     @else
-                        <li class="page-numbers">
-                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                        </li>
+                        <li><a href="{{ $url }}">{{ $page }}</a></li>
                     @endif
                 @endforeach
             @endif
         @endforeach
 
+        {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <li class="page-numbers">
-                <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next"><i class='flaticon-right-arrow'></i></a>
-            </li>
+            <li><a href="{{ $paginator->nextPageUrl() }}" class="shop-pagi-btn"><i class="bi bi-chevron-right"></i></a></li>
         @else
-            <li class="page-numbers disabled">
-                <a class="page-link" href="#"><i class='flaticon-right-arrow'></i></a>
-            </li>
+            <li class="disabled"><span><i class="bi bi-chevron-right"></i></span></li>
         @endif
     </ul>
+</nav>
+
 @endif

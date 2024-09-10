@@ -1,4 +1,24 @@
 <p style="display: none;direction: rtl;">
+    الدكتور أنس ابو شملة، استشاري جراحة الانف والاذن والحنجرة وتجميل الانف، أفضل أخصائي الأنف والأذن والحنجرة في عمان
+    الأردن، جبل النصر، شارع المدينة المنورة، دكتور أنف وأذن وحنجرة في عمان الأردن، أمراض الأنف والأذن والحنجرة، أمراض
+    الأنف والأذن والحنجرة، أمراض الأنف والأذن والحنجرة وعلاجها مع الدكتور أنس أبو شملة، أمراض الأنف والأذن والحنجرة
+    وعلاجها مع الدكتور أنس أبو شملة، أفضل طرق علاج التهابات الأنف والأذن والحنجرة مع الدكتور أنس أبو شملة، تشخيص وعلاج
+    مشاكل الأنف والاذن والحنجرة في عيادة الدكتور أنس أبو شملة، علاج مشاكل فقدان السمع والتهابات الأذن مع الدكتور أنس أبو
+    شملة، حلول فعالة لانسداد الأنف والتهابات الجيوب الأنفية لدى الدكتور أنس أبو شملة، استشارات طبية لمشاكل الصوت والأذن
+    والأنف في عيادة الدكتور أنس أبو شملة، أسباب وعلاج مشاكل التنفس بسبب الأنف والحنجرة مع الدكتور أنس أبو شملة، طرق علاج
+    التهابات الأذن الوسطى والأذن الخارجية في عيادة الدكتور أنس أبو شملة، توفير العناية الشاملة لمشاكل الأنف والأذن
+    والحنجرة مع استشاري الأنف والأذن والحنجرة الدكتور أنس أبو شملة، علاج التهابات الأنف والأذن والحنجرة مع الدكتور أنس
+    أبو شملة، جراحة تجميل الأنف مع الدكتور أنس أبو شملة، تجميل الأنف في عمان مع دكتور أنس أبو شملة، أفضل جراح تجميل
+    الأنف في الأردن، علاج مشاكل الأنف بالليزر مع دكتور أنس أبو شملة، جراحة تجميل الأنف غير الجراحية في عيادة الدكتور أنس
+    أبو شملة، استشارة طبية لتجميل الأنف مع جراح تجميل الأنف الدكتور أنس أبو شملة، نتائج تجميل الأنف في عمان مع الدكتور
+    أنس أبو شملة، إصلاح الأنف المشوه بعد الحوادث مع دكتور أنس أبو شملة، تجميل الأنف لأغراض تجميلية وعلاجية في عيادة
+    الدكتور أنس أبو شملة، تحسين مظهر الأنف بدون جراحة مع الدكتور أنس أبو شملة، علاج تجميل الأنف والجيوب الأنفية بالمنظار
+    مع الدكتور أنس أبو شملة، أفضل دكتور أنف وأذن وحنجرة في عمان الأردن، دكتور أنس ابو شملة اختصاصي الأنف والأذن والحنجرة
+    في جبل النصر، عيادة الدكتور أنس ابو شملة للأنف والأذن والحنجرة في شارع المدينة المنورة مستشفى العيون التخصصي، أخصائي
+    الأنف والأذن والحنجرة في عمان الأردن، دكتور أنس ابو شملة جراح تجميل الأنف في الأردن، تحسين وظيفة الأنف والأذن
+    والحنجرة مع الدكتور أنس أبو شملة، تحسين وظيفة الأنف والأذن والحنجرة مع الدكتور أنس أبو شملة، طرق علاج التهابات الأنف
+    والأذن والحنجرة المتقدمة مع الدكتور أنس أبو شملة، طرق علاج التهابات الأنف والأذن والحنجرة المتقدمة مع الدكتور أنس
+    أبو شملة، استشارات طبية لمشاكل التنفس والتهابات الأنف والأذن والحنجرة
     تكلفة عملية تجميل الانف جمال جمعه,
     دكتور أنف وأذن وحنجرة,
     دكتور أنف,
@@ -28,9 +48,9 @@
     دكتور انف واذن وحنجرة ممتاز,
     دكتور انف,
     تخصص انف واذن وحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     مستشفى انف واذن وحنجرة,
     أفضل دكتور انف واذن وحنجرة بالحبيب الريان,
     دكتور انف واذن وحنجرة بالهرم,
@@ -60,9 +80,9 @@
     دكتور احمد عبد الفتاح انف واذن,
     دكتور اطفال انف واذن وحنجرة,
     دكتور انف وأذن وحنجرة في الجدعاني,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور يوسف شبانه انف واذن وحنجرة,
     دكتور انف واذن في فيصل,
     انف اذن حنجرة دكتور,
@@ -104,9 +124,9 @@
     دكتور انف واذن وحنجرة التخصصي,
     احسن دكتور انف واذن,
     بروفيسور انف واذن وحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور انف واذن عين شمس,
     عايزة دكتور انف واذن شاطر,
     عيادة انف واذن,
@@ -154,9 +174,9 @@
     د ماجد بهجت انف واذن,
     افضل دكتور انف وحنجره,
     افضل دكتور انف واذن مستشفى زين,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     طبيب انف و حنجرة,
     انف واذن وحنجرة فيصل,
     دكتور احمد عبدالفتاح انف واذن وحنجرة,
@@ -206,9 +226,9 @@
     احسن دكاترة انف واذن وحنجره,
     استاذ دكتور انف واذن وحنجرة,
     استشاري انف واذن شبرا الخيمة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     أفضل دكتور لعلاج حساسية الأنف,
     استشارة طبيب انف واذن وحنجرة,
     اطباء انف واذن,
@@ -266,9 +286,9 @@
     مستشفي انف واذن,
     اشهر دكاترة الانف والاذن والحنجرة,
     التواصل مع دكتور انف واذن وحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور انف اذن حنجرة في مستشفى الساحل,
     افضل دكتور انف واذن وحنجرة في مستشفى الحبيب,
     اخصائي انف واذن وحنجرة في الوحدات,
@@ -319,9 +339,9 @@
     افضل دكاترة انف واذن وحنجرة,
     طبيب اذن انف حنجرة,
     دكتور انف و اذن,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     افضل دكتور الأنف والاذن والحنجرة,
     طبيب انف اذن حنجرة,
     أخصائي أنف واذن وحنجرة,
@@ -374,9 +394,9 @@
     طبيب انف واذن وحنجره,
     طبيب الانف,
     دكتور عماد عبدالله انف واذن وحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     حجز دكتور انف واذن وحنجرة,
     دكتور انف واذن وحنجرة الهرم,
     دكتور حاتم بدران انف واذن,
@@ -406,9 +426,9 @@
     طبيب انف وحنجرة,
     طبيب أنف واذن وحنجرة,
     دكتور انف اذن حنجره,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور انف واذن وحنجرة مستشفى التخصصي,
     طبيب أنف وأذن وحنجرة,
     انف وحنجره دكتور,
@@ -442,9 +462,9 @@
     دكاتره انف واذن وحنجره,
     استشارة طبيب أنف وأذن وحنجرة,
     عنوان عياده دكتور احمد نجم أنف واذن,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور انف واذن بالهرم,
     دكتور تخصص انف واذن وحنجرة,
     د ماجد بهجت انف واذن,
@@ -482,9 +502,9 @@
     دكتور ماجد بهجت انف واذن وحنجرة,
     اسال طبيب انف واذن,
     افضل دكتور انف وأذن وحنجرة في الأردن,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتورة انف اذن حنجرة,
     كتور انف واذن وحنجرة,
     اشطر دكتور انف واذن وحنجرة,
@@ -525,9 +545,9 @@
     عايزه دكتور انف واذن,
     عمليات انف واذن وحنجرة,
     افضل استشاري انف واذن وحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور شاطر أنف واذن وحنجرة,
     طبيب أذن وانف وحنجرة,
     طبيب الأنف والأذن والحنجرة,
@@ -564,9 +584,9 @@
     التواصل مع دكتور انف واذن وحنجرة,
     دكتور انف اذن حنجرة في مستشفى الساحل,
     افضل دكتور انف واذن وحنجرة في مستشفى الحبيب,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تجميل الأنف,
     انف واذن وحنجرة,
     تجميل الأنف,
@@ -611,9 +631,9 @@
     انسداد الأنف عند النوم,
     التهاب الأنف,
     التهاب الأنف التحسسي,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     أعراض التهاب الجيوب الأنفية,
     نزيف الأنف عند الأطفال,
     سبب انسداد الأنف,
@@ -678,9 +698,9 @@
     صور جراحة تجميل الأعضاء التناسلية,
     جفاف الأنف من الداخل,
     ألم في غضروف الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     علاج حمية الأنف بزيت الزيتون,
     علاج جفاف الأنف بزيت الزيتون,
     نانسي عجرم قبل الجراحة التجميلية يوتيوب,
@@ -740,9 +760,9 @@
     أنواع تجميل الأنف,
     دكتور انف واذن وحنجرة,
     ألم في عظم الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     إفراز مخاط في الأنف,
     أخصائي أنف وأذن وحنجرة,
     يسبب انسداد الأنف عند النوم,
@@ -811,9 +831,9 @@
     علاج انسداد الأنف للحامل,
     منظار الأنف,
     نتوء في فتحة الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تورم الأنف,
     الجيوب الأنفية,
     أمراض الأذن والأنف والحنجرة وعلاجها pdf,
@@ -882,9 +902,9 @@
     أدوية احتقان الأنف,
     أسباب الحموضة المعوية,
     سعر تجميل الأذن,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     أسباب دموع الأنف,
     أضرار شفاطة الأنف للرضع,
     الأنف يحترق من الداخل,
@@ -949,9 +969,9 @@
     انف واذن وحنجرة,
     تلف ثقب الأنف,
     كيفية تنظيف الأنف بمحلول ملحي,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     أسباب نزيف الأنف,
     ملاقط بلاستيكية لعلاج انحراف الأنف,
     حاولت جراحة الجفن,
@@ -1006,9 +1026,9 @@
     الأنف مائل,
     علاج تضخم الغضروف الأنفي,
     أسباب خروج الصوت من الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     غسول للأنف,
     تعفن الجيوب الأنفية,
     أعراض تضخم الغضروف الأنفي,
@@ -1089,9 +1109,9 @@
     تنظيف الأنف,
     جروح الأنف,
     جراحة الجفن,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور انف واذن,
     حساسية الجيوب الأنفية,
     حكة,
@@ -1167,9 +1187,9 @@
     قطع الشفرين,
     تقرحات الأنف,
     شكل قرنيات الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     عملية القطع بليد,
     علاج فطريات الأنف بالأعشاب,
     تصغير الأنف اللحمي بدون جراحة,
@@ -1209,9 +1229,9 @@
     انسداد فتحة الأنف اليمنى,
     كم هي عملية تجميل الأنف؟,
     عمليات تجميل الوجه قبل وبعد,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     معلومات عن تخصص الأذن والأنف والحنجرة,
     أسباب انسداد الأنف عند النوم,
     مخاط أخضر من الأنف,
@@ -1251,9 +1271,9 @@
     اسعار تجميل الانف ممدوح اشي,
     جبيرة الأنف,
     علاج الحبوب داخل الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     أسباب انسداد الأنف الدائم,
     سبب النزيف,
     أعراض الجيوب الأنفية,
@@ -1295,9 +1315,9 @@
     الأنف يحترق من الداخل,
     تجميل الأنف بدون جراحة,
     جراحة تصغير الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تصغير الأنف بدون جراحة إبرة,
     تكبير الثدي بعد استئصال الثدي,
     سبب انسداد الأنف الدائم,
@@ -1347,9 +1367,9 @@
     دكتور شاطر أنف و أذن و حنجرة,
     شد الجفن قبل وبعد,
     جراحة الفك,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تكلفة عملية تجميل الأنف,
     أعراض الجيوب الأنفية على الأنف,
     الحاجز الأنفي,
@@ -1392,9 +1412,9 @@
     علاج انسداد الأنف أثناء النوم,
     قبل وبعد عملية تجميل المهبل,
     جراحة الأذن والأنف والحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     حبوب الأنف الداخلية,
     علاج انسداد الأنف,
     جفاف الأنف وعلاجه,
@@ -1441,9 +1461,9 @@
     أفضل مرهم لجفاف الأنف,
     حرارة الأنف,
     أخصائي أنف وأذن وحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     جروح الأنف الداخلية,
     انسداد الأنف عند الأطفال بسبب نزلات البرد,
     منظف الجيوب الأنفية,
@@ -1493,9 +1513,9 @@
     انف واذن وحنجرة اطفال,
     جهاز غسيل الأنف,
     علاج دموع الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     د الأنف والأذنين,
     التهاب غضروف الأنف,
     المعالجة الحرارية للأنف,
@@ -1571,9 +1591,9 @@
     جراحة الجفن,
     أعراض الغضروف الأنفي,
     جراحات الجلد المحروق,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     قشور داخل الأنف,
     الجراحة التجميلية المهبلية,
     تصحيح الأنف بدون جراحة,
@@ -1629,9 +1649,9 @@
     أسباب رائحة الأنف,
     ما هو سبب رائحة الفم الكريهة,
     تورم الخدين,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     انسداد الأنف دون سيلان الأنف,
     ضغط في الأنف,
     حبوب منع الحمل داخل أنف السوستة,
@@ -1705,9 +1725,9 @@
     أسباب آلام الأنف,
     قطرات مرطبة للأنف,
     أعراض الزوائد الأنفية,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     التنفس عن طريق الأنف أفضل من الفم,
     انحراف بسيط للأنف,
     كم تكلف عملية تجميل الأنف لبشار البازرة؟,
@@ -1771,9 +1791,9 @@
     دخول الهواء من الأنف إلى الحلق,
     علاج حرقة الأنف الشديدة,
     رائحة الفم الكريهة عند الأطفال,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     أعراض جفاف الأنف,
     تجربتي مع تجميل الأنف,
     جفاف الأنف الخارجي,
@@ -1808,9 +1828,9 @@
     مضاعفات عملية تجميل الأنف,
     أسباب احتقان الأنف,
     البلغم من الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور انف واذن وحنجرة,
     علاج نزيف الأنف من إحدى فتحات الأنف,
     تنظيف الأنف بالملح,
@@ -1875,9 +1895,9 @@
     علاج جفاف الأنف,
     علاج الأنف بدون جراحة,
     جراحة القرنية الأنفية,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     ما هي أسباب سيلان الأنف,
     سعر جراحة رأب الحاجز الأنفي بالليزر,
     السلائل الأنفية عند الأطفال,
@@ -1941,9 +1961,9 @@
     أضرار شفاطة الأنف للرضع,
     ثقب الأنف,
     علاج تضخم قرنية الأنف بالأعشاب,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     بعد إزالة الجبيرة من الأنف,
     دكتور انف واذن وحنجرة برج الاطباء,
     حل مشكلة احتقان الأنف,
@@ -2012,9 +2032,9 @@
     احجز موعدًا للأذن والأنف والحنجرة,
     استشاري جراحة التجميل,
     أسعار عمليات تجميل الأذن مع دكتور عبد الكريم فدا,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     عمليات تجميل الانف قبل وبعد,
     تنحيف الأنف بالليزر,
     جبيرة الأنف,
@@ -2064,9 +2084,9 @@
     دكتور انف واذن وحنجرة فيصل,
     عيادات النجم للأذن والأنف والحنجرة,
     جراحة تجميل العيون,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تكلفة الجراحة الترميمية المهبلية,
     الدكتور شادي رحمة جراح تجميل,
     أنف لحمي بعد الجراحة التجميلية,
@@ -2102,9 +2122,9 @@
     طبيب الأنف,
     طريقة تصغير فتحتي الأنف جراحياً,
     تجميل الأذن بدون جراحة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     سعر جراحة تصغير الشفاه,
     حجز طبيب الأذن والأنف والحنجرة,
     ملصقات بعد عملية تجميل الانف,
@@ -2146,9 +2166,9 @@
     خيوط الأنف قبل وبعد,
     شد الوجه بالليزر للرجال,
     تجارب قطع الشفرين,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تصغير الشفاه بالليزر,
     جبيرة أنف بعد الجراحة التجميلية,
     جراحة الحروق,
@@ -2219,9 +2239,9 @@
     ما بعد عملية تجميل الأنف,
     جراحة أمامية بارزة,
     ما هو سعر تجميل الأنف؟,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور مصطفى حميدة جراح تجميل,
     تجميل الأنف بالليزر,
     من كم عمر عملية تجميل الأنف,
@@ -2288,9 +2308,9 @@
     جراحة الأنف,
     بعد الجراحة التجميلية,
     تصغير فتحتي الأنف بدون جراحة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تصغير فتحتي الأنف قبل وبعد,
     دكتور انف واذن وحنجرة,
     جراحة الجفن العلوي,
@@ -2357,9 +2377,9 @@
     أنواع ملصقات الأنف بعد الجراحة التجميلية,
     تكلفة عملية القطع,
     جراحة الجفن العلوي,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     مضاعفات عملية تجميل الأنف,
     تجميل الأنف بالتخدير الموضعي,
     معدل نجاح عملية تجميل الأنف,
@@ -2414,9 +2434,9 @@
     تجميل الشفرين بالليزر,
     علاج تصغير الأنف بدون جراحة,
     تجميل الأنف بالتخدير الموضعي,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تجميل الأنف,
     قبل وبعد عملية تجميل الأذن,
     جراحة الشفاه,
@@ -2464,9 +2484,9 @@
     جماليات الذراع,
     عيادة طبيب الأذن والأنف والحنجرة,
     اطباء الانف والاذن والحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     جراحة الفك قبل وبعد,
     تجميل الأنف,
     عملية تجميل الأنف الطويلة,
@@ -2548,9 +2568,9 @@
     د / عمرو صفوت ـ جراح تجميل,
     د.محمد الهاجري انف واذنان,
     جراحة الخد,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     كيف يمكن تصغير الأنف بدون جراحة تجميل؟,
     الدكتور علي العمري ، أنف وأذن وحنجرة ، مستشفى الحبيب,
     تجميل الأنف بدون جراحة,
@@ -2617,9 +2637,9 @@
     الاستفادة من ملصقات الأنف بعد الجراحة التجميلية,
     مستشفى دار الشفاء للأذن والأنف والحنجرة,
     انف واذن وحنجرة اطفال,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تصغير الأنف بدون جراحة,
     المانيكير,
     جراحة تجميل الأنف,
@@ -2686,9 +2706,9 @@
     دكتور انف واذن وحنجرة اطفال,
     جراحة الأنف,
     شد الوجه الطويل,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     كم تكلف عملية تجميل الأنف؟,
     جراحة شد الوجه,
     جراحة تصغير الأنف للرجال,
@@ -2756,9 +2776,9 @@
     مستشفى الأذن والأنف,
     أخصائي أنف وأذن وحنجرة,
     افضل دكتور انف واذن وحنجرة في سليمان الحبيب,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تكلفة تصحيح الحاجز الأنفي,
     زراعة غضروف الأنف,
     استشر طبيب الأذن والأنف والحنجرة,
@@ -2816,9 +2836,9 @@
     عمليات تصغير الشفة,
     كم تكلف جراحة تصحيح الحاجز الأنفي؟,
     أطباء أنف و أذن و حنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     استاذ جراحة الانف والاذن والحنجرة,
     المهبل قبل وبعد الجراحة التجميلية,
     الجراحة التجميلية الكورية,
@@ -2891,9 +2911,9 @@
     تكبير الشفة للرجال,
     جراحة التجميل بالليزر,
     جراحة تجميل العجان,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     استشاري أنف و أذن و حنجرة,
     جراحة تجميل الأنف,
     الدكتور وائل غانم أخصائي جراحة التجميل,
@@ -2975,9 +2995,9 @@
     انسداد الأنف الجاف,
     أريد طبيب الأذن والأنف,
     جراحة الفم الكبير,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     بعد عملية تجميل الأنف,
     تعديل فروة الرأس بدون جراحة,
     شد البطن,
@@ -3045,9 +3065,9 @@
     جراحة الغضروف بالليزر,
     كم تكلف عملية تجميل الأنف؟,
     كم تكلف عملية تجميل الأنف؟,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دهون الأنف بعد الجراحة التجميلية,
     جراحة تجميلية حول العين,
     نحت الأنف,
@@ -3106,9 +3126,9 @@
     كيف يتم إجراء عملية تصغير الأنف؟,
     دكتور انف واذن واذن فى الرحاب,
     جراحات الخياطة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     شد البطن,
     شد الوجه للرجال,
     أفضل بلد في الجراحة التجميلية,
@@ -3168,9 +3188,9 @@
     انف واذن وحنجرة,
     افضل دكتور انف واذن وحنجرة,
     تجربتي في تجميل الأنف,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     تعديل الأذن بدون جراحة,
     تكلفة عملية إزالة عظم الأنف,
     الدكتور وائل صقر جراح تجميل,
@@ -3242,9 +3262,9 @@
     طبيب أنف وأذن وحنجرة في المستشفى الإسلامي,
     تجميل الأنف وأسعارها,
     استشارى الانف والاذن والحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     رأب المهبل الخارجي,
     عمليات تقوس الأنف,
     جراحة تجميل الذكور,
@@ -3313,9 +3333,9 @@
     أسعار تجميل الأنف لدى د. عبد الكريم فدا,
     أطباء جراحة تجميل,
     جراحة تجميل الوجه,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور انف واذن وحنجرة بمستشفى الساحل,
     د.محمد الإمام محمود الأنف والأذن,
     اسعار تجميل الانف عبد الكريم فدا,
@@ -3379,9 +3399,9 @@
     افضل دكتور انف واذن وحنجرة,
     دكتور انف واذن وحنجرة,
     دكتور انف واذن,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     عيادة الأذن والأنف والحنجرة,
     استشاري أنف و أذن و حنجرة,
     دكتور انف واذن وحنجرة,
@@ -3445,9 +3465,9 @@
     دكتور انف واذن وحنجرة برج الاطباء,
     دكتور انف واذن اطفال,
     استشارى انف واذن وحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     دكتور احمد عوض انف واذنان,
     استشارى دكتور انف واذن وحنجره,
     دكتور احمد عامر، انف و اذن و حنجرة,
@@ -3514,9 +3534,9 @@
     اسأل طبيب الأذن والأنف والحنجرة,
     اسم طبيب الاذن والانف والحنجرة,
     دكتور حسن علي الأنف والأذنين,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     طبيب أنف وأذن وحنجرة في المستشفى الإسلامي,
     استشاري أنف و أذن و حنجرة,
     دكتور انف واذن وحنجرة في الوحدات,
@@ -3583,9 +3603,9 @@
     د. أحمد سليط أنف وأذن وحنجرة,
     دكتور شبرا أنف وأذن,
     استشر طبيب الأذن والأنف والحنجرة,
-    </p>
-    <h6 style="display: none;direction: rtl;">دكتور</h6>
-    <p style="display: none;direction: rtl;">
+</p>
+<h6 style="display: none;direction: rtl;">دكتور</h6>
+<p style="display: none;direction: rtl;">
     استشاري أنف وأذن وحنجرة الهرم,
     د. احمد العقيل انف واذن وحنجرة,
     استشارى انف واذن وحنجرة,
@@ -3660,5 +3680,4 @@
     عيادات أنف وأذن وحنجرة بالوحدات,
     عيادات النجم للأذن والأنف والحنجرة,
     افضل دكتور انف واذن وحنجرة في الاردن,
-    </p>
-    
+</p>
