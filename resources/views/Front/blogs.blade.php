@@ -100,43 +100,6 @@
                             @endforeach
 
                         </div>
-                        @if (isset($blogs) && $blogs->count() > 0)
-                            <div class="shop-widget">
-                                <h5 class="shop-widget-title">{{ __('front_end.Tags') }}</h5>
-                                <ul class="tag-list">
-
-                                        <li>
-                                            <a href="#">الدكتور أنس ابوشملة</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> اختصاصي الأنف والأذن والحنجرة</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">مقالات طبية</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                نصائح طبية
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                معلومات طبية
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                مقالات طبية متخصصة
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                صحة الأذن والأنف والحنجرة
-                                            </a>
-                                        </li>
-                                </ul>
-                            </div>
-                        @endif
                     </div>
                 </div>
                 @if (isset($blogs) && $blogs->count() > 0)

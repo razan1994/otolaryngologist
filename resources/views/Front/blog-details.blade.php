@@ -98,56 +98,9 @@
                             @endforeach
                         </div>
 
-                            <div class="shop-widget">
-                                <h5 class="shop-widget-title">{{ __('front_end.Tags') }}</h5>
-                                <ul>
-
-                                        <li>
-                                            <a style="color: #000" href="#">{{$news_blog->tags }}</a>
-                                        </li>
-
-                                </ul>
-                            </div>
-
                     </div>
                 </div>
             </div>
-            <div class="row mb-110">
-                <div class="col-lg-12">
-                    <div class="blog-details-navigation">
-                        <!-- Previous Blog Navigation -->
-                        @if($previous_blog)
-                            <div class="single-navigation">
-                                <div class="content">
-                                    <a href="{{ route('blog-details', ['aliasname' => $previous_blog->alias_name_en]) }}">{{ __('front_end.Previous') }} </a>
-                                    <h4><a href="{{ route('blog-details', ['aliasname' => $previous_blog->alias_name_en]) }}">{{ $previous_blog->title }}</a></h4>
-                                </div>
-                                <a href="{{ route('blog-details', ['aliasname' => $previous_blog->alias_name_en]) }}" class="nav-icon">
-                                    <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10 17.4854L1.51472 9.00007M1.51472 9.00007L10 0.514789M1.51472 9.00007L17.4246 9.35362" />
-                                    </svg>
-                                </a>
-                            </div>
-                        @endif
-
-                        <!-- Next Blog Navigation -->
-                        @if($next_blog)
-                            <div class="single-navigation two">
-                                <a href="{{ route('blog-details', ['aliasname' => $next_blog->alias_name_en]) }}" class="nav-icon">
-                                    <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8 0.514648L16.4853 8.99993M16.4853 8.99993L8 17.4852M16.4853 8.99993L0.575379 8.64638" />
-                                    </svg>
-                                </a>
-                                <div class="content">
-                                    <a href="{{ route('blog-details', ['aliasname' => $next_blog->alias_name_en]) }}"> {{ __('front_end.NEXT') }}</a>
-                                    <h4><a href="{{ route('blog-details', ['aliasname' => $next_blog->alias_name_en]) }}">{{ $next_blog->title }}</a></h4>
-                                </div>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
     <!-- End Blog Details section -->
