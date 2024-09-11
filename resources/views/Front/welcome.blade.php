@@ -364,9 +364,10 @@
 
     <!-- Start Video section -->
     <div class="full-video-banner">
-        <video class="banner-video" autoplay muted loop>
+        <video class="banner-video" autoplay muted loop playsinline>
             <source src="{{ asset('front_end_style/assets/videos/banner-video1.mp4') }}" type="video/mp4">
         </video>
+
         <div class="overlay"></div>
         <div class="banner-content">
             <h4> {{ __('front_end.slider_title') }}
