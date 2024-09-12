@@ -6616,6 +6616,7 @@ header.style-2 .nav-right::after {
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify;
+    padding-top: 15px;
 
 }
 
@@ -7309,6 +7310,8 @@ header.style-2 .nav-right::after {
     line-height: 1;
     letter-spacing: 0.66px;
     margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-offset: 13px;
 }
 
 .footer-section .footer-top .footer-widget .widget-title.style-2 h5 {
@@ -7337,7 +7340,6 @@ header.style-2 .nav-right::after {
     font-style: normal;
     font-weight: 400;
     line-height: 1;
-    letter-spacing: 0.32px;
     transition: 0.5s;
 }
 
@@ -7375,7 +7377,6 @@ header.style-2 .nav-right::after {
     font-style: normal;
     font-weight: 500;
     line-height: 1;
-    letter-spacing: 0.32px;
     margin-bottom: 25px;
 }
 
@@ -7486,7 +7487,6 @@ header.style-2 .nav-right::after {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.8;
-    letter-spacing: 0.32px;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -8067,7 +8067,6 @@ header.style-2 .nav-right::after {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    letter-spacing: 0.32px;
     text-transform: capitalize;
     white-space: nowrap;
 }
@@ -9179,7 +9178,6 @@ header.style-2 .nav-right::after {
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
-    letter-spacing: 0.32px;
     text-transform: capitalize;
 }
 
@@ -9227,7 +9225,6 @@ header.style-2 .nav-right::after {
     font-size: 18px;
     font-weight: 500;
     line-height: 20px;
-    letter-spacing: 0.32px;
     text-transform: capitalize;
     transition: 0.5s;
 }
@@ -9862,7 +9859,6 @@ header.style-2 .nav-right::after {
     font-family: var(--font-Jost);
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 0.32px;
     text-transform: capitalize;
 }
 
@@ -9918,7 +9914,7 @@ header.style-2 .nav-right::after {
     font-family: var(--font-Jost);
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 0.32px;
+
     text-transform: capitalize;
     margin-bottom: 10px;
 }
@@ -9936,7 +9932,6 @@ header.style-2 .nav-right::after {
     font-family: var(--font-Jost);
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 0.32px;
     text-transform: capitalize;
     margin-bottom: 0;
 }
@@ -11423,7 +11418,6 @@ header.style-2 .nav-right::after {
     font-size: 16px;
     font-weight: 500;
     line-height: 1;
-    letter-spacing: 0.32px;
     text-transform: capitalize;
     display: flex;
     align-items: center;
@@ -13545,7 +13539,6 @@ Suggest-Section Css
     font-family: var(--font-Jost);
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 0.32px;
     text-transform: capitalize;
     padding: 0;
 }
@@ -13843,7 +13836,6 @@ Testimonial-Section Css
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
-    letter-spacing: 0.32px;
     margin-bottom: 0;
 }
 
@@ -15584,7 +15576,7 @@ Testimonial-Section Css
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(34, 34, 34, 0.1), rgba(34, 34, 34, 0.1));
+    background: linear-gradient(rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3));
     z-index: 1;
 }
 

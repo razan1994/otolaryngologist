@@ -6584,6 +6584,7 @@ header.style-2 .nav-right::after {
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify;
+    padding-top: 15px;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -7278,6 +7279,8 @@ header.style-2 .nav-right::after {
     line-height: 1;
     letter-spacing: 0.66px;
     margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-offset: 13px;
 }
 
 .footer-section .footer-top .footer-widget .widget-title.style-2 h5 {
@@ -15552,7 +15555,7 @@ Testimonial-Section Css
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(34, 34, 34, 0.1), rgba(34, 34, 34, 0.1));
+    background: linear-gradient(rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3));
     z-index: 1;
 }
 
@@ -15644,6 +15647,19 @@ Testimonial-Section Css
 
 
 /*# Home blog */
+
+.newsletter-content {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.newsletter-content p::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
 .newsletter-content a {
     color: #fff;
     font-size: 16px;

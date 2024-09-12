@@ -642,4 +642,9 @@ Nosebleeds,',
     'east_amman_location' => 'East Amman ',
     'contct_title'=> 'We leave the choice to our dear patients to contact us in any way that suits them from the following options or by visiting us at the clinic at the address provided below.',
 'View_All' => 'View All',
+
+'footer_title_dr' => 'Dr. Anas Abu Shamleh',
+'footer_title_specialty' => 'Specialist in Otolaryngology and Rhinoplasty Surgery',
+
+
 ];

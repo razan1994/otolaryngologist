@@ -145,218 +145,216 @@
     }
 
 
- /* Mobile Styles */
- @media (max-width: 768px) {
-    .wrapper {
-        position: relative;
-        height: 300px;
-        width: 100%;
-        max-width: 500px;
-        overflow: hidden;
-        background: #443838;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .wrapper {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            background: #443838;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper .images {
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .wrapper .images .img-1,
+        .wrapper .images .img-2 {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+        }
+
+        .wrapper .images .img-2 {
+            position: absolute;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .wrapper .slider {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+
+        .wrapper .slider input[type="range"]::-webkit-slider-thumb {
+            height: 300px;
+        }
+
+        .slider .drag-line {
+            height: 300px;
+        }
+
+        .slider .drag-line::before,
+        .slider .drag-line::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 500px;
+            background: #fff;
+        }
+
+        .slider .drag-line::before {
+            top: 0;
+        }
+
+        .slider .drag-line::after {
+            bottom: 0;
+        }
+
+        .slider .drag-line span {
+            height: 42px;
+            width: 42px;
+            border: 3px solid #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .slider .drag-line span::before,
+        .slider .drag-line span::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            border: 10px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .slider .drag-line span::before {
+            left: 40%;
+            border-left-color: #fff;
+        }
+
+        .slider .drag-line span::after {
+            left: 60%;
+            border-top-color: #fff;
+        }
+
+        .label-before,
+        .label-after {
+            font-size: 12px;
+            padding: 3px;
+        }
     }
 
-    .wrapper .images {
-        height: 100%;
-        width: 100%;
-        display: flex;
+    /* Extra Small Screens */
+    @media (max-width: 480px) {
+        .wrapper {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper .images {
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .wrapper .images .img-1,
+        .wrapper .images .img-2 {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+        }
+
+        .wrapper .images .img-2 {
+            position: absolute;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .wrapper .slider {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .wrapper .slider input[type="range"]::-webkit-slider-thumb {
+            height: 200px;
+        }
+
+        .slider .drag-line {
+            height: 200px;
+        }
+
+        ..slider .drag-line::before,
+        .slider .drag-line::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 500px;
+            background: #fff;
+        }
+
+        .slider .drag-line::before {
+            top: 0;
+        }
+
+        .slider .drag-line::after {
+            bottom: 0;
+        }
+
+        .slider .drag-line span {
+            height: 42px;
+            width: 42px;
+            border: 3px solid #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .slider .drag-line span::before,
+        .slider .drag-line span::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            border: 10px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .slider .drag-line span::before {
+            left: 40%;
+            border-left-color: #fff;
+        }
+
+        .slider .drag-line span::after {
+            left: 60%;
+            border-top-color: #fff;
+        }
+
+        .label-before,
+        .label-after {
+            font-size: 10px;
+            padding: 2px;
+        }
     }
-
-    .wrapper .images .img-1,
-    .wrapper .images .img-2 {
-        height: 100%;
-        width: 100%;
-        background-size: cover;
-    }
-
-    .wrapper .images .img-2 {
-        position: absolute;
-        width: 50%;
-        overflow: hidden;
-    }
-
-    .wrapper .slider {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 10;
-    }
-
-
-    .wrapper .slider input[type="range"]::-webkit-slider-thumb {
-        height: 300px;
-    }
-
-    .slider .drag-line {
-        height: 300px;
-    }
-
-    .slider .drag-line::before,
-    .slider .drag-line::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 500px;
-        background: #fff;
-    }
-
-    .slider .drag-line::before {
-        top: 0;
-    }
-
-    .slider .drag-line::after {
-        bottom: 0;
-    }
-
-    .slider .drag-line span {
-        height: 42px;
-        width: 42px;
-        border: 3px solid #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .slider .drag-line span::before,
-    .slider .drag-line span::after {
-        position: absolute;
-        content: "";
-        top: 50%;
-        border: 10px solid transparent;
-        border-bottom-width: 0px;
-        border-right-width: 0px;
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    .slider .drag-line span::before {
-        left: 40%;
-        border-left-color: #fff;
-    }
-
-    .slider .drag-line span::after {
-        left: 60%;
-        border-top-color: #fff;
-    }
-
-    .label-before,
-    .label-after {
-        font-size: 12px;
-        padding: 3px;
-    }
-}
-
-/* Extra Small Screens */
-@media (max-width: 480px) {
-    .wrapper {
-        position: relative;
-        height: 200px;
-        width: 100%;
-        max-width: 500px;
-        overflow: hidden;
-        background: #fff;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .wrapper .images {
-        height: 100%;
-        width: 100%;
-        display: flex;
-    }
-
-    .wrapper .images .img-1,
-    .wrapper .images .img-2 {
-        height: 100%;
-        width: 100%;
-        background-size: cover;
-    }
-
-    .wrapper .images .img-2 {
-        position: absolute;
-        width: 50%;
-        overflow: hidden;
-    }
-
-    .wrapper .slider {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 10;
-    }
-
-    .wrapper .slider input[type="range"]::-webkit-slider-thumb {
-        height: 200px;
-    }
-
-    .slider .drag-line {
-        height: 200px;
-    }
-
-    ..slider .drag-line::before,
-    .slider .drag-line::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 500px;
-        background: #fff;
-    }
-
-    .slider .drag-line::before {
-        top: 0;
-    }
-
-    .slider .drag-line::after {
-        bottom: 0;
-    }
-
-    .slider .drag-line span {
-        height: 42px;
-        width: 42px;
-        border: 3px solid #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .slider .drag-line span::before,
-    .slider .drag-line span::after {
-        position: absolute;
-        content: "";
-        top: 50%;
-        border: 10px solid transparent;
-        border-bottom-width: 0px;
-        border-right-width: 0px;
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    .slider .drag-line span::before {
-        left: 40%;
-        border-left-color: #fff;
-    }
-
-    .slider .drag-line span::after {
-        left: 60%;
-        border-top-color: #fff;
-    }
-
-    .label-before,
-    .label-after {
-        font-size: 10px;
-        padding: 2px;
-    }
-}
-
-
 </style>
 
 
@@ -371,7 +369,8 @@
         <div class="overlay"></div>
         <div class="banner-content">
             <h4> {{ __('front_end.slider_title') }}
-            <span>{{ __('front_end.slider_title2') }}</span></h4>
+                <span>{{ __('front_end.slider_title2') }}</span>
+            </h4>
             <p>{{ __('front_end.slider_desc') }}</p>
             <a href="{{ route('dranas') }}" class="primary-btn1 hover-btn3">{{ __('front_end.slider_btn') }}</a>
         </div>
@@ -469,7 +468,9 @@
     <!-- Start About section  -->
     <div style="background-color: #fff;padding-top:50px;padding-bottom:50px" class="makeup-section mb-110">
         <div class="container">
+
             <div class="makeup-top-item">
+
                 <div class="row align-items-center justify-content-center mb-4 g-0 gy-4">
                     <div class="col-lg-5">
                         <div class="makeup-img hover-img">
@@ -478,13 +479,13 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="makeup-content1">
-                            <span><b> {{ __('front_end.nav_Dr_Anas') }}</b></span>
+                            <div class="section-title2 style-2">
+                                <h3>{{ __('front_end.nav_Dr_Anas') }}</h3>
+                            </div>
                             <p id="aboutUsDrParagraph" class="article-card-content">
-
-
                                 <!-- For smaller screens -->
                                 <span class="d-block d-lg-none">
-                                    {!! Str::limit($about->AboutUsDr, 750) !!}
+                                    {!! Str::limit($about->AboutUsDr, 700) !!}
                                 </span>
                             </p>
                             <a href="{{ route('dranas') }}"
@@ -494,15 +495,17 @@
                 </div>
             </div>
             <div class="row align-items-center justify-content-center mb-4 g-0 gy-4 ">
-                <div class="col-lg-8 order-lg-1 order-2">
+                <div class="col-lg-8">
                     <div class="makeup-content">
-                        <span><b>{{ __('front_end.home_AboutClinic') }}</b></span>
+                        <div class="section-title2 style-2">
+                            <h3>{{ __('front_end.home_AboutClinic') }}</h3>
+                        </div>
                         <p style="">{!! Str::limit($about->AboutUsClinic, 778) !!}</p>
                         <a href="{{ route('aboutClinic') }}"
                             class="primary-btn1 style-2 hover-btn3">{{ __('front_end.btn_ReadMore') }}</a>
                     </div>
                 </div>
-                <div class="col-lg-4 order-lg-2 order-1">
+                <div class="col-lg-4">
                     <div class="makeup-img hover-img">
                         <img src="{{ asset('front_end_style/assets/img/home1/makeup-img2.png') }}" alt="">
                     </div>
@@ -572,7 +575,7 @@
     @endif
     <!-- End Treatment section -->
 
-<!-- Start Before & After section  -->
+    <!-- Start Before & After section  -->
     <div class="just-for-section">
         <img src="{{ asset('front_end_style/assets/img/home1/icon/vector-1.svg') }}" alt="" class="vector1">
         <img src="{{ asset('front_end_style/assets/img/home1/icon/vector-2.svg') }}" alt="" class="vector2">
@@ -580,7 +583,7 @@
             <div class="section-title2 style-2">
                 <h3>{{ __('front_end.BeforeandAfter') }}</h3>
                 <div class="all-product hover-underline">
-                    <a href="{{route('gallery')}}">* {{ __('front_end.View_All') }}
+                    <a href="{{ route('gallery') }}">* {{ __('front_end.View_All') }}
                         <svg width="33" height="13" viewBox="0 0 33 13" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M25.5083 7.28L0.491206 7.25429C0.36093 7.25429 0.23599 7.18821 0.143871 7.0706C0.0517519 6.95299 0 6.79347 0 6.62714C0 6.46081 0.0517519 6.3013 0.143871 6.18369C0.23599 6.06607 0.36093 6 0.491206 6L25.5088 6.02571C25.6391 6.02571 25.764 6.09179 25.8561 6.2094C25.9482 6.32701 26 6.48653 26 6.65286C26 6.81919 25.9482 6.9787 25.8561 7.09631C25.764 7.21393 25.6386 7.28 25.5083 7.28Z" />
@@ -627,8 +630,6 @@
     </div>
     <!-- End Before & After section  -->
 
-
-
     <!-- Start Blogs section  -->
     @if (isset($blogs) && $blogs->count() > 0)
         <div style="background-color: #fff;padding-top:120px;padding-bottom:120px" class="beauty-article-section mb-110">
@@ -636,7 +637,7 @@
                 <div class="section-title2 style-2">
                     <h3>{{ __('front_end.home_BlogsArticles') }}</h3>
                     <div class="all-product hover-underline">
-                        <a href="{{route('blogs')}}">* {{ __('front_end.View_All') }}
+                        <a href="{{ route('blogs') }}">* {{ __('front_end.View_All') }}
                             <svg width="33" height="13" viewBox="0 0 33 13" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M25.5083 7.28L0.491206 7.25429C0.36093 7.25429 0.23599 7.18821 0.143871 7.0706C0.0517519 6.95299 0 6.79347 0 6.62714C0 6.46081 0.0517519 6.3013 0.143871 6.18369C0.23599 6.06607 0.36093 6 0.491206 6L25.5088 6.02571C25.6391 6.02571 25.764 6.09179 25.8561 6.2094C25.9482 6.32701 26 6.48653 26 6.65286C26 6.81919 25.9482 6.9787 25.8561 7.09631C25.764 7.21393 25.6386 7.28 25.5083 7.28Z" />
@@ -688,35 +689,35 @@
     <!-- End Blogs section  -->
 
 
-<!-- Start HomeBlog section -->
-<div class="newsletter-section mb-110">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="newsletter-banner hover-img">
-                    <div class="newsletter-content">
-                        <h2> {{ __('front_end.HomeBlog_Title') }}</h2>
-                        <p class="short-text"> {{ __('front_end.HomeBlog_Desc') }}</p>
-                        <div class="full-text home-more-content" style="display: none;">
-                            <p>
-                                {{ __('front_end.HomeBlog_Readmore') }}
-                            </p>
-                            <p>
-                                {{ __('front_end.keywords_home_blog') }}
-                            </p>
+    <!-- Start HomeBlog section -->
+    <div class="newsletter-section mb-110">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="newsletter-banner hover-img">
+                        <div class="newsletter-content">
+                            <h2> {{ __('front_end.HomeBlog_Title') }}</h2>
+                            <p class="short-text"> {{ __('front_end.HomeBlog_Desc') }}</p>
+                            <div class="full-text home-more-content" style="display: none;">
+                                <p>
+                                    {{ __('front_end.HomeBlog_Readmore') }}
+                                </p>
+                                <p>
+                                    {{ __('front_end.keywords_home_blog') }}
+                                </p>
+                            </div>
+
+
+                            <a href="javascript:void(0)" class="read-more-blog" onclick="toggleContent(this)">
+                                {{ __('front_end.btn_Read_More') }}
+                            </a>
                         </div>
-
-
-                        <a href="javascript:void(0)" class="read-more-blog" onclick="toggleContent(this)">
-                            {{ __('front_end.btn_Read_More') }}
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End HomeBlog section -->
+    <!-- End HomeBlog section -->
 
 
 
@@ -785,9 +786,5 @@
         </div>
     </div>
     <!-- End Instagram section section -->
-
-
-
-
 
 @endsection
