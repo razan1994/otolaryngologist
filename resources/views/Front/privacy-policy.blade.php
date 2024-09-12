@@ -51,28 +51,51 @@
     </div>
     <!-- End Breadcrumb Section section -->
 
-    <!-- Start About Us Banner Section -->
-    <div class="about-us-banner mt-40  mb-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-us-thumb hover-img mb-60">
-                        <img src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}"
-                            alt="">
+
+
+        <!-- Start About Us Banner Section -->
+        <div class="about-us-banner mt-40  mb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about-us-thumb hover-img mb-60">
+                            <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, جراحة الأنف والجيوب الأنفية في عمان, تقنيات متقدمة في طب الأنف والأذن والحنجرة, أمراض وعلاجات الأنف والأذن والحنجرة, أفضل عيادة أنف وأذن وحنجرة في عمان الأردن, رعاية ENT موثوقة في عمان,Dr. Anas Abu Shamla Clinic, Comprehensive Ear, Nose and Throat Services, Best ENT Specialist in Amman Jordan, Nose and Sinus Surgery in Amman, Advanced Otorhinolaryngology Techniques, Ear, Nose and Throat Diseases and Treatments, Best ENT Clinic in Amman Jordan, Reliable ENT Care in Amman" src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}" >
+
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- Start About Us Content Section section -->
+            <div class="about-us-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title2 style-2">
+                            <h3>{!! $privacy->PrivacyPolicyTitle !!}</h3>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="about-us-wrapper">
+                                <p><strong>{{ __('front_end.privacy_subTitle') }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End About Us Content Section section -->
         </div>
+        <!-- End About Us Banner Section -->
 
 
+
+    <!-- Start About Us Banner Section -->
+    <div class="about-us-banner mt-40  mb-40">
         <!-- Start About Us Content Section section -->
         <div class="about-us-content">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="about-us-wrapper">
-
-                            <p>{!! $privacy->PrivacyPolicyTitle !!}</p>
                             <p>{!! $privacy->PrivacyPolicyDes !!}</p>
                         </div>
                     </div>
@@ -84,7 +107,7 @@
     <!-- End About Us Banner Section -->
 
     <!-- Start Instagram section section -->
-    <div class="instagram-section mb-40">
+    <div class="instagram-section mt-110  mb-110">
         <div class="container">
             <div class="section-title style-3">
                 <h3>{{ __('front_end.instagramfeeds_title') }}</h3>

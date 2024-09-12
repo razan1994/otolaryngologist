@@ -645,6 +645,9 @@ Nosebleeds,',
 
 'footer_title_dr' => 'Dr. Anas Abu Shamleh',
 'footer_title_specialty' => 'Specialist in Otolaryngology and Rhinoplasty Surgery',
-
-
+'blog_subTitle' => 'Latest specialized medical articles and advice in the field of ear, nose, and throat from Dr. Anas Abu Shamleh, best ENT (ear, nose, and throat) specialist in Amman, Jordan, helping you gain a better understanding of your health and available treatment solutions.',
+'Before&After_subTitle' => 'Explore the results of rhinoplasty through photos showing noticeable changes before and after the procedure, and learn about the improvements that can be achieved thanks to the expertise of Dr. Anas Abu Shamleh, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty in this field.',
+'FAQ_subTitle'=>'Explore the frequently asked questions about our ear, nose, and throat procedures with Dr. Anas Abu Shamleh, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. Here you will find comprehensive answers to common issues, treatments, surgeries, and cosmetic procedures, helping you obtain the information you need and addressing any questions you may have.',
+'privacy_subTitle'=>'Learn how your personal data and information security are protected at Dr. Anas Abu Shamlehs clinic, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. We are committed to safeguarding your privacy and explaining how we use your personal information.',
+'terms_subTitle'=>'Learn about the terms and conditions that govern your use of our website and services at Dr. Anas Abu Shamlehs clinic, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. Please read these terms carefully to ensure you fully understand your rights and responsibilities when using our site.',
 ];

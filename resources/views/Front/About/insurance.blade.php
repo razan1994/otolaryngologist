@@ -61,7 +61,10 @@
                 <div class="col-12">
                     <div class="about-us-thumb hover-img mb-60">
                         <img src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}"
-                            alt="">
+                            alt="الدكتور أنس أبو شملة -  اختصاصي أنف وأذن وحنجرة معتمد في الأردن, استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
+الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
+Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan
+">
                     </div>
                 </div>
             </div>
@@ -72,6 +75,9 @@
         <div class="about-us-content">
             <div class="container">
                 <div class="row">
+                    <div class="section-title2 style-2">
+                        <h3>{{ __('front_end.nav_Certified') }}</h3>
+                    </div>
                     <div class="col-lg-12">
                         <div class="about-us-wrapper">
                             <p><strong>{{ __('front_end.Insurance_Certified1') }}</strong></p>
@@ -96,8 +102,8 @@
                                     <div class="product-card-img double-img">
                                         <a href="#">
                                             @if (isset($insurance->image) && file_exists($insurance->image))
-                                                <img src="{{ asset($insurance->image) }}" alt="" class="img1">
-                                                <img src="{{ asset($insurance->image) }}" alt="" class="img2">
+                                                <img src="{{ asset($insurance->image) }}" alt="{{ $insurance->alt }}" class="img1">
+                                                <img src="{{ asset($insurance->image) }}" alt="{{ $insurance->alt }}" class="img2">
                                             @endif
                                         </a>
                                     </div>

@@ -48,20 +48,46 @@
     </div>
     <!-- End Breadcrumb Section section -->
 
-    <!-- Start About Us Banner Section -->
-    <div class="about-us-banner mt-40  mb-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-us-thumb hover-img mb-60">
-                        <img src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}"
-                            alt="">
+
+        <!-- Start About Us Banner Section -->
+        <div class="about-us-banner mt-40  mb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about-us-thumb hover-img mb-60">
+                            <img alt="الدكتور أنس أبو شملة -  اختصاصي أنف وأذن وحنجرة معتمد في الأردن, استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
+الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن, أفضل جراح أنف وأذن وحنجرة في الأردن
+Dr. Anas Abu Shamleh - A certified Ear, Nose, and Throat (ENT) specialist in Jordan, consultant for endoscopic surgeries of the nose, ears, and throat, as well as rhinoplasty. He is an expert in treating ear, nose, and throat diseases, a member of the Jordanian Surgeons Association and the Jordan Medical Association. He is considered one of the best ENT doctors in Amman, Jordan, and a leading ENT surgeon in Jordan" src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}" >
+
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- Start About Us Content Section section -->
+            <div class="about-us-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title2 style-2">
+                            <h3>{!! $term_and_conditions->TermAndConditionTitle !!}</h3>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="about-us-wrapper">
+                                <p><strong>{{ __('front_end.terms_subTitle') }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End About Us Content Section section -->
         </div>
+        <!-- End About Us Banner Section -->
 
 
+
+    <!-- Start About Us Banner Section -->
+    <div class="about-us-banner mt-40  mb-40">
         <!-- Start About Us Content Section section -->
         <div class="about-us-content">
             <div class="container">

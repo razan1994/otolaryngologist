@@ -39,7 +39,40 @@
         </div>
     </div>
     <!-- End Breadcrumb Section section -->
-    <div class="contact-page pt-40 mb-40">
+
+
+        <!-- Start About Us Banner Section -->
+        <div class="about-us-banner mt-40  mb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about-us-thumb hover-img mb-60">
+                            <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف في عمان الأردن, طرق التواصل مع عيادة الدكتور أنس أبو شملة, اتصل بنا
+, معلومات الاتصال, نموذج الاتصال, استفسر عن خدماتنا, خريطة الموقع وعنواننا, Dr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best consultant for ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty in Amman, Jordan, ways to contact Dr. Anas Abu Shamleh Clinic, contact us, contact information, contact form, inquire about our services, site map and our address
+" src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}" >
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Start About Us Content Section section -->
+            <div class="about-us-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title2 style-2">
+                            <h3>{{ __('front_end.nav_ContactUs') }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End About Us Content Section section -->
+        </div>
+        <!-- End About Us Banner Section -->
+
+
+    <div class="contact-page">
         <div class="container">
 
             <div class="row g-4 mb-40">

@@ -60,7 +60,7 @@
             <div class="col-12">
                 <div class="about-us-thumb hover-img mb-60">
                     <img src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}"
-                        alt="">
+                        alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, جراحة الأنف والجيوب الأنفية في عمان, تقنيات متقدمة في طب الأنف والأذن والحنجرة, أمراض وعلاجات الأنف والأذن والحنجرة, أفضل عيادة أنف وأذن وحنجرة في عمان الأردن, رعاية ENT موثوقة في عمان,Dr. Anas Abu Shamla Clinic, Comprehensive Ear, Nose and Throat Services, Best ENT Specialist in Amman Jordan, Nose and Sinus Surgery in Amman, Advanced Otorhinolaryngology Techniques, Ear, Nose and Throat Diseases and Treatments, Best ENT Clinic in Amman Jordan, Reliable ENT Care in Amman">
                 </div>
             </div>
         </div>
@@ -72,11 +72,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="about-us-wrapper">
-
+                        <div class="section-title2 style-2">
+                            <h3>{{ __('front_end.home_AboutClinic') }}</h3>
+                        </div>
                         <p>{!! $about->AboutUsClinic !!}</p>
-                        <h1>{{__('front_end.OurClinic_Ourvision')}}</h1>
+                        <div class="section-title2 style-2">
+                            <h3>{{ __('front_end.OurClinic_Ourvision') }}</h3>
+                        </div>
                         <p>{!! $about->vision !!}</p>
-                        <h1>{{__('front_end.OurClinic_OurMission')}}</h1>
+                        <div class="section-title2 style-2">
+                            <h3>{{ __('front_end.OurClinic_OurMission') }}</h3>
+                        </div>
                         <p>{!! $about->mission !!}</p>
                     </div>
                 </div>

@@ -56,18 +56,44 @@
     </div>
     <!-- End Breadcrumb Section section -->
 
+        <!-- Start About Us Banner Section -->
+        <div class="about-us-banner mt-40  mb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about-us-thumb hover-img mb-60">
+                            <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, مقالات طبية حول الأذن والأنف والحنجرة, أحدث المقالات الطبية في تخصص الأنف والأذن والحنجرة, مقالات طبية متخصصة من عيادة الدكتور أنس, مدونات طبية عن الأذن والأنف والحنجرة, Dr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best ENT specialist in Amman, Jordan, medical articles about ear, nose, and throat, the latest medical articles in the ENT specialty, specialized medical articles from Dr. Anas Clinic, medical blogs about ear, nose, and throat" src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Start About Us Content Section section -->
+            <div class="about-us-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title2 style-2">
+                            <h3>{!! $news_blog->title !!}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End About Us Content Section section -->
+        </div>
+        <!-- End About Us Banner Section -->
+
     <!-- Start Blog Details section -->
-    <div class="blog-details-section mt-40 mb-40">
+    <div class="blog-details-section mt-10 mb-10">
         <div class="container">
             <div class="row g-lg-4 gy-5">
                 <div class="col-lg-8">
                     <div class="blog-thumb">
-                        <img src="{{ asset($news_blog->image) }}" alt="Blog Thumbnail">
+                        <img src="{{ asset($news_blog->image) }}" alt="{!! $news_blog->ImageTitle !!}">
                         <p>{!! \Carbon\Carbon::parse($news_blog->created_at)->translatedFormat('j F Y') !!}</p>
                     </div>
 
                     <div class="blog-content">
-                        <h4>{!! $news_blog->title !!}</h4>
                         <p>{!! $news_blog->description !!}</p>
                     </div>
                 </div>
@@ -81,7 +107,7 @@
                                     <div class="recent-post-img">
                                         <a href="{{ route('blog-details', $recentBlog->alias_name) }}">
                                             <img src="{{ asset($recentBlog->image) }}"
-                                                alt="{{ $recentBlog->alt_text_en }}">
+                                                alt="{{ $recentBlog->ImageTitle }}">
                                         </a>
                                     </div>
                                     <div class="recent-post-content">
@@ -106,5 +132,70 @@
     <!-- End Blog Details section -->
 
 
+
+    <!-- Start Instagram  section -->
+    <div class="instagram-section mb-110">
+        <div class="container">
+            <div class="section-title style-3">
+                <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
+                <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
+                        href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
+                </p>
+            </div>
+        </div>
+        <div class="instagram-wrapper">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="swiper instagram-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram section -->
 
 @endsection

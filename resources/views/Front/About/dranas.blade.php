@@ -53,13 +53,16 @@
     <!-- End Breadcrumb Section section -->
 
     <!-- Start About DR Section -->
-    <div class="about-us-banner mt-110  mb-110">
+    <div class="about-us-banner mt-40  mb-40">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="about-us-thumb hover-img mb-60">
                         <img src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}"
-                            alt="">
+                            alt="الدكتور أنس أبو شملة -  اختصاصي أنف وأذن وحنجرة معتمد في الأردن, استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
+الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
+Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan
+">
                     </div>
                 </div>
             </div>
@@ -72,7 +75,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="about-us-wrapper">
-                            <h1>{{ __('front_end.top_nav_text') }}</h1>
+                            <div class="section-title2 style-2">
+                                <h3>{{ __('front_end.nav_Dr_Anas') }}</h3>
+                            </div>
                             <p>{!! $about->AboutUsDr !!}</p>
                         </div>
                     </div>

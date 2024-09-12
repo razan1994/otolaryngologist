@@ -55,17 +55,35 @@
 
 
     <!-- Start About Us Banner Section -->
-    <div class="about-us-banner mt-40 ">
+    <div class="about-us-banner mt-40  mb-40">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="about-us-thumb hover-img mb-60">
-                        <img src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}"
-                            alt="">
+                        <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف في عمان الأردن, توضيحات حول خدماتنا في عيادة الدكتور أنس ابوشملة أسئلة متكررة حول , خدماتنا, توضيحات حول خدماتنا, الأسئلة المتكررةDr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best consultant for ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty in Amman, Jordan, explanations about our services at Dr. Anas Abu Shamleh Clinic, frequently asked questions about our services, clarifications about our services, frequently asked questions" src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}" >
+
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- Start About Us Content Section section -->
+        <div class="about-us-content">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title2 style-2">
+                        <h3>{{ __('front_end.FAQ_FAQGet') }}</h3>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="about-us-wrapper">
+                            <p><strong>{{ __('front_end.FAQ_subTitle') }}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End About Us Content Section section -->
     </div>
     <!-- End About Us Banner Section -->
 
@@ -109,5 +127,70 @@
             <!-- End Faq section -->
     @endif
 
+
+        <!-- Start Instagram section section -->
+        <div class="instagram-section mt-110  mb-110">
+            <div class="container">
+                <div class="section-title style-3">
+                    <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
+                    <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
+                            href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
+                    </p>
+                </div>
+            </div>
+            <div class="instagram-wrapper">
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="swiper instagram-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Instagram section section -->
 
 @endsection

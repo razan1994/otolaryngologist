@@ -213,7 +213,7 @@
                 <div class="col-12">
                     <div class="about-us-thumb hover-img mb-60">
                         <img src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}"
-                            alt="">
+                            alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, مقالات طبية حول الأذن والأنف والحنجرة, الإجراءات الطبية في عيادة الدكتور أنس أبوشملة, جراحة الأنف والأذن والحنجرة في , Dr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best ENT specialist in Amman, Jordan, medical articles about ear, nose, and throat, medical procedures at Dr. Anas Abu Shamleh Clinic, ear, nose, and throat surgery in Amman, the best medical services for treating ear, nose, and throat, specialized treatments for ear, nose, and throat conditions عمان, فضل خدمات طبية لعلاج الأذن والأنف والحنجرة, العلاجات المتخصصة لحالات الأذن والأنف والحنجرة">
                     </div>
                 </div>
             </div>
@@ -225,10 +225,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
+                        <div class="section-title2 style-2">
+                            <h3>{{ __('front_end.nav_Treatments') }}</h3>
+                        </div>
                         <div class="about-us-wrapper">
-
                             <p>{{ __('front_end.ourTreatments_Treatments1') }}</p>
-
                         </div>
                     </div>
                 </div>
@@ -250,8 +251,8 @@
                                     <div class="product-card-img double-img">
                                         <a href="{{ route('treatments-details', [$treatment->alias_name]) }}">
                                             @if (isset($treatment->image) && file_exists($treatment->image))
-                                                <img src="{{ asset($treatment->image) }}" alt="" class="img1">
-                                                <img src="{{ asset($treatment->image) }}" alt="" class="img2">
+                                                <img src="{{ asset($treatment->image) }}" alt="{{ $treatment->alt_text_en }}" class="img1">
+                                                <img src="{{ asset($treatment->image) }}" alt="{{ $treatment->alt_text_en }}" class="img2">
                                             @endif
                                         </a>
                                         <div class="overlay">

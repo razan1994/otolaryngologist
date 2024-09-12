@@ -183,6 +183,41 @@
         </div>
     </div>
 
+
+        <!-- Start About Us Banner Section -->
+        <div class="about-us-banner mt-40  mb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about-us-thumb hover-img mb-60">
+                            <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف في عمان الأردن, قبل وبعد عملية تجميل الأنف, نتائج قبل وبعد, صور قبل وبعد العلاج
+, نتائج العلاج قبل وبعد, قبل وبعد النتائج الطبيةصور تجميل الأنف قبل وبعد العملية, Dr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best ENT consultant for endoscopic sinus surgery and rhinoplasty in Amman, Jordan, before and after rhinoplasty, results before and after, before and after treatment photos, treatment results before and after, before and after medical results, rhinoplasty photos before and after the procedure" src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}" >
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Start About Us Content Section section -->
+            <div class="about-us-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title2 style-2">
+                            <h3>{{ __('front_end.BeforeandAfter') }}</h3>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="about-us-wrapper">
+                                <p><strong>{{ __('front_end.Before&After_subTitle') }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End About Us Content Section section -->
+        </div>
+        <!-- End About Us Banner Section -->
+
     <!-- Start Blog Grid Left Sidebar section -->
     <div dir="{{ App::isLocale('ar') ? 'ltr' : 'ltr' }}" class="blog-masonary-section mt-40 mb-40">
         <div class="container-xl container-fluid">
@@ -223,23 +258,80 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
                         </div>
                     @endforeach
-
-
-
-
                 </div>
 
             </div>
         </div>
     </div>
     <!-- End Blog Grid Left Sidebar section -->
+
+
+        <!-- Start Instagram section section -->
+        <div class="instagram-section mb-110">
+            <div class="container">
+                <div class="section-title style-3">
+                    <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
+                    <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
+                            href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
+                    </p>
+                </div>
+            </div>
+            <div class="instagram-wrapper">
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="swiper instagram-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/"><img
+                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Instagram section section -->
 
     <script>
         document.querySelectorAll('.wrapper').forEach(wrapper => {
