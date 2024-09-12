@@ -216,12 +216,13 @@
                 @if (Config::get('app.locale') == 'en')
                     <a href="{{ route('welcome') }}">
                         <img src="{{ asset('front_end_style/assets/img/home1/logo.png') }}"
-                            alt="Company Logo English" class="img-fluid">
+                            alt="Dr. Anas Abu Shamleh - A certified Ear, Nose, and Throat (ENT) specialist in Jordan, consultant for endoscopic surgeries of the nose, ears, and throat, as well as rhinoplasty. He is an expert in treating ear, nose, and throat diseases, a member of the Jordanian Surgeons Association and the Jordan Medical Association. He is considered one of the best ENT doctors in Amman, Jordan, and a leading ENT surgeon in Jordan." class="img-fluid">
                     </a>
                 @else
                     <a href="{{ route('welcome') }}">
                         <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" class="img-fluid"
-                            alt="شعار الشركة">
+                            alt="الدكتور أنس أبو شملة -  اختصاصي أنف وأذن وحنجرة معتمد في الأردن, استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
+الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن, أفضل جراح أنف وأذن وحنجرة في الأردن>
                     </a>
                 @endif
             </div>
@@ -229,11 +230,13 @@
                 @if (Config::get('app.locale') == 'en')
                     <a href="{{ route('welcome') }}">
                         <img src="{{ asset('front_end_style/assets/img/home1/logo.png') }}"
-                            alt="Company Logo English">
+                            alt="Dr. Anas Abu Shamleh - A certified Ear, Nose, and Throat (ENT) specialist in Jordan, consultant for endoscopic surgeries of the nose, ears, and throat, as well as rhinoplasty. He is an expert in treating ear, nose, and throat diseases, a member of the Jordanian Surgeons Association and the Jordan Medical Association. He is considered one of the best ENT doctors in Amman, Jordan, and a leading ENT surgeon in Jordan.">
                     </a>
                 @else
                     <a href="{{ route('welcome') }}">
-                        <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" alt="شعار الشركة">
+                        <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" alt="الدكتور أنس أبو شملة -  اختصاصي أنف وأذن وحنجرة معتمد في الأردن, استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
+الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن, أفضل جراح أنف وأذن وحنجرة في الأردن
+">
                     </a>
                 @endif
             </div>
@@ -243,12 +246,14 @@
                         @if (Config::get('app.locale') == 'en')
                             <a href="{{ route('welcome') }}">
                                 <img src="{{ asset('front_end_style/assets/img/home1/logo.png') }}"
-                                    alt="Company Logo English">
+                                    alt="Dr. Anas Abu Shamleh - A certified Ear, Nose, and Throat (ENT) specialist in Jordan, consultant for endoscopic surgeries of the nose, ears, and throat, as well as rhinoplasty. He is an expert in treating ear, nose, and throat diseases, a member of the Jordanian Surgeons Association and the Jordan Medical Association. He is considered one of the best ENT doctors in Amman, Jordan, and a leading ENT surgeon in Jordan.">
                             </a>
                         @else
                             <a href="{{ route('welcome') }}">
                                 <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}"
-                                    alt="شعار الشركة">
+                                    alt="الدكتور أنس أبو شملة -  اختصاصي أنف وأذن وحنجرة معتمد في الأردن, استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
+الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن, أفضل جراح أنف وأذن وحنجرة في الأردن
+">
                             </a>
                         @endif
                     </div>

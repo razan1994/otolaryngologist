@@ -105,8 +105,6 @@ class Blogs extends Model
         }
     }
 
-
-
     public function getSeoTitleAttribute()
     {
 
