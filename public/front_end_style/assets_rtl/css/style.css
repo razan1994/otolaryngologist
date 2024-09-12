@@ -2620,7 +2620,7 @@ header .main-menu>ul>li.menu-item-has-children .mega-menu2 .megamenu-wrap .menu-
         font-size: 15px;
         font-weight: 500;
         font-family: var(--font-yeseva);
-        color: var(--title-color);
+        color: var(--primary-color1);
         white-space: nowrap;
     }
 }
