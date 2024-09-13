@@ -207,7 +207,7 @@
     <!-- End Breadcrumb Section section -->
 
     <!-- Start About Us Banner Section -->
-    <div class="about-us-banner mt-40  mb-40">
+    <div class="about-us-banner mt-40 mb-40">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -241,7 +241,7 @@
 
     <!-- Start Treatment section section -->
     @if (isset($treatments) && $treatments->count() > 0)
-        <div class="newest-product-section mb-110">
+        <div class="newest-product-section mt-40 mb-110">
             <div class="container">
                 <div class="row">
                     @foreach ($treatments as $treatment)

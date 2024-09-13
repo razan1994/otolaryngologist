@@ -72,7 +72,7 @@
         <!-- End About Us Banner Section -->
 
 
-    <div class="contact-page">
+    <div class="contact-page mb-110">
         <div class="container">
 
             <div class="row g-4 mb-40">
@@ -223,6 +223,72 @@
             </div>
         </div>
     </div>
+
+
+     <!-- Start Instagram  section -->
+     <div class="instagram-section mb-110">
+        <div class="container">
+            <div class="section-title style-3">
+                <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
+                <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
+                        href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
+                </p>
+            </div>
+        </div>
+        <div class="instagram-wrapper">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="swiper instagram-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram section -->
 
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDXkzEIj9sB3J_ohqT0woVWqAJQiyRmAE"></script>

@@ -89,7 +89,7 @@
 
 
     <!-- Start About Us Banner Section -->
-    <div class="about-us-banner mt-40  mb-40">
+    <div class="about-us-banner mt-40 mb-110">
         <!-- Start About Us Content Section section -->
         <div class="about-us-content">
             <div class="container">

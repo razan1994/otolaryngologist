@@ -367,7 +367,7 @@
             <p>الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
                 الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
                 Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan."
-                 <a href="{{ asset('front_end_style/assets/videos/banner-video1.mp4') }}">Download the video</a> to view it.</p>
+            </p>
         </video>
         <div class="overlay"></div>
         <div class="banner-content">

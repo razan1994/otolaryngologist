@@ -55,7 +55,7 @@
 
 
     <!-- Start About Us Banner Section -->
-    <div class="about-us-banner mt-40  mb-40">
+    <div class="about-us-banner mt-40 mb-40">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -89,14 +89,14 @@
 
     @if (isset($faqs) && $faqs->count() > 0)
         <!-- Start Faq section -->
-        <div class="faq-section">
+        <div class="faq-section mt-40 mb-110">
             <div class="container">
                 <div class="faq-title">
 
                     <p>{{ __('front_end.FAQ_FAQGet') }}</p>
                     </h1>
                 </div>
-                <div class="row g-4 mb-40">
+                <div class="row g-4 mt-40 mb-110">
 
                     <div class="col-lg-10">
                         <div class="faq-content">

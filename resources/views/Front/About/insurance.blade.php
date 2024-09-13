@@ -92,7 +92,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
 
     <!-- Star insurances section -->
     @if (isset($insurances) && $insurances->count() > 0)
-        <div class="newest-product-section mb-110">
+        <div class="newest-product-section mt-40  mb-110">
             <div class="container">
                 <div class="row">
                     @foreach ($insurances as $insurance)
@@ -102,7 +102,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                     <div class="product-card-img double-img">
                                         <a href="#">
                                             @if (isset($insurance->image) && file_exists($insurance->image))
-                                                <img src="{{ asset($insurance->image) }}" alt="{{ $insurance->alt }}" class="img1">
+                                                <img src="{{ asset($insurance->image) }}" alt="{{ $insurance->lt }}" class="img1">
                                                 <img src="{{ asset($insurance->image) }}" alt="{{ $insurance->alt }}" class="img2">
                                             @endif
                                         </a>

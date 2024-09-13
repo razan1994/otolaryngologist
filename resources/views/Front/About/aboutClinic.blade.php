@@ -54,7 +54,7 @@
 <!-- End Breadcrumb section -->
 
 <!-- Start About Clinic Section -->
-<div class="about-us-banner mt-40  mb-40">
+<div class="about-us-banner mt-40  mb-110">
     <div class="container">
         <div class="row">
             <div class="col-12">

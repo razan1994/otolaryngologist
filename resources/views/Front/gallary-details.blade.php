@@ -433,7 +433,7 @@
     <!-- End About Us Banner Section -->
 
     <!-- Start Before & After section -->
-    <div class="blog-details-section mt-40 mb-40">
+    <div class="blog-details-section mt-40 mb-110">
         <div class="container">
             <div class="row g-lg-4 gy-5">
                 <div class="col-lg-8">
