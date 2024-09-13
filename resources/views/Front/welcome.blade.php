@@ -643,7 +643,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
 
     <!-- Start Blogs section  -->
     @if (isset($blogs) && $blogs->count() > 0)
-        <div style="background-color: #fff;padding-top:120px;padding-bottom:120px" class="beauty-article-section mb-110">
+        <div style="background-color: #fff;padding-top:70px;padding-bottom:70px" class="beauty-article-section mb-110">
             <div class="container-md container-fluid">
                 <div class="section-title2 style-2">
                     <h3>{{ __('front_end.home_BlogsArticles') }}</h3>
@@ -734,7 +734,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
 
 
     <!-- Start Instagram section section -->
-    <div class="instagram-section mb-110">
+    <div class="instagram-section mb-110 mt-110">
         <div class="container">
             <div class="section-title style-3">
                 <h3>{{ __('front_end.instagramfeeds_title') }}</h3>

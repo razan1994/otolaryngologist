@@ -70,7 +70,7 @@
     $(this).siblings().removeClass("active");
     $(this).addClass("active");
   });
- 
+
   // sidebar
   $(".filter").on("click", function (e) {
     e.stopPropagation();
@@ -158,12 +158,12 @@
   /* ---------------------------------------------
      NiceSelect
 --------------------------------------------- */
-  
+
   $("select").niceSelect();
   // cart menu
 
   $(".header-cart-btn, .search-btn").on("click", function (e) {
-         
+
         let parent  = $(this).parent();
 
         parent.find(".cart-menu, .search-input").toggleClass("active");
@@ -256,11 +256,11 @@
     },
     breakpoints: {
       280: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       386: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       576: {
@@ -291,11 +291,11 @@
     },
     breakpoints: {
       280: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       386: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       576: {
@@ -326,11 +326,11 @@
     },
     breakpoints: {
       280: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       386: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       576: {
@@ -361,11 +361,11 @@
     },
     breakpoints: {
       280: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       386: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       576: {
@@ -396,11 +396,11 @@
     },
     breakpoints: {
       280: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       386: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       576: {
@@ -736,7 +736,7 @@
     },
     breakpoints: {
       280: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       386: {
@@ -764,9 +764,9 @@
   });
 
  /// active sidebar item added active class
- 
+
 /// active  slider item
-$(".swiper-slide .nav-item .nav-link ").on("click",function(){  
+$(".swiper-slide .nav-item .nav-link ").on("click",function(){
   $('.swiper-slide .nav-item .nav-link').removeClass('active');
     $(this).addClass("active");
 })
@@ -843,7 +843,7 @@ $(".swiper-slide .nav-item .nav-link ").on("click",function(){
       }
     });
   });
-  
+
   //Select wrap
   $(".select-wrap").on("click", function () {
     $(this).addClass("selected").siblings().removeClass("selected");
