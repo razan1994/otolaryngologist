@@ -3401,6 +3401,8 @@ header.style-2 .nav-right::after {
     align-items: center;
 }
 
+
+
 @media (max-width: 767px) {
     .section-title2 {
         margin-bottom: 30px;
