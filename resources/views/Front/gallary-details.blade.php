@@ -370,7 +370,7 @@
 
     .label-before,
     .label-after {
-        font-size: 10px; /* Even smaller font size for extra small screens */
+        font-size: 10px; 
         padding: 2px;
     }
 }
