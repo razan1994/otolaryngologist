@@ -399,7 +399,7 @@
                                 <li><a href="tel:+9962799559157">{{ __('front_end.footer_Phone') }}
                                         {{ __('front_end.footer_No') }}</a>
                                 </li>
-                                <li><a href="dranasabushamleh82@gmail.com">{{ __('front_end.footer_Email') }} <br>
+                                <li><a href="#">{{ __('front_end.footer_Email') }} <br>
 
                                         dranasabushamleh82@gmail.com</a>
                                 </li>
