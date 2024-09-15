@@ -261,7 +261,11 @@
                         </div>
                     @endforeach
                 </div>
-
+                <nav class="shop-pagination">
+                    <nav class="shop-pagination">
+                        {{ $blogs->links('vendor.pagination.custom') }}
+                    </nav>
+                </nav>
             </div>
         </div>
     </div>
