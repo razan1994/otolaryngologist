@@ -219,7 +219,7 @@
         <!-- End About Us Banner Section -->
 
   <!-- Start Blog Grid Left Sidebar section -->
-<div dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}" class="blog-masonary-section mt-40 mb-110">
+<div dir="{{ App::isLocale('ar') ? 'ltr' : 'ltr' }}" class="blog-masonary-section mt-40 mb-110">
     <div class="container-xl container-fluid">
         <div class="blog-masonary mb-80">
             <div class="row justify-content-center g-4 mb-50">
