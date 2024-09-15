@@ -299,9 +299,6 @@
             outline: none;
         }
 
-        #icon {
-            width: 60%;
-        }
     </style>
 
 </head>
