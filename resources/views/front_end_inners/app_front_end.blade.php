@@ -238,14 +238,14 @@
                 <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
                     <div class="mobile-logo-wrap">
                         @if (Config::get('app.locale') == 'en')
-                            <a href="{{ route('welcome') }}">
-                                <img src="{{ asset('front_end_style/assets/img/home1/logo.png') }}" >
-                            </a>
-                        @else
-                            <a href="{{ route('welcome') }}">
-                                <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" >
-                            </a>
-                        @endif
+                        <a href="{{ route('welcome') }}">
+                            <img src="{{ asset('front_end_style/assets/img/home1/logo.png') }}">
+                        </a>
+                    @else
+                        <a href="{{ route('welcome') }}">
+                            <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}">
+                        </a>
+                    @endif
                     </div>
                 </div>
                 <ul class="menu-list">

@@ -1000,7 +1000,7 @@ header .header-logo {
 
 @media (max-width: 480px) {
     header .header-logo img {
-        width: 100px;
+        width: 150px;
         height: auto;
     }
 
