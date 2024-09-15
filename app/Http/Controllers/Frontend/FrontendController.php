@@ -80,7 +80,7 @@ class FrontendController extends Controller
     public function Gallary()
     {
 
-        $photos = Photo::where('status', 1)->paginate(9);
+        $photos = Photo::where('status', 1)->paginate(12);
 
         $seo_operation = SeoOperation::where('page_name', 'Gallery')->get()->first();
         // return $photos;

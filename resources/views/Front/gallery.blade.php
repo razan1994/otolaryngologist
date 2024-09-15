@@ -218,124 +218,241 @@
         </div>
         <!-- End About Us Banner Section -->
 
-    <!-- Start Blog Grid Left Sidebar section -->
-    <div dir="{{ App::isLocale('ar') ? 'ltr' : 'ltr' }}" class="blog-masonary-section mt-40 mb-110">
-        <div class="container-xl container-fluid">
-            <div class="blog-masonary mb-80">
-                <div class="row justify-content-center g-4 mb-50">
-                    @foreach ($photos as $photo)
-                        <div class="col-lg-3 col-sm-10">
-
-
-                            <div style="border: none" class="article-card">
-                                <div style="padding: 0px" class="article-card-content style-3">
-                                    <div class="wrapper">
-                                        <div class="images">
-                                            @if (isset($photo->image_before) &&
-                                                    isset($photo->image_after) &&
-                                                    file_exists(public_path($photo->image_before)) &&
-                                                    file_exists(public_path($photo->image_after)))
-                                                <div class="img-1"
-                                                    style="background-image: url('{{ asset($photo->image_after) }}');">
-                                                </div>
-                                                <div class="img-2"
-                                                    style="background-image: url('{{ asset($photo->image_before) }}');">
-                                                </div>
-                                            @endif
-                                        </div>
-                                        <div class="slider">
-                                            <div class="drag-line">
-                                                <span></span>
+  <!-- Start Blog Grid Left Sidebar section -->
+<div dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}" class="blog-masonary-section mt-40 mb-110">
+    <div class="container-xl container-fluid">
+        <div class="blog-masonary mb-80">
+            <div class="row justify-content-center g-4 mb-50">
+                @foreach ($photos as $photo)
+                    <div class="col-lg-3 col-sm-10">
+                        <div style="border: none" class="article-card">
+                            <div style="padding: 0px" class="article-card-content style-3">
+                                <div class="wrapper">
+                                    <div class="images">
+                                        @if (isset($photo->image_before) &&
+                                                isset($photo->image_after) &&
+                                                file_exists(public_path($photo->image_before)) &&
+                                                file_exists(public_path($photo->image_after)))
+                                            <div class="img-1"
+                                                style="background-image: url('{{ asset($photo->image_after) }}');">
                                             </div>
-                                            <input type="range" min="0" max="100" value="50">
-                                        </div>
+                                            <div class="img-2"
+                                                style="background-image: url('{{ asset($photo->image_before) }}');">
+                                            </div>
+                                        @endif
                                     </div>
-                                    <div class="article-card-content">
+                                    <div class="slider">
+                                        <div class="drag-line">
+                                            <span></span>
+                                        </div>
+                                        <input type="range" min="0" max="100" value="50">
+                                    </div>
+                                </div>
+                                <div class="article-card-content">
                                     <h6 dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}">{{ Str::limit($photo->title, 80) }}</h6>
                                     <a href="{{ route('gallery-details', $photo->alias_name) }}" dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}" class="read-more">
                                         <p>{{ __('front_end.btn_ReadMore') }}</p>
                                     </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-                <nav class="shop-pagination">
-                    <nav class="shop-pagination">
-                        {{ $blogs->links('vendor.pagination.custom') }}
-                    </nav>
-                </nav>
+                    </div>
+                @endforeach
             </div>
+            <nav class="shop-pagination">
+                {{ $photos->links('vendor.pagination.custom') }}
+            </nav>
         </div>
     </div>
-    <!-- End Blog Grid Left Sidebar section -->
+</div>
+<!-- End Blog Grid Left Sidebar section -->
 
 
-        <!-- Start Instagram section section -->
-        <div class="instagram-section mb-110">
-            <div class="container">
-                <div class="section-title style-3">
-                    <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
-                    <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
-                            href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
-                    </p>
-                </div>
-            </div>
-            <div class="instagram-wrapper">
-                <div class="container-fluid p-0">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="swiper instagram-slider">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <a href="https://www.instagram.com/"><img
-                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.instagram.com/"><img
-                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.instagram.com/"><img
-                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.instagram.com/"><img
-                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.instagram.com/"><img
-                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.instagram.com/"><img
-                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.instagram.com/"><img
-                                                src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="https://www.instagram.com/"><img
-                                                src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
-                                                alt=""></a>
-                                    </div>
-                                </div>
+
+<!-- Start Instagram section section -->
+<div class="instagram-section mb-110 mt-110">
+    <div class="container">
+        <div class="section-title style-3">
+            <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
+            <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
+                    href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
+            </p>
+        </div>
+    </div>
+    <div class="instagram-wrapper">
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="swiper instagram-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst1.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst3.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst4.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst5.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst6.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst7.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst8.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst9.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst10.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst11.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst12.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst13.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst14.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst15.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst16.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst17.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst18.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst19.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst20.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst21.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst22.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst23.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                        alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                        alt=""></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Instagram section section -->
+    </div>
+</div>
+<!-- End Instagram section section -->
 
     <script>
         document.querySelectorAll('.wrapper').forEach(wrapper => {
