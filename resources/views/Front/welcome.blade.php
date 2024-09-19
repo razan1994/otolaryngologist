@@ -360,25 +360,26 @@
 
 @section('content')
 
-    <!-- Start Video section -->
-    <div class="full-video-banner">
-        <video class="banner-video" autoplay muted loop playsinline>
-            <source src="{{ asset('front_end_style/assets/videos/banner-video1.mp4') }}" type="video/mp4">
-            <p>الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
-                الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
-                Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan."
-            </p>
-        </video>
-        <div class="overlay"></div>
-        <div class="banner-content">
-            <h4> {{ __('front_end.slider_title') }}
-                <span>{{ __('front_end.slider_title2') }}</span>
-            </h4>
-            <p>{{ __('front_end.slider_desc') }}</p>
-            <a href="{{ route('dranas') }}" class="primary-btn1 hover-btn3">{{ __('front_end.slider_btn') }}</a>
-        </div>
+   <!-- Start Video section -->
+   <div class="full-video-banner">
+    <video class="banner-video" autoplay muted loop playsinline>
+        <source src="{{ asset('front_end_style/assets/videos/banner-video1.mp4') }}" type="video/mp4">
+        <p>الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
+            الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
+            Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan."
+        </p>
+    </video>
+    <div class="overlay"></div>
+    <div class="banner-content">
+        <h4> {{ __('front_end.slider_title') }}
+            <span>{{ __('front_end.slider_title2') }}</span>
+        </h4>
+        <p>{{ __('front_end.slider_desc') }}</p>
+        <a href="{{ route('dranas') }}" class="primary-btn1 hover-btn3">{{ __('front_end.slider_btn') }}</a>
     </div>
-    <!-- End Video section -->
+</div>
+<!-- End Video section -->
+
 
     <!-- Start Blogs Features section -->
     <div class="blog-masonary-section mt-110 mb-110">
@@ -488,11 +489,13 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                 <h3>{{ __('front_end.nav_Dr_Anas') }}</h3>
                             </div>
                             <p id="aboutUsDrParagraph" class="article-card-content">
-                                <!-- For smaller screens -->
                                 <span class="d-block d-lg-none">
-                                    {!! Str::limit($about->AboutUsDr, 700) !!}
+                                    {!! Str::limit($about->AboutUsDr, 510) !!}
                                 </span>
                             </p>
+                            <div class="hover-img mb-20">
+                                <img src="{{ asset('front_end_style/assets/img/home1/signture.png') }}" alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, جراحة الأنف والجيوب الأنفية في عمان, تقنيات متقدمة في طب الأنف والأذن والحنجرة, أمراض وعلاجات الأنف والأذن والحنجرة, أفضل عيادة أنف وأذن وحنجرة في عمان الأردن, رعاية ENT موثوقة في عمان,Dr. Anas Abu Shamla Clinic, Comprehensive Ear, Nose and Throat Services, Best ENT Specialist in Amman Jordan, Nose and Sinus Surgery in Amman, Advanced Otorhinolaryngology Techniques, Ear, Nose and Throat Diseases and Treatments, Best ENT Clinic in Amman Jordan, Reliable ENT Care in Amman">
+                            </div>
                             <a href="{{ route('dranas') }}"
                                 class="primary-btn1 style-2 hover-btn3">{{ __('front_end.btn_ReadMore') }}</a>
                         </div>
@@ -505,7 +508,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                         <div class="section-title2 style-2">
                             <h3>{{ __('front_end.home_AboutClinic') }}</h3>
                         </div>
-                        <p style="">{!! Str::limit($about->AboutUsClinic, 778) !!}</p>
+                        <p style="">{!! Str::limit($about->AboutUsClinic, 650) !!}</p>
                         <a href="{{ route('aboutClinic') }}"
                             class="primary-btn1 style-2 hover-btn3">{{ __('front_end.btn_ReadMore') }}</a>
                     </div>

@@ -84,6 +84,7 @@
                             <h3>{{ __('front_end.OurClinic_OurMission') }}</h3>
                         </div>
                         <p>{!! $about->mission !!}</p>
+                        
                     </div>
                 </div>
             </div>

@@ -6427,7 +6427,7 @@ header.style-2 .nav-right::after {
     font-size: 13px;
     font-family: var(--font-Jost);
     text-transform: capitalize;
-    background-color: var(--primary-color1);
+    background-color: #42aeb9;
     padding: 5px 16px;
 }
 
@@ -6485,14 +6485,6 @@ header.style-2 .nav-right::after {
     margin-bottom: 15px;
 }
 
-.article-card .article-card-content h5 a {
-    color: var(--primary-color1);
-    font-size: 22px;
-    font-family: var(--font-Jost);
-    font-weight: 600;
-    line-height: 1.4;
-    text-transform: capitalize;
-}
 
 .article-card .article-card-content h5 a {
     color: var(--primary-color1);
@@ -6513,7 +6505,7 @@ header.style-2 .nav-right::after {
         font-weight: 600;
         line-height: 1.4;
         text-transform: capitalize;
-        margin-right: 100px;
+        margin-right: 35px;
     }
 }
 
@@ -15463,7 +15455,7 @@ Testimonial-Section Css
     text-align: center;
     padding: 16px;
     transition: all 0.3s ease;
-    color: #125258;
+    color: #42aeb9;
     font-size: 20px;
 }
 
@@ -15580,7 +15572,7 @@ Testimonial-Section Css
 
 .banner-content span {
     font-size: 1.8rem;
-    color: #125258;
+    color: #42aeb9;
     margin-top: 5px;
     position: relative;
     display: inline-block;
