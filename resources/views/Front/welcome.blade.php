@@ -362,7 +362,7 @@
 
    <!-- Start Video section -->
    <div class="full-video-banner">
-    <video class="banner-video" autoplay muted loop playsinline>
+    <video preload="none" class="banner-video" autoplay muted loop playsinline>
         <source src="{{ asset('front_end_style/assets/videos/banner-video1.mp4') }}" type="video/mp4">
         <p>الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
             الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
@@ -920,5 +920,17 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
         </div>
     </div>
     <!-- End Instagram section section -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let video = document.querySelector('video');
+            let source = video.querySelector('source');
+            if (source && source.getAttribute('data-src')) {
+                source.src = source.getAttribute('data-src');
+                video.load();
+            }
+        });
+    </script>
 
 @endsection
