@@ -1,4 +1,5 @@
 @extends('front_end_inners.app_front_end')
+
 {{-- SEO SECTION --}}
 @section('page_title')
     {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
@@ -84,7 +85,7 @@
                             <h3>{{ __('front_end.OurClinic_OurMission') }}</h3>
                         </div>
                         <p>{!! $about->mission !!}</p>
-                        
+
                     </div>
                 </div>
             </div>

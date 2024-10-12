@@ -9,6 +9,12 @@
     $treatments = App\Models\Treatment::latest()->take(5)->get();
     ?>
 
+    <style>
+        strong {
+    font-weight: bold;
+}
+    </style>
+
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -401,7 +407,7 @@
                                 </li>
 
                             </ul>
-                            
+
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 d-flex justify-content-lg-start justify-content-sm-end">
