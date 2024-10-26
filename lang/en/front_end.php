@@ -13,7 +13,7 @@ return [
     'nav_Treatments' => 'Treatments',
     'nav_Blogs' => 'Blogs',
     'nav_Gallery' => 'Before & After',
-    'nav_ContactUs' => 'Contact Us',
+    'nav_ContactUs' => 'Book an appointment',
     'nav_Expert' => 'Expert care for your ear, nose and throat.',
     'nav_OurTreatments' => 'Our Treatments',
     'btn_ReadMore' => 'Read More',

@@ -113,12 +113,7 @@
                                         <input type="text" name="full_name" id="name" class="form-control" required data-error="{{__('front_end.ContactUs_error_name')}}  {{__('front_end.ContactUs_Name')}}" placeholder="{{__('front_end.ContactUs_Name')}}">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-inner mb-20">
-                                        <label>{{__('front_end.ContactUs_Email')}}</label>
-                                        <input type="email" name="email" id="email" class="form-control" required data-error="{{__('front_end.ContactUs_error_name')}}  {{__('front_end.ContactUs_Email')}}" placeholder="{{__('front_end.ContactUs_Email')}}">                                    </div>
-                                </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-inner mb-20">
                                         <label>{{__('front_end.ContactUs_Phone')}}</label>
                                         <input type="text" name="phone" id="phone" required data-error="{{__('front_end.ContactUs_error_name')}} {{__('front_end.ContactUs_Phone')}}" class="form-control" placeholder="{{__('front_end.ContactUs_Phone')}}">                                    </div>
@@ -152,7 +147,7 @@
                     <div class="single-location">
                         <div class="title-and-view-btn">
                             <h5>{{__('front_end.west_amman_location')}} </h5>
-                            <a href="https://maps.app.goo.gl/r1bKGv8pDnJKzwjE6" target="_blank">{{__('front_end.View_Map')}}
+                            <a href="https://maps.google.com/?q=31.957905,35.876591" target="_blank">{{__('front_end.View_Map')}}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
                                     <path d="M6.669 2.27202L0.94102 8L0 7.05898L5.72731 1.331H0.679478V0H8V7.32052H6.669V2.27202Z"/>
                                 </svg>
