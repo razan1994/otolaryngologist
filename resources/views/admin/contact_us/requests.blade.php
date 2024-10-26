@@ -59,7 +59,6 @@
                         <thead>
                             <tr>
                                 <th>Full Name </th>
-                                <th>Email</th>
                                 <th>Subject</th>
                                 <th>Control</th>
                             </tr>
@@ -69,7 +68,6 @@
                                 @foreach ($requests as $index => $request)
                                     <tr>
                                         <td>{!! isset($request->full_name) ? $request->full_name : "<span style='color:red;'>Undefined</span>" !!} </td>
-                                        <td>{!! isset($request->email) ? $request->email : "<span style='color:red;'>Undefined</span>" !!} </td>
                                         <td>{!! isset($request->subject) ? $request->subject : "<span style='color:red;'>Undefined</span>" !!} </td>
                                         <td><a href="{{ route('super_admin.contact_us-showrequest', $request->id) }}"
                                                     class="mb-1 btn btn-sm btn-primary"><i class="mdi mdi-eye"></i></a>

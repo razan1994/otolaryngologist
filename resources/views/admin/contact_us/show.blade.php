@@ -61,16 +61,6 @@
             <div class="col-md-6">
                 <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                     <div class="text-center pb-4">
-                        <h4 class="pb-2" style="color: blue"> Email :</h4>
-                        <p class="text-dark">{!! isset($request->email) ? $request->email : "<span style='color:red;'>Undefined</span>" !!} </p>
-                    </div>
-                    <hr class="w-100">
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
-                    <div class="text-center pb-4">
                         <h4 class="pb-2" style="color: blue"> Phone :</h4>
                         <p class="text-dark">{!! isset($request->phone) ? $request->phone : "<span style='color:red;'>Undefined</span>" !!} </p>
                     </div>
