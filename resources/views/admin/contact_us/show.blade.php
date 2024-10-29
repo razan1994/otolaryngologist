@@ -48,7 +48,7 @@
 
         <div class="row no-gutters">
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                     <div class="text-center pb-4">
                         <h4 class="pb-2" style="color: blue"> Full Name :</h4>
@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                     <div class="text-center pb-4">
                         <h4 class="pb-2" style="color: blue"> Phone :</h4>
@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                     <div class="text-center pb-4">
                         <h4 class="pb-2" style="color: blue"> Subject :</h4>

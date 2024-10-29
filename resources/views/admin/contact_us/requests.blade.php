@@ -69,7 +69,7 @@
                                 @foreach ($requests as $index => $request)
                                     <tr>
                                         <td>{!! isset($request->full_name) ? $request->full_name : "<span style='color:red;'>Undefined</span>" !!} </td>
-                                        <td>{!! isset($request->full_name) ? $request->full_name : "<span style='color:red;'>Undefined</span>" !!} </td>
+                                        <td>{!! isset($request->phone) ? $request->phone : "<span style='color:red;'>Undefined</span>" !!} </td>
                                         <td>{!! isset($request->subject) ? $request->subject : "<span style='color:red;'>Undefined</span>" !!} </td>
                                         <td><a href="{{ route('super_admin.contact_us-showrequest', $request->id) }}"
                                                     class="mb-1 btn btn-sm btn-primary"><i class="mdi mdi-eye"></i></a>
