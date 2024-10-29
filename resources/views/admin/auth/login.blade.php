@@ -331,7 +331,7 @@
 
             <!-- Icon -->
             <div class="fadeIn first">
-                <img src="{{ asset('front_end_style/assets/img/logo-clinic.png') }}" id="icon" alt="User Icon" />
+                <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" id="icon" alt="User Icon" />
             </div>
 
             <!-- Login Form -->

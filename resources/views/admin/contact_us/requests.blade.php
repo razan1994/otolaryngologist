@@ -59,7 +59,8 @@
                         <thead>
                             <tr>
                                 <th>Full Name </th>
-                                <th>Subject</th>
+                                <th>Phone no</th>
+                                <th>Treatment</th>
                                 <th>Control</th>
                             </tr>
                         </thead>
@@ -67,6 +68,7 @@
                             @if ($requests->count() > 0)
                                 @foreach ($requests as $index => $request)
                                     <tr>
+                                        <td>{!! isset($request->full_name) ? $request->full_name : "<span style='color:red;'>Undefined</span>" !!} </td>
                                         <td>{!! isset($request->full_name) ? $request->full_name : "<span style='color:red;'>Undefined</span>" !!} </td>
                                         <td>{!! isset($request->subject) ? $request->subject : "<span style='color:red;'>Undefined</span>" !!} </td>
                                         <td><a href="{{ route('super_admin.contact_us-showrequest', $request->id) }}"

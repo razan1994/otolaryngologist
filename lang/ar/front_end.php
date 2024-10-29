@@ -33,7 +33,7 @@ return [
     'footer_OurClinic' => 'عيادتنا',
     'footer_OIncurance' => 'شركات التأمين المعتمدة',
     'footer_PrivacyPolicy' => 'سياسة الخصوصية',
-    'footer_ContactUs' => 'اتصل بنا',
+    'footer_ContactUs' => 'إحجز الآن',
     'footer_Treatments' => 'العلاجات',
     'footer_Eardisease' => 'مرض الأذن',
     'footer_nosediseases' => 'أمراض الأنف',
@@ -180,7 +180,7 @@ return [
     ###============================= ٍstart Contact Us=======================================================###
     ###==========================================================================================================###
 
-    'ContactUs_Contact' => 'اتصل بنا',
+    'ContactUs_Contact' => 'إحجز الآن',
     'ContactUs_Contact1' => 'أدخل معلوماتك الآن لإتمام حجز موعدك بنجاح',
     'ContactUs_Name' => 'الاسم بالكامل',
     'ContactUs_Email' => 'البريد الإلكتروني',
