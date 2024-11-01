@@ -8,7 +8,7 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Contact Message All</div>
+            <div class="breadcrumb-title pe-3">Appointments</div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
@@ -17,7 +17,9 @@
                                 <i class="bx bx-home-alt"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Contact Message All</li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('super_admin.dashboard') }}">
+                            <span class="mdi mdi-home"></span> dashboard
+                        </a></li>
                     </ol>
                 </nav>
             </div>
