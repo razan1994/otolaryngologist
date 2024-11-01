@@ -15722,3 +15722,13 @@ Testimonial-Section Css
     width: 100%;
 }
 
+div:where(.swal2-container) .swal2-select {
+    display: none;
+    min-width: 50%;
+    max-width: 100%;
+    padding: .375em .625em;
+    background: rgba(0, 0, 0, 0);
+    color: inherit;
+    font-size: 1.125em;
+}
+

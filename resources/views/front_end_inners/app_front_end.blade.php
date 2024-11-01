@@ -48,6 +48,8 @@
     @yield('canonical')
 
     @if (Config::get('app.locale') == 'en')
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
             rel="stylesheet">
 
@@ -78,6 +80,8 @@
         <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
             rel="stylesheet">
     @elseif (Config::get('app.locale') == 'ar')
+    
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- Bootstrap CSS -->
         <link href="{{ asset('front_end_style/assets_rtl/css/bootstrap.rtl.min.css') }}" rel="stylesheet">
         <!-- Bootstrap Icon CSS -->

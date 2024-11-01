@@ -97,48 +97,69 @@
 
                     <div class="contact-map">
                         <div id="map"></div>
-                                        </div>
+                         </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="inquiry-form">
                         <div class="section-title mb-20">
                             <h4>{{__('front_end.ContactUs_Contact1')}}</h4>
                         </div>
-                        <form action="{{route('contactUsRequest1')}}" method="POST" >
+                        <form action="{{ route('contactUsRequest1') }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-inner mb-20">
-                                        <label>{{__('front_end.ContactUs_Name')}}</label>
-                                        <input type="text" name="full_name" id="name" class="form-control" required data-error="{{__('front_end.ContactUs_error_name')}}  {{__('front_end.ContactUs_Name')}}" placeholder="{{__('front_end.ContactUs_Name')}}">
+                                        <label>{{ __('front_end.ContactUs_Name') }}</label>
+                                        <input type="text" name="full_name" id="name" class="form-control" required
+                                               data-error="{{ __('front_end.ContactUs_error_name') }} {{ __('front_end.ContactUs_Name') }}"
+                                               placeholder="{{ __('front_end.ContactUs_Name') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-inner mb-20">
-                                        <label>{{__('front_end.ContactUs_Phone')}}</label>
-                                        <input type="text" name="phone" id="phone" required data-error="{{__('front_end.ContactUs_error_name')}} {{__('front_end.ContactUs_Phone')}}" class="form-control" placeholder="{{__('front_end.ContactUs_Phone')}}">                                    </div>
+                                        <label>{{ __('front_end.ContactUs_Phone') }}</label>
+                                        <input type="text" name="phone" id="phone" required
+                                               data-error="{{ __('front_end.ContactUs_error_name') }} {{ __('front_end.ContactUs_Phone') }}"
+                                               class="form-control" placeholder="{{ __('front_end.ContactUs_Phone') }}">
+                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-inner mb-20">
-                                        <label>{{__('front_end.ContactUs_Subject')}}</label>
-                                        <input type="text" name="subject" id="msg_subject" class="form-control" required data-error="{{__('front_end.ContactUs_error_name')}}  {{__('front_end.ContactUs_Subject')}}" placeholder="{{__('front_end.ContactUs_Subject')}}">
+                                        <label>{{ __('front_end.ContactUs_Subject') }}</label>
+                                        <input type="text" name="subject" id="msg_subject" class="form-control" required
+                                               data-error="{{ __('front_end.ContactUs_error_name') }} {{ __('front_end.ContactUs_Subject') }}"
+                                               placeholder="{{ __('front_end.ContactUs_Subject') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-inner mb-30">
-                                        <label>{{__('front_end.ContactUs_YourMessage')}}</label>
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="5" required data-error="{{__('front_end.ContactUs_error_name')}}  {{__('front_end.ContactUs_YourMessage')}}" placeholder="{{__('front_end.ContactUs_YourMessage')}} "></textarea>
+                                        <label>{{ __('front_end.ContactUs_YourMessage') }}</label>
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="5" required
+                                                  data-error="{{ __('front_end.ContactUs_error_name') }} {{ __('front_end.ContactUs_YourMessage') }}"
+                                                  placeholder="{{ __('front_end.ContactUs_YourMessage') }}"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="col-md-12">
-                                        <div class="form-inner">
-                                            <button id="msgSubmit" type="submit" class="primary-btn1 hover-btn3">{{__('front_end.ContactUs_SendMessage')}}</button>
-                                        </div>
+                                    <div class="form-inner">
+                                        <button id="msgSubmit" type="submit" class="primary-btn1 hover-btn3">
+                                            {{ __('front_end.ContactUs_SendMessage') }}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </form>
+
+                        <!-- SweetAlert Success Message -->
+                        @if(session('success'))
+                            <script>
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'شكرًا لك !',
+                                    text: 'تم تقديم حجزك بنجاح، وسنقوم بالتواصل معك في أقرب وقت ممكن ',
+                                    confirmButtonColor: '#42aeb9',
+                                });
+                            </script>
+                        @endif
                     </div>
                 </div>
             </div>
