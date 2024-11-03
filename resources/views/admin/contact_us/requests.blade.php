@@ -5,6 +5,54 @@
 <!-- DataTable-->
 
 @section('content')
+
+<style>
+    table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* For screens smaller than 768px (typical tablet size) */
+@media (max-width: 768px) {
+  table {
+    font-size: 12px; /* Reduce font size */
+  }
+
+  th, td {
+    word-wrap: break-word; /* Allow text to wrap */
+  }
+}
+
+/* For screens smaller than 480px (typical mobile size) */
+@media (max-width: 480px) {
+  table {
+    font-size: 12px; /* Further reduce font size */
+  }
+
+  th, td {
+    word-wrap: break-word; /* Make all cells wrap */
+  }
+}
+
+/* Ensure the table scrolls horizontally on smaller devices */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling */
+}
+
+</style>
+
+
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -17,9 +65,11 @@
                                 <i class="bx bx-home-alt"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('super_admin.dashboard') }}">
-                            <span class="mdi mdi-home"></span> dashboard
-                        </a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <a href="{{ route('super_admin.dashboard') }}">
+                                <span class="mdi mdi-home"></span> dashboard
+                            </a>
+                        </li>
                     </ol>
                 </nav>
             </div>
@@ -38,7 +88,7 @@
                                 <th>Treatment</th>
                                 <th>Phone no</th>
                                 <th>Date</th>
-                                <th>Actions</th> <!-- New column for actions -->
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,21 +101,20 @@
                                 <td>{{ $item->phone }}</td>
                                 <td>{{ Carbon\Carbon::parse($item->created_at)->format('Y-m-d') }}</td>
                                 <td>
-
                                     <a href="{{ route('super_admin.contact_us-showrequest', $item->id) }}"
                                         class="mb-1 btn btn-sm btn-primary"><i class="mdi mdi-eye"></i></a>
-                                        <a href="{{ route('super_admin.contact_us-destroyrequest', $item->id) }}"
-                                            class="confirm mb-1 btn btn-sm btn-danger"><i class="mdi mdi-delete"></i></a>
+                                    <a href="{{ route('super_admin.contact_us-destroyrequest', $item->id) }}"
+                                        class="confirm mb-1 btn btn-sm btn-danger"><i class="mdi mdi-delete"></i></a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-
                     </table>
                 </div>
             </div>
         </div>
     </div>
+
 @endsection
 
 @section('admin_javascript')
