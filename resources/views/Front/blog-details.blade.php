@@ -15,6 +15,16 @@
 @endsection
 {{-- SEO SECTION --}}
 
+<style>
+    #blog-content ul{
+        padding: 0;
+    margin: 0;
+    list-style: inside;
+    text-align: justify;
+    font-family: var(--font-Jost);
+    color: var(--primary-color1);
+    }
+</style>
 
 
 @section('canonical')
