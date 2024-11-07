@@ -15732,3 +15732,12 @@ div:where(.swal2-container) .swal2-select {
     font-size: 1.125em;
 }
 
+#articles-content-ul ul{
+    padding: 0;
+margin: 0;
+list-style: inside;
+text-align: justify;
+font-family: var(--font-Jost);
+color: var(--primary-color1);
+}
+

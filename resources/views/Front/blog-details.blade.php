@@ -15,16 +15,6 @@
 @endsection
 {{-- SEO SECTION --}}
 
-<style>
-    .blog-content ul{
-        padding: 0;
-    margin: 0;
-    list-style: inside;
-    text-align: justify;
-    font-family: var(--font-Jost);
-    color: var(--primary-color1);
-    }
-</style>
 
 
 @section('canonical')
@@ -104,7 +94,7 @@
                         <p>{!! \Carbon\Carbon::parse($news_blog->created_at)->translatedFormat('j F Y') !!}</p>
                     </div>
 
-                    <div class="blog-content">
+                    <div id="articles-content-ul" class="blog-content">
                         <p>{!! $news_blog->description !!}</p>
                     </div>
                 </div>
