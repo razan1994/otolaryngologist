@@ -15707,3 +15707,13 @@ div:where(.swal2-container) .swal2-select {
     color: inherit;
     font-size: 1.125em;
 }
+
+
+textarea ul{
+    padding: 0;
+    margin: 0;
+    list-style: inside;
+    text-align: justify;
+    font-family: var(--font-Jost);
+    color: var(--primary-color1);
+}

@@ -4,10 +4,8 @@
 <link href="{{ asset('adminbackend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
 <!-- DataTable-->
 
-@section('content')
-
 <style>
-    table {
+table {
   border-collapse: collapse;
   width: 100%;
 }
@@ -22,14 +20,21 @@ th {
   background-color: #f2f2f2;
 }
 
+
 /* For screens smaller than 768px (typical tablet size) */
 @media (max-width: 768px) {
   table {
     font-size: 12px; /* Reduce font size */
   }
 
-  th, td {
+  /* Make table headers wrap */
+  th {
     word-wrap: break-word; /* Allow text to wrap */
+  }
+
+  /* Force table to scroll horizontally if needed */
+  table {
+    overflow-x: auto;
   }
 }
 
@@ -39,19 +44,21 @@ th {
     font-size: 12px; /* Further reduce font size */
   }
 
-  th, td {
-    word-wrap: break-word; /* Make all cells wrap */
+  /* Make all table cells wrap */
+  td, th {
+    word-wrap: break-word;
   }
-}
 
-/* Ensure the table scrolls horizontally on smaller devices */
-.table-responsive {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling */
+  /* Force table to scroll horizontally if needed */
+  table {
+    overflow-x: auto;
+  }
 }
 
 </style>
 
+
+@section('content')
 
     <div class="page-content">
         <!--breadcrumb-->
@@ -80,7 +87,7 @@ th {
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <table class="table table-striped table-bordered" >
                         <thead>
                             <tr>
                                 <th>Sl</th>
