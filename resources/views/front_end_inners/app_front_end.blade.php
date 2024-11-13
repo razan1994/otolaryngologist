@@ -5,15 +5,8 @@
     <?php
     $lang = app()->getLocale() == 'ar' ? 'assets_rtl' : 'assets';
     $val = app()->getLocale() == 'ar' ? '.rtl' : '';
-
     $treatments = App\Models\Treatment::latest()->take(5)->get();
     ?>
-
-    <style>
-        strong {
-    font-weight: bold;
-}
-    </style>
 
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -41,7 +34,7 @@
     <meta name="twitter:title" content="@yield('meta_title')">
     <meta name="twitter:description" content="@yield('meta_desc')" />
     <meta property="keywords" content="@yield('meta_keywords')">
-    <meta name="author" content="smartzone">
+    <meta name="author" content="dranasabushamleh">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
 
@@ -49,6 +42,7 @@
 
     @if (Config::get('app.locale') == 'en')
 
+        <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
             rel="stylesheet">
@@ -80,7 +74,8 @@
         <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
             rel="stylesheet">
     @elseif (Config::get('app.locale') == 'ar')
-    
+
+        <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- Bootstrap CSS -->
         <link href="{{ asset('front_end_style/assets_rtl/css/bootstrap.rtl.min.css') }}" rel="stylesheet">
@@ -149,13 +144,18 @@
         gtag('config', 'G-E83HWT4Z13');
     </script>
 
-
-
-
 </head>
 
 <body class="style-2">
 
+<!-- Appointment Section -->
+<div class="consult-section" id="consultSection">
+    <div class="consult-content">
+        <p class="consult-text">احجز موعدك الان مع الدكتور أنس أبو شملة استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف</p>
+        <a class="appointment-button hover-btn3" href="#" onclick="openSprintfulPopup(); return false;">احجز الآن</a>
+    </div>
+    <span class="close-button" onclick="closeConsultSection()">×</span>
+</div>
 
     <!-- Icons Section -->
     <div class="icon-bar">
@@ -167,6 +167,7 @@
         </a>
         <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
     </div>
+
 
     <h1 class="hidden-h1">@yield('h1_val')</h1>
     <h2 class="hidden-h2">@yield('h2_val')</h2>
@@ -196,21 +197,18 @@
                     <p> {{ __('front_end.top_nav_text') }} </p>
                     <div class="social-area">
                         <ul>
+                            @if (Config::get('app.locale') == 'en')
                             <li>
-                                <a href="https://www.facebook.com/ENTDoctorJordan">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </a>
+                                <a style="font-family: 'El Messiri', sans-serif; color:#fff" class="nav-link"
+                                hreflang="ar" href="{{ '/ar' }}">العربية</a>
                             </li>
+                            @else
                             <li>
-                                <a href="https://www.instagram.com/dr.anasabushamleh/">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
+                                <a style="font-family: 'Jost', sans-serif; color:#fff" class="nav-link"
+                                hreflang="en" href="{{ '/en' }}">English</a>
                             </li>
-                            <li>
-                                <a href="https://wa.link/chzxur">
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                            </li>
+                            @endif
+
 
                         </ul>
 
@@ -357,13 +355,8 @@
                 <div class="search-area">
                     <div class="search-area">
                         <div class="search-btn">
-                            @if (Config::get('app.locale') == 'en')
-                                <a style="font-family: 'El Messiri', sans-serif; color:#125258" class="nav-link"
-                                    hreflang="ar" href="{{ '/ar' }}">العربية</a>
-                            @else
-                                <a style="font-family: 'Jost', sans-serif; color:#125258" class="nav-link"
-                                    hreflang="en" href="{{ '/en' }}">English</a>
-                            @endif
+
+                            <a style="font-family: 'El Messiri', sans-serif; color:#125258" class="nav-link" href="#" onclick="openSprintfulPopup(); return false;">إحجز موعدك الآن</a>
 
                         </div>
                     </div>
@@ -597,7 +590,37 @@
         }
     </script>
 
+<script>
+    // Function to open the Sprintful popup
+    function openSprintfulPopup() {
+        if (typeof Sprintful !== 'undefined' && Sprintful.showPopup) {
+            Sprintful.showPopup({
+                url: 'https://on.sprintful.com/anas-abushamleh-operation?hide-logo=false&hide-message=false&show-close=true',
+                copyParentsQuery: 'false'
+            });
+        } else {
+            console.error("Sprintful script is not loaded or accessible.");
+        }
+    }
 
+    // Function to close the consult section and set a session flag
+    function closeConsultSection() {
+        document.getElementById('consultSection').classList.remove('show');
+        sessionStorage.setItem('consultSectionClosedAt', Date.now());
+    }
+
+    // Check if the section should be displayed or hidden based on session storage
+    function checkConsultSection() {
+        const closedAt = sessionStorage.getItem('consultSectionClosedAt');
+        const oneHour = 60 * 60 * 1000;
+
+        if (!closedAt || (Date.now() - closedAt >= oneHour)) {
+            document.getElementById('consultSection').classList.add('show');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', checkConsultSection);
+  </script>
 </body>
 
 </html>

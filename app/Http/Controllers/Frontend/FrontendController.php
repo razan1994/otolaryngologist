@@ -191,6 +191,10 @@ class FrontendController extends Controller
         $seo_operation = SeoOperation::where('page_name', 'Blogs')->get()->first();
         return view('Front.blogs', compact('blogs', 'seo_operation', 'recentBlogs'));
     }
+
+
+
+    
     public function BlogDetails(Route $route, $aliasname)
     {
         if (Config::get('app.locale') == 'en') {

@@ -26,6 +26,10 @@
 {{$seo_operation?->h2_val}}
 @endsection
 
+
+
+
+
 @section('content')
          <!-- Start Breadcrumb Section -->
     <div class="breadcrumb-section">
@@ -427,6 +431,7 @@
 <!-- End Instagram section section -->
 
 
+    <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDXkzEIj9sB3J_ohqT0woVWqAJQiyRmAE"></script>
     <script>
         function initMap() {
@@ -460,4 +465,5 @@
 
         window.onload = initMap;
     </script>
+
         @endsection

@@ -20,6 +20,7 @@
             <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
         @endif
     @endsection
+
 @else
     {{-- SEO SECTION --}}
     @section('page_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - {{ 'page=' . $blogs->currentPage() }}@endsection
@@ -41,6 +42,7 @@
             <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}" hreflang="en-jo"/>
         @endif
     @endsection
+
 @endif
 
 
@@ -50,6 +52,8 @@
 @section('h2_val')
     {{ $seo_operation?->h2_val }}
 @endsection
+
+
 
 @section('content')
 

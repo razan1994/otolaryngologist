@@ -11,7 +11,7 @@ return [
     'nav_Treatments' => 'الإجراءات الطبية',
     'nav_Blogs' => 'مقالات طبية',
     'nav_Gallery' => 'قبل و بعد',
-    'nav_ContactUs' => 'احجز موعد',
+    'nav_ContactUs' => 'تواصل معنا',
     'nav_Expert' =>'رعاية متخصصة للأنف والأذن والحنجرة.',
     'nav_OurTreatments' => 'علاجاتنا',
     'btn_ReadMore' => 'اقرأ المزيد',
@@ -33,7 +33,7 @@ return [
     'footer_OurClinic' => 'عيادتنا',
     'footer_OIncurance' => 'شركات التأمين المعتمدة',
     'footer_PrivacyPolicy' => 'سياسة الخصوصية',
-    'footer_ContactUs' => 'إحجز الآن',
+    'footer_ContactUs' => 'تواصل معنا',
     'footer_Treatments' => 'العلاجات',
     'footer_Eardisease' => 'مرض الأذن',
     'footer_nosediseases' => 'أمراض الأنف',
@@ -180,20 +180,21 @@ return [
     ###============================= ٍstart Contact Us=======================================================###
     ###==========================================================================================================###
 
-    'ContactUs_Contact' => 'إحجز الآن',
-    'ContactUs_Contact1' => 'أدخل معلوماتك الآن لإتمام حجز موعدك بنجاح',
+    'ContactUs_Contact' => 'تواصل معنا',
+    'ContactUs_Contact1' => 'نحن هنا لخدمتكم، تواصلوا معنا لأي استفسار أو مزيد من المعلومات',
     'ContactUs_Name' => 'الاسم بالكامل',
     'ContactUs_Email' => 'البريد الإلكتروني',
     'ContactUs_Phone' => 'رقم الهاتف',
-    'ContactUs_Subject' => 'الإجراء المطلوب',
+    'ContactUs_Subject' => 'الموضوع',
     'ContactUs_YourMessage' => 'ملاحظات ',
     'ContactUs_YourMessage1' => 'اتصل بنا عن طريق رقم الهاتف أو عنوان البريد الإلكتروني',
     'ContactUs_YourMessage2' =>': العنوان ',
     'west_amman'=>'عبدون الشمالي - خلف الملكية الاردنية للطيران - مجمع الدكتور عبدالكريم مرعي - الطابق الثاني',
     'east_amman'=>'جبل النصر - عيادات النصر الطبية',
     'ContactUs_OR' => 'أو',
-    'ContactUs_SendMessage' => 'إحجز الآن',
+    'ContactUs_SendMessage' => 'تواصل معنا',
     'ContactUs_error_name' => 'من فضلك أدخل',
+    'book_now' => 'تواصل معنا',
 
 
 
@@ -637,7 +638,8 @@ return [
 'west_amman_location' => ' عمان الغربية',
 'east_amman_location' => ' عمان الشرقية ',
 'View_Map' => 'عرض الخريطة',
-'contct_title'=> 'نترك الخيار لمرضانا الأعزاء بالتواصل معنا بأي طريقة تناسبهم من الطرق التالية أو بزيارتنا في العيادة على العنوان الموضح أدناه.',
+'contct_title'=> 'نترك الخيار لمرضانا الأعزاء بالتواصل معنا بأي طريقة تناسبهم من الطرق التالية أو بزيارتنا في العيادة على العناوين الموضحة أدناه.
+',
 'View_All' => 'عرض الكل',
 
 'footer_title_dr'=>'الدكتور أنس أبو شملة',
