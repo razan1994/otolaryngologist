@@ -151,8 +151,12 @@
 <!-- Appointment Section -->
 <div class="consult-section" id="consultSection">
     <div class="consult-content">
-        <p class="consult-text">احجز موعدك الان مع الدكتور أنس أبو شملة استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف</p>
-        <a class="appointment-button hover-btn3" href="#" onclick="openSprintfulPopup(); return false;">احجز الآن</a>
+        <p class="consult-text">
+         {{ __('front_end.book_text') }}
+        </p>
+        <a class="appointment-button hover-btn3" href="#" onclick="openSprintfulPopup(); return false;">
+            {{ __('front_end.book_now') }}
+        </a>
     </div>
     <span class="close-button" onclick="closeConsultSection()">×</span>
 </div>
@@ -168,7 +172,7 @@
         <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
     </div>
 
-
+    <!-- h1/h1 hidden Section -->
     <h1 class="hidden-h1">@yield('h1_val')</h1>
     <h2 class="hidden-h2">@yield('h2_val')</h2>
 
@@ -177,6 +181,8 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+
+   <!-- top bar Section -->
     <div class="top-bar2">
         <div class="container-md container-fluid">
             <div class="row">
@@ -217,7 +223,8 @@
             </div>
         </div>
     </div>
-    <!-- Start home2 header section -->
+
+    <!-- Start header section -->
     <header class="header-area style-2">
         <div class="container-md position-relative  d-flex flex-nowrap align-items-center justify-content-between">
             <div class="header-logo d-lg-none d-flex">
@@ -356,7 +363,9 @@
                     <div class="search-area">
                         <div class="search-btn">
 
-                            <a style="font-family: 'El Messiri', sans-serif; color:#125258" class="nav-link" href="#" onclick="openSprintfulPopup(); return false;">إحجز موعدك الآن</a>
+                            <a style="font-family: 'El Messiri', sans-serif; color:#125258" class="nav-link" href="#" onclick="openSprintfulPopup(); return false;">
+                                {{ __('front_end.book_your_appointment_now') }}
+                            </a>
 
                         </div>
                     </div>
@@ -369,7 +378,7 @@
             </div>
         </div>
     </header>
-    <!-- End home2 header section -->
+    <!-- End header section -->
 
 
     @yield('content')
@@ -590,8 +599,9 @@
         }
     </script>
 
+
 <script>
-    // Function to open the Sprintful popup
+     // open the Sprintful popup
     function openSprintfulPopup() {
         if (typeof Sprintful !== 'undefined' && Sprintful.showPopup) {
             Sprintful.showPopup({
@@ -603,13 +613,12 @@
         }
     }
 
-    // Function to close the consult section and set a session flag
+    // close the consult section
     function closeConsultSection() {
         document.getElementById('consultSection').classList.remove('show');
         sessionStorage.setItem('consultSectionClosedAt', Date.now());
     }
 
-    // Check if the section should be displayed or hidden based on session storage
     function checkConsultSection() {
         const closedAt = sessionStorage.getItem('consultSectionClosedAt');
         const oneHour = 60 * 60 * 1000;
@@ -618,7 +627,6 @@
             document.getElementById('consultSection').classList.add('show');
         }
     }
-
     document.addEventListener('DOMContentLoaded', checkConsultSection);
   </script>
 </body>

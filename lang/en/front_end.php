@@ -13,7 +13,7 @@ return [
     'nav_Treatments' => 'Treatments',
     'nav_Blogs' => 'Blogs',
     'nav_Gallery' => 'Before & After',
-    'nav_ContactUs' => 'Book an appointment',
+    'nav_ContactUs' => 'Contact us',
     'nav_Expert' => 'Expert care for your ear, nose and throat.',
     'nav_OurTreatments' => 'Our Treatments',
     'btn_ReadMore' => 'Read More',
@@ -204,6 +204,10 @@ return [
     'ContactUs_OR' => 'OR',
     'ContactUs_SendMessage' => 'Send Message',
     'ContactUs_error_name' => 'Please enter your ',
+    'book_your_appointment_now' => 'Book your appointment now',
+    'book_text' => 'Book your appointment now with Dr. Anas Abu Shamleh, Consultant in Ear, Nose, Throat, Sinus Endoscopic Surgeries, and Rhinoplasty',
+    'book_now' => 'Book Now',
+
 
 
 
