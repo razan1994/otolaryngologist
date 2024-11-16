@@ -69,7 +69,7 @@ class FrontendController extends Controller
 
     public function TermsAndConditions()
     {
-        $seo_operation = SeoOperation::where('page_name', 'TermsAndConditions')->get()->first();
+        $seo_operation = SeoOperation::where('page_name', 'Terms')->get()->first();
         $term_and_conditions = TermAndCondition::get()->first();
         // return   $privacy;
         return view('Front/terms', compact('seo_operation', 'term_and_conditions'));
@@ -194,7 +194,7 @@ class FrontendController extends Controller
 
 
 
-    
+
     public function BlogDetails(Route $route, $aliasname)
     {
         if (Config::get('app.locale') == 'en') {
