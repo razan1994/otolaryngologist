@@ -182,60 +182,59 @@ class FrontendController extends Controller
 
 
     }
-    public function Blogs()
-    {
+    public function Blogs($id)
+{
 
-        $blogs = Blogs::where('status', 1)->paginate(6);
-        $recentBlogs = Blogs::where('status', 1)->orderBy('created_at', 'desc')->take(3)->get();
+    $currentBlog = Blogs::find($id);
+    $blogs = Blogs::where('status', 1)->paginate(6);
+    $recentBlogs = Blogs::where('status', 1)
+                        ->where('id', '!=', $currentBlog->id)
+                        ->orderBy('created_at', 'desc')
+                        ->take(3)
+                        ->get();
 
-        $seo_operation = SeoOperation::where('page_name', 'Blogs')->get()->first();
-        return view('Front.blogs', compact('blogs', 'seo_operation', 'recentBlogs'));
+    $seo_operation = SeoOperation::where('page_name', 'Blogs')->first();
+
+    return view('Front.blogs', compact('blogs', 'seo_operation', 'recentBlogs'));
+}
+
+
+
+public function BlogDetails(Route $route, $aliasname)
+{
+    // Retrieve the blog based on the alias name and locale
+    if (Config::get('app.locale') == 'en') {
+        $news_blog = Blogs::where('status', 1)
+            ->where('alias_name_en', '=', $aliasname)
+            ->first();
+    } else {
+        $news_blog = Blogs::where('status', 1)
+            ->where('alias_name_ar', '=', $aliasname)
+            ->first();
     }
 
+    if ($news_blog) {
+        // Get popular blogs excluding the current blog
+        $popular_blogs = Blogs::where('status', 1)
+            ->where('id', '!=', $news_blog->id)
+            ->limit(6)
+            ->get();
 
+        // Get recent blogs excluding the current blog
+        $recentBlogs = Blogs::where('status', 1)
+            ->where('id', '!=', $news_blog->id)  // Exclude the current blog
+            ->orderBy('created_at', 'desc')
+            ->take(3)
+            ->get();
 
-
-    public function BlogDetails(Route $route, $aliasname)
-    {
-        if (Config::get('app.locale') == 'en') {
-            $news_blog = Blogs::where('status', 1)
-                ->where('alias_name_en', '=', $aliasname)
-                ->first();
-        } else {
-            $news_blog = Blogs::where('status', 1)
-                ->where('alias_name_ar', '=', $aliasname)
-                ->first();
-        }
-
-        if ($news_blog) {
-            $popular_blogs = Blogs::where('status', 1)
-                ->where('id', '!=', $news_blog->id)
-                ->limit(6)
-                ->get();
-
-            // Get recent blogs
-            $recentBlogs = Blogs::where('status', 1)
-                ->orderBy('created_at', 'desc')
-                ->take(3)
-                ->get();
-
-            // Find previous blog
-            $previous_blog = Blogs::where('status', 1)
-                ->where('created_at', '<', $news_blog->created_at)
-                ->orderBy('created_at', 'desc')
-                ->first();
-
-            // Find next blog
-            $next_blog = Blogs::where('status', 1)
-                ->where('created_at', '>', $news_blog->created_at)
-                ->orderBy('created_at', 'asc')
-                ->first();
-
-            return view('Front/blog-details', compact('news_blog', 'popular_blogs', 'recentBlogs', 'previous_blog', 'next_blog'));
-        } else {
-            return redirect()->back()->with('danger', 'Blog Not Found !!!');
-        }
+        // Return the view with the necessary data
+        return view('Front.blog-details', compact('news_blog', 'popular_blogs', 'recentBlogs'));
+    } else {
+        // Redirect if the blog is not found
+        return redirect()->back()->with('danger', 'Blog Not Found !!!');
     }
+}
+
 
     public function GallaryDetails(Route $route, $aliasname)
     {

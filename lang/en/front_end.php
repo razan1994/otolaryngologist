@@ -1,8 +1,6 @@
 <?php
 
 return [
-
-
     'top_nav_phone' => '+962799559157',
     'top_nav_text' => 'Dr. Anas Abushamleh - Specialist in Ear, Nose, and Throat and Rhinoplasty',
     'nav_home' => 'Home',
