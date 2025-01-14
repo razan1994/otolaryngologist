@@ -47,19 +47,19 @@
 @endif
 
 
-@section('h1_val')
-    {{ $seo_operation?->h1_val }}
-@endsection
-@section('h2_val')
-    {{ $seo_operation?->h2_val }}
-@endsection
+
 
 
 
 @section('content')
 
 
-
+@section('h1_val')
+    {{ $seo_operation?->h1_val }}
+@endsection
+@section('h2_val')
+    {{ $seo_operation?->h2_val }}
+@endsection
 
     <!-- Start Breadcrumb Section -->
     <div class="breadcrumb-section">

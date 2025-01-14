@@ -44,14 +44,16 @@
 @endsection
 
 
+
+
+@section('content')
+
 @section('h1_val')
     {{ $news_blog?->h1_val }}
 @endsection
 @section('h2_val')
     {{ $news_blog?->h2_val }}
 @endsection
-
-@section('content')
 
 
     <!-- Start Breadcrumb Section -->
