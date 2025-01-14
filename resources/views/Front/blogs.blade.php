@@ -1,55 +1,49 @@
 @extends('front_end_inners.app_front_end')
 
 
-@if ($blogs->currentPage() == 1)
-    @section('page_title')
-        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
-    @endsection
-    @section('meta_title')
-        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
-    @endsection
-    @section('meta_desc')
-        {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }}
-    @endsection
-    @section('meta_keywords')
-        {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
-    @endsection
+@if($blogs->currentPage() == 1)
+    {{-- SEO SECTION --}}
+    @section('page_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}@endsection
+    @section('meta_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}@endsection
+    @section('meta_desc'){{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }}@endsection
+    @section('meta_keywords'){{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}@endsection
+    {{-- SEO SECTION --}}
+
+
+
     @section('canonical')
-        <link rel="canonical"
-            href="https://otolaryngologist-jo.com/{{ Config::get('app.locale') == 'en' ? 'en/blogs' : 'ar/مقالة-طبية' }}" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo" />
+        @if (Config::get('app.locale') == 'en')
+            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo"/>
+        @else
+            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo"/>
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
+        @endif
     @endsection
 @else
-    @section('page_title')
-        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - Page {{ $blogs->currentPage() }}
-    @endsection
-    @section('meta_title')
-        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - Page {{ $blogs->currentPage() }}
-    @endsection
-    @section('meta_desc')
-        {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }} - Page {{ $blogs->currentPage() }}
-    @endsection
-    @section('meta_keywords')
-        {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
-    @endsection
+    {{-- SEO SECTION --}}
+    @section('page_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - {{ 'page=' . $blogs->currentPage() }}@endsection
+    @section('meta_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - {{ 'page=' . $blogs->currentPage() }}@endsection
+    @section('meta_desc'){{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }} - {{ 'page=' . $blogs->currentPage() }}@endsection
+    @section('meta_keywords'){{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}@endsection
+    {{-- SEO SECTION --}}
+
+
+
     @section('canonical')
-        <link rel="canonical"
-            href="https://otolaryngologist-jo.com/{{ Config::get('app.locale') == 'en' ? 'en/blogs' : 'ar/مقالة-طبية' }}?page={{ $blogs->currentPage() }}" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}"
-            hreflang="en-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}"
-            hreflang="ar-jo" />
+        @if (Config::get('app.locale') == 'en')
+            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}" hreflang="en-jo"/>
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}" hreflang="ar-jo"/>
+        @else
+            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}" hreflang="ar-jo"/>
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}" hreflang="en-jo"/>
+        @endif
     @endsection
 @endif
-
-
-@endif
-
-
-
-
-
 
 @section('content')
 
