@@ -17,7 +17,7 @@
 @section('canonical')
     @if (Config::get('app.locale') == 'en')
         <link rel="canonical" href="https://otolaryngologist-jo.com/en/FAQ" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en//FAQ" hreflang="en-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/FAQ" hreflang="en-jo" />
         <link rel="alternate" href="https://otolaryngologist-jo.com/ar/الاسئلة-المقترحة" hreflang="ar-jo" />
     @else
         <link rel="canonical" href="https://otolaryngologist-jo.com/ar/الاسئلة-المقترحة" />
