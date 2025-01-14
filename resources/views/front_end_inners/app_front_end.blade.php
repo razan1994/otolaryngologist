@@ -5,6 +5,7 @@
     <?php
     $lang = app()->getLocale() == 'ar' ? 'assets_rtl' : 'assets';
     $val = app()->getLocale() == 'ar' ? '.rtl' : '';
+    
     $treatments = App\Models\Treatment::latest()->take(5)->get();
     ?>
 
