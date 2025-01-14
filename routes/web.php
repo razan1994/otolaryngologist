@@ -61,7 +61,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
 });
 
-Route::get('en//FAQ', function () {
+Route::get('https://otolaryngologist-jo.com/en//FAQ', function () {
     return redirect('https://otolaryngologist-jo.com/en/FAQ', 301);
 });
 
