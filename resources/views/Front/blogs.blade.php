@@ -1,47 +1,48 @@
 @extends('front_end_inners.app_front_end')
-@if($blogs->currentPage() == 1)
-    {{-- SEO SECTION --}}
-    @section('page_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}@endsection
-    @section('meta_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}@endsection
-    @section('meta_desc'){{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }}@endsection
-    @section('meta_keywords'){{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}@endsection
-    {{-- SEO SECTION --}}
 
 
-
-    @section('canonical')
-        @if (Config::get('app.locale') == 'en')
-            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo"/>
-        @else
-            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo"/>
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
-        @endif
+@if ($blogs->currentPage() == 1)
+    @section('page_title')
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
     @endsection
-
+    @section('meta_title')
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
+    @endsection
+    @section('meta_desc')
+        {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }}
+    @endsection
+    @section('meta_keywords')
+        {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
+    @endsection
+    @section('canonical')
+        <link rel="canonical"
+            href="https://otolaryngologist-jo.com/{{ Config::get('app.locale') == 'en' ? 'en/blogs' : 'ar/مقالة-طبية' }}" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo" />
+    @endsection
 @else
-    {{-- SEO SECTION --}}
-    @section('page_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - {{ 'page=' . $blogs->currentPage() }}@endsection
-    @section('meta_title'){{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - {{ 'page=' . $blogs->currentPage() }}@endsection
-    @section('meta_desc'){{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }} - {{ 'page=' . $blogs->currentPage() }}@endsection
-    @section('meta_keywords'){{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}@endsection
-    {{-- SEO SECTION --}}
-
-
-
-    @section('canonical')
-        @if (Config::get('app.locale') == 'en')
-            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}" hreflang="en-jo"/>
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}" hreflang="ar-jo"/>
-        @else
-            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}" hreflang="ar-jo"/>
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}" hreflang="en-jo"/>
-        @endif
+    @section('page_title')
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - Page {{ $blogs->currentPage() }}
     @endsection
+    @section('meta_title')
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - Page {{ $blogs->currentPage() }}
+    @endsection
+    @section('meta_desc')
+        {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }} - Page {{ $blogs->currentPage() }}
+    @endsection
+    @section('meta_keywords')
+        {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
+    @endsection
+    @section('canonical')
+        <link rel="canonical"
+            href="https://otolaryngologist-jo.com/{{ Config::get('app.locale') == 'en' ? 'en/blogs' : 'ar/مقالة-طبية' }}?page={{ $blogs->currentPage() }}" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}"
+            hreflang="en-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}"
+            hreflang="ar-jo" />
+    @endsection
+@endif
+
 
 @endif
 
@@ -73,37 +74,38 @@
     </div>
     <!-- End Breadcrumb Section section -->
 
-        <!-- Start About Us Banner Section -->
-        <div class="about-us-banner mt-40  mb-40">
+    <!-- Start About Us Banner Section -->
+    <div class="about-us-banner mt-40  mb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-us-thumb hover-img mb-60">
+                        <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, مقالات طبية حول الأذن والأنف والحنجرة, أحدث المقالات الطبية في تخصص الأنف والأذن والحنجرة, مقالات طبية متخصصة من عيادة الدكتور أنس, مدونات طبية عن الأذن والأنف والحنجرة, Dr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best ENT specialist in Amman, Jordan, medical articles about ear, nose, and throat, the latest medical articles in the ENT specialty, specialized medical articles from Dr. Anas Clinic, medical blogs about ear, nose, and throat"
+                            src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Start About Us Content Section section -->
+        <div class="about-us-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="about-us-thumb hover-img mb-60">
-                            <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, مقالات طبية حول الأذن والأنف والحنجرة, أحدث المقالات الطبية في تخصص الأنف والأذن والحنجرة, مقالات طبية متخصصة من عيادة الدكتور أنس, مدونات طبية عن الأذن والأنف والحنجرة, Dr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best ENT specialist in Amman, Jordan, medical articles about ear, nose, and throat, the latest medical articles in the ENT specialty, specialized medical articles from Dr. Anas Clinic, medical blogs about ear, nose, and throat" src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}" >
+                    <div class="section-title2 style-2">
+                        <h3>{{ __('front_end.footer_Blogs') }}</h3>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="about-us-wrapper">
+                            <p><strong>{{ __('front_end.blog_subTitle') }}</strong></p>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <!-- Start About Us Content Section section -->
-            <div class="about-us-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title2 style-2">
-                            <h3>{{ __('front_end.footer_Blogs') }}</h3>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="about-us-wrapper">
-                                <p><strong>{{ __('front_end.blog_subTitle') }}</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End About Us Content Section section -->
         </div>
-        <!-- End About Us Banner Section -->
+        <!-- End About Us Content Section section -->
+    </div>
+    <!-- End About Us Banner Section -->
 
     <!-- Start Blog Standard Left Sidebar section -->
     <div class="blog-standard-left-sidebar-section mt-40 mb-110">
@@ -186,7 +188,7 @@
     <!-- End Blog Standard Left Sidebar section -->
 
 
-     <!-- Start Instagram section section -->
+    <!-- Start Instagram section section -->
     <div class="instagram-section mb-110 mt-110">
         <div class="container">
             <div class="section-title style-3">
