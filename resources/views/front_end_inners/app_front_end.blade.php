@@ -42,7 +42,6 @@
     @yield('canonical')
 
     @if (Config::get('app.locale') == 'en')
-
         <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
@@ -74,8 +73,9 @@
 
         <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
             rel="stylesheet">
-    @elseif (Config::get('app.locale') == 'ar')
 
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+    @elseif (Config::get('app.locale') == 'ar')
         <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- Bootstrap CSS -->
@@ -107,6 +107,8 @@
         <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
             rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap"
             rel="stylesheet">
     @endif
 
@@ -149,18 +151,18 @@
 
 <body class="style-2">
 
-<!-- Appointment Section -->
-<div class="consult-section" id="consultSection">
-    <div class="consult-content">
-        <p class="consult-text">
-         {{ __('front_end.book_text') }}
-        </p>
-        <a class="appointment-button hover-btn3" href="#" onclick="openSprintfulPopup(); return false;">
-            {{ __('front_end.book_now') }}
-        </a>
+    <!-- Appointment Section -->
+    <div class="consult-section" id="consultSection">
+        <div class="consult-content">
+            <p class="consult-text">
+                {{ __('front_end.book_text') }}
+            </p>
+            <a class="appointment-button hover-btn3" href="#" onclick="openSprintfulPopup(); return false;">
+                {{ __('front_end.book_now') }}
+            </a>
+        </div>
+        <span class="close-button" onclick="closeConsultSection()">×</span>
     </div>
-    <span class="close-button" onclick="closeConsultSection()">×</span>
-</div>
 
     <!-- Icons Section -->
     <div class="icon-bar">
@@ -183,7 +185,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
 
-   <!-- top bar Section -->
+    <!-- top bar Section -->
     <div class="top-bar2">
         <div class="container-md container-fluid">
             <div class="row">
@@ -205,15 +207,15 @@
                     <div class="social-area">
                         <ul>
                             @if (Config::get('app.locale') == 'en')
-                            <li>
-                                <a style="font-family: 'El Messiri', sans-serif; color:#fff" class="nav-link"
-                                hreflang="ar" href="{{ '/ar' }}">العربية</a>
-                            </li>
+                                <li>
+                                    <a style="font-family: 'El Messiri', sans-serif; color:#fff" class="nav-link"
+                                        hreflang="ar" href="{{ '/ar' }}">العربية</a>
+                                </li>
                             @else
-                            <li>
-                                <a style="font-family: 'Jost', sans-serif; color:#fff" class="nav-link"
-                                hreflang="en" href="{{ '/en' }}">English</a>
-                            </li>
+                                <li>
+                                    <a style="font-family: 'Jost', sans-serif; color:#fff" class="nav-link"
+                                        hreflang="en" href="{{ '/en' }}">English</a>
+                                </li>
                             @endif
 
 
@@ -235,8 +237,8 @@
                     </a>
                 @else
                     <a href="{{ route('welcome') }}">
-                        <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" class="img-fluid" >
-                            </a>
+                        <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" class="img-fluid">
+                    </a>
                 @endif
             </div>
             <div class="company-logo d-lg-flex d-none">
@@ -254,14 +256,14 @@
                 <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
                     <div class="mobile-logo-wrap">
                         @if (Config::get('app.locale') == 'en')
-                        <a href="{{ route('welcome') }}">
-                            <img src="{{ asset('front_end_style/assets/img/home1/logo.png') }}">
-                        </a>
-                    @else
-                        <a href="{{ route('welcome') }}">
-                            <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}">
-                        </a>
-                    @endif
+                            <a href="{{ route('welcome') }}">
+                                <img src="{{ asset('front_end_style/assets/img/home1/logo.png') }}">
+                            </a>
+                        @else
+                            <a href="{{ route('welcome') }}">
+                                <img src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}">
+                            </a>
+                        @endif
                     </div>
                 </div>
                 <ul class="menu-list">
@@ -364,7 +366,8 @@
                     <div class="search-area">
                         <div class="search-btn">
 
-                            <a style="font-family: 'El Messiri', sans-serif; color:#125258" class="nav-link" href="#" onclick="openSprintfulPopup(); return false;">
+                            <a style="font-family: 'El Messiri', sans-serif; color:#125258" class="nav-link"
+                                href="#" onclick="openSprintfulPopup(); return false;">
                                 {{ __('front_end.book_your_appointment_now') }}
                             </a>
 
@@ -601,35 +604,35 @@
     </script>
 
 
-<script>
-     // open the Sprintful popup
-    function openSprintfulPopup() {
-        if (typeof Sprintful !== 'undefined' && Sprintful.showPopup) {
-            Sprintful.showPopup({
-                url: 'https://on.sprintful.com/anas-abushamleh-operation?hide-logo=false&hide-message=false&show-close=true',
-                copyParentsQuery: 'false'
-            });
-        } else {
-            console.error("Sprintful script is not loaded or accessible.");
+    <script>
+        // open the Sprintful popup
+        function openSprintfulPopup() {
+            if (typeof Sprintful !== 'undefined' && Sprintful.showPopup) {
+                Sprintful.showPopup({
+                    url: 'https://on.sprintful.com/anas-abushamleh-operation?hide-logo=false&hide-message=false&show-close=true',
+                    copyParentsQuery: 'false'
+                });
+            } else {
+                console.error("Sprintful script is not loaded or accessible.");
+            }
         }
-    }
 
-    // close the consult section
-    function closeConsultSection() {
-        document.getElementById('consultSection').classList.remove('show');
-        sessionStorage.setItem('consultSectionClosedAt', Date.now());
-    }
-
-    function checkConsultSection() {
-        const closedAt = sessionStorage.getItem('consultSectionClosedAt');
-        const oneHour = 60 * 60 * 1000;
-
-        if (!closedAt || (Date.now() - closedAt >= oneHour)) {
-            document.getElementById('consultSection').classList.add('show');
+        // close the consult section
+        function closeConsultSection() {
+            document.getElementById('consultSection').classList.remove('show');
+            sessionStorage.setItem('consultSectionClosedAt', Date.now());
         }
-    }
-    document.addEventListener('DOMContentLoaded', checkConsultSection);
-  </script>
+
+        function checkConsultSection() {
+            const closedAt = sessionStorage.getItem('consultSectionClosedAt');
+            const oneHour = 60 * 60 * 1000;
+
+            if (!closedAt || (Date.now() - closedAt >= oneHour)) {
+                document.getElementById('consultSection').classList.add('show');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', checkConsultSection);
+    </script>
 </body>
 
 </html>

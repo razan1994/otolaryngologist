@@ -13324,9 +13324,10 @@ Product-Banner-Section Css
 =======================================*/
 .product-banner-section .product-banner-bg {
     border-radius: 10px;
-    background: #F4EFEB;
+    background: rgba(34, 34, 34, 0.0500000007);
     position: relative;
 }
+
 
 @media (max-width: 576px) {
     .product-banner-section .product-banner-bg {
@@ -13368,7 +13369,7 @@ Product-Banner-Section Css
 .product-banner-section .product-banner-bg .product-banner-wrapper .product-banner-content h2 {
     color: var(--primary-color1);
     font-family: var(--font-Kalam);
-    font-size: 42px;
+    font-size: 20px;
     font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 20px;
@@ -15698,6 +15699,8 @@ Testimonial-Section Css
     color: var(--white-color);
     font-size: 17px;
     line-height: 20px;
+    text-align: justify; 
+    text-justify: inter-word;
 }
 
 

@@ -486,7 +486,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                     <div class="col-lg-7">
                         <div class="makeup-content1">
                             <div class="section-title2 style-2">
-                                <h3>{{ __('front_end.nav_Dr_Anas') }}</h3>
+                                <h3>{{ __('front_end.nav_Dr_Anas2') }}</h3>
                             </div>
                             <p id="aboutUsDrParagraph" class="article-card-content">
                                 <span class="d-block d-lg-none">
@@ -520,8 +520,12 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                 </div>
             </div>
         </div>
+
+       
     </div>
     <!-- End About section -->
+
+
 
 
     <!-- Start Treatment section  -->
@@ -645,9 +649,10 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
     <!-- End Before & After section  -->
 
     <!-- Start Blogs section  -->
-    @if (isset($blogs) && $blogs->count() > 0)
+   
         <div style="background-color: #fff;padding-top:70px;padding-bottom:70px" class="beauty-article-section mb-110">
-            <div class="container-md container-fluid">
+           @if (isset($blogs) && $blogs->count() > 0) 
+           <div class="container-md container-fluid">
                 <div class="section-title2 style-2">
                     <h3>{{ __('front_end.home_BlogsArticles') }}</h3>
                     <div class="all-product hover-underline">
@@ -698,8 +703,116 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                     </div>
                 </div>
             </div>
+ @endif
+
+ <div class="product-banner-section mt-50" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="product-banner-bg">
+                    <div class="swiper product-banner-slider swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events">
+                        <div class="swiper-wrapper" id="swiper-wrapper-74bb9986ec4fde85" aria-live="off" style="transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 1296px; opacity: 0; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                               
+                            <div class="product-banner-wrapper">
+                                <div class="product-banner-left-img">
+                                    <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" alt="">
+                                </div>
+                                <div class="product-banner-content">
+                                    <h2>{{ __('front_end.book_text') }}</h2>
+                                    <a href="#" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                </div>
+                                <div class="product-banner-right-img">
+                                    <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}" alt="">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 1296px; opacity: 0; transform: translate3d(-1296px, 0px, 0px); transition-duration: 0ms;">
+                                <div class="product-banner-wrapper">
+                                    <div class="product-banner-left-img">
+                                        <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" alt="">
+                                    </div>
+                                    <div class="product-banner-content">
+                                        <h2>{{ __('front_end.book_text') }}</h2>
+                                        <a href="#" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                    </div>
+                                    <div class="product-banner-right-img">
+                                        <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-visible swiper-slide-active" data-swiper-slide-index="1" role="group" aria-label="2 / 3" style="width: 1296px; opacity: 1; transform: translate3d(-2592px, 0px, 0px); transition-duration: 0ms;">
+                                <div class="product-banner-wrapper">
+                                    <div class="product-banner-left-img">
+                                        <img src="{{ asset('front_end_style/assets/img/home1/banner-section3.png') }}" alt="">
+                                    </div>
+                                    <div class="product-banner-content">
+                                        <h2>{{ __('front_end.banner_section_text_slide1') }}</h2>
+                                        <a href="shop-list.html" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                    </div>
+                                    <div class="product-banner-right-img">
+                                        <img src="{{ asset('front_end_style/assets/img/home1/banner-section4.png') }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 1296px; opacity: 0; transform: translate3d(-3888px, 0px, 0px); transition-duration: 0ms;">
+                                <div class="product-banner-wrapper">
+                                    <div class="product-banner-left-img">
+                                        <img src="{{ asset('front_end_style/assets/img/home1/banner-section5.png') }}" alt="">
+                                    </div>
+                                    <div class="product-banner-content">
+                                        <h2>{{ __('front_end.banner_section_text_slide2') }}</h2>
+                                        <a href="shop-list.html" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                    </div>
+                                    <div class="product-banner-right-img">
+                                        <img src="{{ asset('front_end_style/assets/img/home1/banner-section6.png') }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" role="group" aria-label="3 / 3" style="width: 1296px; opacity: 0; transform: translate3d(-3888px, 0px, 0px); transition-duration: 0ms;">
+                                <div class="product-banner-wrapper">
+                                    <div class="product-banner-left-img">
+                                        <img src="{{ asset('front_end_style/assets/img/home1/banner-section7.png') }}" alt="">
+                                    </div>
+                                    <div class="product-banner-content">
+                                        <h2>{{ __('front_end.banner_section_text_slide3') }}</h2>
+                                        <a href="shop-list.html" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                    </div>
+                                    <div class="product-banner-right-img">
+                                        <img src="{{ asset('front_end_style/assets/img/home1/banner-section8.png') }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 1296px; opacity: 0; transform: translate3d(-5184px, 0px, 0px); transition-duration: 0ms;">
+                            <div class="product-banner-wrapper">
+                                <div class="product-banner-left-img">
+                                    <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" alt="">
+                                </div>
+                                <div class="product-banner-content">
+                                    <h2>{{ __('front_end.banner_section_text_slide3') }}</h2>
+                                    <a href="shop-list.html" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                </div>
+                                <div class="product-banner-right-img">
+                                    <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}" alt="">
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    <div class="product-banner-slider-btn">
+                        <div class="pd-banner-prev-btn slider-btn-bg" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-74bb9986ec4fde85">
+                            <i class="bx bxs-chevron-left"></i>
+                        </div>
+                        <div class="pd-banner-next-btn slider-btn-bg two" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-74bb9986ec4fde85">
+                            <i class="bx bxs-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    @endif
+    </div>
+</div>
+        </div>
+   
     <!-- End Blogs section  -->
 
 

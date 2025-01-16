@@ -6,6 +6,7 @@ return [
     'nav_home' => 'Home',
     'nav_AboutUs' => 'About Us',
     'nav_Dr_Anas' => 'Dr.Anas Abu Shamla',
+    'nav_Dr_Anas2' => 'Dr.Anas Abu Shamleh',
     'nav_Clinic' => 'Clinic',
     'nav_Certified' => 'Certified Insurance Companies',
     'nav_Treatments' => 'Treatments',
@@ -205,6 +206,10 @@ return [
     'book_your_appointment_now' => 'Book your appointment now',
     'book_text' => 'Book your appointment now with Dr. Anas Abu Shamleh, Consultant in Ear, Nose, Throat, Sinus Endoscopic Surgeries, and Rhinoplasty',
     'book_now' => 'Book Now',
+    'banner_section_text_slide1' => 'Dr. Anas Abu Shamleh treats all nasal and sinus diseases, in addition to performing all surgical and cosmetic procedures with exceptional expertise',
+'banner_section_text_slide3' => 'Dr. Anas Abu Shamleh offers services for the treatment of pharyngeal and laryngeal disorders, and the diagnosis of vocal cord disorders',
+'banner_section_text_slide2' => 'Comprehensive services for the treatment of ear diseases, and the treatment of acute and chronic infections, along with providing accurate consultations ',
+
 
 
 

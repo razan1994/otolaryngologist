@@ -461,6 +461,10 @@ p {
     margin-top: 35px;
 }
 
+.mt-50
+{
+    margin-top: 50px;
+}
 .mb-40 {
     margin-bottom: 40px;
 }
@@ -13292,7 +13296,7 @@ Product-Banner-Section Css
 =======================================*/
 .product-banner-section .product-banner-bg {
     border-radius: 10px;
-    background: #F4EFEB;
+    background: rgba(34, 34, 34, 0.0500000007);
     position: relative;
 }
 
@@ -13336,7 +13340,7 @@ Product-Banner-Section Css
 .product-banner-section .product-banner-bg .product-banner-wrapper .product-banner-content h2 {
     color: var(--primary-color1);
     font-family: var(--font-Kalam);
-    font-size: 42px;
+    font-size: 20px;
     font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 20px;
