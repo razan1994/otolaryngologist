@@ -534,16 +534,14 @@ p {
 
 @media (min-width: 576px) and (max-width: 768px) {
     .primary-btn1.style-2 {
-        font-size: 
-        
-        0px;
+        font-size: 16px;
         padding: 10px 25px;
     }
 }
 
 @media (max-width: 576px) {
     .primary-btn1.style-2 {
-        font-size: 18px;
+        font-size: 14px;
         padding: 8px 20px;
     }
 }
@@ -13392,7 +13390,7 @@ Product-Banner-Section Css
 
 @media (max-width: 576px) {
     .product-banner-section .product-banner-bg .product-banner-wrapper .product-banner-content h2 {
-        font-size: 18px;
+        font-size: 19px;
         margin-bottom: 15px;
     }
 }
