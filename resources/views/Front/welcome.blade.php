@@ -800,7 +800,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     href="{{ route('blog-details', [$blog->alias_name]) }}"
                                                     class="hover-underline">{{ Str::limit($blog->title, 20) }}</a></h5>
 
-                                            <p>{!! \Illuminate\Support\Str::limit(strip_tags($blog->description), 95) !!}</p>
+                                            <p>{!! \Illuminate\Support\Str::limit(strip_tags($blog->description), 120) !!}</p>
                                             <a
                                                 href="{{ route('blog-details', [$blog->alias_name]) }}">{{ __('front_end.btn_ReadMore') }}</a>
                                         </div>
