@@ -13368,28 +13368,28 @@ Product-Banner-Section Css
 .product-banner-section .product-banner-bg .product-banner-wrapper .product-banner-content h2 {
     color: var(--primary-color1);
     font-family: var(--font-Kalam);
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 42px;
+    font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 20px;
 }
 
 @media (max-width: 991px) {
     .product-banner-section .product-banner-bg .product-banner-wrapper .product-banner-content h2 {
-        font-size: 18px;
+        font-size: 32px;
     }
 }
 
 @media (max-width: 767px) {
     .product-banner-section .product-banner-bg .product-banner-wrapper .product-banner-content h2 {
-        font-size: 16px;
+        font-size: 22px;
         margin-bottom: 15px;
     }
 }
 
 @media (max-width: 576px) {
     .product-banner-section .product-banner-bg .product-banner-wrapper .product-banner-content h2 {
-        font-size: 14px;
+        font-size: 26px;
         margin-bottom: 15px;
     }
 }
