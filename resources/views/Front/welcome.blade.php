@@ -652,7 +652,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
    
         <div style="background-color: #fff;padding-top:70px;padding-bottom:70px" class="beauty-article-section mb-110">
 
-            {{-- <div class="product-banner-section mt-35" >
+            <div class="product-banner-section mt-35" >
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -665,7 +665,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                 <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" alt="">
                                             </div>
                                             <div class="product-banner-content">
-                                                <h2>{{ __('front_end.book_text') }}</h2>
+                                                <h2 style="font-size: 20px">{{ __('front_end.book_text') }}</h2>
                                                 <a href="#" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
@@ -679,7 +679,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" alt="">
                                                 </div>
                                                 <div class="product-banner-content">
-                                                    <h2>{{ __('front_end.book_text') }}</h2>
+                                                    <h2 style="font-size: 20px">{{ __('front_end.book_text') }}</h2>
                                                     <a href="#" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                                 </div>
                                                 <div class="product-banner-right-img">
@@ -693,7 +693,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     <img src="{{ asset('front_end_style/assets/img/home1/banner-section3.png') }}" alt="">
                                                 </div>
                                                 <div class="product-banner-content">
-                                                    <h2>{{ __('front_end.banner_section_text_slide1') }}</h2>
+                                                    <h2 style="font-size: 20px">{{ __('front_end.banner_section_text_slide1') }}</h2>
                                                     <a href="shop-list.html" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                                 </div>
                                                 <div class="product-banner-right-img">
@@ -707,7 +707,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     <img src="{{ asset('front_end_style/assets/img/home1/banner-section5.png') }}" alt="">
                                                 </div>
                                                 <div class="product-banner-content">
-                                                    <h2>{{ __('front_end.banner_section_text_slide2') }}</h2>
+                                                    <h2 style="font-size: 20px">{{ __('front_end.banner_section_text_slide2') }}</h2>
                                                     <a href="shop-list.html" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                                 </div>
                                                 <div class="product-banner-right-img">
@@ -721,7 +721,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     <img src="{{ asset('front_end_style/assets/img/home1/banner-section7.png') }}" alt="">
                                                 </div>
                                                 <div class="product-banner-content">
-                                                    <h2>{{ __('front_end.banner_section_text_slide3') }}</h2>
+                                                    <h2 style="font-size: 20px">{{ __('front_end.banner_section_text_slide3') }}</h2>
                                                     <a href="shop-list.html" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                                 </div>
                                                 <div class="product-banner-right-img">
@@ -735,7 +735,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                 <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" alt="">
                                             </div>
                                             <div class="product-banner-content">
-                                                <h2>{{ __('front_end.banner_section_text_slide3') }}</h2>
+                                                <h2 style="font-size: 20px">{{ __('front_end.banner_section_text_slide3') }}</h2>
                                                 <a href="shop-list.html" class="primary-btn1 style-2 hover-btn3" onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
@@ -757,7 +757,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
 
 
            @if (isset($blogs) && $blogs->count() > 0) 
