@@ -534,7 +534,9 @@ p {
 
 @media (min-width: 576px) and (max-width: 768px) {
     .primary-btn1.style-2 {
-        font-size: 20px;
+        font-size: 
+        
+        0px;
         padding: 10px 25px;
     }
 }
