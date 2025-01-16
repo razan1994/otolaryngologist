@@ -761,7 +761,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
 
 
            @if (isset($blogs) && $blogs->count() > 0) 
-           <div class="container-md container-fluid mt-50">
+           <div class="container-md container-fluid mb-110">
                 <div class="section-title2 style-2">
                     <h3>{{ __('front_end.home_BlogsArticles') }}</h3>
                     <div class="all-product hover-underline">
