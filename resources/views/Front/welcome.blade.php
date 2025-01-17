@@ -663,7 +663,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                         <div class="col-12 p-4">
                             <p class="mb-3 consult-text">  {{ __('front_end.book_text') }}</p>
                             <h4 class="mb-2 text-white">{{ __('front_end.footer_No') }} </h4>
-                            <a style="font-family: 'El Messiri', sans-serif;background-color:#42aeb9" href="#" onclick="openSprintfulPopup(); return false;" class="btn btn-success w-100">{{ __('front_end.book_your_appointment_now') }} </a>
+                            <a style="font-family: 'El Messiri', sans-serif;background-color:#42aeb9" href="#" onclick="openSprintfulPopup(); return false;" class="primary-btn1 hover-btn3 w-100">{{ __('front_end.book_your_appointment_now') }} </a>
                         </div>
                     </div>
                 </div>
