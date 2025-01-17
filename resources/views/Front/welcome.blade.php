@@ -652,7 +652,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
    
         <div style="background-color: #fff;padding-top:70px;padding-bottom:70px" class="beauty-article-section mb-110">
 
-            <div class="product-banner-section mt-35" >
+            <div class="product-banner-section mt-35 d-none d-lg-block" >
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -814,10 +814,27 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
             </div>
  @endif
 
-
+ <div class="container my-5 d-block d-md-none">
+    <div style="background-color: #125258" class="card text-white border-0 text-center">
+        <div class="row g-0 align-items-center">
+            <!-- Centered Image Section -->
+            <div class="col-12">
+                <img src="{{ asset('front_end_style/assets/img/home1/banner-section9.png') }}" class="img-fluid mx-auto d-block rounded-top mt-3" alt="Doctor Image">
+            </div>
+            <!-- Content Section -->
+            <div class="col-12 p-4">
+                <p class="mb-3 consult-text">  {{ __('front_end.book_text') }}</p>
+                <h4 class="mb-2 text-white">{{ __('front_end.footer_No') }} </h4>
+                <a style="font-family: 'El Messiri', sans-serif;background-color:#42aeb9" href="#" onclick="openSprintfulPopup(); return false;" class="btn btn-success w-100">{{ __('front_end.book_your_appointment_now') }} </a>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
    
     <!-- End Blogs section  -->
+
+    
 
 
     <!-- Start HomeBlog section -->
