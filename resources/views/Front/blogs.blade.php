@@ -3,60 +3,54 @@
 
 @if($blogs->currentPage() == 1)
     @if (Config::get('app.locale') == 'en')
-
-    @section('page_title'){{ isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Undefined' }}@endsection
-    @section('meta_title'){{ isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Undefined' }}@endsection
-    @section('meta_desc'){{ isset($seo_operation->meta_desc_en) ? $seo_operation->meta_desc_en : 'Undefined' }}@endsection
-    @section('meta_keywords'){{ isset($seo_operation->keywords_en) ? $seo_operation->keywords_en : 'Undefined' }}@endsection
-
+        @section('page_title'){{ isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Undefined' }}@endsection
+        @section('meta_title'){{ isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Undefined' }}@endsection
+        @section('meta_desc'){{ isset($seo_operation->meta_desc_en) ? $seo_operation->meta_desc_en : 'Undefined' }}@endsection
+        @section('meta_keywords'){{ isset($seo_operation->keywords_en) ? $seo_operation->keywords_en : 'Undefined' }}@endsection
     @else
-
-    @section('page_title'){{ isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'Undefined' }}@endsection
-    @section('meta_title'){{ isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'Undefined' }}@endsection
-    @section('meta_desc'){{ isset($seo_operation->meta_desc_ar) ? $seo_operation->meta_desc_ar : 'Undefined' }}@endsection
-    @section('meta_keywords'){{ isset($seo_operation->keywords_ar) ? $seo_operation->keywords_ar : 'Undefined' }}@endsection
-
+        @section('page_title'){{ isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'Undefined' }}@endsection
+        @section('meta_title'){{ isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'Undefined' }}@endsection
+        @section('meta_desc'){{ isset($seo_operation->meta_desc_ar) ? $seo_operation->meta_desc_ar : 'Undefined' }}@endsection
+        @section('meta_keywords'){{ isset($seo_operation->keywords_ar) ? $seo_operation->keywords_ar : 'Undefined' }}@endsection
     @endif
 
     @section('canonical')
-    @if (Config::get('app.locale') == 'en')
-    <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs" />
-    <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
-    <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo"/>
-@else
-<link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
-<link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo"/>
-<link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
-@endif
-    @endsection
-
-@else
-    @if (Config::get('app.locale') == 'en')
-    @section('page_title'){{ isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Undefined' }}@endsection
-    @section('meta_title'){{ isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Undefined' }}@endsection
-    @section('meta_desc'){{ isset($seo_operation->meta_desc_en) ? $seo_operation->meta_desc_en : 'Undefined' }}@endsection
-    @section('meta_keywords'){{ isset($seo_operation->keywords_en) ? $seo_operation->keywords_en : 'Undefined' }}@endsection
-    @else
-    @section('page_title'){{ isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'Undefined' }}@endsection
-    @section('meta_title'){{ isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'Undefined' }}@endsection
-    @section('meta_desc'){{ isset($seo_operation->meta_desc_ar) ? $seo_operation->meta_desc_ar : 'Undefined' }}@endsection
-    @section('meta_keywords'){{ isset($seo_operation->keywords_ar) ? $seo_operation->keywords_ar : 'Undefined' }}@endsection
-    @endif
-
-    @section('canonical')
-    @if (Config::get('app.locale') == 'en')
-    <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs" />
-    <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
-    <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo"/>
-    @else
-    <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
-    <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo"/>
-    <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo"/>
+        @if (Config::get('app.locale') == 'en')
+            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs" />
+            <link rel="alternate" hreflang="en-jo" href="https://otolaryngologist-jo.com/en/blogs" />
+            <link rel="alternate" hreflang="ar-jo" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
+        @else
+            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
+            <link rel="alternate" hreflang="ar-jo" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
+            <link rel="alternate" hreflang="en-jo" href="https://otolaryngologist-jo.com/en/blogs" />
         @endif
     @endsection
+@else
+    @if (Config::get('app.locale') == 'en')
+        @section('page_title'){{ isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Undefined' }}@endsection
+        @section('meta_title'){{ isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Undefined' }}@endsection
+        @section('meta_desc'){{ isset($seo_operation->meta_desc_en) ? $seo_operation->meta_desc_en : 'Undefined' }}@endsection
+        @section('meta_keywords'){{ isset($seo_operation->keywords_en) ? $seo_operation->keywords_en : 'Undefined' }}@endsection
+    @else
+        @section('page_title'){{ isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'Undefined' }}@endsection
+        @section('meta_title'){{ isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'Undefined' }}@endsection
+        @section('meta_desc'){{ isset($seo_operation->meta_desc_ar) ? $seo_operation->meta_desc_ar : 'Undefined' }}@endsection
+        @section('meta_keywords'){{ isset($seo_operation->keywords_ar) ? $seo_operation->keywords_ar : 'Undefined' }}@endsection
+    @endif
 
-
+    @section('canonical')
+        @if (Config::get('app.locale') == 'en')
+            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}" />
+            <link rel="alternate" hreflang="en-jo" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}" />
+            <link rel="alternate" hreflang="ar-jo" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" />
+        @else
+            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" />
+            <link rel="alternate" hreflang="ar-jo" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" />
+            <link rel="alternate" hreflang="en-jo" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}" />
+        @endif
+    @endsection
 @endif
+
 
 @section('content')
 
