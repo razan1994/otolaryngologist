@@ -2,6 +2,21 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E83HWT4Z13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E83HWT4Z13');
+    </script>
+
+
     <?php
     $lang = app()->getLocale() == 'ar' ? 'assets_rtl' : 'assets';
     $val = app()->getLocale() == 'ar' ? '.rtl' : '';
@@ -134,18 +149,7 @@
     <!-- End Google Tag Manager -->
 
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E83HWT4Z13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-E83HWT4Z13');
-    </script>
 
 </head>
 
@@ -233,22 +237,26 @@
             <div class="header-logo d-lg-none d-flex">
                 @if (Config::get('app.locale') == 'en')
                     <a href="{{ route('welcome') }}">
-                        <img alt="الدكتور أنس ابوشملة - DR.Aans Abu-Shamleh" src="{{ asset('front_end_style/assets/img/home1/logo.png') }}" class="img-fluid">
+                        <img alt="الدكتور أنس ابوشملة - DR.Aans Abu-Shamleh"
+                            src="{{ asset('front_end_style/assets/img/home1/logo.png') }}" class="img-fluid">
                     </a>
                 @else
                     <a href="{{ route('welcome') }}">
-                        <img alt="الدكتور أنس ابوشملة - DR.Aans Abu-Shamleh" src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" class="img-fluid">
+                        <img alt="الدكتور أنس ابوشملة - DR.Aans Abu-Shamleh"
+                            src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}" class="img-fluid">
                     </a>
                 @endif
             </div>
             <div class="company-logo d-lg-flex d-none">
                 @if (Config::get('app.locale') == 'en')
                     <a href="{{ route('welcome') }}">
-                        <img alt="أفضل دكتور أنف وأذن وحنجرة في الأردن -   Best Ent Doctor in jordan" src="{{ asset('front_end_style/assets/img/home1/logo.png') }}">
+                        <img alt="أفضل دكتور أنف وأذن وحنجرة في الأردن -   Best Ent Doctor in jordan"
+                            src="{{ asset('front_end_style/assets/img/home1/logo.png') }}">
                     </a>
                 @else
                     <a href="{{ route('welcome') }}">
-                        <img alt="أفضل دكتور أنف وأذن وحنجرة في الأردن -   Best Ent Doctor in jordan" src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}">
+                        <img alt="أفضل دكتور أنف وأذن وحنجرة في الأردن -   Best Ent Doctor in jordan"
+                            src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}">
                     </a>
                 @endif
             </div>
@@ -257,11 +265,13 @@
                     <div class="mobile-logo-wrap">
                         @if (Config::get('app.locale') == 'en')
                             <a href="{{ route('welcome') }}">
-                                <img alt=" الدكتور أنس أبوشملة دكتور أنف وأذن وحنجرة عمان الأردن  - Dr.Anas Abu Shamleh, ENT Doctor, Amman, Jordan" src="{{ asset('front_end_style/assets/img/home1/logo.png') }}">
+                                <img alt=" الدكتور أنس أبوشملة دكتور أنف وأذن وحنجرة عمان الأردن  - Dr.Anas Abu Shamleh, ENT Doctor, Amman, Jordan"
+                                    src="{{ asset('front_end_style/assets/img/home1/logo.png') }}">
                             </a>
                         @else
                             <a href="{{ route('welcome') }}">
-                                <img alt=" الدكتور أنس أبوشملة دكتور أنف وأذن وحنجرة عمان الأردن  - Dr.Anas Abu Shamleh, ENT Doctor, Amman, Jordan" src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}">
+                                <img alt=" الدكتور أنس أبوشملة دكتور أنف وأذن وحنجرة عمان الأردن  - Dr.Anas Abu Shamleh, ENT Doctor, Amman, Jordan"
+                                    src="{{ asset('front_end_style/assets/img/home1/logo_ar.png') }}">
                             </a>
                         @endif
                     </div>
@@ -325,7 +335,7 @@
                                 </h6>
                             </div>
                         </div>
-                       
+
                         <div class="email pt-20 d-flex align-items-center">
                             <div class="email-icon">
                                 <!-- Language (Globe) SVG Icon -->
