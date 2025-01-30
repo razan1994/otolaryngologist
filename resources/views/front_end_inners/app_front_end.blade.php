@@ -148,9 +148,6 @@
     </script>
     <!-- End Google Tag Manager -->
 
-
-
-
 </head>
 
 <body class="style-2">
