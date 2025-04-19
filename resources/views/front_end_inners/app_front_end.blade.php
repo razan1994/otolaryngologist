@@ -29,14 +29,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <title>@yield('page_title')</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="@yield('robot')">
     <meta name="title" content="@yield('meta_title')">
     <meta name="description" content="@yield('meta_desc')">
-    <meta property="title" content="@yield('meta_title')">
-    <meta property="description" content="@yield('meta_desc')">
+    <meta name="keywords" content="@yield('meta_keywords')">
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta name="og:title" content="@yield('meta_title')">
     <meta name="og:description" content="@yield('meta_desc')" />
@@ -49,7 +46,6 @@
     <meta name="twitter:image" content="{{ asset('front_end_style/assets/img/favicon.png') }}" />
     <meta name="twitter:title" content="@yield('meta_title')">
     <meta name="twitter:description" content="@yield('meta_desc')" />
-    <meta property="keywords" content="@yield('meta_keywords')">
     <meta name="author" content="dranasabushamleh">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
@@ -127,6 +123,7 @@
             rel="stylesheet">
     @endif
 
+    <!-- search console -->
     <meta name="google-site-verification" content="cHvVWecmNPDa8dEPTPTUw-etBdtLKKLj4GYnAX-83Bc" />
 
     <!-- Google Tag Manager -->
@@ -148,9 +145,26 @@
     </script>
     <!-- End Google Tag Manager -->
 
+    <!-- Include Files -->
+    @if (Config::get('app.locale') == 'en')
+        @include('front_end_inners.includes.en_include')
+    @else
+        @include('front_end_inners.includes.ar_include')
+    @endif
+    <!-- End Include Files -->
+
 </head>
 
 <body class="style-2">
+
+    <!-- h1/h1 hidden Section -->
+    <h1 class="hidden-h1">@yield('h1_val')</h1>
+    <h2 class="hidden-h2">@yield('h2_val')</h2>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5KVRS7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Appointment Section -->
     <div class="consult-section" id="consultSection">
@@ -165,7 +179,7 @@
         <span class="close-button" onclick="closeConsultSection()">×</span>
     </div>
 
-    <!-- Icons Section -->
+    <!-- Social Icons Section -->
     <div class="icon-bar">
         <a href="tel:00962799559157" class="phone"><i class="fas fa-phone-alt"></i></a>
         <a href="https://wa.link/chzxur" class="whatsapp"><i class="fab fa-whatsapp"></i>
@@ -175,15 +189,6 @@
         </a>
         <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
     </div>
-
-    <!-- h1/h1 hidden Section -->
-    <h1 class="hidden-h1">@yield('h1_val')</h1>
-    <h2 class="hidden-h2">@yield('h2_val')</h2>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5KVRS7" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
 
     <!-- top bar Section -->
@@ -386,11 +391,7 @@
 
     @yield('content')
 
-    @if (Config::get('app.locale') == 'en')
-        @include('front_end_inners.includes.en_include')
-    @else
-        @include('front_end_inners.includes.ar_include')
-    @endif
+
 
     <!-- Start Footer section section -->
     <footer class="footer-section style-2">
