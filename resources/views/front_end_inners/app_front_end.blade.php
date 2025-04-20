@@ -35,8 +35,6 @@
     <meta name="description" content="@yield('meta_desc')">
     <meta name="keywords" content="@yield('meta_keywords')">
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta name="og:title" content="@yield('meta_title')">
-    <meta name="og:description" content="@yield('meta_desc')" />
     <meta property="og:image" content="{{ asset('front_end_style/assets/img/favicon.png') }}" />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
@@ -47,6 +45,9 @@
     <meta name="twitter:title" content="@yield('meta_title')">
     <meta name="twitter:description" content="@yield('meta_desc')" />
     <meta name="author" content="dranasabushamleh">
+    <meta property="og:title" content="@yield('meta_title')">
+    <meta property="og:description" content="@yield('meta_desc')">
+    <meta propert="og:keywords" content="@yield('meta_keywords')">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
 
