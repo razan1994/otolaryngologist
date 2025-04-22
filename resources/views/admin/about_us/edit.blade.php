@@ -67,7 +67,7 @@
                                             @csrf
                                             <div class="form-row">
                                                 <div class="col-md-12 mb-3">
-                                                    <h3 class="mb-3" for="validationServer01">About As about_dr_en:</h3>
+                                                    <h3 class="mb-3" for="validationServer01">About us - About Dr EN:</h3>
                                                     <div class="input-group">
                                                         <textarea id="about_dr_en" name="about_dr_en" class="form-control" rows="10">{!! isset($about->about_dr_en) ? $about->about_dr_en : null !!}</textarea>
                                                     </div>
@@ -76,7 +76,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="col-md-12 mb-3">
-                                                    <h3 class="mb-3" for="validationServer01">About As about_dr_ar AR :</h3>
+                                                    <h3 class="mb-3" for="validationServer01">About us - About Dr AR:</h3>
                                                     <div class="input-group">
 
                                                         <textarea id="about_dr_ar" name="about_dr_ar" class="form-control"
@@ -135,8 +135,20 @@
                                                         <h4 class="form-text text-danger"> - {{ $message }}</h4>
                                                     @enderror
                                                 </div>
+
+
                                                 <div class="col-md-12 mb-3">
-                                                    <h3 class="mb-3" for="validationServer01">About As about_clinic_ar AR :</h3>
+                                                    <h3 class="mb-3" for="validationServer01">About us - About Clinic EN:</h3>
+                                                    <div class="input-group">
+                                                        <textarea id="about_clinic_en" name="about_clinic_en" class="form-control" rows="10">{!! isset($about->about_clinic_en) ? $about->about_clinic_en : null !!}</textarea>
+                                                    </div>
+                                                    @error('about_clinic_en')
+                                                        <h4 class="form-text text-danger"> - {{ $message }}</h4>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="col-md-12 mb-3">
+                                                    <h3 class="mb-3" for="validationServer01">About us - About Clinic AR:</h3>
                                                     <div class="input-group">
 
                                                         <textarea id="about_clinic_ar" name="about_clinic_ar" class="form-control"
@@ -148,16 +160,17 @@
                                                 </div>
 
                                                 <div class="col-md-12 mb-3">
-                                                    <h3 class="mb-3" for="validationServer01">About As about_clinic_en</h3>
+                                                    <h3 class="mb-3" for="validationServer01">Insurance Text EN</h3>
                                                     <div class="input-group">
-                                                        <textarea id="about_clinic_en" name="about_clinic_en" class="form-control" rows="10">{!! isset($about->about_clinic_en) ? $about->about_clinic_en : null !!}</textarea>
+                                                        <textarea id="insurance_text_en" name="insurance_text_en" class="form-control" rows="10">{!! isset($about->insurance_text_en) ? $about->insurance_text_en : null !!}</textarea>
                                                     </div>
-                                                    @error('about_clinic_en')
+                                                    @error('insurance_text_en')
                                                         <h4 class="form-text text-danger"> - {{ $message }}</h4>
                                                     @enderror
                                                 </div>
+
                                                 <div class="col-md-12 mb-3">
-                                                    <h3 class="mb-3" for="validationServer01">insurance_text_ar :</h3>
+                                                    <h3 class="mb-3" for="validationServer01">Insurance Text AR :</h3>
                                                     <div class="input-group">
 
                                                         <textarea id="insurance_text_ar" name="insurance_text_ar" class="form-control"
@@ -168,15 +181,7 @@
                                                     @enderror
                                                 </div>
 
-                                                <div class="col-md-12 mb-3">
-                                                    <h3 class="mb-3" for="validationServer01">insurance_text_en</h3>
-                                                    <div class="input-group">
-                                                        <textarea id="insurance_text_en" name="insurance_text_en" class="form-control" rows="10">{!! isset($about->insurance_text_en) ? $about->insurance_text_en : null !!}</textarea>
-                                                    </div>
-                                                    @error('insurance_text_en')
-                                                        <h4 class="form-text text-danger"> - {{ $message }}</h4>
-                                                    @enderror
-                                                </div>
+
 
                                             </div>
                                             <button class="btn btn-primary" type="submit">Save Updates</button>
