@@ -3,7 +3,7 @@
         <!-- Aplication Brand -->
         <div class="app-brand">
             <a href="{{ route('super_admin.dashboard') }}" title="Dashboard">
-                <span class="brand-name text-truncate"> Smarzone Dashboard </span>
+                <span class="brand-name text-truncate"> Dashboard </span>
             </a>
         </div>
         <!-- begin sidebar scrollbar -->
@@ -109,7 +109,7 @@
                         </a>
                         <ul class="collapse" id="services" data-parent="#sidebar-menu">
                             <div class="sub-menu">
-                                    
+
                                      <li class="active">
                                         <a class="sidenav-item-link"
                                             href="{{ route('super_admin.treatments-index') }}">
@@ -134,12 +134,12 @@
                                             <span class="nav-text" style="font-size: 9pt;">Terms & Conditions </span>
                                         </a>
                                     </li>
-                                    <li class="active">
+                                    {{-- <li class="active">
                                         <a class="sidenav-item-link" href="{{ route('super_admin.insurances-index') }}">
                                             <i class="fas fa-briefcase"> </i>
                                             <span class="nav-text" style="font-size: 9pt;"> Insurances</span>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li class="active">
                                         <a class="sidenav-item-link" href="{{ route('super_admin.photos-index') }}">
                                             <i class="fas fa-briefcase"> </i>

@@ -35,6 +35,326 @@
 @endsection
 
 <style>
+/*# Before & After CSS */
+.wrapper {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    max-width: 750px;
+    overflow: hidden;
+    background: #fff;
+    border: 7px solid #fff;
+}
+
+.wrapper .images {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.wrapper .images .img-1,
+.wrapper .images .img-2 {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper .images .img-2 {
+    position: absolute;
+    width: 50%;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.slider input {
+    width: 100%;
+    outline: none;
+    background: none;
+    -webkit-appearance: none;
+}
+
+.slider input::-webkit-slider-thumb {
+    height: 486px;
+    width: 3px;
+    background: none;
+    -webkit-appearance: none;
+    cursor: col-resize;
+}
+
+.slider .drag-line {
+    width: 3px;
+    height: 486px;
+    position: absolute;
+    left: 49.85%;
+    pointer-events: none;
+}
+
+.slider .drag-line::before,
+.slider .drag-line::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 222px;
+    background: #fff;
+}
+
+.slider .drag-line::before {
+    top: 0;
+}
+
+.slider .drag-line::after {
+    bottom: 0;
+}
+
+.slider .drag-line span {
+    height: 42px;
+    width: 42px;
+    border: 3px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider .drag-line span::before,
+.slider .drag-line span::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    border: 10px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.slider .drag-line span::before {
+    left: 40%;
+    border-left-color: #fff;
+}
+
+.slider .drag-line span::after {
+    left: 60%;
+    border-top-color: #fff;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .wrapper {
+        position: relative;
+        height: 300px;
+        width: 100%;
+        max-width: 500px;
+        overflow: hidden;
+        background: #443838;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper .images {
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+
+    .wrapper .images .img-1,
+    .wrapper .images .img-2 {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .wrapper .images .img-2 {
+        position: absolute;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .wrapper .slider {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+
+    .wrapper .slider input[type="range"]::-webkit-slider-thumb {
+        height: 300px;
+    }
+
+    .slider .drag-line {
+        height: 300px;
+    }
+
+    .slider .drag-line::before,
+    .slider .drag-line::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 500px;
+        background: #fff;
+    }
+
+    .slider .drag-line::before {
+        top: 0;
+    }
+
+    .slider .drag-line::after {
+        bottom: 0;
+    }
+
+    .slider .drag-line span {
+        height: 42px;
+        width: 42px;
+        border: 3px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .slider .drag-line span::before,
+    .slider .drag-line span::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        border: 10px solid transparent;
+        border-bottom-width: 0px;
+        border-right-width: 0px;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .slider .drag-line span::before {
+        left: 40%;
+        border-left-color: #fff;
+    }
+
+    .slider .drag-line span::after {
+        left: 60%;
+        border-top-color: #fff;
+    }
+
+    .label-before,
+    .label-after {
+        font-size: 12px;
+        padding: 3px;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .wrapper {
+        position: relative;
+        height: 200px;
+        width: 100%;
+        max-width: 500px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper .images {
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+
+    .wrapper .images .img-1,
+    .wrapper .images .img-2 {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .wrapper .images .img-2 {
+        position: absolute;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .wrapper .slider {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .wrapper .slider input[type="range"]::-webkit-slider-thumb {
+        height: 200px;
+    }
+
+    .slider .drag-line {
+        height: 200px;
+    }
+
+    .slider .drag-line::before,
+    .slider .drag-line::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 500px;
+        background: #fff;
+    }
+
+    .slider .drag-line::before {
+        top: 0;
+    }
+
+    .slider .drag-line::after {
+        bottom: 0;
+    }
+
+    .slider .drag-line span {
+        height: 42px;
+        width: 42px;
+        border: 3px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .slider .drag-line span::before,
+    .slider .drag-line span::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        border: 10px solid transparent;
+        border-bottom-width: 0px;
+        border-right-width: 0px;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .slider .drag-line span::before {
+        left: 40%;
+        border-left-color: #fff;
+    }
+
+    .slider .drag-line span::after {
+        left: 60%;
+        border-top-color: #fff;
+    }
+
+    .label-before,
+    .label-after {
+        font-size: 10px;
+        padding: 2px;
+    }
+}
 
 </style>
 
