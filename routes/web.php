@@ -34,21 +34,21 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
 
     Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
-    Route::get('/'.str_replace(' ','-',trans('front_end.ContactUs_Contact')), [FrontendController::class, 'ContactUs'])->name('ContactUs');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.ContactUs_Contact')), [FrontendController::class, 'ContactUs'])->name('ContactUs');
     Route::post('/contactUsRequest1', [FrontendController::class, 'contactUsRequest1'])->name('contactUsRequest1');
-    Route::get('/'.str_replace(' ','-',trans('front_end.nav_Dr_Anas')), [FrontendController::class, 'Dranas'])->name('dranas');
-    Route::get('/'.str_replace(' ','-',trans('front_end.footer_OurClinic')), [FrontendController::class, 'Clinic'])->name('aboutClinic');
-    Route::get('/'.str_replace(' ','-',trans('front_end.Insurance_Certified')), [FrontendController::class, 'Insurance'])->name('insurance');
-    Route::get('/'.str_replace(' ','-',trans('front_end.nav_Treatments')), [FrontendController::class, 'Treatments'])->name('treatments');
-    Route::get('/'.str_replace(' ','-',trans('front_end.ourTreatments_Treatments')).'/{aliasname}', [FrontendController::class, 'TreatmentsDetails'])->name('treatments-details');
-    Route::get('/'.str_replace(' ','-',trans('front_end.nav_Gallery')), [FrontendController::class, 'Gallary'])->name('gallery');
-    Route::get('/'.str_replace(' ','-',trans('front_end.seo_Blogs')), [FrontendController::class, 'Blogs'])->name('blogs');
-    Route::get('/'.str_replace(' ','-',trans('front_end.seo_Blogs')).'/{aliasname}', [FrontendController::class, 'BlogDetails'])->name('blog-details');
-    Route::get('/'.str_replace(' ','-',trans('front_end.nav_Gallery')).'/{aliasname}', [FrontendController::class, 'GallaryDetails'])->name('gallery-details');
-    Route::get('/'.str_replace(' ','-',trans('front_end.seo_FAQ')), [FrontendController::class, 'FAQ'])->name('FAQ');
-    Route::get('/'.str_replace(' ','-',trans('front_end.PrivacyPolicy_Privacy')), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
-    Route::get('/'.str_replace(' ','-',trans('front_end.Eardisease_AllServices')).'/{alias_name}', [FrontendController::class, 'ServiceDetails'])->name('services-details');
-    Route::get('/'.str_replace(' ','-',trans('front_end.footer_terms')), [FrontendController::class, 'TermsAndConditions'])->name('Terms&Conditions');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Dr_Anas')), [FrontendController::class, 'Dranas'])->name('dranas');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.footer_OurClinic')), [FrontendController::class, 'Clinic'])->name('aboutClinic');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.Insurance_Certified')), [FrontendController::class, 'Insurance'])->name('insurance');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Treatments')), [FrontendController::class, 'Treatments'])->name('treatments');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.ourTreatments_Treatments')) . '/{aliasname}', [FrontendController::class, 'TreatmentsDetails'])->name('treatments-details');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Gallery')), [FrontendController::class, 'Gallary'])->name('gallery');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.seo_Blogs')), [FrontendController::class, 'Blogs'])->name('blogs');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.seo_Blogs')) . '/{aliasname}', [FrontendController::class, 'BlogDetails'])->name('blog-details');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Gallery')) . '/{aliasname}', [FrontendController::class, 'GallaryDetails'])->name('gallery-details');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.seo_FAQ')), [FrontendController::class, 'FAQ'])->name('FAQ');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.PrivacyPolicy_Privacy')), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.Eardisease_AllServices')) . '/{alias_name}', [FrontendController::class, 'ServiceDetails'])->name('services-details');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.footer_terms')), [FrontendController::class, 'TermsAndConditions'])->name('Terms&Conditions');
 
 
     // Route::get('/policy', function () {
@@ -62,21 +62,24 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 });
 
 
+Route::get('/dashboard',function(){
+    return redirect()->route('super_admin.dashboard');
+})->middleware('auth:super_admin')->name('dashboard');
 // ==================================================================================================================
 // =========================================== Super Admin Routes ===================================================
 // ==================================================================================================================
 Route::prefix('super_admin')->name('super_admin.')->group(function () {
 
-        Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
-        Route::post('/login', [AdminLoginController::class, 'login'])->name('login.submit');
-        Route::group(['middleware' => 'auth:super_admin'], function () {
+    Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AdminLoginController::class, 'login'])->name('login.submit');
+    Route::group(['middleware' => 'auth:super_admin'], function () {
         // Dashboard Route :
         Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('dashboard');
         // Support Tickets :
         // ==============================================================================
         Route::group(['prefix' => 'support_tickets'], function () {
-        Route::get('/index', [SupportTicketController::class, 'index'])->name('support_tickets-index');
-        Route::get('destroy/{id}', [SupportTicketController::class, 'destroy'])->name('support_tickets-destroy');
+            Route::get('/index', [SupportTicketController::class, 'index'])->name('support_tickets-index');
+            Route::get('destroy/{id}', [SupportTicketController::class, 'destroy'])->name('support_tickets-destroy');
         });
 
         // About Us Routes :
@@ -90,11 +93,11 @@ Route::prefix('super_admin')->name('super_admin.')->group(function () {
 
         // SEO operations
         // ==============================================================================
-       Route::group(['prefix' => 'seo_operations'], function () {
-           Route::get('/index', [SeoOperationsController::class, 'index'])->name('seo_operations-index');
-           Route::get('edit/{id}', [SeoOperationsController::class, 'edit'])->name('seo_operations-edit');
-          Route::post('update/{id}', [SeoOperationsController::class, 'update'])->name('seo_operations-update');
-      });
+        Route::group(['prefix' => 'seo_operations'], function () {
+            Route::get('/index', [SeoOperationsController::class, 'index'])->name('seo_operations-index');
+            Route::get('edit/{id}', [SeoOperationsController::class, 'edit'])->name('seo_operations-edit');
+            Route::post('update/{id}', [SeoOperationsController::class, 'update'])->name('seo_operations-update');
+        });
 
 
 
@@ -250,12 +253,12 @@ Route::prefix('super_admin')->name('super_admin.')->group(function () {
 
 
         Route::group(['prefix' => 'photos'], function () {
-            Route::get('/index',        [PhotosController::class, 'index'])->name('photos-index');
-            Route::post('/store',       [PhotosController::class, 'store'])->name('photos-store');
+            Route::get('/index', [PhotosController::class, 'index'])->name('photos-index');
+            Route::post('/store', [PhotosController::class, 'store'])->name('photos-store');
             Route::get('/destroy/{id}', [PhotosController::class, 'destroy'])->name('photos-destroy');
         });
 
-         // Photo
+        // Photo
         // ==============================================================================
         Route::group(['prefix' => 'Photo'], function () {
             Route::get('/index', [PhotosController::class, 'index'])->name('Photo-index');
