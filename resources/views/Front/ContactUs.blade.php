@@ -35,6 +35,10 @@
 @endsection
 
 
+<?php
+$contacts=App\Models\ContactUs::first();
+?>
+
 
 
 
@@ -169,7 +173,7 @@
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'شكرًا لك !',
-                                    text: 'تم تقديم حجزك بنجاح، وسنقوم بالتواصل معك في أقرب وقت ممكن ',
+                                    text: 'سنقوم بالتواصل معك في أقرب وقت ممكن ',
                                     confirmButtonColor: '#42aeb9',
                                 });
                             </script>
@@ -201,7 +205,7 @@
                                 </div>
                                 <div class="info">
                                     <a
-                                        href="tel:{{ __('front_end.top_nav_phone') }}">{{ __('front_end.top_nav_phone') }}</a>
+                                        href="tel:{{$contacts->phone}}">{{$contacts->phone}}</a>
                                 </div>
                             </li>
                             <li>
@@ -244,7 +248,7 @@
                                 </div>
                                 <div class="info">
                                     <a
-                                        href="tel:{{ __('front_end.top_nav_phone') }}">{{ __('front_end.top_nav_phone') }}</a>
+                                        href="tel:{{$contacts->phone}}">{{$contacts->phone}}</a>
 
                                 </div>
                             </li>
