@@ -419,7 +419,8 @@
                 <div class="about-us-thumb hover-img mb-60">
                     <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف في عمان الأردن, قبل وبعد عملية تجميل الأنف, نتائج قبل وبعد, صور قبل وبعد العلاج
 , نتائج العلاج قبل وبعد, قبل وبعد النتائج الطبيةصور تجميل الأنف قبل وبعد العملية, Dr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best ENT consultant for endoscopic sinus surgery and rhinoplasty in Amman, Jordan, before and after rhinoplasty, results before and after, before and after treatment photos, treatment results before and after, before and after medical results, rhinoplasty photos before and after the procedure"
-                        src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}">
+                        src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}"
+                        loading="lazy">
 
                 </div>
             </div>
@@ -465,7 +466,7 @@
                                             file_exists(public_path($news_blog->image_before)) &&
                                             file_exists(public_path($news_blog->image_after)))
                                         <div class="img-1"
-                                            style="background-image: url('{{ asset($news_blog->image_after) }}');">
+                                            style="background-image: url('{{ asset($news_blog->image_after) }}');" >
                                         </div>
                                         <div class="img-2"
                                             style="background-image: url('{{ asset($news_blog->image_before) }}');">
@@ -497,7 +498,7 @@
                             <div class="recent-post-widget mb-20">
                                 <div class="recent-post-img">
                                     <a href="{{ route('gallery-details', $photo->alias_name) }}">
-                                        <img src="{{ asset($photo->image_after) }}" alt=" {{ $photo->alt }}">
+                                        <img src="{{ asset($photo->image_after) }}" loading="lazy" alt=" {{ $photo->alt }}">
                                     </a>
                                 </div>
                                 <div class="recent-post-content">
@@ -524,219 +525,220 @@
 
 
 
-<!-- Start Instagram section section -->
-<div class="instagram-section mb-110 mt-110">
-    <div class="container">
-        <div class="section-title style-3">
-            <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
-            <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
-                    href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
-            </p>
+    <!-- Start Instagram section section -->
+    <div class="instagram-section mb-110 mt-110">
+        <div class="container">
+            <div class="section-title style-3">
+                <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
+                <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
+                        href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="instagram-wrapper">
-        <div class="container-fluid p-0">
-            <div class="row">
-                <div class="col-12">
-                    <div class="swiper instagram-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst1.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst3.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst4.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+        <div class="instagram-wrapper">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="swiper instagram-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst1.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst3.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst4.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst5.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst5.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst6.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst6.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst7.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst7.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst8.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst9.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst10.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst11.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst12.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst13.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst14.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst15.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst8.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst9.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst10.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst11.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst12.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst13.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst14.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst15.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst16.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst16.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst17.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst17.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst18.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst18.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst19.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst19.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst20.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst20.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst21.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst21.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst22.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst22.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst23.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst23.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="https://www.instagram.com/"><img
-                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
-                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="https://www.instagram.com/"><img
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
+                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -744,8 +746,7 @@ Specialist and Rhinoplasty Surgeon
             </div>
         </div>
     </div>
-</div>
-<!-- End Instagram section section -->
+    <!-- End Instagram section section -->
 <script>
     document.querySelectorAll('.wrapper').forEach(wrapper => {
         const range = wrapper.querySelector('input[type="range"]');

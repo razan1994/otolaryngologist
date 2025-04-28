@@ -92,18 +92,14 @@ class FrontendController extends Controller
         $insurances = Insurance::get();
         // return   $insurances;
         return view('Front/About/insurance', compact('seo_operation', 'insurances'));
-
-
-
     }
+
     public function FAQ()
     {
         $seo_operation = SeoOperation::where('page_name', 'Faq')->get()->first();
         $faqs = Faq::get();
         // return   $faqs;
         return view('Front/FAQ', compact('seo_operation', 'faqs'));
-
-
 
     }
     public function Dranas()
@@ -267,7 +263,7 @@ class FrontendController extends Controller
     public function Treatments()
     {
         $seo_operation = SeoOperation::where('page_name', 'Treatments')->first();
-        $treatments = Treatment::where('status', 1)->paginate(9);
+        $treatments = Treatment::where('status', 1)->paginate(8);
 
         return view('Front/treatments', compact('seo_operation', 'treatments', ));
     }

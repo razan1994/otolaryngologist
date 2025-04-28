@@ -100,11 +100,15 @@ class ContactUsController extends Controller
                 $update_data = [
                     'email' => $request->email,
                     'phone' => $request->phone,
+                    'phone2' => $request->phone2,
                     'address_en' => $request->address_en,
                     'address_ar' => $request->address_ar,
+                    'address_en2' => $request->address_en2,
+                    'address_ar2' => $request->address_ar2,
                     'longitude' => $request->longitude,
                     'latitude' => $request->latitude,
                 ];
+
 
 
                 DB::transaction(function () use ($update_data, $contact) {

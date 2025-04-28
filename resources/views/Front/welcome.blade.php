@@ -362,8 +362,9 @@
 
     <!-- Start Video section -->
     <div class="full-video-banner">
-        <video preload="none" class="banner-video" autoplay muted loop playsinline>
+        <video class="banner-video" autoplay muted loop playsinline preload="metadata">
             <source src="{{ asset('front_end_style/assets/videos/banner-video1.mp4') }}" type="video/mp4">
+                <source src="{{ asset('front_end_style/assets/videos/banner-video1.webm') }}" type="video/webm">
             <p>الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو
                 جمعية
                 الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
@@ -393,7 +394,7 @@
                         <div class="article-card">
                             <div class="article-card-content style-3">
                                 <div class="d-flex align-items-center justify-content-start">
-                                    <img src="{{ asset('front_end_style/assets/img/home1/icon1.png') }}"
+                                    <img src="{{ asset('front_end_style/assets/img/home1/icon1.png') }}" loading="lazy"
                                         alt="الدكتور أنس ابوشملة, أفضل طبيب أنف وأذن وحنجرة ووالجيوب الأنفية بالمنظار وتجميل الأنف في عمان الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, أمراض الأنف، التهابات الأنف، انحراف الحاجز الأنفي، التهاب الجيوب الأنفية، حساسية الأنف، تورم الأنف، انسداد الأنف، أورام الأنف، علاج الأنف، ألم الأنف، تنظير الأنف، تشخيص أمراض الأنف، جراحة الأنف، علاج التهابات الأنف، علاج انسداد الأنف، التهابات الجيوب الأنفية المزمنة، علاج حساسية الأنف، أسباب انسداد الأنف، أعراض أمراض الأنف، تشخيص التهاب الأنف, Dr. Anas Abu Shumla, the best ENT specialist and endoscopic sinus surgeon, and nasal plastic surgeon in Amman, Jordan, is an expert in treating ear, nose, and throat diseases. His specialties include nasal diseases, nasal inflammations, deviated nasal septum, sinusitis, nasal allergies, nasal swelling, nasal obstruction, nasal tumors, nasal treatment, nasal pain, nasal endoscopy, diagnosis of nasal diseases, nasal surgery, treatment of nasal inflammations, treatment of nasal obstruction, chronic sinusitis treatment, treatment of nasal allergies, causes of nasal obstruction, symptoms of nasal diseases, and diagnosis of nasal inflammation."
                                         style="width: 70px; height: 70px;" class="me-3">
                                     <h5 class="mb-0">
@@ -419,7 +420,7 @@
                         <div class="article-card">
                             <div class="article-card-content style-3">
                                 <div class="d-flex align-items-center justify-content-start">
-                                    <img src="{{ asset('front_end_style/assets/img/home1/icon2.png') }}"
+                                    <img src="{{ asset('front_end_style/assets/img/home1/icon2.png') }}" loading="lazy"
                                         alt="الدكتور أنس ابوشملة, أفضل طبيب أنف وأذن وحنجرة ووالجيوب الأنفية بالمنظار وتجميل الأنف في عمان الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, أمراض الأنف، أمراض الأذن، التهاب الأذن، فقدان السمع، طنين الأذن، أوجاع الأذن، انسداد الأذن، عدوى الأذن، ألم الأذن، جراحة الأذن، تشخيص أمراض الأذن، علاج التهاب الأذن، ضعف السمع، التهاب الأذن الوسطى، التهاب الأذن الخارجية، أذن swimmer، انسداد قناة الأذن، داء منيير، صمم، مشاكل الأذن، مشاكل السمع، جراحة الأذن، أعراض طنين الأذن، أسباب فقدان السمع، علاج طنين الأذن، مشاكل الأذن الداخلية، استشاري أمراض الأذن، تقنيات علاج الأذن، تأهيل السمع، تشخيص طنين الأذن، الوقاية من مشاكل الأذن، استشارات الأذن، أمراض الأذن الشائعة، علاج عدوى الأذن، اضطرابات الأذن,Dr. Anas Abu Shumla, the best ENT specialist and endoscopic sinus and nasal cosmetic surgeon in Amman, Jordan, is an expert in treating ear, nose, and throat diseases. His expertise includes ear diseases, ear infections, hearing loss, tinnitus, ear pain, ear blockage, ear infections, ear surgery, diagnosing ear diseases, treating ear inflammation, hearing impairment, middle ear infections, outer ear infections, swimmer's ear, ear canal blockage, Meniere's disease, deafness, ear problems, hearing problems, ENT surgery, symptoms of tinnitus, causes of hearing loss, treatment of tinnitus, inner ear issues, ENT consultant, ear treatment techniques, hearing rehabilitation, tinnitus diagnosis, prevention of ear problems, ear consultations, common ear diseases, ear infection treatment, and ear disorders."
                                         style="width: 70px; height: 70px;" class="me-3">
                                     <h5 class="mb-0">
@@ -446,7 +447,7 @@
                         <div class="article-card">
                             <div class="article-card-content style-3">
                                 <div class="d-flex align-items-center justify-content-start">
-                                    <img src="{{ asset('front_end_style/assets/img/home1/icon3.png') }}"
+                                    <img src="{{ asset('front_end_style/assets/img/home1/icon3.png') }}" loading="lazy"
                                         alt="الدكتور أنس ابوشملة, أفضل طبيب أنف وأذن وحنجرة ووالجيوب الأنفية بالمنظار وتجميل الأنف في عمان الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, أمراض الأنف، أمراض الحنجرة، التهاب الحنجرة، تشخيص أمراض الحنجرة، علاج التهاب الحنجرة، أورام الحنجرة، خراج الحنجرة، التهاب الحنجرة المزمن، صعوبة في البلع، بحة في الصوت، مشاكل الصوت، التهاب الحنجرة البكتيري، التهاب الحنجرة الفيروسي، تشنجات الحنجرة، سرطان الحنجرة، جراحة الحنجرة، تنظير الحنجرة، علاج بحة الصوت، أسباب صعوبة البلع، أعراض التهاب الحنجرة، تشخيص سرطان الحنجرة، علاج أورام الحنجرة، استشاري الحنجرة، علاج تشنجات الحنجرة، مشاكل الحنجرة، استشارات الحنجرة, Dr. Anas Abu Shumleh, the best ENT specialist and endoscopic sinus surgeon in Amman, Jordan, is an expert in treating ear, nose, and throat diseases. He specializes in nose diseases, throat diseases, laryngitis, diagnosing throat conditions, treating laryngitis, laryngeal tumors, laryngeal abscesses, chronic laryngitis, difficulty swallowing, hoarseness, voice problems, bacterial laryngitis, viral laryngitis, laryngeal spasms, laryngeal cancer, laryngeal surgery, laryngoscopy, treating hoarseness, causes of swallowing difficulties, symptoms of laryngitis, diagnosing laryngeal cancer, treating laryngeal tumors, laryngeal consultations, treating laryngeal spasms, throat issues, and laryngeal consultations."
                                         style="width: 70px; height: 70px;" class="me-3">
                                     <h5 class="mb-0">
@@ -484,7 +485,7 @@
                 <div class="row align-items-center justify-content-center mb-4 g-0 gy-4">
                     <div class="col-lg-5">
                         <div class="makeup-img hover-img">
-                            <img style="object-fit: cover; width: 100%; height: 450px;" src="{{ asset('front_end_style/assets/img/home1/makeup-img1.png') }}"
+                            <img style="object-fit: cover; width: 100%; height: 450px;" src="{{ asset('front_end_style/assets/img/home1/makeup-img1.png') }}" loading="lazy"
                                 alt="الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
 الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
 Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan.">
@@ -502,7 +503,8 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                             </p>
                             <div class="hover-img mb-20">
                                 <img src="{{ asset('front_end_style/assets/img/home1/signture.png') }}"
-                                    alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, جراحة الأنف والجيوب الأنفية في عمان, تقنيات متقدمة في طب الأنف والأذن والحنجرة, أمراض وعلاجات الأنف والأذن والحنجرة, أفضل عيادة أنف وأذن وحنجرة في عمان الأردن, رعاية ENT موثوقة في عمان,Dr. Anas Abu shamleh Clinic, Comprehensive Ear, Nose and Throat Services, Best ENT Specialist in Amman Jordan, Nose and Sinus Surgery in Amman, Advanced Otorhinolaryngology Techniques, Ear, Nose and Throat Diseases and Treatments, Best ENT Clinic in Amman Jordan, Reliable ENT Care in Amman">
+                                    alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, جراحة الأنف والجيوب الأنفية في عمان, تقنيات متقدمة في طب الأنف والأذن والحنجرة, أمراض وعلاجات الأنف والأذن والحنجرة, أفضل عيادة أنف وأذن وحنجرة في عمان الأردن, رعاية ENT موثوقة في عمان,Dr. Anas Abu shamleh Clinic, Comprehensive Ear, Nose and Throat Services, Best ENT Specialist in Amman Jordan, Nose and Sinus Surgery in Amman, Advanced Otorhinolaryngology Techniques, Ear, Nose and Throat Diseases and Treatments, Best ENT Clinic in Amman Jordan, Reliable ENT Care in Amman"
+                                    loading="lazy" >
                             </div>
                             <a href="{{ route('dranas') }}"
                                 class="primary-btn1 style-2 hover-btn3">{{ __('front_end.btn_ReadMore') }}</a>
@@ -523,7 +525,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                 </div>
                 <div class="col-lg-4">
                     <div class="makeup-img hover-img">
-                        <img style="object-fit: cover; width: 100%; height: 350px;" src="{{ asset('front_end_style/assets/img/home1/makeup-img2.png') }}"
+                        <img style="object-fit: cover; width: 100%; height: 350px;" src="{{ asset('front_end_style/assets/img/home1/makeup-img2.png') }}" loading="lazy"
                             alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, جراحة الأنف والجيوب الأنفية في عمان, تقنيات متقدمة في طب الأنف والأذن والحنجرة, أمراض وعلاجات الأنف والأذن والحنجرة, أفضل عيادة أنف وأذن وحنجرة في عمان الأردن, رعاية ENT موثوقة في عمان,Dr. Anas Abu shamleh Clinic, Comprehensive Ear, Nose and Throat Services, Best ENT Specialist in Amman Jordan, Nose and Sinus Surgery in Amman, Advanced Otorhinolaryngology Techniques, Ear, Nose and Throat Diseases and Treatments, Best ENT Clinic in Amman Jordan, Reliable ENT Care in Amman">
                     </div>
                 </div>
@@ -562,10 +564,10 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     @if (isset($treatment->image) && file_exists($treatment->image))
                                                         <img title="{{ $treatment->ImageTitle }}"
                                                             src="{{ asset($treatment->image) }}"
-                                                            alt="{{ $treatment->ImageTitle }}" class="img1">
+                                                            alt="{{ $treatment->ImageTitle }}" class="img1" loading="lazy">
                                                         <img title="{{ $treatment->ImageTitle }}"
                                                             src="{{ asset($treatment->image) }}"
-                                                            alt="{{ $treatment->ImageTitle }}" class="img2">
+                                                            alt="{{ $treatment->ImageTitle }}" class="img2" loading="lazy">
                                                     @endif
 
                                                 </a>
@@ -598,13 +600,13 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
 
     <!-- Start Before & After section  -->
     <div class="just-for-section">
-        <img src="{{ asset('front_end_style/assets/img/home1/icon/vector-1.svg') }}"
+        <img src="{{ asset('front_end_style/assets/img/home1/icon/vector-1.svg') }}" loading="lazy"
             alt="الدكتور أنس أبو شملة -  اختصاصي أنف وأذن وحنجرة معتمد في الأردن, استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
 الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
 Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan
 "
             class="vector1">
-        <img src="{{ asset('front_end_style/assets/img/home1/icon/vector-2.svg') }}"
+        <img src="{{ asset('front_end_style/assets/img/home1/icon/vector-2.svg') }}" loading="lazy"
             alt="الدكتور أنس أبو شملة -  اختصاصي أنف وأذن وحنجرة معتمد في الأردن, استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
 الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
 Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan
@@ -673,7 +675,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                     <div class="col-12">
                         <img alt=" الدكتور أنس أبوشملة دكتور أنف وأذن وحنجرة عمان الأردن  - Dr.Anas Abu Shamleh, ENT Doctor, Amman, Jordan"
                             src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}"
-                            class="img-fluid mx-auto d-block rounded-top mt-3">
+                            class="img-fluid mx-auto d-block rounded-top mt-3" loading="lazy">
                     </div>
                     <!-- Content Section -->
                     <div class="col-12 p-4">
@@ -703,7 +705,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
 
                                         <div class="product-banner-wrapper">
                                             <div class="product-banner-left-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" loading="lazy"
                                                     alt=" الدكتور أنس أبوشملة دكتور أنف وأذن وحنجرة عمان الأردن  - Dr.Anas Abu Shamleh, ENT Doctor, Amman, Jordan">
                                             </div>
                                             <div class="product-banner-content">
@@ -712,7 +714,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}" loading="lazy"
                                                     alt=" الدكتور أنس أبوشملة دكتور تجميل أنف عمان الأردن  - Dr. Anas Abu shamleh, Rhinoplasty Doctor, Amman, Jordan">
                                             </div>
                                         </div>
@@ -722,7 +724,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                         style="width: 1296px; opacity: 0; transform: translate3d(-1296px, 0px, 0px); transition-duration: 0ms;">
                                         <div class="product-banner-wrapper">
                                             <div class="product-banner-left-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" loading="lazy"
                                                     alt=" احجز موعدك مع الدكتور أنس أبوشملة دكتور تجميل أنف عمان الأردن  - Book your appointment with Dr. Anas Abu Shamleh, Rhinoplasty Doctor, Amman, Jordan">
                                             </div>
                                             <div class="product-banner-content">
@@ -731,7 +733,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}" loading="lazy"
                                                     alt=" احجز موعدك مع الدكتور أنس أبوشملة دكتور  أنف وأذن وحنجرة عمان الأردن  - Book your appointment with Dr. Anas Abu Shamleh, ENT Doctor, Amman, Jordan ">
                                             </div>
                                         </div>
@@ -741,7 +743,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                         style="width: 1296px; opacity: 1; transform: translate3d(-2592px, 0px, 0px); transition-duration: 0ms;">
                                         <div class="product-banner-wrapper">
                                             <div class="product-banner-left-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section3.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section3.png') }}" loading="lazy"
                                                     alt="الدكتور أنس أبو شملة اختصاصي الأنف والأذن والحنجرة وجراح تجميل الأنف - Dr. Anas Abu Shamleh, ENT Specialist and Rhinoplasty Surgeon">
                                             </div>
                                             <div class="product-banner-content">
@@ -751,7 +753,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section4.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section4.png') }}" loading="lazy"
                                                     alt="الدكتور أنس أبو شملة اختصاصي الأنف والأذن والحنجرة وجراح تجميل الأنف - Dr. Anas Abu Shamleh, ENT Specialist and Rhinoplasty Surgeon">
                                             </div>
                                         </div>
@@ -761,7 +763,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                         style="width: 1296px; opacity: 0; transform: translate3d(-3888px, 0px, 0px); transition-duration: 0ms;">
                                         <div class="product-banner-wrapper">
                                             <div class="product-banner-left-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section5.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section5.png') }}" loading="lazy"
                                                     alt="عيادة دكتور انس ابوشملة - نقدم خدمات متكاملة وخدمات طبية متكاملة من الأذن والأنف والحنجرة - وعمليات تجميل ألانف - Dr. Anas Abu Shamleh Clinic - We provide integrated services and integrated medical services from ear, nose and throat - and rhinoplasty surgeries">
                                             </div>
                                             <div class="product-banner-content">
@@ -771,7 +773,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section6.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section6.png') }}" loading="lazy"
                                                     alt="عيادة دكتور انس ابوشملة - نقدم خدمات متكاملة وخدمات طبية متكاملة من الأذن والأنف والحنجرة - وعمليات تجميل ألانف - Dr. Anas Abu Shamleh Clinic - We provide integrated services and integrated medical services from ear, nose and throat - and rhinoplasty surgeries">
                                             </div>
                                         </div>
@@ -781,7 +783,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                         style="width: 1296px; opacity: 0; transform: translate3d(-3888px, 0px, 0px); transition-duration: 0ms;">
                                         <div class="product-banner-wrapper">
                                             <div class="product-banner-left-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section7.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section7.png') }}" loading="lazy"
                                                     alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon">
                                             </div>
                                             <div class="product-banner-content">
@@ -791,7 +793,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section8.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section8.png') }}" loading="lazy"
                                                     alt="">
                                             </div>
                                         </div>
@@ -801,7 +803,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                         style="width: 1296px; opacity: 0; transform: translate3d(-5184px, 0px, 0px); transition-duration: 0ms;">
                                         <div class="product-banner-wrapper">
                                             <div class="product-banner-left-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section1.png') }}" loading="lazy"
                                                     alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon">
                                             </div>
                                             <div class="product-banner-content">
@@ -811,7 +813,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                     onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
-                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}"
+                                                <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}" loading="lazy"
                                                     alt="">
                                             </div>
                                         </div>
@@ -866,7 +868,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                             <a href="{{ route('blog-details', [$blog->alias_name]) }}"
                                                 class="article-card-img hover-img">
                                                 @if (isset($blog->image) && file_exists($blog->image))
-                                                    <img title="{{ $blog->ImageTitle }}" src="{{ asset($blog->image) }}"
+                                                    <img title="{{ $blog->ImageTitle }}" src="{{ asset($blog->image) }}" loading="lazy"
                                                         alt="{{ $blog->Alt }}">
                                                 @endif
                                             </a>
@@ -950,22 +952,22 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst1.jpg') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst1.jpg') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst3.jpg') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst3.jpg') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst4.jpg') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst4.jpg') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
@@ -1098,35 +1100,35 @@ Specialist and Rhinoplasty Surgeon
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
@@ -1138,12 +1140,12 @@ Specialist and Rhinoplasty Surgeon
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
                                             alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
                                 </div>
                             </div>

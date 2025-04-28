@@ -59,8 +59,8 @@
                                 <div class="card card-default">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="d-flex justify-content-center ">
+                                            <div class="col-md-12">
+                                                <div class="d-flex justify-content-center">
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Email</h3>
                                                         <p class="text-dark">
@@ -72,7 +72,7 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                <div class="d-flex justify-content-center ">
+                                                <div class="d-flex justify-content-center">
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Phone</h3>
                                                         <p class="text-dark">
@@ -83,34 +83,24 @@
                                                 <hr class="w-100">
                                             </div>
 
-                                            {{-- <div class="col-md-6">
-                                                <div class="d-flex justify-content-center ">
+                                            {{-- Phone2 --}}
+                                            <div class="col-md-6">
+                                                <div class="d-flex justify-content-center">
                                                     <div class="text-center pb-4">
-                                                        <h3 class="pb-2" style="color: blue">Longitude</h3>
+                                                        <h3 class="pb-2" style="color: blue">Second Phone</h3>
                                                         <p class="text-dark">
-                                                            {!! isset($contact->longitude) ? $contact->longitude : "<span style='color:red;'>Undefined</span>" !!}
+                                                            {!! isset($contact->phone2) ? $contact->phone2 : "<span style='color:red;'>Undefined</span>" !!}
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <hr class="w-100">
                                             </div>
 
+                                            {{-- Address AR --}}
                                             <div class="col-md-6">
-                                                <div class="d-flex justify-content-center ">
+                                                <div class="d-flex justify-content-center">
                                                     <div class="text-center pb-4">
-                                                        <h3 class="pb-2" style="color: blue">Latitudes</h3>
-                                                        <p class="text-dark">
-                                                            {!! isset($contact->latitude) ? $contact->latitude : "<span style='color:red;'>Undefined</span>" !!}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100">
-                                            </div> --}}
-
-                                            <div class="col-md-12">
-                                                <div class="d-flex justify-content-center ">
-                                                    <div class="text-center pb-4">
-                                                        <h3 class="pb-2" style="color: blue"> Address Ar</h3>
+                                                        <h3 class="pb-2" style="color: blue">Address AR</h3>
                                                         <p class="text-dark">
                                                             {!! isset($contact->address_ar) ? $contact->address_ar : "<span style='color:red;'>Undefined</span>" !!}
                                                         </p>
@@ -119,21 +109,47 @@
                                                 <hr class="w-100">
                                             </div>
 
-                                            <div class="col-md-12">
-                                                <div class="d-flex justify-content-center ">
+                                            {{-- Address EN --}}
+                                            <div class="col-md-6">
+                                                <div class="d-flex justify-content-center">
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Address EN</h3>
                                                         <p class="text-dark">
                                                             {!! isset($contact->address_en) ? $contact->address_en : "<span style='color:red;'>Undefined</span>" !!}
                                                         </p>
-
                                                     </div>
                                                 </div>
                                                 <hr class="w-100">
                                             </div>
-                                            
+
+                                            {{-- Address EN2 --}}
+                                            <div class="col-md-6">
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="text-center pb-4">
+                                                        <h3 class="pb-2" style="color: blue">Second Address EN</h3>
+                                                        <p class="text-dark">
+                                                            {!! isset($contact->address_en2) ? $contact->address_en2 : "<span style='color:red;'>Undefined</span>" !!}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100">
+                                            </div>
+
+                                            {{-- Address AR2 --}}
+                                            <div class="col-md-6">
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="text-center pb-4">
+                                                        <h3 class="pb-2" style="color: blue">Second Address AR</h3>
+                                                        <p class="text-dark">
+                                                            {!! isset($contact->address_ar2) ? $contact->address_ar2 : "<span style='color:red;'>Undefined</span>" !!}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100">
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

@@ -60,15 +60,13 @@
 
                                     </div>
                                     <div class="card-body">
-                                        <form action="{{ route('super_admin.contact_us-update') }}" method="POST"
-                                            enctype="multipart/form-data">
+                                        <form action="{{ route('super_admin.contact_us-update') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-row">
 
                                                 {{-- Email --}}
-                                                <div class="col-md-6 mb-3">
-                                                    <label class="text-dark font-weight-medium mb-3"
-                                                        for="validationServer01">
+                                                <div class="col-md-12 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3" for="validationServer01">
                                                         <i class="mdi mdi-account"></i> Email : <strong class="text-danger">
                                                             * @error('email')
                                                                 ( {{ $message }} )
@@ -77,20 +75,17 @@
                                                     </label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text mdi mdi-email"
-                                                                id="inputGroupPrepend2"></span>
+                                                            <span class="input-group-text mdi mdi-email" id="inputGroupPrepend2"></span>
                                                         </div>
-                                                        <input type="email" name="email" class="form-control"
-                                                            id="validationServer01" placeholder="Email"
+                                                        <input type="email" name="email" class="form-control" id="validationServer01" placeholder="Email"
                                                             value="{!! isset($contact->email) ? $contact->email : "<span style='color:red;'>Undefined</span>" !!}">
                                                     </div>
                                                 </div>
 
                                                 {{-- Phone --}}
                                                 <div class="col-md-6 mb-3">
-                                                    <label class="text-dark font-weight-medium mb-3"
-                                                        for="validationServer01">
-                                                        <i class="mdi mdi-account"></i> Phone : <strong class="text-danger">
+                                                    <label class="text-dark font-weight-medium mb-3" for="validationServer01">
+                                                        <i class="mdi mdi-account"></i> FirstPhone : <strong class="text-danger">
                                                             * @error('phone')
                                                                 ( {{ $message }} )
                                                             @enderror
@@ -98,63 +93,107 @@
                                                     </label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text mdi mdi-cellphone"
-                                                                id="inputGroupPrepend2"></span>
+                                                            <span class="input-group-text mdi mdi-cellphone" id="inputGroupPrepend2"></span>
                                                         </div>
-                                                        <input type="text" name="phone" class="form-control"
-                                                            id="validationServer01" placeholder="Phone"
+                                                        <input type="number" name="phone" class="form-control" id="validationServer01" placeholder="Phone"
                                                             value="{!! isset($contact->phone) ? $contact->phone : "<span style='color:red;'>Undefined</span>" !!}">
                                                     </div>
                                                 </div>
 
-
-
-                                                {{-- Address EN --}}
+                                                {{-- Phone 2 --}}
                                                 <div class="col-md-6 mb-3">
-                                                    <label class="text-dark font-weight-medium mb-3"
-                                                        for="validationServer01">
-                                                        <i class="mdi mdi-account"></i> Address EN : <strong
-                                                            class="text-danger"> * @error('address_en')
+                                                    <label class="text-dark font-weight-medium mb-3" for="validationServer01">
+                                                        <i class="mdi mdi-account"></i>second Phone : <strong class="text-danger">
+                                                            * @error('phone2')
                                                                 ( {{ $message }} )
                                                             @enderror
                                                         </strong>
                                                     </label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text mdi mdi-format-title"
-                                                                id="inputGroupPrepend2"></span>
+                                                            <span class="input-group-text mdi mdi-cellphone" id="inputGroupPrepend2"></span>
                                                         </div>
-                                                        <input type="text" name="address_en" class="form-control"
-                                                            id="validationServer01" placeholder="Address EN"
+                                                        <input type="number" name="phone2" class="form-control" id="validationServer01" placeholder="Second Phone"
+                                                            value="{!! isset($contact->phone2) ? $contact->phone2 : "<span style='color:red;'>Undefined</span>" !!}">
+                                                    </div>
+                                                </div>
+
+                                                {{-- Address EN --}}
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3" for="validationServer01">
+                                                        <i class="mdi mdi-account"></i> First Address EN : <strong class="text-danger"> * @error('address_en')
+                                                            ( {{ $message }} )
+                                                        @enderror
+                                                        </strong>
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-format-title" id="inputGroupPrepend2"></span>
+                                                        </div>
+                                                        <input type="text" name="address_en" class="form-control" id="validationServer01" placeholder="Address EN"
                                                             value="{!! isset($contact->address_en) ? $contact->address_en : "<span style='color:red;'>Undefined</span>" !!}">
                                                     </div>
                                                 </div>
 
                                                 {{-- Address AR --}}
                                                 <div class="col-md-6 mb-3">
-                                                    <label class="text-dark font-weight-medium mb-3"
-                                                        for="validationServer01">
-                                                        <i class="mdi mdi-account"></i> Address AR : <strong
-                                                            class="text-danger"> * @error('address_ar')
+                                                    <label class="text-dark font-weight-medium mb-3" for="validationServer01">
+                                                        <i class="mdi mdi-account"></i> First Address AR : <strong class="text-danger"> * @error('address_ar')
+                                                            ( {{ $message }} )
+                                                        @enderror
+                                                        </strong>
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-format-title" id="inputGroupPrepend2"></span>
+                                                        </div>
+                                                        <input type="text" name="address_ar" class="form-control" id="validationServer01" placeholder="Address AR"
+                                                            value="{!! isset($contact->address_ar) ? $contact->address_ar : "<span style='color:red;'>Undefined</span>" !!}">
+                                                    </div>
+                                                </div>
+
+                                                {{-- Address EN 2 --}}
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3" for="validationServer01">
+                                                        <i class="mdi mdi-account"></i> Second Address EN : <strong class="text-danger">
+                                                            * @error('address_en2')
                                                                 ( {{ $message }} )
                                                             @enderror
                                                         </strong>
                                                     </label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text mdi mdi-format-title"
-                                                                id="inputGroupPrepend2"></span>
+                                                            <span class="input-group-text mdi mdi-format-title" id="inputGroupPrepend2"></span>
                                                         </div>
-                                                        <input type="text" name="address_ar" class="form-control"
-                                                            id="validationServer01" placeholder="Address AR"
-                                                            value="{!! isset($contact->address_ar) ? $contact->address_ar : "<span style='color:red;'>Undefined</span>" !!}">
+                                                        <input type="text" name="address_en2" class="form-control" id="validationServer01" placeholder="Second Address EN"
+                                                        value="{!! isset($contact->address_en2) ? $contact->address_en2 : "<span style='color:red;'>Undefined</span>" !!}">
+
                                                     </div>
                                                 </div>
-                                                
+
+                                                {{-- Address AR 2 --}}
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="text-dark font-weight-medium mb-3" for="validationServer01">
+                                                        <i class="mdi mdi-account"></i> Second Address AR : <strong class="text-danger">
+                                                            * @error('address_ar2')
+                                                                ( {{ $message }} )
+                                                            @enderror
+                                                        </strong>
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text mdi mdi-format-title" id="inputGroupPrepend2"></span>
+                                                        </div>
+
+                                                        <input type="text" name="address_ar2" class="form-control" id="validationServer01" placeholder="Second Address AR"
+                                                        value="{!! isset($contact->address_ar2) ? $contact->address_ar2 : "<span style='color:red;'>Undefined</span>" !!}">
+                                                    </div>
+                                                </div>
 
                                             </div>
                                             <button class="btn btn-primary" type="submit">Edit</button>
                                         </form>
+
                                     </div>
                                 </div>
                             </div>
