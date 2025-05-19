@@ -1,57 +1,77 @@
 @extends('front_end_inners.app_front_end')
 
 
-@if($blogs->currentPage() == 1)
-    @if (Config::get('app.locale') == 'en')
-        @section('page_title'){!! isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Dr.Anas Abushamleh website - Blogs' !!}@endsection
-        @section('meta_title'){!! isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Dr.Anas Abushamleh website - Blogs' !!}@endsection
-        @section('meta_desc'){!! isset($seo_operation->meta_desc_en) ? $seo_operation->meta_desc_en : (isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en : 'Blogs') !!}@endsection
-        @section('meta_keywords'){{ isset($seo_operation->keywords_en) ? $seo_operation->keywords_en : 'dr.Anas Abushamleh,docotors,doctor,ent,ent doctor,otolaryngologist' }}@endsection
-    @else
-        @section('page_title'){!! isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'موقع الدكتور أنس ابوشملة - مقالة طبية' !!}@endsection
-        @section('meta_title'){!! isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'موقع الدكتور أنس ابوشملة - مقالة طبية' !!}@endsection
-        @section('meta_desc'){!! isset($seo_operation->meta_desc_ar) ? $seo_operation->meta_desc_ar : (isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar : 'مقالة-طبية') !!}@endsection
-        @section('meta_keywords'){{ isset($seo_operation->keywords_ar) ? $seo_operation->keywords_ar : 'د. أنس أبو شملة، أطباء، طبيب، أنف وأذن وحنجرة، طبيب أنف وأذن وحنجرة، اختصاصي أنف وأذن وحنجرة' }}@endsection
-    @endif
 
-    @section('canonical')
-    @if (Config::get('app.locale') == 'en')
-        <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar" />
-    @else
-        <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en" />
-    @endif
+
+@if ($blogs->currentPage() == 1)
+    {{-- SEO SECTION --}}
+    @section('page_title')
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
     @endsection
+    @section('meta_title')
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
+    @endsection
+    @section('meta_desc')
+        {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }}
+    @endsection
+    @section('meta_keywords')
+        {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
+    @endsection
+    {{-- SEO SECTION --}}
 
-@else
-    @if (Config::get('app.locale') == 'en')
-        @section('page_title'){!! isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en . ' page=' . $blogs->currentPage() : 'Dr.Anas Abushamleh website - Blogs page=' . $blogs->currentPage() !!}@endsection
-        @section('meta_title'){!! isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en . ' page=' . $blogs->currentPage() : 'Dr.Anas Abushamleh website - Blogs page=' . $blogs->currentPage() !!}@endsection
-        @section('meta_desc'){!! isset($seo_operation->meta_desc_en) ? $seo_operation->meta_desc_en . ' page=' . $blogs->currentPage() : (isset($seo_operation->seo_title_en) ? $seo_operation->seo_title_en . ' page=' . $blogs->currentPage() : 'Blogs page=' . $blogs->currentPage()) !!}@endsection
-        @section('meta_keywords'){{ isset($seo_operation->keywords_en) ? $seo_operation->keywords_en : 'dr.Anas Abushamleh,docotors,doctor,ent,ent doctor,otolaryngologist' }}@endsection
-    @else
-        @section('page_title'){!! isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar . ' page=' . $blogs->currentPage() : 'موقع الدكتور أنس ابوشملة - مقالة طبية page=' . $blogs->currentPage() !!}@endsection
-        @section('meta_title'){!! isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar . ' page=' . $blogs->currentPage() : 'موقع الدكتور أنس ابوشملة - مقالة طبية page=' . $blogs->currentPage() !!}@endsection
-        @section('meta_desc'){!! isset($seo_operation->meta_desc_ar) ? $seo_operation->meta_desc_ar . ' page=' . $blogs->currentPage() : (isset($seo_operation->seo_title_ar) ? $seo_operation->seo_title_ar . ' page=' . $blogs->currentPage() : 'مقالة-طبية page=' . $blogs->currentPage()) !!}@endsection
-        @section('meta_keywords'){{ isset($seo_operation->keywords_ar) ? $seo_operation->keywords_ar : 'د. أنس أبو شملة، أطباء، طبيب، أنف وأذن وحنجرة، طبيب أنف وأذن وحنجرة، اختصاصي أنف وأذن وحنجرة' }}@endsection
-    @endif
+
 
     @section('canonical')
-    @if (Config::get('app.locale') == 'en')
-        <link rel="canonical" href="https://otolaryngologist-jo.com/en/Blog?page={{ $blogs->currentPage() }}" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Blog?page={{ $blogs->currentPage() }}" hreflang="en" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" hreflang="ar" />
-    @else
-        <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" hreflang="ar" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Blog?page={{ $blogs->currentPage() }}" hreflang="en" />
-    @endif
+        @if (Config::get('app.locale') == 'en')
+            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo" />
+        @else
+            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en-jo" />
+        @endif
+    @endsection
+@else
+    {{-- SEO SECTION --}}
+    @section('page_title')
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} -
+        {{ 'page=' . $blogs->currentPage() }}
+    @endsection
+    @section('meta_title')
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} -
+        {{ 'page=' . $blogs->currentPage() }}
+    @endsection
+    @section('meta_desc')
+        {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }} -
+        {{ 'page=' . $blogs->currentPage() }}
+    @endsection
+    @section('meta_keywords')
+        {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
+    @endsection
+    {{-- SEO SECTION --}}
+
+
+
+    @section('canonical')
+        @if (Config::get('app.locale') == 'en')
+            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}"
+                hreflang="en-jo" />
+            <link rel="alternate"
+                href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}"
+                hreflang="ar-jo" />
+        @else
+            <link rel="canonical"
+                href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}" />
+            <link rel="alternate"
+                href="https://otolaryngologist-jo.com/ar/مقالة-طبية?{{ 'page=' . $blogs->currentPage() }}"
+                hreflang="ar-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?{{ 'page=' . $blogs->currentPage() }}"
+                hreflang="en-jo" />
+        @endif
     @endsection
 @endif
-
 
 @section('content')
 
