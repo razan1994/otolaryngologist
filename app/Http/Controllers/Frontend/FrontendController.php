@@ -190,7 +190,6 @@ class FrontendController extends Controller
 
 
 
-
     public function BlogDetails(Route $route, $aliasname)
     {
         if (Config::get('app.locale') == 'en') {
@@ -270,39 +269,39 @@ class FrontendController extends Controller
 
 
     public function TreatmentsDetails(Route $route, $aliasname)
-{
-    if (Config::get('app.locale') == 'en') {
-        $treats = Treatment::where('status', 1)->where('alias_name_en', '=', $aliasname)->first();
-    } else {
-        $treats = Treatment::where('status', 1)->where('alias_name_ar', '=', $aliasname)->first();
+    {
+        if (Config::get('app.locale') == 'en') {
+            $treats = Treatment::where('status', 1)->where('alias_name_en', '=', $aliasname)->first();
+        } else {
+            $treats = Treatment::where('status', 1)->where('alias_name_ar', '=', $aliasname)->first();
+        }
+
+        if ($treats) {
+            $previous = Treatment::where('status', 1)
+                ->where('id', '<', $treats->id)
+                ->orderBy('id', 'desc')
+                ->first();
+
+            $next = Treatment::where('status', 1)
+                ->where('id', '>', $treats->id)
+                ->orderBy('id', 'asc')
+                ->first();
+
+            $popular_treatments = Treatment::where('status', 1)
+                ->where('id', '!=', $treats->id)
+                ->limit(6)
+                ->get();
+
+            $recent_treatments = Treatment::where('status', 1)
+                ->orderBy('created_at', 'desc')
+                ->limit(3)
+                ->get();
+
+            return view('Front/treatments-details', compact('treats', 'popular_treatments', 'previous', 'next', 'recent_treatments'));
+        } else {
+            return redirect()->back()->with('danger', 'Treatment Not Found !!!');
+        }
     }
-
-    if ($treats) {
-        $previous = Treatment::where('status', 1)
-            ->where('id', '<', $treats->id)
-            ->orderBy('id', 'desc')
-            ->first();
-
-        $next = Treatment::where('status', 1)
-            ->where('id', '>', $treats->id)
-            ->orderBy('id', 'asc')
-            ->first();
-
-        $popular_treatments = Treatment::where('status', 1)
-            ->where('id', '!=', $treats->id)
-            ->limit(6)
-            ->get();
-
-        $recent_treatments = Treatment::where('status', 1)
-            ->orderBy('created_at', 'desc')
-            ->limit(3)
-            ->get();
-
-        return view('Front/treatments-details', compact('treats', 'popular_treatments', 'previous', 'next', 'recent_treatments'));
-    } else {
-        return redirect()->back()->with('danger', 'Treatment Not Found !!!');
-    }
-}
 
 
 
