@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>404 Not Found</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
     <style>
         body {
             margin: 0;
@@ -38,9 +40,9 @@
             font-size: 1rem;
             margin-bottom: 2rem;
         }
-
     </style>
 </head>
+
 <body>
     <div class="error-container">
         <h1>404</h1>
@@ -48,4 +50,5 @@
         <p>The page you are looking for might have been removed or is temporarily unavailable.</p>
     </div>
 </body>
+
 </html>
