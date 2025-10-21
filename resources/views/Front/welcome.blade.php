@@ -38,7 +38,7 @@
     /*# Before & After CSS */
     .wrapper {
         position: relative;
-        height: 500px;
+        height: 400px;
         width: 100%;
         max-width: 750px;
         overflow: hidden;
