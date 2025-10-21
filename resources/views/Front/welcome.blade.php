@@ -35,129 +35,15 @@
 @endsection
 
 <style>
-/*# Before & After CSS */
-.wrapper {
-    position: relative;
-    height: 500px;
-    width: 100%;
-    max-width: 750px;
-    overflow: hidden;
-    background: #fff;
-    border: 7px solid #fff;
-}
-
-.wrapper .images {
-    height: 100%;
-    width: 100%;
-    display: flex;
-}
-
-.wrapper .images .img-1,
-.wrapper .images .img-2 {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.wrapper .images .img-2 {
-    position: absolute;
-    width: 50%;
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-.slider input {
-    width: 100%;
-    outline: none;
-    background: none;
-    -webkit-appearance: none;
-}
-
-.slider input::-webkit-slider-thumb {
-    height: 486px;
-    width: 3px;
-    background: none;
-    -webkit-appearance: none;
-    cursor: col-resize;
-}
-
-.slider .drag-line {
-    width: 3px;
-    height: 486px;
-    position: absolute;
-    left: 49.85%;
-    pointer-events: none;
-}
-
-.slider .drag-line::before,
-.slider .drag-line::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 222px;
-    background: #fff;
-}
-
-.slider .drag-line::before {
-    top: 0;
-}
-
-.slider .drag-line::after {
-    bottom: 0;
-}
-
-.slider .drag-line span {
-    height: 42px;
-    width: 42px;
-    border: 3px solid #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.slider .drag-line span::before,
-.slider .drag-line span::after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    border: 10px solid transparent;
-    border-bottom-width: 0px;
-    border-right-width: 0px;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.slider .drag-line span::before {
-    left: 40%;
-    border-left-color: #fff;
-}
-
-.slider .drag-line span::after {
-    left: 60%;
-    border-top-color: #fff;
-}
-
-
-/* Mobile Styles */
-@media (max-width: 768px) {
+    /*# Before & After CSS */
     .wrapper {
         position: relative;
-        height: 300px;
+        height: 500px;
         width: 100%;
-        max-width: 500px;
+        max-width: 750px;
         overflow: hidden;
-        background: #443838;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        background: #fff;
+        border: 7px solid #fff;
     }
 
     .wrapper .images {
@@ -171,28 +57,42 @@
         height: 100%;
         width: 100%;
         background-size: cover;
+        background-position: center;
     }
 
     .wrapper .images .img-2 {
         position: absolute;
         width: 50%;
-        overflow: hidden;
     }
 
-    .wrapper .slider {
+    .slider {
         position: absolute;
         top: 0;
         width: 100%;
         z-index: 10;
     }
 
+    .slider input {
+        width: 100%;
+        outline: none;
+        background: none;
+        -webkit-appearance: none;
+    }
 
-    .wrapper .slider input[type="range"]::-webkit-slider-thumb {
-        height: 300px;
+    .slider input::-webkit-slider-thumb {
+        height: 486px;
+        width: 3px;
+        background: none;
+        -webkit-appearance: none;
+        cursor: col-resize;
     }
 
     .slider .drag-line {
-        height: 300px;
+        width: 3px;
+        height: 486px;
+        position: absolute;
+        left: 49.85%;
+        pointer-events: none;
     }
 
     .slider .drag-line::before,
@@ -200,7 +100,7 @@
         position: absolute;
         content: "";
         width: 100%;
-        height: 500px;
+        height: 222px;
         background: #fff;
     }
 
@@ -244,118 +144,728 @@
         border-top-color: #fff;
     }
 
-    .label-before,
-    .label-after {
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .wrapper {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            background: #443838;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper .images {
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .wrapper .images .img-1,
+        .wrapper .images .img-2 {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+        }
+
+        .wrapper .images .img-2 {
+            position: absolute;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .wrapper .slider {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+
+        .wrapper .slider input[type="range"]::-webkit-slider-thumb {
+            height: 300px;
+        }
+
+        .slider .drag-line {
+            height: 300px;
+        }
+
+        .slider .drag-line::before,
+        .slider .drag-line::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 500px;
+            background: #fff;
+        }
+
+        .slider .drag-line::before {
+            top: 0;
+        }
+
+        .slider .drag-line::after {
+            bottom: 0;
+        }
+
+        .slider .drag-line span {
+            height: 42px;
+            width: 42px;
+            border: 3px solid #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .slider .drag-line span::before,
+        .slider .drag-line span::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            border: 10px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .slider .drag-line span::before {
+            left: 40%;
+            border-left-color: #fff;
+        }
+
+        .slider .drag-line span::after {
+            left: 60%;
+            border-top-color: #fff;
+        }
+
+        .label-before,
+        .label-after {
+            font-size: 12px;
+            padding: 3px;
+        }
+    }
+
+    /* Extra Small Screens */
+    @media (max-width: 480px) {
+        .wrapper {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper .images {
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .wrapper .images .img-1,
+        .wrapper .images .img-2 {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+        }
+
+        .wrapper .images .img-2 {
+            position: absolute;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .wrapper .slider {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .wrapper .slider input[type="range"]::-webkit-slider-thumb {
+            height: 200px;
+        }
+
+        .slider .drag-line {
+            height: 200px;
+        }
+
+        ..slider .drag-line::before,
+        .slider .drag-line::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 500px;
+            background: #fff;
+        }
+
+        .slider .drag-line::before {
+            top: 0;
+        }
+
+        .slider .drag-line::after {
+            bottom: 0;
+        }
+
+        .slider .drag-line span {
+            height: 42px;
+            width: 42px;
+            border: 3px solid #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .slider .drag-line span::before,
+        .slider .drag-line span::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            border: 10px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .slider .drag-line span::before {
+            left: 40%;
+            border-left-color: #fff;
+        }
+
+        .slider .drag-line span::after {
+            left: 60%;
+            border-top-color: #fff;
+        }
+
+        .label-before,
+        .label-after {
+            font-size: 10px;
+            padding: 2px;
+        }
+    }
+
+    /* Premium Modern Before & After Showcase */
+    .premium-showcase-wrapper {
+        position: relative;
+        /* width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px; */
+    }
+
+    .showcase-container {
+        position: relative;
+        /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 25px; */
+        padding: 8px;
+        box-shadow:
+            0 25px 50px rgba(102, 126, 234, 0.2),
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    .showcase-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb, #f5576c); */
+        background-size: 300% 300%;
+        /* border-radius: 25px; */
+        opacity: 0;
+        animation: premiumGradient 6s ease-in-out infinite;
+        z-index: -1;
+    }
+
+    .showcase-container:hover {
+        transform: translateY(-8px) scale(1.02);
+        /* box-shadow:
+            0 35px 80px rgba(102, 126, 234, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3); */
+    }
+
+    .showcase-container:hover::before {
+        opacity: 1;
+    }
+
+    .image-frame {
+        position: relative;
+        height: 400px;
+        /* border-radius: 18px; */
+        overflow: hidden;
+        background: #000;
+    }
+
+    .before-image-layer,
+    .after-image-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .before-image-layer {
+        z-index: 1;
+    }
+
+    .after-image-layer {
+        z-index: 2;
+        clip-path: circle(0% at 50% 50%);
+        animation: circularReveal 6s infinite ease-in-out;
+    }
+
+    .morphing-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.1) 70%); */
+        z-index: 3;
+        opacity: 0;
+        animation: morphingPulse 6s infinite ease-in-out;
+    }
+
+    .sparkle-effect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        pointer-events: none;
+    }
+
+    .sparkle-effect::before,
+    .sparkle-effect::after {
+        content: '✨';
+        position: absolute;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 20px;
+        animation: sparkleFloat 4s infinite ease-in-out;
+    }
+
+    .sparkle-effect::before {
+        top: 20%;
+        left: 15%;
+        animation-delay: -1s;
+    }
+
+    .sparkle-effect::after {
+        top: 70%;
+        right: 20%;
+        animation-delay: -3s;
+    }
+
+    .floating-badges {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: space-between;
+        z-index: 5;
+    }
+
+    .badge-item {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         font-size: 12px;
-        padding: 3px;
-    }
-}
-
-/* Extra Small Screens */
-@media (max-width: 480px) {
-    .wrapper {
-        position: relative;
-        height: 200px;
-        width: 100%;
-        max-width: 500px;
-        overflow: hidden;
-        background: #fff;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
     }
 
-    .wrapper .images {
-        height: 100%;
-        width: 100%;
-        display: flex;
+    .badge-text {
+        color: #333;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
-    .wrapper .images .img-1,
-    .wrapper .images .img-2 {
-        height: 100%;
-        width: 100%;
-        background-size: cover;
+    .before-badge {
+        background: #ff6b6b;
+        color: white;
+        animation: floatBadgeBefore 6s infinite ease-in-out;
     }
 
-    .wrapper .images .img-2 {
+    .after-badge {
+        background: #4ecdc4;
+        color: white;
+        animation: floatBadgeAfter 6s infinite ease-in-out;
+    }
+
+    .before-badge .badge-text {
+        color: white;
+    }
+
+    .after-badge .badge-text {
+        color: white;
+    }
+
+    .badge-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .timeline-indicator {
         position: absolute;
-        width: 50%;
-        overflow: hidden;
-    }
-
-    .wrapper .slider {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 10;
-    }
-
-    .wrapper .slider input[type="range"]::-webkit-slider-thumb {
-        height: 200px;
-    }
-
-    .slider .drag-line {
-        height: 200px;
-    }
-
-    .slider .drag-line::before,
-    .slider .drag-line::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 500px;
-        background: #fff;
-    }
-
-    .slider .drag-line::before {
-        top: 0;
-    }
-
-    .slider .drag-line::after {
         bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        z-index: 5;
     }
 
-    .slider .drag-line span {
-        height: 42px;
-        width: 42px;
-        border: 3px solid #fff;
+    .timeline-track {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .timeline-progress {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(90deg, #42aeb9, #42aeb9);
+        border-radius: 3px;
+        width: 0%;
+        animation: timelineProgress 6s infinite ease-in-out;
+    }
+
+    .timeline-thumb {
+        position: absolute;
+        top: -6px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background: linear-gradient(45deg, #42aeb9, #42aeb9);
+        border: 3px solid white;
         border-radius: 50%;
-        transform: translate(-50%, -50%);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        animation: timelineThumb 6s infinite ease-in-out;
     }
 
-    .slider .drag-line span::before,
-    .slider .drag-line span::after {
-        position: absolute;
-        content: "";
-        top: 50%;
-        border: 10px solid transparent;
-        border-bottom-width: 0px;
-        border-right-width: 0px;
-        transform: translate(-50%, -50%) rotate(45deg);
+    /* Premium Keyframe Animations */
+    @keyframes premiumGradient {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
     }
 
-    .slider .drag-line span::before {
-        left: 40%;
-        border-left-color: #fff;
+    @keyframes circularReveal {
+        0% {
+            clip-path: circle(0% at 50% 50%);
+        }
+
+        15% {
+            clip-path: circle(0% at 50% 50%);
+        }
+
+        50% {
+            clip-path: circle(70% at 50% 50%);
+        }
+
+        85% {
+            clip-path: circle(70% at 50% 50%);
+        }
+
+        100% {
+            clip-path: circle(0% at 50% 50%);
+        }
     }
 
-    .slider .drag-line span::after {
-        left: 60%;
-        border-top-color: #fff;
+    @keyframes morphingPulse {
+
+        0%,
+        100% {
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        25% {
+            opacity: 0.3;
+            transform: scale(1.05);
+        }
+
+        50% {
+            opacity: 0.6;
+            transform: scale(1.1);
+        }
+
+        75% {
+            opacity: 0.3;
+            transform: scale(1.05);
+        }
     }
 
-    .label-before,
-    .label-after {
-        font-size: 10px;
-        padding: 2px;
-    }
-}
+    @keyframes sparkleFloat {
 
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+            opacity: 0;
+        }
+
+        25% {
+            transform: translateY(-10px) rotate(90deg);
+            opacity: 1;
+        }
+
+        50% {
+            transform: translateY(-20px) rotate(180deg);
+            opacity: 0.8;
+        }
+
+        75% {
+            transform: translateY(-10px) rotate(270deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes floatBadgeBefore {
+        0% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        25% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        50% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        75% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes floatBadgeAfter {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        25% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        75% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes timelineProgress {
+        0% {
+            width: 0%;
+        }
+
+        50% {
+            width: 100%;
+        }
+
+        100% {
+            width: 0%;
+        }
+    }
+
+    @keyframes timelineThumb {
+        0% {
+            left: 0%;
+            transform: scale(1);
+        }
+
+        25% {
+            transform: scale(1.2);
+        }
+
+        50% {
+            left: calc(100% - 18px);
+            transform: scale(1);
+        }
+
+        75% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            left: 0%;
+            transform: scale(1);
+        }
+    }
+
+
+
+    /* Premium Mobile Responsive */
+    @media (max-width: 768px) {
+        /* .premium-showcase-wrapper {
+            padding: 15px;
+            max-width: 450px;
+        } */
+
+        .showcase-container {
+            border-radius: 20px;
+            padding: 6px;
+        }
+
+        .image-frame {
+            height: 320px;
+            /* border-radius: 15px; */
+        }
+
+        .floating-badges {
+            top: 15px;
+            left: 15px;
+            right: 15px;
+        }
+
+        .badge-item {
+            padding: 10px 14px;
+        }
+
+        .badge-text {
+            font-size: 11px;
+        }
+
+        .timeline-indicator {
+            padding: 0 20px;
+            height: 50px;
+        }
+
+        .timeline-thumb {
+            width: 16px;
+            height: 16px;
+            top: -5px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* .premium-showcase-wrapper {
+            padding: 10px;
+            max-width: 100%;
+        } */
+
+        .showcase-container {
+            border-radius: 16px;
+            padding: 4px;
+        }
+
+        .image-frame {
+            height: 280px;
+            /* border-radius: 12px; */
+        }
+
+        .floating-badges {
+            top: 12px;
+            left: 12px;
+            right: 12px;
+        }
+
+        .badge-item {
+            padding: 8px 12px;
+        }
+
+        .badge-icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .badge-text {
+            font-size: 10px;
+        }
+
+        .timeline-indicator {
+            padding: 0 15px;
+            height: 45px;
+        }
+
+        .timeline-thumb {
+            width: 14px;
+            height: 14px;
+            top: -4px;
+        }
+
+        .sparkle-effect::before,
+        .sparkle-effect::after {
+            font-size: 16px;
+        }
+    }
+
+    /* Pause animations on hover */
+    .premium-showcase-wrapper:hover .after-image-layer,
+    .premium-showcase-wrapper:hover .morphing-overlay,
+    .premium-showcase-wrapper:hover .before-badge,
+    .premium-showcase-wrapper:hover .after-badge,
+    .premium-showcase-wrapper:hover .timeline-progress,
+    .premium-showcase-wrapper:hover .timeline-thumb,
+    .premium-showcase-wrapper:hover .sparkle-effect::before,
+    .premium-showcase-wrapper:hover .sparkle-effect::after {
+        animation-play-state: paused;
+    }
 </style>
 
 @section('content')
@@ -634,20 +1144,32 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                 <ul class="splide__list">
                                     @foreach ($photos as $photo)
                                         <li class="splide__slide">
-                                            <div class="wrapper">
-                                                <div class="images">
-                                                    <div title="{{ $photo->ImageTitle }}" class="img-1"
-                                                        style="background-image: url('{{ asset($photo->image_after) }}');">
+                                            <div class="premium-showcase-wrapper">
+                                                <div class="showcase-container">
+                                                    <div class="image-frame">
+                                                        <div class="before-image-layer"
+                                                            style="background-image: url('{{ asset($photo->image_before) }}');">
+                                                        </div>
+                                                        <div class="after-image-layer"
+                                                            style="background-image: url('{{ asset($photo->image_after) }}');">
+                                                        </div>
+                                                        <div class="morphing-overlay"></div>
+                                                        <div class="sparkle-effect"></div>
                                                     </div>
-                                                    <div title="{{ $photo->ImageTitle }}" class="img-2"
-                                                        style="background-image: url('{{ asset($photo->image_before) }}');">
+                                                    <div class="floating-badges">
+                                                        <div class="badge-item before-badge">
+                                                            <span class="badge-text">{{ Config::get('app.locale') == 'en' ? 'Before' : 'قبل' }}</span>
+                                                        </div>
+                                                        <div class="badge-item after-badge">
+                                                            <span class="badge-text">{{ Config::get('app.locale') == 'en' ? 'After' : 'بعد' }}</span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="slider">
-                                                    <div class="drag-line">
-                                                        <span></span>
+                                                    <div class="timeline-indicator">
+                                                        <div class="timeline-track">
+                                                            <div class="timeline-progress"></div>
+                                                            <div class="timeline-thumb"></div>
+                                                        </div>
                                                     </div>
-                                                    <input type="range" min="0" max="100" value="50">
                                                 </div>
                                             </div>
                                         </li>

@@ -34,359 +34,523 @@
 @endsection
 
 
+@section('h1_val')
+    {{ $news_blog?->h1_val }}
+@endsection
+@section('h2_val')
+    {{ $news_blog?->h2_val }}
+@endsection
+
 <style>
-    .wrapper {
+    /* Premium Modern Before & After Showcase */
+    .premium-showcase-wrapper {
         position: relative;
-        height: 500px;
-        width: 100%;
-        max-width: 750px;
-        overflow: hidden;
-        background: #fff;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        /* width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px; */
     }
 
-    .wrapper .images {
-        height: 100%;
-        width: 100%;
-        display: flex;
-    }
-
-    .wrapper .images .img-1,
-    .wrapper .images .img-2 {
-        height: 100%;
-        width: 100%;
-        background-size: cover;
-    }
-
-    .wrapper .images .img-2 {
-        position: absolute;
-        width: 50%;
+    .showcase-container {
+        position: relative;
+        /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 25px; */
+        padding: 8px;
+        /* box-shadow:
+            0 25px 50px rgba(102, 126, 234, 0.2),
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2); */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
     }
 
-    .wrapper .slider {
+    .showcase-container::before {
+        content: '';
         position: absolute;
         top: 0;
-        width: 100%;
-        z-index: 10;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb, #f5576c); */
+        background-size: 300% 300%;
+        /* border-radius: 25px; */
+        opacity: 0;
+        animation: premiumGradient 6s ease-in-out infinite;
+        z-index: -1;
     }
 
-    .wrapper .slider input[type="range"] {
-        width: 100%;
-        outline: none;
-        background: none;
-        appearance: none;
+    .showcase-container:hover {
+        transform: translateY(-8px) scale(1.02);
+        /* box-shadow:
+            0 35px 80px rgba(102, 126, 234, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3); */
+    }
+
+    .showcase-container:hover::before {
+        opacity: 1;
+    }
+
+    .image-frame {
         position: relative;
-        z-index: 5;
+        height: 500px;
+        /* border-radius: 18px; */
+        overflow: hidden;
+        background: #000;
     }
 
-    .wrapper .slider input[type="range"]::-webkit-slider-thumb {
-        height: 500px;
-        width: 3px;
-        background: none;
-        appearance: none;
-        cursor: col-resize;
-    }
-
-    .slider .drag-line {
-        width: 3px;
-        height: 500px;
+    .before-image-layer,
+    .after-image-layer {
         position: absolute;
-        left: 60%;
-        pointer-events: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .before-image-layer {
         z-index: 1;
     }
 
-    .slider .drag-line::before,
-    .slider .drag-line::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 500px;
-        background: #fff;
+    .after-image-layer {
+        z-index: 2;
+        clip-path: circle(0% at 50% 50%);
+        animation: circularReveal 6s infinite ease-in-out;
     }
 
-    .slider .drag-line::before {
+    .morphing-overlay {
+        position: absolute;
         top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.1) 70%); */
+        z-index: 3;
+        opacity: 0;
+        animation: morphingPulse 6s infinite ease-in-out;
     }
 
-    .slider .drag-line::after {
-        bottom: 0;
-    }
-
-    .slider .drag-line span {
-        height: 42px;
-        width: 42px;
-        border: 3px solid #fff;
+    .sparkle-effect {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+        pointer-events: none;
     }
 
-    .slider .drag-line span::before,
-    .slider .drag-line span::after {
+    .sparkle-effect::before,
+    .sparkle-effect::after {
+        content: '✨';
         position: absolute;
-        content: "";
-        top: 50%;
-        border: 10px solid transparent;
-        border-bottom-width: 0px;
-        border-right-width: 0px;
-        transform: translate(-50%, -50%) rotate(45deg);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 20px;
+        animation: sparkleFloat 4s infinite ease-in-out;
     }
 
-    .slider .drag-line span::before {
-        left: 40%;
-        border-left-color: #fff;
+    .sparkle-effect::before {
+        top: 20%;
+        left: 15%;
+        animation-delay: -1s;
     }
 
-    .slider .drag-line span::after {
-        left: 60%;
-        border-top-color: #fff;
+    .sparkle-effect::after {
+        top: 70%;
+        right: 20%;
+        animation-delay: -3s;
     }
 
-    /* Styles for before and after labels */
-    .label-before,
-    .label-after {
+    .floating-badges {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 16px;
-        font-weight: bold;
-        color: #000;
-        background: #fff;
-        padding: 5px;
-        border-radius: 3px;
-    }
-
-    .label-before {
-        left: 10px;
-    }
-
-    .label-after {
-        right: 10px;
-    }
-
-    .blog-masonary-section {
+        top: 20px;
+        left: 20px;
+        right: 20px;
         display: flex;
-
+        justify-content: space-between;
+        z-index: 5;
     }
 
-    /* Mobile Styles */
+    .badge-item {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+    }
+
+    .badge-text {
+        color: #333;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .before-badge {
+        background: #ff6b6b;
+        color: white;
+        animation: floatBadgeBefore 6s infinite ease-in-out;
+    }
+
+    .after-badge {
+        background: #4ecdc4;
+        color: white;
+        animation: floatBadgeAfter 6s infinite ease-in-out;
+    }
+
+    .before-badge .badge-text {
+        color: white;
+    }
+
+    .after-badge .badge-text {
+        color: white;
+    }
+
+    .badge-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .timeline-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        z-index: 5;
+    }
+
+    .timeline-track {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .timeline-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(90deg, #42aeb9, #42aeb9);
+        border-radius: 3px;
+        width: 0%;
+        animation: timelineProgress 6s infinite ease-in-out;
+    }
+
+    .timeline-thumb {
+        position: absolute;
+        top: -6px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background: linear-gradient(45deg, #42aeb9, #42aeb9);
+        border: 3px solid white;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        animation: timelineThumb 6s infinite ease-in-out;
+    }
+
+    /* Premium Keyframe Animations */
+    @keyframes premiumGradient {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    @keyframes circularReveal {
+        0% {
+            clip-path: circle(0% at 50% 50%);
+        }
+
+        15% {
+            clip-path: circle(0% at 50% 50%);
+        }
+
+        50% {
+            clip-path: circle(70% at 50% 50%);
+        }
+
+        85% {
+            clip-path: circle(70% at 50% 50%);
+        }
+
+        100% {
+            clip-path: circle(0% at 50% 50%);
+        }
+    }
+
+    @keyframes morphingPulse {
+
+        0%,
+        100% {
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        25% {
+            opacity: 0.3;
+            transform: scale(1.05);
+        }
+
+        50% {
+            opacity: 0.6;
+            transform: scale(1.1);
+        }
+
+        75% {
+            opacity: 0.3;
+            transform: scale(1.05);
+        }
+    }
+
+    @keyframes sparkleFloat {
+
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+            opacity: 0;
+        }
+
+        25% {
+            transform: translateY(-10px) rotate(90deg);
+            opacity: 1;
+        }
+
+        50% {
+            transform: translateY(-20px) rotate(180deg);
+            opacity: 0.8;
+        }
+
+        75% {
+            transform: translateY(-10px) rotate(270deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes floatBadgeBefore {
+        0% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        25% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        50% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        75% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes floatBadgeAfter {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        25% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        75% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes timelineProgress {
+        0% {
+            width: 0%;
+        }
+
+        50% {
+            width: 100%;
+        }
+
+        100% {
+            width: 0%;
+        }
+    }
+
+    @keyframes timelineThumb {
+        0% {
+            left: 0%;
+            transform: scale(1);
+        }
+
+        25% {
+            transform: scale(1.2);
+        }
+
+        50% {
+            left: calc(100% - 18px);
+            transform: scale(1);
+        }
+
+        75% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            left: 0%;
+            transform: scale(1);
+        }
+    }
+
+
+
+    /* Premium Mobile Responsive */
     @media (max-width: 768px) {
-        .wrapper {
-            position: relative;
-            height: 300px;
-            width: 100%;
-            max-width: 500px;
-            overflow: hidden;
-            background: #443838;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* .premium-showcase-wrapper {
+            padding: 15px;
+            max-width: 450px;
+        } */
+
+        .showcase-container {
+            border-radius: 20px;
+            padding: 6px;
         }
 
-        .wrapper .images {
-            height: 100%;
-            width: 100%;
-            display: flex;
+        .image-frame {
+            height: 320px;
+            /* border-radius: 15px; */
         }
 
-        .wrapper .images .img-1,
-        .wrapper .images .img-2 {
-            height: 100%;
-            width: 100%;
-            background-size: cover;
+        .floating-badges {
+            top: 15px;
+            left: 15px;
+            right: 15px;
         }
 
-        .wrapper .images .img-2 {
-            position: absolute;
-            width: 50%;
-            overflow: hidden;
+        .badge-item {
+            padding: 10px 14px;
         }
 
-        .wrapper .slider {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 10;
+        .badge-text {
+            font-size: 11px;
         }
 
-
-        .wrapper .slider input[type="range"]::-webkit-slider-thumb {
-            height: 300px;
+        .timeline-indicator {
+            padding: 0 20px;
+            height: 50px;
         }
 
-        .slider .drag-line {
-            height: 300px;
-        }
-
-        .slider .drag-line::before,
-        .slider .drag-line::after {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 500px;
-            background: #fff;
-        }
-
-        .slider .drag-line::before {
-            top: 0;
-        }
-
-        .slider .drag-line::after {
-            bottom: 0;
-        }
-
-        .slider .drag-line span {
-            height: 42px;
-            width: 42px;
-            border: 3px solid #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .slider .drag-line span::before,
-        .slider .drag-line span::after {
-            position: absolute;
-            content: "";
-            top: 50%;
-            border: 10px solid transparent;
-            border-bottom-width: 0px;
-            border-right-width: 0px;
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .slider .drag-line span::before {
-            left: 40%;
-            border-left-color: #fff;
-        }
-
-        .slider .drag-line span::after {
-            left: 60%;
-            border-top-color: #fff;
-        }
-
-        .label-before,
-        .label-after {
-            font-size: 12px;
-            /* Smaller font size for labels */
-            padding: 3px;
-            /* Adjust padding for smaller screens */
+        .timeline-thumb {
+            width: 16px;
+            height: 16px;
+            top: -5px;
         }
     }
 
-    /* Extra Small Screens */
     @media (max-width: 480px) {
-        .wrapper {
-            position: relative;
-            height: 200px;
-            width: 100%;
-            max-width: 500px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* .premium-showcase-wrapper {
+            padding: 10px;
+            max-width: 100%;
+        } */
+
+        .showcase-container {
+            border-radius: 16px;
+            padding: 4px;
         }
 
-        .wrapper .images {
-            height: 100%;
-            width: 100%;
-            display: flex;
+        .image-frame {
+            height: 280px;
+            /* border-radius: 12px; */
         }
 
-        .wrapper .images .img-1,
-        .wrapper .images .img-2 {
-            height: 100%;
-            width: 100%;
-            background-size: cover;
+        .floating-badges {
+            top: 12px;
+            left: 12px;
+            right: 12px;
         }
 
-        .wrapper .images .img-2 {
-            position: absolute;
-            width: 50%;
-            overflow: hidden;
+        .badge-item {
+            padding: 8px 12px;
         }
 
-        .wrapper .slider {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 10;
+        .badge-icon {
+            width: 14px;
+            height: 14px;
         }
 
-        .wrapper .slider input[type="range"]::-webkit-slider-thumb {
-            height: 200px;
-        }
-
-        .slider .drag-line {
-            height: 200px;
-        }
-
-        ..slider .drag-line::before,
-        .slider .drag-line::after {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 500px;
-            background: #fff;
-        }
-
-        .slider .drag-line::before {
-            top: 0;
-        }
-
-        .slider .drag-line::after {
-            bottom: 0;
-        }
-
-        .slider .drag-line span {
-            height: 42px;
-            width: 42px;
-            border: 3px solid #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .slider .drag-line span::before,
-        .slider .drag-line span::after {
-            position: absolute;
-            content: "";
-            top: 50%;
-            border: 10px solid transparent;
-            border-bottom-width: 0px;
-            border-right-width: 0px;
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .slider .drag-line span::before {
-            left: 40%;
-            border-left-color: #fff;
-        }
-
-        .slider .drag-line span::after {
-            left: 60%;
-            border-top-color: #fff;
-        }
-
-        .label-before,
-        .label-after {
+        .badge-text {
             font-size: 10px;
-            padding: 2px;
         }
+
+        .timeline-indicator {
+            padding: 0 15px;
+            height: 45px;
+        }
+
+        .timeline-thumb {
+            width: 14px;
+            height: 14px;
+            top: -4px;
+        }
+
+        .sparkle-effect::before,
+        .sparkle-effect::after {
+            font-size: 16px;
+        }
+    }
+
+    /* Pause animations on hover */
+    .premium-showcase-wrapper:hover .after-image-layer,
+    .premium-showcase-wrapper:hover .morphing-overlay,
+    .premium-showcase-wrapper:hover .before-badge,
+    .premium-showcase-wrapper:hover .after-badge,
+    .premium-showcase-wrapper:hover .timeline-progress,
+    .premium-showcase-wrapper:hover .timeline-thumb,
+    .premium-showcase-wrapper:hover .sparkle-effect::before,
+    .premium-showcase-wrapper:hover .sparkle-effect::after {
+        animation-play-state: paused;
     }
 </style>
 
@@ -453,39 +617,51 @@
         <div class="row g-lg-4 gy-5">
             <div class="col-lg-8">
                 <div class="blog-thumb">
-                    <div dir="{{ App::isLocale('ar') ? 'ltr' : 'ltr' }}" style="border: none" class="article-card">
-                        <div style="padding: 0px" class="article-card-content style-3">
-                            <div class="wrapper">
-                                <!-- Labels for before and after -->
-                                <div class="label-before">Before</div>
-                                <div class="label-after">After</div>
 
-                                <div class="images">
-                                    @if (isset($news_blog->image_before) &&
-                                            isset($news_blog->image_after) &&
-                                            file_exists(public_path($news_blog->image_before)) &&
-                                            file_exists(public_path($news_blog->image_after)))
-                                        <div class="img-1"
-                                            style="background-image: url('{{ asset($news_blog->image_after) }}');" >
-                                        </div>
-                                        <div class="img-2"
-                                            style="background-image: url('{{ asset($news_blog->image_before) }}');">
-                                        </div>
-                                    @endif
-                                </div>
-                                <div class="slider">
-                                    <div class="drag-line">
-                                        <span></span>
+                    <div class="premium-showcase-wrapper">
+                        <div class="showcase-container">
+                            <div class="image-frame">
+                                @if (isset($news_blog->image_before) &&
+                                        isset($news_blog->image_after) &&
+                                        file_exists(public_path($news_blog->image_before)) &&
+                                        file_exists(public_path($news_blog->image_after)))
+                                    <div class="before-image-layer"
+                                        style="background-image: url('{{ asset($news_blog->image_before) }}');">
                                     </div>
-                                    <input type="range" min="0" max="100" value="50">
+                                    <div class="after-image-layer"
+                                        style="background-image: url('{{ asset($news_blog->image_after) }}');">
+                                    </div>
+                                @else
+                                    <div class="no-image-placeholder">
+                                        <p>{{ __('front_end.no_images_available') ?? 'Images not available' }}</p>
+                                    </div>
+                                @endif
+                                <div class="morphing-overlay"></div>
+                                <div class="sparkle-effect"></div>
+                            </div>
+                            <div class="floating-badges">
+                                <div class="badge-item before-badge">
+                                    <span
+                                        class="badge-text">{{ Config::get('app.locale') == 'en' ? 'Before' : 'قبل' }}</span>
+                                </div>
+                                <div class="badge-item after-badge">
+                                    <span
+                                        class="badge-text">{{ Config::get('app.locale') == 'en' ? 'After' : 'بعد' }}</span>
                                 </div>
                             </div>
-
-                            <div dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}" class="blog-content mb-40">
-                                <p> {!! $news_blog->description !!}</p>
+                            <div class="timeline-indicator">
+                                <div class="timeline-track">
+                                    <div class="timeline-progress"></div>
+                                    <div class="timeline-thumb"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div dir="{{ App::isLocale('ar') ? 'rtl' : 'ltr' }}" class="gallery-content mt-3">
+                        {!! $news_blog->description !!}
+                    </div>
+
                 </div>
 
             </div>
@@ -498,7 +674,8 @@
                             <div class="recent-post-widget mb-20">
                                 <div class="recent-post-img">
                                     <a href="{{ route('gallery-details', $photo->alias_name) }}">
-                                        <img src="{{ asset($photo->image_after) }}" loading="lazy" alt=" {{ $photo->alt }}">
+                                        <img src="{{ asset($photo->image_after) }}" loading="lazy"
+                                            alt=" {{ $photo->alt }}">
                                     </a>
                                 </div>
                                 <div class="recent-post-content">
@@ -525,220 +702,251 @@
 
 
 
-    <!-- Start Instagram section section -->
-    <div class="instagram-section mb-110 mt-110">
-        <div class="container">
-            <div class="section-title style-3">
-                <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
-                <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
-                        href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
-                </p>
-            </div>
+<!-- Start Instagram section section -->
+<div class="instagram-section mb-110 mt-110">
+    <div class="container">
+        <div class="section-title style-3">
+            <h3>{{ __('front_end.instagramfeeds_title') }}</h3>
+            <p>{{ __('front_end.instagramfeeds_SubTitle') }} <a
+                    href="https://www.instagram.com/dr.anasabushamleh/">{{ __('front_end.instagramfeeds_Account') }}</a>
+            </p>
         </div>
-        <div class="instagram-wrapper">
-            <div class="container-fluid p-0">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="swiper instagram-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst1.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst3.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst4.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+    </div>
+    <div class="instagram-wrapper">
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="swiper instagram-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst1.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst3.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أخصائي أنف و أذن و حنجرة و جراحة تجميل الأنف - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst4.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst5.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst5.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst6.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst6.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst7.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst7.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst8.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst9.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst10.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst11.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst12.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst13.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst14.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst15.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst8.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst9.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst10.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst11.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst12.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst13.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst14.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst15.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst16.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst16.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst17.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst17.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst18.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst18.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst19.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst19.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst20.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst20.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst21.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst21.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور تجميل أنف في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst22.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst22.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst23.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst23.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/Instagram/inst2.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور أنف وأذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat
 Specialist and Rhinoplasty Surgeon
 "></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.instagram.com/"><img
-                                            src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}" loading="lazy"
-                                            alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
-                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram2.jpg') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.instagram.com/"><img
+                                        src="{{ asset('front_end_style/assets/img/home1/instagram1.webp') }}"
+                                        loading="lazy"
+                                        alt="الدكتور أنس ابوشملة - أفضل دكتور انف واذن وجنجرة في الأردن - Dr. Anas Abu Shamleh - Ear, Nose, Throat Specialist and Rhinoplasty Surgeon"></a>
                             </div>
                         </div>
                     </div>
@@ -746,7 +954,8 @@ Specialist and Rhinoplasty Surgeon
             </div>
         </div>
     </div>
-    <!-- End Instagram section section -->
+</div>
+<!-- End Instagram section section -->
 <script>
     document.querySelectorAll('.wrapper').forEach(wrapper => {
         const range = wrapper.querySelector('input[type="range"]');
