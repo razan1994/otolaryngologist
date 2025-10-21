@@ -83,21 +83,17 @@
         /* Premium Modern Before & After Showcase */
     .premium-showcase-wrapper {
         position: relative;
-        /* width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px; */
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 30px;
+        padding: 20px;
     }
 
     .showcase-container {
         position: relative;
-        /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 25px; */
+
         padding: 8px;
-        box-shadow:
-            0 25px 50px rgba(102, 126, 234, 0.2),
-            0 0 0 1px rgba(255, 255, 255, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
     }
@@ -109,9 +105,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        /* background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb, #f5576c); */
         background-size: 300% 300%;
-        /* border-radius: 25px; */
+
         opacity: 0;
         animation: premiumGradient 6s ease-in-out infinite;
         z-index: -1;
@@ -119,10 +114,7 @@
 
     .showcase-container:hover {
         transform: translateY(-8px) scale(1.02);
-        /* box-shadow:
-            0 35px 80px rgba(102, 126, 234, 0.3),
-            0 0 0 1px rgba(255, 255, 255, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3); */
+
     }
 
     .showcase-container:hover::before {
@@ -132,7 +124,6 @@
     .image-frame {
         position: relative;
         height: 400px;
-        /* border-radius: 18px; */
         overflow: hidden;
         background: #000;
     }
@@ -165,7 +156,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        /* background: radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.1) 70%); */
+        background: radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.1) 70%);
         z-index: 3;
         opacity: 0;
         animation: morphingPulse 6s infinite ease-in-out;
@@ -486,10 +477,11 @@
 
     /* Premium Mobile Responsive */
     @media (max-width: 768px) {
-        /* .premium-showcase-wrapper {
+        .premium-showcase-wrapper {
             padding: 15px;
-            max-width: 450px;
-        } */
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
 
         .showcase-container {
             border-radius: 20px;
@@ -498,7 +490,7 @@
 
         .image-frame {
             height: 320px;
-            /* border-radius: 15px; */
+            border-radius: 15px;
         }
 
         .floating-badges {
@@ -525,13 +517,33 @@
             height: 16px;
             top: -5px;
         }
+
+        .gallery-content {
+            padding: 12px 8px;
+        }
+
+        .gallery-title {
+            font-size: 14px;
+            min-height: 38px;
+        }
+
+        .gallery-read-more {
+            font-size: 13px;
+            padding: 8px 16px;
+        }
+
+        .gallery-read-more svg {
+            width: 18px;
+            height: 9px;
+        }
     }
 
     @media (max-width: 480px) {
-        /* .premium-showcase-wrapper {
+        .premium-showcase-wrapper {
             padding: 10px;
             max-width: 100%;
-        } */
+            margin-bottom: 15px;
+        }
 
         .showcase-container {
             border-radius: 16px;
@@ -540,7 +552,7 @@
 
         .image-frame {
             height: 280px;
-            /* border-radius: 12px; */
+            border-radius: 12px;
         }
 
         .floating-badges {
@@ -577,6 +589,25 @@
         .sparkle-effect::after {
             font-size: 16px;
         }
+
+        .gallery-content {
+            padding: 10px 5px;
+        }
+
+        .gallery-title {
+            font-size: 13px;
+            min-height: 35px;
+        }
+
+        .gallery-read-more {
+            font-size: 12px;
+            padding: 6px 14px;
+        }
+
+        .gallery-read-more svg {
+            width: 16px;
+            height: 8px;
+        }
     }
 
     /* Pause animations on hover */
@@ -589,6 +620,81 @@
     .premium-showcase-wrapper:hover .sparkle-effect::before,
     .premium-showcase-wrapper:hover .sparkle-effect::after {
         animation-play-state: paused;
+    }
+
+    /* Gallery Content Styles */
+    .gallery-content {
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    .gallery-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gallery-read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        padding: 10px 20px;
+        border-radius: 25px;
+        background: linear-gradient(135deg, #42aeb9 0%, #369aa5 100%);
+        box-shadow: 0 4px 15px rgba(66, 174, 185, 0.3);
+    }
+
+    .gallery-read-more:hover {
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(66, 174, 185, 0.4);
+        background: linear-gradient(135deg, #369aa5 0%, #2d8a94 100%);
+    }
+
+    .gallery-read-more span {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .gallery-read-more svg {
+        width: 20px;
+        height: 10px;
+        fill: currentColor;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-read-more:hover svg {
+        transform: translateX(5px);
+    }
+
+    .no-image-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        color: #6c757d;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 15px;
+    }
+
+    .no-image-placeholder p {
+        margin: 0;
+        padding: 20px;
     }
 </style>
 
