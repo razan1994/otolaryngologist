@@ -25,7 +25,9 @@ class FrontendController extends Controller
 {
     public function welcome()
     {
-        $photos = Photo::where('status', 1)->get();
+        $photos = Photo::where('status', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
         $about = AboutUs::first();
         $sliders = Slider::where('status', 1)->get();
         $services = Service::get();
