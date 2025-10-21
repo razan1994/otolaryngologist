@@ -359,16 +359,16 @@
     /* Premium Modern Before & After Showcase */
     .premium-showcase-wrapper {
         position: relative;
-        /* width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px; */
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 30px;
+        padding: 20px;
     }
 
     .showcase-container {
         position: relative;
-        /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 25px; */
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 25px;
         padding: 8px;
         box-shadow:
             0 25px 50px rgba(102, 126, 234, 0.2),
@@ -385,9 +385,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        /* background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb, #f5576c); */
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb, #f5576c);
         background-size: 300% 300%;
-        /* border-radius: 25px; */
+        border-radius: 25px;
         opacity: 0;
         animation: premiumGradient 6s ease-in-out infinite;
         z-index: -1;
@@ -395,10 +395,10 @@
 
     .showcase-container:hover {
         transform: translateY(-8px) scale(1.02);
-        /* box-shadow:
+        box-shadow:
             0 35px 80px rgba(102, 126, 234, 0.3),
             0 0 0 1px rgba(255, 255, 255, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3); */
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
     .showcase-container:hover::before {
@@ -407,8 +407,8 @@
 
     .image-frame {
         position: relative;
-        height: 300px;
-        /* border-radius: 18px; */
+        height: 400px;
+        border-radius: 18px;
         overflow: hidden;
         background: #000;
     }
@@ -773,8 +773,8 @@
         }
 
         .image-frame {
-            height: 320px;
-            /* border-radius: 15px; */
+            height: 350px;
+            border-radius: 15px;
         }
 
         .floating-badges {
@@ -815,8 +815,8 @@
         }
 
         .image-frame {
-            height: 280px;
-            /* border-radius: 12px; */
+            height: 300px;
+            border-radius: 12px;
         }
 
         .floating-badges {
