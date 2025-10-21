@@ -38,7 +38,7 @@
     /*# Before & After CSS */
     .wrapper {
         position: relative;
-        height: 400px;
+        height: 300px;
         width: 100%;
         max-width: 750px;
         overflow: hidden;
@@ -407,7 +407,7 @@
 
     .image-frame {
         position: relative;
-        height: 400px;
+        height: 300px;
         /* border-radius: 18px; */
         overflow: hidden;
         background: #000;
