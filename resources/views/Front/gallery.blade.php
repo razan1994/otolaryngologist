@@ -80,21 +80,18 @@
 
 <style>
 
-        /* Premium Modern Before & After Showcase */
+      /* Premium Modern Before & After Showcase */
     .premium-showcase-wrapper {
         position: relative;
         width: 100%;
         max-width: 100%;
-        margin: 0 auto 30px;
+        margin: 0 auto 10px;
         padding: 20px;
     }
 
     .showcase-container {
         position: relative;
-
         padding: 8px;
-
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
     }
 
@@ -106,7 +103,6 @@
         right: 0;
         bottom: 0;
         background-size: 300% 300%;
-
         opacity: 0;
         animation: premiumGradient 6s ease-in-out infinite;
         z-index: -1;
@@ -114,7 +110,6 @@
 
     .showcase-container:hover {
         transform: translateY(-8px) scale(1.02);
-
     }
 
     .showcase-container:hover::before {
@@ -156,7 +151,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.1) 70%);
         z-index: 3;
         opacity: 0;
         animation: morphingPulse 6s infinite ease-in-out;
@@ -227,23 +221,23 @@
     }
 
     .before-badge {
-        background: #ff6b6b;
-        color: white;
+        background: rgba(255, 255, 255, 0.8);;
+        color: black;
         animation: floatBadgeBefore 6s infinite ease-in-out;
     }
 
     .after-badge {
-        background: #4ecdc4;
-        color: white;
+        background: rgba(255, 255, 255, 0.8);;
+        color: black;
         animation: floatBadgeAfter 6s infinite ease-in-out;
     }
 
     .before-badge .badge-text {
-        color: white;
+        color: black;
     }
 
     .after-badge .badge-text {
-        color: white;
+        color: black;
     }
 
     .badge-item:hover {
@@ -484,13 +478,11 @@
         }
 
         .showcase-container {
-            border-radius: 20px;
             padding: 6px;
         }
 
         .image-frame {
-            height: 320px;
-            border-radius: 15px;
+            height: 350px;
         }
 
         .floating-badges {
@@ -517,25 +509,6 @@
             height: 16px;
             top: -5px;
         }
-
-        .gallery-content {
-            padding: 12px 8px;
-        }
-
-        .gallery-title {
-            font-size: 14px;
-            min-height: 38px;
-        }
-
-        .gallery-read-more {
-            font-size: 13px;
-            padding: 8px 16px;
-        }
-
-        .gallery-read-more svg {
-            width: 18px;
-            height: 9px;
-        }
     }
 
     @media (max-width: 480px) {
@@ -546,13 +519,11 @@
         }
 
         .showcase-container {
-            border-radius: 16px;
             padding: 4px;
         }
 
         .image-frame {
-            height: 280px;
-            border-radius: 12px;
+            height: 300px;
         }
 
         .floating-badges {
@@ -588,25 +559,6 @@
         .sparkle-effect::before,
         .sparkle-effect::after {
             font-size: 16px;
-        }
-
-        .gallery-content {
-            padding: 10px 5px;
-        }
-
-        .gallery-title {
-            font-size: 13px;
-            min-height: 35px;
-        }
-
-        .gallery-read-more {
-            font-size: 12px;
-            padding: 6px 14px;
-        }
-
-        .gallery-read-more svg {
-            width: 16px;
-            height: 8px;
         }
     }
 
