@@ -392,7 +392,100 @@
 
     @yield('content')
 
+    <!-- WhatsApp Floating Button -->
+    {{-- <div class="whatsapp-float" id="whatsappButton">
+        <a href="https://wa.me/{{str_replace([' ', '+', '-', '(', ')'], '', $contacts->phone)}}" target="_blank"
+           title="{{ Config::get('app.locale') == 'ar' ? 'تواصل معنا عبر واتساب' : 'Chat with us on WhatsApp' }}">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div> --}}
 
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            {{ Config::get('app.locale') == 'ar' ? 'left: 40px;' : 'right: 40px;' }}
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 8px #666;
+        }
+
+        .whatsapp-float a {
+            color: #FFF;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .whatsapp-float i {
+            font-size: 30px;
+            line-height: 60px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                {{ Config::get('app.locale') == 'ar' ? 'left: 20px;' : 'right: 20px;' }}
+                font-size: 25px;
+            }
+
+            .whatsapp-float i {
+                font-size: 25px;
+                line-height: 50px;
+            }
+        }
+
+        /* Hide on very small screens to avoid interference */
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                {{ Config::get('app.locale') == 'ar' ? 'left: 15px;' : 'right: 15px;' }}
+            }
+
+            .whatsapp-float i {
+                font-size: 20px;
+                line-height: 45px;
+            }
+        }
+    </style>
 
     <!-- Start Footer section section -->
     <footer class="footer-section style-2">
@@ -635,7 +728,7 @@
         document.addEventListener('DOMContentLoaded', checkConsultSection);
     </script>
 
-    
+
 </body>
 
 </html>

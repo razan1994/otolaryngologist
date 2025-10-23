@@ -585,7 +585,7 @@
             clip-path: circle(0% at 50% 50%);
         }
 
-        15% {
+        40% {
             clip-path: circle(0% at 50% 50%);
         }
 
@@ -593,7 +593,7 @@
             clip-path: circle(70% at 50% 50%);
         }
 
-        85% {
+        90% {
             clip-path: circle(70% at 50% 50%);
         }
 
@@ -656,7 +656,7 @@
             transform: translateY(0px);
         }
 
-        25% {
+        40% {
             opacity: 1;
             transform: translateY(0px);
         }
@@ -666,7 +666,7 @@
             transform: translateY(-20px);
         }
 
-        75% {
+        90% {
             opacity: 0;
             transform: translateY(-20px);
         }
@@ -683,9 +683,9 @@
             transform: translateY(-20px);
         }
 
-        25% {
-            opacity: 1;
-            transform: translateY(0px);
+        40% {
+            opacity: 0;
+            transform: translateY(-20px);
         }
 
         50% {
@@ -693,7 +693,7 @@
             transform: translateY(0px);
         }
 
-        75% {
+        90% {
             opacity: 1;
             transform: translateY(0px);
         }
@@ -1144,14 +1144,21 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                         <div class="sparkle-effect"></div>
                                                     </div>
                                                     <div class="floating-badges">
-                                                        <div class="badge-item before-badge">
-                                                            <span
-                                                                class="badge-text">{{ Config::get('app.locale') == 'en' ? 'Before' : 'قبل' }}</span>
-                                                        </div>
-                                                        <div class="badge-item after-badge">
-                                                            <span
-                                                                class="badge-text">{{ Config::get('app.locale') == 'en' ? 'After' : 'بعد' }}</span>
-                                                        </div>
+                                                        @if (Config::get('app.locale') == 'en')
+                                                            <div class="badge-item before-badge">
+                                                                <span class="badge-text">Before</span>
+                                                            </div>
+                                                            <div class="badge-item after-badge">
+                                                                <span class="badge-text">After</span>
+                                                            </div>
+                                                        @else
+                                                            <div class="badge-item after-badge">
+                                                                <span class="badge-text">بعد</span>
+                                                            </div>
+                                                            <div class="badge-item before-badge">
+                                                                <span class="badge-text">قبل</span>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                     <div class="timeline-indicator">
                                                         <div class="timeline-track">
@@ -1469,7 +1476,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
             <div class="container-fluid p-0">
                 <div class="row">
                     <div class="col-12">
-                        <div class="swiper instagram-slider">
+                        <div class="swiper instagram-slider" dir="{{ Config::get('app.locale') == 'ar' ? 'ltr' : 'rtl' }}">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <a href="https://www.instagram.com/"><img
