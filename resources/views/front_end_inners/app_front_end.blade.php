@@ -216,12 +216,12 @@
                             @if (Config::get('app.locale') == 'en')
                                 <li>
                                     <a style="font-family: 'El Messiri', sans-serif; color:#fff" class="nav-link"
-                                        hreflang="ar" href="{{ '/ar' }}">العربية</a>
+                                        href="{{ '/ar' }}">العربية</a>
                                 </li>
                             @else
                                 <li>
                                     <a style="font-family: 'Jost', sans-serif; color:#fff" class="nav-link"
-                                        hreflang="en" href="{{ '/en' }}">English</a>
+                                        href="{{ '/en' }}">English</a>
                                 </li>
                             @endif
 
@@ -351,12 +351,12 @@
                             <div class="email-info">
                                 @if (Config::get('app.locale') == 'en')
                                     <h6>
-                                        <a style="font-family: 'El Messiri', sans-serif; color:#125258" hreflang="ar"
+                                        <a style="font-family: 'El Messiri', sans-serif; color:#125258"
                                             href="{{ '/ar' }}">العربية</a>
                                     </h6>
                                 @else
                                     <h6>
-                                        <a style="font-family: 'Jost', sans-serif; color:#125258" hreflang="en"
+                                        <a style="font-family: 'Jost', sans-serif; color:#125258"
                                             href="{{ '/en' }}">English</a>
                                     </h6>
                                 @endif
