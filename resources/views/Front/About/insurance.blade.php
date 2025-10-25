@@ -17,12 +17,14 @@
 @section('canonical')
     @if (Config::get('app.locale') == 'en')
         <link rel="canonical" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="en-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة" hreflang="ar-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="en" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="x-default" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة" hreflang="ar" />
     @else
         <link rel="canonical" href="https://otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة" hreflang="ar-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="en-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة" hreflang="ar" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="en" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="x-default" />
     @endif
 @endsection
 

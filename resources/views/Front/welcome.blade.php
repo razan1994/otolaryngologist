@@ -17,12 +17,14 @@
 @section('canonical')
     @if (Config::get('app.locale') == 'en')
         <link rel="canonical" href="https://otolaryngologist-jo.com/en" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="en-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar" hreflang="ar-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="en" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="x-default" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/ar" hreflang="ar" />
     @else
         <link rel="canonical" href="https://otolaryngologist-jo.com/ar" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar" hreflang="ar-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="en-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/ar" hreflang="ar" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="en" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="x-default" />
     @endif
 @endsection
 

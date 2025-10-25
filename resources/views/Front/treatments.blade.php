@@ -33,22 +33,26 @@
     @if ($treatments->currentPage() == 1)
         @if (Config::get('app.locale') == 'en')
             <link rel="canonical" href="https://otolaryngologist-jo.com/en/Treatments" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="en-jo" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات" hreflang="ar-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="en" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="x-default" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات" hreflang="ar" />
         @else
             <link rel="canonical" href="https://otolaryngologist-jo.com/ar/العلاجات" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات" hreflang="ar-jo" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="en-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات" hreflang="ar" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="en" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="x-default" />
         @endif
     @else
         @if (Config::get('app.locale') == 'en')
             <link rel="canonical" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="en-jo" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات?page={{ $treatments->currentPage() }}" hreflang="ar-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="en" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="x-default" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات?page={{ $treatments->currentPage() }}" hreflang="ar" />
         @else
             <link rel="canonical" href="https://otolaryngologist-jo.com/ar/العلاجات?page={{ $treatments->currentPage() }}" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات?page={{ $treatments->currentPage() }}" hreflang="ar-jo" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="en-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات?page={{ $treatments->currentPage() }}" hreflang="ar" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="en" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="x-default" />
         @endif
     @endif
 @endsection

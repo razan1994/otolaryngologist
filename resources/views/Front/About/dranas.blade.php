@@ -18,12 +18,14 @@
 @section('canonical')
     @if (Config::get('app.locale') == 'en')
         <link rel="canonical" href="https://otolaryngologist-jo.com/en/Dr.Anas-Abu-Shamla" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Dr.Anas-Abu-Shamla" hreflang="en-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/دكتور-انس-ابوشمله" hreflang="ar-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Dr.Anas-Abu-Shamla" hreflang="en" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Dr.Anas-Abu-Shamla" hreflang="x-default" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/دكتور-انس-ابوشمله" hreflang="ar" />
     @else
         <link rel="canonical" href="https://otolaryngologist-jo.com/ar/دكتور-انس-ابوشمله" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/دكتور-انس-ابوشمله" hreflang="ar-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Dr.Anas-Abu-Shamla" hreflang="en-jo" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/دكتور-انس-ابوشمله" hreflang="ar" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Dr.Anas-Abu-Shamla" hreflang="en" />
+        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Dr.Anas-Abu-Shamla" hreflang="x-default" />
     @endif
 @endsection
 

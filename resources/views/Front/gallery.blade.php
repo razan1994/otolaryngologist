@@ -1,74 +1,61 @@
 @extends('front_end_inners.app_front_end')
 
-@if ($photos->currentPage() == 1)
-    {{-- SEO SECTION --}}
-    @section('page_title')
+{{-- SEO SECTION --}}
+@section('page_title')
+    @if ($photos->currentPage() == 1)
         {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
-    @endsection
-    @section('meta_title')
+    @else
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - {{ __('front_end.page') }} {{ $photos->currentPage() }}
+    @endif
+@endsection
+
+@section('meta_title')
+    @if ($photos->currentPage() == 1)
         {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }}
-    @endsection
-    @section('meta_desc')
+    @else
+        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} - {{ __('front_end.page') }} {{ $photos->currentPage() }}
+    @endif
+@endsection
+
+@section('meta_desc')
+    @if ($photos->currentPage() == 1)
         {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }}
-    @endsection
-    @section('meta_keywords')
-        {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
-    @endsection
+    @else
+        {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }} - {{ __('front_end.page') }} {{ $photos->currentPage() }}
+    @endif
+@endsection
 
+@section('meta_keywords')
+    {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
+@endsection
 
-
-    @section('canonical')
+@section('canonical')
+    @if ($photos->currentPage() == 1)
         @if (Config::get('app.locale') == 'en')
             <link rel="canonical" href="https://otolaryngologist-jo.com/en/Before&After" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After" hreflang="en-jo" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد" hreflang="ar-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After" hreflang="en" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After" hreflang="x-default" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد" hreflang="ar" />
         @else
             <link rel="canonical" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد" hreflang="ar-jo" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After" hreflang="en-jo" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد" hreflang="ar" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After" hreflang="en" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After" hreflang="x-default" />
         @endif
-    @endsection
-@else
-    @section('page_title')
-        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} -
-        {{ 'page=' . $photos->currentPage() }}
-    @endsection
-    @section('meta_title')
-        {{ isset($seo_operation->seo_title) ? $seo_operation->seo_title : 'Undefined' }} -
-        {{ 'page=' . $photos->currentPage() }}
-    @endsection
-    @section('meta_desc')
-        {{ isset($seo_operation->meta_desc) ? $seo_operation->meta_desc : 'Undefined' }} -
-        {{ 'page=' . $photos->currentPage() }}
-    @endsection
-    @section('meta_keywords')
-        {{ isset($seo_operation->keywords) ? $seo_operation->keywords : 'Undefined' }}
-    @endsection
-
-
-
-    @section('canonical')
+    @else
         @if (Config::get('app.locale') == 'en')
-            <link rel="canonical"
-                href="https://otolaryngologist-jo.com/en/Before&After?{{ 'page=' . $photos->currentPage() }}" />
-            <link rel="alternate"
-                href="https://otolaryngologist-jo.com/en/Before&After?{{ 'page=' . $photos->currentPage() }}"
-                hreflang="en-jo" />
-            <link rel="alternate"
-                href="https://otolaryngologist-jo.com/ar/قبل-و-بعد?{{ 'page=' . $photos->currentPage() }}"
-                hreflang="ar-jo" />
+            <link rel="canonical" href="https://otolaryngologist-jo.com/en/Before&After?page={{ $photos->currentPage() }}" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After?page={{ $photos->currentPage() }}" hreflang="en" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After?page={{ $photos->currentPage() }}" hreflang="x-default" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد?page={{ $photos->currentPage() }}" hreflang="ar" />
         @else
-            <link rel="canonical"
-                href="https://otolaryngologist-jo.com/ar/قبل-و-بعد?{{ 'page=' . $photos->currentPage() }}" />
-            <link rel="alternate"
-                href="https://otolaryngologist-jo.com/ar/قبل-و-بعد?{{ 'page=' . $photos->currentPage() }}"
-                hreflang="ar-jo" />
-            <link rel="alternate"
-                href="https://otolaryngologist-jo.com/en/Before&After?{{ 'page=' . $photos->currentPage() }}"
-                hreflang="en-jo" />
+            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد?page={{ $photos->currentPage() }}" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد?page={{ $photos->currentPage() }}" hreflang="ar" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After?page={{ $photos->currentPage() }}" hreflang="en" />
+            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After?page={{ $photos->currentPage() }}" hreflang="x-default" />
         @endif
-    @endsection
-@endif
+    @endif
+@endsection
 
 
 @section('h1_val')
