@@ -819,9 +819,6 @@
     <!-- main js  -->
     <script src="{{ asset('front_end_style/assets/js/main.js') }}"></script>
 
-    <!-- Before After plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/before-after-js/dist/before-after.min.js"></script>
-
     <!-- Splide -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
 
