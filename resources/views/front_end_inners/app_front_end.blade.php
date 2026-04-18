@@ -2,6 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
+
+    <?php
+    $treatments = App\Models\Treatment::latest()->take(5)->get();
+    $contacts=App\Models\ContactUs::first();
+    ?>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E83HWT4Z13"></script>
     <script>

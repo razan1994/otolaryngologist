@@ -30,12 +30,5 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         session()->put('locale', 'ar');
 
-        $treatments = Treatment::latest()->limit(5)->get();
-        $contacts = ContactUs::first();
-        view()->share([
-            'treatments' => $treatments,
-            'contacts' => $contacts,
-        ]);
-
     }
 }
