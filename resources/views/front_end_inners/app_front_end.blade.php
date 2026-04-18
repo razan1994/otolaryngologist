@@ -829,6 +829,43 @@
                 $('.before-after').beforeAfter();
             }
         });
+
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Splide
+            new Splide('#splide', {
+                type: 'loop',
+                perPage: 2,
+                gap: '10px',
+                pagination: false,
+                autoplay: true,
+                interval: 5000,
+                pauseOnHover: true,
+                breakpoints: {
+                    1024: {
+                        perPage: 2,
+                    },
+                    768: {
+                        perPage: 1,
+                    }
+                }
+            }).mount();
+
+
+            document.querySelectorAll(".wrapper").forEach(wrapper => {
+                const slider = wrapper.querySelector(".slider input");
+                const img = wrapper.querySelector(".images .img-2");
+                const dragLine = wrapper.querySelector(".slider .drag-line");
+
+                slider.oninput = () => {
+                    let sliderVal = slider.value;
+                    dragLine.style.left = sliderVal + "%";
+                    img.style.width = sliderVal + "%";
+                };
+            });
+        });
+    </script>
         // document.addEventListener('DOMContentLoaded', function() {
         //     if (!sessionStorage.getItem('booking_popup_shown')) {
         //         sessionStorage.setItem('booking_popup_shown', '1');
