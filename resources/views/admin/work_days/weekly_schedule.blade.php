@@ -363,8 +363,6 @@
                             <i class="mdi mdi-calendar-week"></i>
                             <span>Weekly Schedule</span>
                         </h2>
-                        <p>Manage weekly availability, organize work days, and keep the schedule clearly structured.</p>
-
                         <nav class="page-breadcrumb" aria-label="breadcrumb">
                             <ol>
                                 <li>
@@ -392,14 +390,10 @@
             </div>
 
             <div class="schedule-card">
-                <div class="schedule-card-header">
-                    <h4>Weekly Schedule Overview</h4>
-                    <p>Review and manage the weekly schedule in the same clean dashboard style used across the system.</p>
-                </div>
 
                 <div class="schedule-card-body">
                     <div class="schedule-livewire-wrap">
-                        @livewire('backend.work-days.weekly-schedule')
+                        <livewire:backend.work-days.weekly-schedule />
                     </div>
                 </div>
             </div>
