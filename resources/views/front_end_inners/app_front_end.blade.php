@@ -823,14 +823,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            if (typeof $('.before-after').beforeAfter === 'function') {
-                $('.before-after').beforeAfter();
-            }
-        });
-    </script>
-
-    <script>
         document.addEventListener('DOMContentLoaded', function () {
             const splideEl = document.getElementById('splide');
 
