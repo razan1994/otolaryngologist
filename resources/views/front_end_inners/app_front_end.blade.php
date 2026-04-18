@@ -824,6 +824,15 @@
                 $('.before-after').beforeAfter();
             }
         });
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     if (!sessionStorage.getItem('booking_popup_shown')) {
+        //         sessionStorage.setItem('booking_popup_shown', '1');
+
+        //         setTimeout(function() {
+        //             openBookingPopup();
+        //         }, 300);
+        //     }
+        // });
     </script>
 
     <!-- Home blogs Features -->
