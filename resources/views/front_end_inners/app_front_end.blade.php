@@ -15,15 +15,6 @@
         gtag('config', 'G-E83HWT4Z13');
     </script>
 
-
-    <?php
-    $lang = app()->getLocale() == 'ar' ? 'assets_rtl' : 'assets';
-    $val = app()->getLocale() == 'ar' ? '.rtl' : '';
-
-    $treatments = App\Models\Treatment::latest()->take(5)->get();
-    $contacts=App\Models\ContactUs::first();
-    ?>
-
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,82 +38,40 @@
     <meta name="author" content="dranasabushamleh">
     <meta property="og:title" content="@yield('meta_title')">
     <meta property="og:description" content="@yield('meta_desc')">
-    <meta propert="og:keywords" content="@yield('meta_keywords')">
+    <meta property="og:keywords" content="@yield('meta_keywords')">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
 
-    @yield('canonical')
+    <!-- Bootstrap CSS -->
+    <link href="{{ asset('front_end_style/assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Bootstrap Icon CSS -->
+    <link href="{{ asset('front_end_style/assets/css/bootstrap-icons.css') }}" rel="stylesheet">
+    <!-- Fontawesome all CSS -->
+    <link href="{{ asset('front_end_style/assets/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('front_end_style/assets/css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ asset('front_end_style/assets/css/animate.min.css') }}" rel="stylesheet">
+    <!--  FancyBox CSS  -->
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/jquery.fancybox.min.css') }}">
 
-    @if (Config::get('app.locale') == 'en')
-        <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link href="{{ asset('front_end_style/assets/css/fontawesome.min.css') }}" rel="stylesheet">
+    <!-- box icon css -->
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/boxicons.min.css') }}">
+    <!-- slider CSS -->
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick-theme.css') }}">
 
-        <!-- Bootstrap CSS -->
-        <link href="{{ asset('front_end_style/assets/css/bootstrap.min.css') }}" rel="stylesheet">
-        <!-- Bootstrap Icon CSS -->
-        <link href="{{ asset('front_end_style/assets/css/bootstrap-icons.css') }}" rel="stylesheet">
-        <!-- Fontawesome all CSS -->
-        <link href="{{ asset('front_end_style/assets/css/all.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('front_end_style/assets/css/nice-select.css') }}" rel="stylesheet">
-        <link href="{{ asset('front_end_style/assets/css/animate.min.css') }}" rel="stylesheet">
-        <!--  FancyBox CSS  -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/jquery.fancybox.min.css') }}">
 
-        <!-- Fontawesome CSS -->
-        <link href="{{ asset('front_end_style/assets/css/fontawesome.min.css') }}" rel="stylesheet">
-        <!-- box icon css -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/boxicons.min.css') }}">
-        <!-- slider CSS -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/swiper-bundle.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick-theme.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick.css') }}">
-        <!--  Style CSS  -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick.css') }}">
+    <!--  Style CSS  -->
 
-        <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
 
-        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
+    <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
 
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
-    @elseif (Config::get('app.locale') == 'ar')
-        <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <!-- Bootstrap CSS -->
-        <link href="{{ asset('front_end_style/assets_rtl/css/bootstrap.rtl.min.css') }}" rel="stylesheet">
-        <!-- Bootstrap Icon CSS -->
-        <link href="{{ asset('front_end_style/assets_rtl/css/bootstrap-icons.css') }}" rel="stylesheet">
-        <!-- Fontawesome all CSS -->
-        <link href="{{ asset('front_end_style/assets_rtl/css/all.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('front_end_style/assets_rtl/css/nice-select.css') }}" rel="stylesheet">
-        <link href="{{ asset('front_end_style/assets_rtl/css/animate.min.css') }}" rel="stylesheet">
-        <!--  FancyBox CSS  -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/jquery.fancybox.min.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-        <link href="{{ asset('front_end_style/assets_rtl/css/fontawesome.min.css') }}" rel="stylesheet">
-        <!-- box icon css -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/boxicons.min.css') }}">
-        <!-- slider CSS -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/swiper-bundle.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/slick-theme.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/slick.css') }}">
-        <!--  Style CSS  -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/style-rtl.css') }}">
-        <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
-
-        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-    @endif
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- search console -->
     <meta name="google-site-verification" content="cHvVWecmNPDa8dEPTPTUw-etBdtLKKLj4GYnAX-83Bc" />
@@ -149,10 +98,16 @@
     <!-- Include Files -->
     @if (Config::get('app.locale') == 'en')
         @include('front_end_inners.includes.en_include')
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/appointment-booking.css') }}">
     @else
         @include('front_end_inners.includes.ar_include')
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style-rtl.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/appointment-booking-rtl.css') }}">
     @endif
     <!-- End Include Files -->
+
+
 
 </head>
 
@@ -168,12 +123,12 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Appointment Section -->
-    <div class="consult-section" id="consultSection">
+    <div class="consult-section show" id="consultSection">
         <div class="consult-content">
             <p class="consult-text">
                 {{ __('front_end.book_text') }}
             </p>
-            <a class="appointment-button hover-btn3" href="#" onclick="openSprintfulPopup(); return false;">
+            <a class="appointment-button hover-btn3" href="#" onclick="openBookingPopup(event)">
                 {{ __('front_end.book_now') }}
             </a>
         </div>
@@ -182,13 +137,15 @@
 
     <!-- Social Icons Section -->
     <div class="icon-bar">
-        <a href="tel:{{$contacts->phone}}" class="phone"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://wa.link/chzxur" class="whatsapp"><i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="#" class="calendar" onclick="openBookingPopup(event)"><i class="fas fa-calendar-alt"></i></a>
+        <a href="https://wa.me/962790098884" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
         <a href="https://web.facebook.com/ENTDoctorJordan" class="facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/dr.anasabushamleh/" class="instagram"><i class="fab fa-instagram"></i>
-        </a>
+        <a href="https://www.instagram.com/dr.anasabushamleh/" class="instagram"><i class="fab fa-instagram"></i></a>
         <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+        <!-- Calendar Icon for Booking -->
+        {{-- <a href="#" class="calendar" title="Book Appointment" onclick="openBookingPopup(event)">
+            <i class="fas fa-calendar-alt"></i>
+        </a> --}}
     </div>
 
 
@@ -208,7 +165,7 @@
                                     d="M15.9811 7.05794C15.6806 5.29519 14.8499 3.69116 13.5734 2.41469C12.2969 1.13821 10.6929 0.307495 8.93016 0.00695018C8.68364 -0.0369496 8.45063 0.131896 8.40673 0.37841C8.36621 0.628301 8.53168 0.861308 8.78157 0.905208C10.3552 1.17198 11.7904 1.91828 12.9318 3.0563C14.0732 4.19769 14.8161 5.63288 15.0829 7.20652C15.12 7.4294 15.3125 7.58473 15.532 7.58473C15.559 7.58473 15.5827 7.58136 15.6097 7.57798C15.8562 7.54083 16.025 7.30445 15.9811 7.05794Z" />
                             </g>
                         </svg>
-                        <a href="tel:{{$contacts->phone}}">{{$contacts->phone}} | {{$contacts->phone2}}</a>
+                        <a href="tel:{{ $contacts->phone }}">{{ $contacts->phone }} | {{ $contacts->phone2 }}</a>
                     </div>
                     <p> {{ __('front_end.top_nav_text') }} </p>
                     <div class="social-area">
@@ -313,7 +270,7 @@
                         <a href="{{ route('ContactUs') }}">{{ __('front_end.nav_ContactUs') }}</a>
                     </li>
                     <li>
-                        <a href="#" class="d-block d-md-none" onclick="openSprintfulPopup(); return false;">
+                        <a href="#" class="d-block d-md-none" onclick="openBookingPopup(event)">
                             {{ __('front_end.book_your_appointment_now') }}
                         </a>
                     </li>
@@ -368,20 +325,256 @@
             </div>
             <div class="nav-right position-inherit d-flex jsutify-content-end align-items-center">
                 <div class="search-area">
-                    <div class="search-area">
-                        <div class="search-btn">
-
-                            <a style="font-family: 'El Messiri', sans-serif; color:#125258" class="nav-link"
-                                href="#" onclick="openSprintfulPopup(); return false;">
-                                {{ __('front_end.book_your_appointment_now') }}
-                            </a>
-
-                        </div>
+                    <div class="search-btn">
+                        <a style="font-family: 'El Messiri', sans-serif; color:#125258" class="nav-link"
+                            href="#" onclick="openBookingPopup(event)">
+                            {{ __('front_end.book_your_appointment_now') }}
+                        </a>
                     </div>
 
+                    <div id="customBookingModal" class="booking-modal-overlay">
+                        <div class="booking-modal-card">
+                            <button type="button" class="booking-close" id="closeBookingPopup">&times;</button>
+
+                            <div class="booking-header">
+                                <h2 class="booking-title">{{ __('front_end.booking_modal_title') }}</h2>
+                            </div>
+
+                            <div class="booking-body">
+                                <!-- Step 1: Date & Time -->
+                                <div id="stepDateTime" class="booking-step">
+                                    <h3 class="booking-step-title">{{ __('front_end.booking_select_date_time') }}</h3>
+
+                                    <div class="booking-content-layout" id="bookingContentLayout">
+                                        <div class="booking-calendar-side">
+                                            <div class="booking-month-nav">
+                                                <button type="button" class="month-arrow month-arrow-left"
+                                                    id="calPrevMonth" aria-label="Previous month">
+                                                    <span>&#8249;</span>
+                                                </button>
+
+                                                <div class="month-label" id="calMonthLabel">March 2026</div>
+
+                                                <button type="button" class="month-arrow month-arrow-right"
+                                                    id="calNextMonth" aria-label="Next month">
+                                                    <span>&#8250;</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="booking-calendar" id="calendlyCalendar"></div>
+
+                                            <div class="booking-timezone-title">
+                                                {{ __('front_end.booking_time_zone') }}
+                                            </div>
+
+                                            <div class="booking-timezone">
+                                                <span class="booking-globe">🌐</span>
+                                                <span id="calTimeZone">
+                                                    {{ __('front_end.booking_jordan_time') }}
+                                                    (<span id="jordanTime"></span>)
+                                                </span>
+                                                <span class="booking-timezone-arrow">▼</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-times-side" id="selectedDateWrap">
+                                            {{-- <div class="selected-date-heading" id="selectedDateTitle">
+                                                {{ __('front_end.booking_select_date') }}
+                                            </div> --}}
+                                            <div id="timeSlotsContainer" class="time-slots-list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2: Details -->
+                                <div id="stepEnterDetails" class="booking-step" style="display:none;">
+                                    <div class="booking-back-btn" id="backToDateTime">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span>{{ __('front_end.booking_back') }}</span>
+                                    </div>
+
+                                    <h3 class="booking-step-title">{{ __('front_end.booking_enter_details') }}</h3>
+
+                                    <div class="booking-summary">
+                                        <div class="summary-info">
+                                            <div class="summary-datetime" id="summaryDateTime"></div>
+                                        </div>
+                                    </div>
+
+                                    <form id="bookingDetailsForm" class="booking-details-form">
+                                        <div class="form-row-grid">
+                                            <div class="form-group">
+                                                <input type="text" name="website" value=""
+                                                    autocomplete="off" tabindex="-1"
+                                                    style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row-grid">
+
+                                            <div class="form-group">
+                                                <label for="fullName">
+                                                    {{ __('front_end.booking_name') }}
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <input type="text" id="fullName" name="full_name"
+                                                    class="form-control"
+                                                    placeholder="{{ __('front_end.booking_name_placeholder') }}"
+                                                    required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="email">
+                                                    {{ __('front_end.booking_email') }}
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <input type="email" id="email" name="email"
+                                                    class="form-control"
+                                                    placeholder="{{ __('front_end.booking_email_placeholder') }}"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row-grid">
+                                            <div class="form-group">
+                                                <label for="phone">{{ __('front_end.booking_phone') }}
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <input type="tel" id="phone" name="phone"
+                                                    class="form-control"
+                                                    placeholder="{{ __('front_end.booking_phone_placeholder') }}">
+                                            </div>
+
+                                            <!-- ===== Appointment Type Dropdown ===== -->
+                                            <div class="form-group">
+                                                <label for="appointmentType">
+                                                    {{ __('front_end.booking_appointment_type') }}
+                                                    <span class="required">*</span>
+                                                </label>
+
+                                                <div class="custom-select-wrapper">
+                                                    <select id="appointmentType" name="appointment_type_id"
+                                                        class="form-control" required>
+
+                                                        @if (isset($appointmentTypes))
+                                                            @foreach ($appointmentTypes as $type)
+                                                                <option value="{{ $type->id }}">
+                                                                    {{ app()->getLocale() == 'ar' ? $type->name_ar : $type->name_en }}
+                                                                    @if ($type->duration)
+                                                                        ({{ $type->duration }} min)
+                                                                    @endif
+                                                                </option>
+                                                            @endforeach
+                                                        @endif
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                {{ __('front_end.booking_location') }}
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <div class="location-display">
+                                                <svg width="20" height="20" fill="currentColor"
+                                                    viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                                <span>{{ __('front_end.booking_location_address') }}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="notes">{{ __('front_end.booking_notes') }}</label>
+                                            <textarea id="notes" name="notes" class="form-control" rows="4"
+                                                placeholder="{{ __('front_end.booking_notes_placeholder') }}"></textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn-schedule-event">
+                                            {{ __('front_end.booking_schedule_button') }}
+                                        </button>
+
+                                        <div id="formError" class="form-error" style="display:none;"></div>
+                                        <div id="formSuccess" class="form-success" style="display:none;"></div>
+                                    </form>
+                                </div>
+
+                                <!-- Step 3: Success -->
+                                <div id="stepSuccess" class="booking-step" style="display:none;">
+                                    <div class="success-container">
+                                        <div class="success-icon">
+                                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                                <circle cx="40" cy="40" r="38" fill="#d4ebec"
+                                                    stroke="#125258" stroke-width="2" />
+                                                <path d="M25 40L35 50L55 30" stroke="#125258" stroke-width="4"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+
+                                        <h2 class="success-title">{{ __('front_end.booking_confirmed_title') }}</h2>
+                                        <p class="success-message">{{ __('front_end.booking_confirmed_message') }}</p>
+
+                                        <div class="success-details">
+                                            <div class="success-detail-row">
+                                                <span
+                                                    class="detail-label">{{ __('front_end.booking_reference') }}</span>
+                                                <span class="detail-value" id="successBookingRef">-</span>
+                                            </div>
+
+                                            <div class="success-detail-row">
+                                                <span
+                                                    class="detail-label">{{ __('front_end.booking_date_time') }}</span>
+                                                <span class="detail-value" id="successDateTime">-</span>
+                                            </div>
+
+                                            <div class="success-detail-row">
+                                                <span class="detail-label">{{ __('front_end.booking_name') }}:</span>
+                                                <span class="detail-value" id="successName">-</span>
+                                            </div>
+
+                                            <div class="success-detail-row">
+                                                <span class="detail-label">{{ __('front_end.booking_email') }}:</span>
+                                                <span class="detail-value" id="successEmail">-</span>
+                                            </div>
+
+                                            <div class="success-detail-row">
+                                                <span class="detail-label">{{ __('front_end.booking_phone') }}:</span>
+                                                <span class="detail-value" id="successPhone">-</span>
+                                            </div>
+
+                                            <div class="success-detail-row">
+                                                <span
+                                                    class="detail-label">{{ __('front_end.booking_appointment') }}</span>
+                                                <span class="detail-value" id="successAppointmentType">-</span>
+                                            </div>
+
+                                            <div class="success-detail-row">
+                                                <span
+                                                    class="detail-label">{{ __('front_end.booking_location') }}:</span>
+                                                <span
+                                                    class="detail-value">{{ __('front_end.booking_location_address') }}</span>
+                                            </div>
+                                        </div>
+
+                                        <button type="button" class="btn-close-success" id="closeSuccess">
+                                            {{ __('front_end.booking_done_button') }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="sidebar-button mobile-menu-btn ">
+                <div class="sidebar-button mobile-menu-btn">
                     <span></span>
                 </div>
             </div>
@@ -393,12 +586,12 @@
     @yield('content')
 
     <!-- WhatsApp Floating Button -->
-    {{-- <div class="whatsapp-float" id="whatsappButton">
-        <a href="https://wa.me/{{str_replace([' ', '+', '-', '(', ')'], '', $contacts->phone)}}" target="_blank"
-           title="{{ Config::get('app.locale') == 'ar' ? 'تواصل معنا عبر واتساب' : 'Chat with us on WhatsApp' }}">
+    <div class="whatsapp-float" id="whatsappButton" style="display: none; left: 40px; right: auto;">
+        <a href="https://wa.me/{{ str_replace([' ', '+', '-', '(', ')'], '', $contacts->phone) }}" target="_blank"
+            title="{{ Config::get('app.locale') == 'ar' ? 'تواصل معنا عبر واتساب' : 'Chat with us on WhatsApp' }}">
             <i class="fab fa-whatsapp"></i>
         </a>
-    </div> --}}
+    </div>
 
     <style>
         .whatsapp-float {
@@ -406,8 +599,7 @@
             width: 60px;
             height: 60px;
             bottom: 40px;
-            {{ Config::get('app.locale') == 'ar' ? 'left: 40px;' : 'right: 40px;' }}
-            background-color: #25d366;
+            {{ Config::get('app.locale') == 'ar' ? 'left: 40px;' : 'right: 40px;' }} background-color: #25d366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
@@ -447,9 +639,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
@@ -461,8 +655,7 @@
                 width: 50px;
                 height: 50px;
                 bottom: 20px;
-                {{ Config::get('app.locale') == 'ar' ? 'left: 20px;' : 'right: 20px;' }}
-                font-size: 25px;
+                {{ Config::get('app.locale') == 'ar' ? 'left: 20px;' : 'right: 20px;' }} font-size: 25px;
             }
 
             .whatsapp-float i {
@@ -506,8 +699,8 @@
                                         {{ __('front_end.footer_Location2') }}
                                     </a>
                                 </li>
-                                <li><a href="tel:{{$contacts->phone}}">{{ __('front_end.footer_Phone') }}
-                                    {{$contacts->phone}}</a>
+                                <li><a href="tel:{{ $contacts->phone }}">{{ __('front_end.footer_Phone') }}
+                                        {{ $contacts->phone }}</a>
                                 </li>
 
                             </ul>
@@ -588,24 +781,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Splide
-            new Splide('#splide', {
-                type: 'loop',
-                perPage: 2,
-                gap: '10px',
-                pagination: false,
-                autoplay: true,
-                interval: 5000,
-                pauseOnHover: true,
-                breakpoints: {
-                    1024: {
-                        perPage: 2,
-                    },
-                    768: {
-                        perPage: 1,
+            // Initialize Splide only if the element exists
+            const splideElement = document.querySelector('#splide');
+            if (splideElement) {
+                new Splide('#splide', {
+                    type: 'loop',
+                    perPage: 2,
+                    gap: '10px',
+                    pagination: false,
+                    autoplay: true,
+                    interval: 5000,
+                    pauseOnHover: true,
+                    breakpoints: {
+                        1024: {
+                            perPage: 2,
+                        },
+                        768: {
+                            perPage: 1,
+                        }
                     }
-                }
-            }).mount();
+                }).mount();
+            }
 
 
             document.querySelectorAll(".wrapper").forEach(wrapper => {
@@ -639,12 +835,23 @@
     <!-- main js  -->
     <script src="{{ asset('front_end_style/assets/js/main.js') }}"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Before After plugin (removed duplicate jQuery - using 3.6.0 loaded above) -->
     <script src="https://cdn.jsdelivr.net/npm/before-after-js/dist/before-after.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.before-after').beforeAfter();
+            if (typeof $('.before-after').beforeAfter === 'function') {
+                $('.before-after').beforeAfter();
+            }
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!sessionStorage.getItem('booking_popup_shown')) {
+                sessionStorage.setItem('booking_popup_shown', '1');
+
+                setTimeout(function() {
+                    openBookingPopup();
+                }, 300);
+            }
+        });2
     </script>
 
     <!-- Home blogs Features -->
@@ -696,38 +903,678 @@
             }
         }
     </script>
-
-
     <script>
-        // open the Sprintful popup
-        function openSprintfulPopup() {
-            if (typeof Sprintful !== 'undefined' && Sprintful.showPopup) {
-                Sprintful.showPopup({
-                    url: 'https://on.sprintful.com/anas-abushamleh-operation?hide-logo=false&hide-message=false&show-close=true',
-                    copyParentsQuery: 'false'
+        window.closeConsultSection = function() {
+            var section = document.getElementById('consultSection');
+            var whatsappBtn = document.getElementById('whatsappButton');
+            if (section) {
+                section.style.display = 'none';
+            }
+            if (whatsappBtn) {
+                whatsappBtn.style.display = 'flex';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            var openBookingBtn = document.getElementById('openBookingPopup');
+            var consultSection = document.getElementById('consultSection');
+            var whatsappBtn = document.getElementById('whatsappButton');
+            // Hide WhatsApp button initially if consultSection is visible
+            if (consultSection && consultSection.style.display !== 'none') {
+                if (whatsappBtn) whatsappBtn.style.display = 'none';
+            }
+            if (openBookingBtn) {
+                openBookingBtn.addEventListener('click', function() {
+                    if (typeof closeConsultSection === 'function') {
+                        closeConsultSection();
+                    } else {
+                        var section = document.getElementById('consultSection');
+                        if (section) section.style.display = 'none';
+                        if (whatsappBtn) whatsappBtn.style.display = 'flex';
+                    }
                 });
-            } else {
-                console.error("Sprintful script is not loaded or accessible.");
             }
-        }
-
-        // close the consult section
-        function closeConsultSection() {
-            document.getElementById('consultSection').classList.remove('show');
-            sessionStorage.setItem('consultSectionClosedAt', Date.now());
-        }
-
-        function checkConsultSection() {
-            const closedAt = sessionStorage.getItem('consultSectionClosedAt');
-            const oneHour = 60 * 60 * 1000;
-
-            if (!closedAt || (Date.now() - closedAt >= oneHour)) {
-                document.getElementById('consultSection').classList.add('show');
-            }
-        }
-        document.addEventListener('DOMContentLoaded', checkConsultSection);
+        });
     </script>
 
+    <script>
+        let bookingModal;
+        let closeBookingBtn;
+        let closeSuccessBtn;
+
+        let stepDateTime;
+        let stepEnterDetails;
+        let stepSuccess;
+
+        let bookingContentLayout;
+        let calendarContainer;
+        let monthLabel;
+        let prevMonthBtn;
+        let nextMonthBtn;
+
+        let selectedDateTitle;
+        let timeSlotsContainer;
+        let bookingDetailsForm;
+        let backToDateTimeBtn;
+
+        let jordanTimeEl;
+
+        let currentDate = new Date();
+        currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+
+        let selectedDate = null;
+        let selectedTime = null;
+
+        let apiData = {
+            work_days: [],
+            blocked_dates: [],
+            time_slots: {}
+        };
+
+        const currentLocale = "{{ app()->getLocale() }}" === 'ar' ? 'ar-EG' : 'en-US';
+        const atText = "{{ __('front_end.at') }}";
+
+        function openBookingPopup(e) {
+            if (e) e.preventDefault();
+
+            var consultSection = document.getElementById('consultSection');
+            var whatsappBtn = document.getElementById('whatsappButton');
+            if (consultSection) consultSection.style.display = 'none';
+            if (whatsappBtn) whatsappBtn.style.display = 'flex';
+
+            if (!bookingModal) return;
+
+            bookingModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            fetchAvailability().then(() => {
+                resetBookingModal();
+            });
+        }
+
+        function closeBookingModal() {
+            if (!bookingModal) return;
+
+            bookingModal.classList.remove('active');
+            document.body.style.overflow = '';
+            resetBookingModal();
+        }
+
+        function updateJordanTime() {
+            if (!jordanTimeEl) return;
+
+            try {
+                const now = new Date();
+                const jordanTime = new Intl.DateTimeFormat('en-GB', {
+                    timeZone: 'Asia/Amman',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: true
+                }).format(now);
+
+                jordanTimeEl.textContent = jordanTime;
+            } catch (e) {
+                jordanTimeEl.textContent = '--:--';
+            }
+        }
+
+        function resetStepScroll() {
+            const timesSide = document.getElementById('selectedDateWrap');
+            const successDetails = document.querySelector('.success-details');
+
+            if (stepDateTime) stepDateTime.scrollTop = 0;
+            if (stepEnterDetails) stepEnterDetails.scrollTop = 0;
+            if (stepSuccess) stepSuccess.scrollTop = 0;
+            if (timesSide) timesSide.scrollTop = 0;
+            if (successDetails) successDetails.scrollTop = 0;
+        }
+
+        function showStep(stepName) {
+            if (!stepDateTime || !stepEnterDetails || !stepSuccess) return;
+
+            stepDateTime.style.display = 'none';
+            stepEnterDetails.style.display = 'none';
+            stepSuccess.style.display = 'none';
+
+            if (stepName === 'date') stepDateTime.style.display = 'flex';
+            if (stepName === 'details') stepEnterDetails.style.display = 'flex';
+            if (stepName === 'success') stepSuccess.style.display = 'flex';
+
+            resetStepScroll();
+        }
+
+        async function fetchAvailability() {
+            try {
+                const response = await fetch('/api/availability', {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load availability');
+                }
+
+                const result = await response.json();
+
+                let workDays = [];
+                if (Array.isArray(result.work_days)) {
+                    workDays = result.work_days.map(dayObj => {
+                        if (typeof dayObj.day === 'string') {
+                            return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
+                                    'Saturday'
+                                ]
+                                .indexOf(dayObj.day);
+                        }
+                        return dayObj.day;
+                    }).filter(day => day !== -1);
+                }
+
+                let blockedDates = [];
+                if (Array.isArray(result.blocked_dates)) {
+                    blockedDates = result.blocked_dates.map(bd =>
+                        typeof bd === 'string' ? bd : bd.date
+                    );
+                }
+
+                apiData = {
+                    work_days: workDays,
+                    blocked_dates: blockedDates,
+                    time_slots: result.time_slots || {}
+                };
+            } catch (error) {
+                console.warn('Availability fallback used:', error);
+                apiData = {
+                    work_days: [1, 2, 3, 4, 5],
+                    blocked_dates: [],
+                    time_slots: {}
+                };
+            }
+        }
+
+        function formatDateKey(date) {
+            const y = date.getFullYear();
+            const m = String(date.getMonth() + 1).padStart(2, '0');
+            const d = String(date.getDate()).padStart(2, '0');
+            return `${y}-${m}-${d}`;
+        }
+
+        function isPastDate(date) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            const compareDate = new Date(date);
+            compareDate.setHours(0, 0, 0, 0);
+
+            return compareDate < today;
+        }
+
+        function isBlockedDate(dateKey) {
+            return apiData.blocked_dates.includes(dateKey);
+        }
+
+        function isWorkDay(date) {
+            const jsDay = date.getDay();
+            return apiData.work_days.includes(jsDay);
+        }
+
+        function hasTimeSlots(dateKey) {
+            return Array.isArray(apiData.time_slots[dateKey]) && apiData.time_slots[dateKey].length > 0;
+        }
+
+        function renderCalendar(date) {
+            if (!calendarContainer || !monthLabel) return;
+
+            calendarContainer.innerHTML = '';
+
+            const monthNames = currentLocale === 'ar-EG' ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو',
+                'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
+                'ديسمبر'
+            ] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                'November', 'December'
+            ];
+
+            const dayNames = currentLocale === 'ar-EG' ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة',
+                'السبت'
+            ] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+            monthLabel.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+
+            dayNames.forEach(day => {
+                const dayEl = document.createElement('div');
+                dayEl.className = 'calendar-day-name';
+                dayEl.textContent = day;
+                calendarContainer.appendChild(dayEl);
+            });
+
+            const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+            const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+            for (let i = 0; i < firstDay.getDay(); i++) {
+                const empty = document.createElement('div');
+                empty.className = 'calendar-empty';
+                calendarContainer.appendChild(empty);
+            }
+
+            for (let day = 1; day <= lastDay.getDate(); day++) {
+                const dayDate = new Date(date.getFullYear(), date.getMonth(), day);
+                const dateKey = formatDateKey(dayDate);
+
+                const dateEl = document.createElement('div');
+                dateEl.className = 'calendar-date';
+                dateEl.textContent = day;
+
+                const hasSlots = hasTimeSlots(dateKey);
+
+                const available = !isPastDate(dayDate) &&
+                    !isBlockedDate(dateKey) &&
+                    isWorkDay(dayDate) &&
+                    hasSlots;
+
+                if (available) {
+                    dateEl.classList.add('available');
+
+                    if (selectedDate === dateKey) {
+                        dateEl.classList.add('selected');
+                    }
+
+                    dateEl.addEventListener('click', function() {
+                        document.querySelectorAll('.calendar-date.selected').forEach(el => {
+                            el.classList.remove('selected');
+                        });
+
+                        dateEl.classList.add('selected');
+                        selectedDate = dateKey;
+                        renderTimeSlots(dateKey);
+
+                        if (selectedDateTitle) {
+                            selectedDateTitle.textContent = dayDate.toLocaleDateString(currentLocale, {
+                                weekday: 'long',
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            });
+                        }
+
+                        if (bookingContentLayout) {
+                            bookingContentLayout.classList.add('show-times');
+                        }
+
+                        resetStepScroll();
+                    });
+                } else {
+                    dateEl.classList.add('muted');
+                }
+
+                calendarContainer.appendChild(dateEl);
+            }
+        }
+
+        function renderTimeSlots(dateKey) {
+            if (!timeSlotsContainer) return;
+
+            timeSlotsContainer.innerHTML = '';
+            selectedTime = null;
+
+            const slots = apiData.time_slots[dateKey] || [];
+
+            if (!slots.length) {
+                timeSlotsContainer.innerHTML = `<div class="no-times-msg">No time slots available.</div>`;
+                return;
+            }
+
+            slots.forEach((slot) => {
+                const row = document.createElement('div');
+                row.className = 'time-slot-row';
+
+                const timeBtn = document.createElement('button');
+                timeBtn.type = 'button';
+                timeBtn.className = 'time-slot-btn';
+                timeBtn.textContent = `${slot.start_time.substring(0, 5)} - ${slot.end_time.substring(0, 5)}`;
+
+                const nextBtn = document.createElement('button');
+                nextBtn.type = 'button';
+                nextBtn.className = 'time-next-btn';
+                nextBtn.textContent = "{{ __('front_end.booking_next') }}";
+
+                function selectThisTime() {
+                    document.querySelectorAll('.time-slot-row').forEach(r => r.classList.remove('active'));
+                    document.querySelectorAll('.time-slot-btn').forEach(btn => btn.classList.remove('selected'));
+
+                    row.classList.add('active');
+                    timeBtn.classList.add('selected');
+
+                    selectedTime = {
+                        date: dateKey,
+                        start_time: slot.start_time,
+                        end_time: slot.end_time
+                    };
+                }
+
+                function goToDetailsStep() {
+                    if (!selectedTime) {
+                        selectThisTime();
+                    }
+
+                    const [year, month, day] = selectedTime.date.split('-').map(Number);
+                    const appointmentDate = new Date(year, month - 1, day);
+
+                    const dateStr = appointmentDate.toLocaleDateString(currentLocale, {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    const timeStr =
+                        `${selectedTime.start_time.substring(0, 5)} - ${selectedTime.end_time.substring(0, 5)}`;
+                    const summaryDateTime = document.getElementById('summaryDateTime');
+
+                    if (summaryDateTime) {
+                        summaryDateTime.textContent = `${dateStr} ${atText} ${timeStr}`;
+                    }
+
+                    showStep('details');
+                }
+
+                timeBtn.addEventListener('click', function() {
+                    selectThisTime();
+                });
+
+                nextBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    selectThisTime();
+                    goToDetailsStep();
+                });
+
+                row.appendChild(timeBtn);
+                row.appendChild(nextBtn);
+                timeSlotsContainer.appendChild(row);
+            });
+        }
+
+        function resetBookingModal() {
+            selectedDate = null;
+            selectedTime = null;
+
+            if (selectedDateTitle) {
+                selectedDateTitle.textContent = `{{ __('front_end.booking_select_date') }}`;
+            }
+
+            if (timeSlotsContainer) {
+                timeSlotsContainer.innerHTML = '';
+            }
+
+            if (bookingContentLayout) {
+                bookingContentLayout.classList.remove('show-times');
+            }
+
+            const formError = document.getElementById('formError');
+            const formSuccess = document.getElementById('formSuccess');
+            const appointmentTypeSelect = document.getElementById('appointmentType');
+            const summaryDateTime = document.getElementById('summaryDateTime');
+
+            if (formError) {
+                formError.style.display = 'none';
+                formError.textContent = '';
+            }
+
+            if (formSuccess) {
+                formSuccess.style.display = 'none';
+                formSuccess.textContent = '';
+            }
+
+            if (summaryDateTime) {
+                summaryDateTime.textContent = '';
+            }
+
+            if (bookingDetailsForm) {
+                bookingDetailsForm.reset();
+            }
+
+            if (appointmentTypeSelect) {
+                appointmentTypeSelect.selectedIndex = 0;
+            }
+
+            renderCalendar(currentDate);
+            showStep('date');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            bookingModal = document.getElementById('customBookingModal');
+            closeBookingBtn = document.getElementById('closeBookingPopup');
+            closeSuccessBtn = document.getElementById('closeSuccess');
+
+            stepDateTime = document.getElementById('stepDateTime');
+            stepEnterDetails = document.getElementById('stepEnterDetails');
+            stepSuccess = document.getElementById('stepSuccess');
+
+            bookingContentLayout = document.getElementById('bookingContentLayout');
+            calendarContainer = document.getElementById('calendlyCalendar');
+            monthLabel = document.getElementById('calMonthLabel');
+            prevMonthBtn = document.getElementById('calPrevMonth');
+            nextMonthBtn = document.getElementById('calNextMonth');
+
+            selectedDateTitle = document.getElementById('selectedDateTitle');
+            timeSlotsContainer = document.getElementById('timeSlotsContainer');
+            bookingDetailsForm = document.getElementById('bookingDetailsForm');
+            backToDateTimeBtn = document.getElementById('backToDateTime');
+
+            jordanTimeEl = document.getElementById('jordanTime');
+
+            updateJordanTime();
+            setInterval(updateJordanTime, 30000);
+
+            if (closeBookingBtn) {
+                closeBookingBtn.addEventListener('click', closeBookingModal);
+            }
+
+            if (closeSuccessBtn) {
+                closeSuccessBtn.addEventListener('click', closeBookingModal);
+            }
+
+            if (bookingModal) {
+                bookingModal.addEventListener('click', function(e) {
+                    if (e.target === bookingModal) {
+                        closeBookingModal();
+                    }
+                });
+            }
+
+            if (prevMonthBtn) {
+                prevMonthBtn.addEventListener('click', function() {
+                    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+                    renderCalendar(currentDate);
+                    resetStepScroll();
+                });
+            }
+
+            if (nextMonthBtn) {
+                nextMonthBtn.addEventListener('click', function() {
+                    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+                    renderCalendar(currentDate);
+                    resetStepScroll();
+                });
+            }
+
+            if (backToDateTimeBtn) {
+                backToDateTimeBtn.addEventListener('click', function() {
+                    showStep('date');
+                });
+            }
+
+            if (bookingDetailsForm) {
+                bookingDetailsForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    if (!selectedTime) {
+                        alert('Please select a date and time first.');
+                        return;
+                    }
+
+                    const formError = document.getElementById('formError');
+                    const formSuccess = document.getElementById('formSuccess');
+                    const submitBtn = bookingDetailsForm.querySelector('button[type="submit"]');
+
+                    if (formError) {
+                        formError.style.display = 'none';
+                        formError.textContent = '';
+                    }
+
+                    if (formSuccess) {
+                        formSuccess.style.display = 'none';
+                        formSuccess.textContent = '';
+                    }
+
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Scheduling...';
+
+                    const fullName = document.getElementById('fullName').value.trim();
+                    const nameParts = fullName.split(' ');
+                    const firstName = nameParts[0] || '';
+                    const lastName = nameParts.slice(1).join(' ') || '';
+
+                    const appointmentTypeSelect = document.getElementById('appointmentType');
+                    const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value :
+                        null;
+
+                    if (!appointmentTypeId) {
+                        if (formError) {
+                            formError.textContent = 'Please select an appointment type.';
+                            formError.style.display = 'block';
+                        }
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = '{{ __('front_end.booking_schedule_button') }}';
+                        return;
+                    }
+
+                    const formData = {
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        appointment_date: selectedTime.date,
+                        start_time: selectedTime.start_time,
+                        end_time: selectedTime.end_time,
+                        appointment_type_id: appointmentTypeId,
+                        notes: document.getElementById('notes').value
+                    };
+
+                    try {
+                        const response = await fetch('/api/appointments', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector(
+                                        'meta[name="csrf-token"]')?.getAttribute('content') ||
+                                    ''
+                            },
+                            body: JSON.stringify(formData)
+                        });
+
+                        const result = await response.json();
+
+                        if (!response.ok) {
+                            let message = 'Something went wrong. Please try again.';
+
+                            if (result.message) {
+                                message = result.message;
+                            } else if (result.errors) {
+                                const firstKey = Object.keys(result.errors)[0];
+                                if (firstKey && Array.isArray(result.errors[firstKey])) {
+                                    message = result.errors[firstKey][0];
+                                }
+                            }
+
+                            if (formError) {
+                                formError.textContent = message;
+                                formError.style.display = 'block';
+                            }
+                            return;
+                        }
+
+                        document.getElementById('successBookingRef').textContent = result
+                            .booking_reference || 'N/A';
+
+                        const [year, month, day] = formData.appointment_date.split('-').map(Number);
+                        const appointmentDate = new Date(year, month - 1, day);
+
+                        const dateStr = appointmentDate.toLocaleDateString(currentLocale, {
+                            weekday: 'long',
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+
+                        const timeStr =
+                            `${formData.start_time.substring(0, 5)} - ${formData.end_time.substring(0, 5)}`;
+
+                        document.getElementById('successDateTime').textContent =
+                            `${dateStr} ${atText} ${timeStr}`;
+                        document.getElementById('successName').textContent = fullName;
+                        document.getElementById('successEmail').textContent = formData.email;
+                        document.getElementById('successPhone').textContent = formData.phone;
+
+                        const appointmentTypeName = appointmentTypeSelect.options[appointmentTypeSelect
+                            .selectedIndex].text;
+                        document.getElementById('successAppointmentType').textContent =
+                            appointmentTypeName;
+
+                        await fetchAvailability();
+
+                        if (apiData.time_slots[selectedTime.date]) {
+                            apiData.time_slots[selectedTime.date] = apiData.time_slots[selectedTime
+                                .date].filter(slot =>
+                                !(slot.start_time === selectedTime.start_time && slot.end_time ===
+                                    selectedTime.end_time)
+                            );
+
+                            if (apiData.time_slots[selectedTime.date].length === 0) {
+                                delete apiData.time_slots[selectedTime.date];
+                            }
+                        }
+
+                        renderCalendar(currentDate);
+
+                        if (selectedTime?.date && hasTimeSlots(selectedTime.date)) {
+                            selectedDate = selectedTime.date;
+                            renderTimeSlots(selectedTime.date);
+                        } else {
+                            selectedDate = null;
+                            if (selectedDateTitle) {
+                                selectedDateTitle.textContent =
+                                    `{{ __('front_end.booking_select_date') }}`;
+                            }
+                            if (timeSlotsContainer) {
+                                timeSlotsContainer.innerHTML = '';
+                            }
+                            if (bookingContentLayout) {
+                                bookingContentLayout.classList.remove('show-times');
+                            }
+                        }
+
+                        bookingDetailsForm.reset();
+                        if (appointmentTypeSelect) {
+                            appointmentTypeSelect.selectedIndex = 0;
+                        }
+
+                        showStep('success');
+
+                    } catch (error) {
+                        console.error(error);
+                        if (formError) {
+                            formError.textContent = 'An unexpected error occurred. Please try again.';
+                            formError.style.display = 'block';
+                        }
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = '{{ __('front_end.booking_schedule_button') }}';
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 

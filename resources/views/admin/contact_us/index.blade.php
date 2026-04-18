@@ -64,7 +64,7 @@
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Email</h3>
                                                         <p class="text-dark">
-                                                            {!! isset($contact->email) ? $contact->email : "<span style='color:red;'>Undefined</span>" !!}
+                                                            {!! isset($contact->email) ? $contact->email : "<span style='color:red;'>Add email</span>" !!}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -76,7 +76,7 @@
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Phone</h3>
                                                         <p class="text-dark">
-                                                            {!! isset($contact->phone) ? $contact->phone : "<span style='color:red;'>Undefined</span>" !!}
+                                                            {!! isset($contact->phone) ? $contact->phone : "<span style='color:red;'>Add phone</span>" !!}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -89,7 +89,7 @@
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Second Phone</h3>
                                                         <p class="text-dark">
-                                                            {!! isset($contact->phone2) ? $contact->phone2 : "<span style='color:red;'>Undefined</span>" !!}
+                                                            {!! isset($contact->phone2) ? $contact->phone2 : "<span style='color:red;'>Add phone2</span>" !!}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -102,7 +102,7 @@
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Address AR</h3>
                                                         <p class="text-dark">
-                                                            {!! isset($contact->address_ar) ? $contact->address_ar : "<span style='color:red;'>Undefined</span>" !!}
+                                                            {!! isset($contact->address_ar) ? $contact->address_ar : "<span style='color:red;'>Add address AR</span>" !!}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -115,7 +115,7 @@
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Address EN</h3>
                                                         <p class="text-dark">
-                                                            {!! isset($contact->address_en) ? $contact->address_en : "<span style='color:red;'>Undefined</span>" !!}
+                                                            {!! isset($contact->address_en) ? $contact->address_en : "<span style='color:red;'>Add address EN</span>" !!}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -128,7 +128,7 @@
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Second Address EN</h3>
                                                         <p class="text-dark">
-                                                            {!! isset($contact->address_en2) ? $contact->address_en2 : "<span style='color:red;'>Undefined</span>" !!}
+                                                            {!! isset($contact->address_en2) ? $contact->address_en2 : "<span style='color:red;'>Add second address EN</span>" !!}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -141,7 +141,7 @@
                                                     <div class="text-center pb-4">
                                                         <h3 class="pb-2" style="color: blue">Second Address AR</h3>
                                                         <p class="text-dark">
-                                                            {!! isset($contact->address_ar2) ? $contact->address_ar2 : "<span style='color:red;'>Undefined</span>" !!}
+                                                            {!! isset($contact->address_ar2) ? $contact->address_ar2 : "<span style='color:red;'>Add second address AR</span>" !!}
                                                         </p>
                                                     </div>
                                                 </div>

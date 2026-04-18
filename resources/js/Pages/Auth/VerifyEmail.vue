@@ -48,7 +48,7 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
                         Edit Profile</Link>
 
                     <Link
-                        :href="route('logout')"
+                        :href="route('')"
                         method="post"
                         as="button"
                         class="underline text-sm text-gray-600 hover:text-gray-900 ml-2"

@@ -151,7 +151,7 @@ class ContactUsController extends Controller
         try {
 
 
-            $requests = ContactUsRequest::orderBy('id', 'asc')->get();
+            $requests = ContactUsRequest::orderBy('id', 'desc')->get();
             return view('admin.contact_us.requests', compact('requests'));
         } catch (\Throwable $th) {
             $function_name =  $route->getActionName();

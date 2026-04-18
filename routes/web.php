@@ -1,11 +1,19 @@
 <?php
 
+use App\Http\Controllers\Api\BookingAvailabilityController;
 use App\Http\Controllers\Backend\Admin\AboutUsController;
 use App\Http\Controllers\Backend\Admin\AdminDashboardController;
 use App\Http\Controllers\Backend\Admin\Auth\AdminLoginController;
+use App\Http\Controllers\Backend\Admin\AppointmentController;
+use App\Http\Controllers\Backend\Admin\AppointmentLogController;
+use App\Http\Controllers\Backend\Admin\AppointmentTypeController;
 use App\Http\Controllers\Backend\Admin\BlogsController;
 use App\Http\Controllers\Backend\Admin\ContactUsController;
+use App\Http\Controllers\Backend\Admin\PublicSettingController;
+use App\Http\Controllers\Backend\Admin\CustomerController;
 use App\Http\Controllers\Backend\Admin\FaqController;
+use App\Http\Controllers\Backend\Admin\WorkDayController;
+use App\Http\Controllers\Backend\Admin\BlockedDateController;
 use App\Http\Controllers\Backend\Admin\InsuranceController as AdminInsuranceController;
 use App\Http\Controllers\Backend\Admin\PhotosController;
 use App\Http\Controllers\Backend\Admin\PrivacyPolicyController;
@@ -16,7 +24,6 @@ use App\Http\Controllers\Backend\Admin\TermAndConditionController;
 use App\Http\Controllers\Backend\Admin\TreatmentController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\SupportTicketController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -31,6 +38,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
 
     Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
@@ -51,6 +59,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/' . str_replace(' ', '-', trans('front_end.footer_terms')), [FrontendController::class, 'TermsAndConditions'])->name('Terms&Conditions');
 
 
+
+
     // Route::get('/policy', function () {
     //     return view('policy');
     // });
@@ -62,7 +72,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 });
 
 
-Route::get('/dashboard',function(){
+Route::get('/dashboard', function () {
     return redirect()->route('super_admin.dashboard');
 })->middleware('auth:super_admin')->name('dashboard');
 // ==================================================================================================================
@@ -113,7 +123,6 @@ Route::prefix('super_admin')->name('super_admin.')->group(function () {
             Route::get('softDelete/{id}', [BlogsController::class, 'softDelete'])->name('blogs-softDelete');
             Route::get('/showSoftDelete', [BlogsController::class, 'showSoftDelete'])->name('blogs-showSoftDelete');
             Route::get('softDeleteRestore/{id}', [BlogsController::class, 'softDeleteRestore'])->name('blogs-softDeleteRestore');
-
         });
 
 
@@ -177,9 +186,63 @@ Route::prefix('super_admin')->name('super_admin.')->group(function () {
             Route::get('destroy/{id}', [FaqController::class, 'destroy'])->name('faqs-destroy');
         });
 
+        // Appointments Routes :
+        // ==============================================================================
+        Route::group(['prefix' => 'appointments'], function () {
+            Route::get('/index', [AppointmentController::class, 'index'])->name('appointments-index');
+            Route::get('/create', [AppointmentController::class, 'create'])->name('appointments-create');
+            Route::get('show/{id}', [AppointmentController::class, 'show'])->name('appointments-show');
+            Route::get('edit/{id}', [AppointmentController::class, 'edit'])->name('appointments-edit');
+            Route::get('softDelete/{id}', [AppointmentController::class, 'softDelete'])->name('appointments-softDelete');
+            Route::post('status/{id}/{status}', [AppointmentController::class, 'updateStatus'])->name('appointments-status');
+        });
 
 
+        // Appointment Types Routes :
+        // ==============================================================================
+        Route::group(['prefix' => 'appointment-types'], function () {
+            Route::get('/index', [AppointmentTypeController::class, 'index'])->name('appointment-types-index');
+            Route::get('/create', [AppointmentTypeController::class, 'create'])->name('appointment-types-create');
+            Route::get('edit/{id}', [AppointmentTypeController::class, 'edit'])->name('appointment-types-edit');
+            Route::get('softDelete/{id}', [AppointmentTypeController::class, 'softDelete'])->name('appointment-types-softDelete');
+        });
 
+        // Customers Routes :
+        // ==============================================================================
+        Route::group(['prefix' => 'customers'], function () {
+            Route::get('/index', [CustomerController::class, 'index'])->name('customers-index');
+            Route::get('/create', [CustomerController::class, 'create'])->name('customers-create');
+            Route::get('edit/{id}', [CustomerController::class, 'edit'])->name('customers-edit');
+            Route::get('softDelete/{id}', [CustomerController::class, 'softDelete'])->name('customers-softDelete');
+        });
+
+        // Work Days Routes :
+        // ==============================================================================
+        Route::group(['prefix' => 'work-days'], function () {
+            Route::get('/index', [WorkDayController::class, 'index'])->name('work-days-index');
+            Route::get('/weekly-schedule', [WorkDayController::class, 'weeklySchedule'])->name('work-days-weekly-schedule');
+            Route::get('/create', [WorkDayController::class, 'create'])->name('work-days-create');
+            Route::get('edit/{id}', [WorkDayController::class, 'edit'])->name('work-days-edit');
+            Route::get('softDelete/{id}', [WorkDayController::class, 'softDelete'])->name('work-days-softDelete');
+        });
+
+        // Blocked Dates Routes :
+        // ==============================================================================
+        Route::group(['prefix' => 'blocked-dates'], function () {
+            Route::get('/index', [BlockedDateController::class, 'index'])->name('blocked-dates-index');
+            Route::get('/create', [BlockedDateController::class, 'create'])->name('blocked-dates-create');
+            Route::get('edit/{id}', [BlockedDateController::class, 'edit'])->name('blocked-dates-edit');
+            Route::get('softDelete/{id}', [BlockedDateController::class, 'softDelete'])->name('blocked-dates-softDelete');
+        });
+
+        // Public Settings Routes :
+        // ==============================================================================
+        Route::group(['prefix' => 'public_settings'], function () {
+            Route::get('/index', [PublicSettingController::class, 'index'])->name('public_settings-index');
+            Route::get('/create', [PublicSettingController::class, 'create'])->name('public_settings-create');
+            Route::get('edit/{id}', [PublicSettingController::class, 'edit'])->name('public_settings-edit');
+            Route::get('destroy/{id}', [PublicSettingController::class, 'destroy'])->name('public_settings-destroy');
+        });
 
         // Contact Us Routes :
         // ==============================================================================
@@ -270,11 +333,6 @@ Route::prefix('super_admin')->name('super_admin.')->group(function () {
             Route::get('softDelete/{id}', [PhotosController::class, 'softDelete'])->name('Photo-softDelete');
             Route::get('/showSoftDelete', [PhotosController::class, 'showSoftDelete'])->name('Photo-showSoftDelete');
             Route::get('softDeleteRestore/{id}', [PhotosController::class, 'softDeleteRestore'])->name('Photo-softDeleteRestore');
-
         });
-
-
-
-
     });
 });

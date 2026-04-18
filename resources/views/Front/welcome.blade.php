@@ -858,8 +858,7 @@
     <!-- Start Video section -->
     <div class="full-video-banner">
         <video class="banner-video" autoplay muted loop playsinline preload="metadata">
-            <source src="{{ asset('front_end_style/assets/videos/banner-video1.mp4') }}" type="video/mp4">
-            <source src="{{ asset('front_end_style/assets/videos/banner-video1.webm') }}" type="video/webm">
+            <source src="{{ asset('front_end_style/assets/videos/banner-video1.webm') }}" type="video/mp4">
             <p>الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو
                 جمعية
                 الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
@@ -981,7 +980,7 @@
                     <div class="col-lg-5">
                         <div class="makeup-img hover-img">
                             <img style="object-fit: cover; width: 100%; height: 450px;"
-                                src="{{ asset('front_end_style/assets/img/home1/makeup-img1.png') }}" loading="lazy"
+                                src="{{ asset('front_end_style/assets/img/home1/makeup-img1.webp') }}" loading="lazy"
                                 alt="الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو جمعية
 الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن
 Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treating Ear, Nose, and Throat Diseases, Member of the Jordanian Surgeons Association and the Jordan Medical Association, Best ENT Doctor in Amman, Jordan.">
@@ -1022,7 +1021,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                 <div class="col-lg-4">
                     <div class="makeup-img hover-img">
                         <img style="object-fit: cover; width: 100%; height: 350px;"
-                            src="{{ asset('front_end_style/assets/img/home1/makeup-img2.png') }}" loading="lazy"
+                            src="{{ asset('front_end_style/assets/img/home1/makeup-img2.webp') }}" loading="lazy"
                             alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل اختصاصي أنف وأذن وحنجرة في عمان الأردن, جراحة الأنف والجيوب الأنفية في عمان, تقنيات متقدمة في طب الأنف والأذن والحنجرة, أمراض وعلاجات الأنف والأذن والحنجرة, أفضل عيادة أنف وأذن وحنجرة في عمان الأردن, رعاية ENT موثوقة في عمان,Dr. Anas Abu shamleh Clinic, Comprehensive Ear, Nose and Throat Services, Best ENT Specialist in Amman Jordan, Nose and Sinus Surgery in Amman, Advanced Otorhinolaryngology Techniques, Ear, Nose and Throat Diseases and Treatments, Best ENT Clinic in Amman Jordan, Reliable ENT Care in Amman">
                     </div>
                 </div>
@@ -1202,7 +1201,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                         <h5 class="mb-3 text-white"> {{ __('front_end.book_text') }}</h5>
                         <h4 class="mb-2 text-white">{{ __('front_end.footer_No') }} </h4>
                         <a style="font-family: 'El Messiri', sans-serif;background-color:#42aeb9" href="#"
-                            onclick="openSprintfulPopup(); return false;"
+                            onclick="openBookingPopup(event)"
                             class="primary-btn1 hover-btn3 w-100">{{ __('front_end.book_your_appointment_now') }} </a>
                     </div>
                 </div>
@@ -1232,7 +1231,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                             <div class="product-banner-content">
                                                 <h2 style="font-size: 20px">{{ __('front_end.book_text') }}</h2>
                                                 <a href="#" class="primary-btn1 style-2 hover-btn3"
-                                                    onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                                    onclick="openBookingPopup(event)">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
                                                 <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}"
@@ -1253,7 +1252,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                             <div class="product-banner-content">
                                                 <h2 style="font-size: 20px">{{ __('front_end.book_text') }}</h2>
                                                 <a href="#" class="primary-btn1 style-2 hover-btn3"
-                                                    onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                                    onclick="openBookingPopup(event)">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
                                                 <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}"
@@ -1275,7 +1274,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                 <h2 style="font-size: 20px">
                                                     {{ __('front_end.banner_section_text_slide1') }}</h2>
                                                 <a href="#" class="primary-btn1 style-2 hover-btn3"
-                                                    onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                                    onclick="openBookingPopup(event)">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
                                                 <img src="{{ asset('front_end_style/assets/img/home1/banner-section4.png') }}"
@@ -1297,7 +1296,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                 <h2 style="font-size: 20px">
                                                     {{ __('front_end.banner_section_text_slide2') }}</h2>
                                                 <a href="#" class="primary-btn1 style-2 hover-btn3"
-                                                    onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                                    onclick="openBookingPopup(event)">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
                                                 <img src="{{ asset('front_end_style/assets/img/home1/banner-section6.png') }}"
@@ -1319,7 +1318,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                 <h2 style="font-size: 20px">
                                                     {{ __('front_end.banner_section_text_slide3') }}</h2>
                                                 <a href="#" class="primary-btn1 style-2 hover-btn3"
-                                                    onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                                    onclick="openBookingPopup(event)">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
                                                 <img src="{{ asset('front_end_style/assets/img/home1/banner-section8.png') }}"
@@ -1340,7 +1339,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                                                 <h2 style="font-size: 20px">
                                                     {{ __('front_end.banner_section_text_slide3') }}</h2>
                                                 <a href="#" class="primary-btn1 style-2 hover-btn3"
-                                                    onclick="openSprintfulPopup(); return false;">{{ __('front_end.book_now') }}</a>
+                                                    onclick="openBookingPopup(event)">{{ __('front_end.book_now') }}</a>
                                             </div>
                                             <div class="product-banner-right-img">
                                                 <img src="{{ asset('front_end_style/assets/img/home1/banner-section2.png') }}"

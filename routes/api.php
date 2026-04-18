@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/availability', [\App\Http\Controllers\Api\BookingAvailabilityController::class, 'index']);
+Route::post('/appointments', [\App\Http\Controllers\AppointmentController::class, 'store']);

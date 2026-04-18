@@ -25,17 +25,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         Paginator::useBootstrap();
         session()->put('locale', 'ar');
 
-        // app()->setLocale(session()->get('locale'));
-
-        // $services2=Service::latest()->limit(4)->get();
-        // view()->share([
-        //     'services2' => $services2,
-
-        // ]);
+        $treatments = \App\Models\Treatment::latest()->take(5)->get();
+        $contacts = \App\Models\ContactUs::first();
+        view()->share([
+            'treatments' => $treatments,
+            'contacts' => $contacts,
+        ]);
 
     }
 }

@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AboutUsSeeder::class,
             SeoOperationSeeder::class,
-            ContactUsSeeder::class
+            ContactUsSeeder::class,
+            PublicSettingSeeder::class,
+            AppointmentTypeSeeder::class,
         ]);
     }
 }

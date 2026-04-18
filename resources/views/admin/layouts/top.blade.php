@@ -113,6 +113,9 @@
     {{-- =============== Live Select Search Section =============== --}}
     {{-- ========================================================== --}}
 
+    {{-- Vite Assets --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">

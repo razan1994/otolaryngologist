@@ -20,7 +20,7 @@ const form = useForm({
     password: '',
 });
 
-const confirmLogout = () => {
+const confirm = () => {
     confirmingLogout.value = true;
 
     setTimeout(() => passwordInput.value.focus(), 250);

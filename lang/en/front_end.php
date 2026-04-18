@@ -102,9 +102,9 @@ return [
     'DrAnas_Surgery' => 'Adult Ear Nose and throat Surgery',
     'DrAnas_Rhinoplastic' => 'Rhinoplastic Surgery',
     'treatment_details' => 'treatment_details',
-    'treatment_Recent_Treatment'=>'Recent Treatment',
-    'treatment_Tags'=>'Tags',
-    'Recent_Before_&_After'=>'Recent Cases',
+    'treatment_Recent_Treatment' => 'Recent Treatment',
+    'treatment_Tags' => 'Tags',
+    'Recent_Before_&_After' => 'Recent Cases',
 
 
     ###============================= End Dr.Anas =======================================================###
@@ -208,9 +208,45 @@ return [
     'book_your_appointment_now' => 'Book your appointment now',
     'book_text' => 'Book your appointment now with Dr. Anas Abu Shamleh, Consultant in Ear, Nose, Throat, Sinus Endoscopic Surgeries, and Rhinoplasty',
     'book_now' => 'Book Now',
+
+    // Booking Modal Translations
+    'booking_modal_title' => 'Book Your Appointment',
+    'booking_select_date_time' => 'Select a Date & Time',
+    'booking_time_zone' => 'Time zone',
+    'booking_jordan_time' => 'Jordan Time',
+    'booking_select_date' => 'Select a date',
+    'booking_back' => 'Back',
+    'booking_enter_details' => 'Enter Details',
+    'booking_name' => 'Full Name',
+    'booking_email' => 'Email',
+    'booking_phone' => 'Phone',
+    'booking_appointment_type' => 'Appointment Type',
+    'booking_location' => 'Location',
+    'booking_location_address' => 'Abdoun, behind Royal Jordanian, above Rouhi Pharmacy',
+    'booking_notes' => 'Additional notes (optional)',
+    'booking_notes_placeholder' => 'Enter any notes or special requests you have',
+    'booking_schedule_button' => 'Schedule Booking',
+    'booking_confirmed_title' => 'Booking Confirmed!',
+    'booking_confirmed_message' => 'We will reach out to you as soon as possible to confirm the details',
+    'booking_reference' => 'Booking Reference:',
+    'booking_date_time' => 'Date & Time:',
+    'booking_appointment' => 'Appointment:',
+    'booking_email_sent' => 'A confirmation email has been sent to your email address with all the appointment details.',
+    'booking_done_button' => 'Done',
+    'booking_no_slots' => 'No available time slots for this date.',
+    'booking_name_placeholder' => 'Enter your full name',
+    'booking_select_appointment_type' => 'Select Appointment Type',
+    'booking_next' => 'Next',
+    'booking_email_placeholder' => 'Enter your email address',
+    'booking_phone_placeholder' => 'Enter your phone number',
+    'at' => 'at',
+
+
+
+
     'banner_section_text_slide1' => 'Dr. Anas Abu Shamleh treats all nasal and sinus diseases, in addition to performing all surgical and cosmetic procedures with exceptional expertise',
-'banner_section_text_slide3' => 'Dr. Anas Abu Shamleh offers services for the treatment of pharyngeal and laryngeal disorders, and the diagnosis of vocal cord disorders',
-'banner_section_text_slide2' => 'Comprehensive services for the treatment of ear diseases, and the treatment of acute and chronic infections, along with providing accurate consultations ',
+    'banner_section_text_slide3' => 'Dr. Anas Abu Shamleh offers services for the treatment of pharyngeal and laryngeal disorders, and the diagnosis of vocal cord disorders',
+    'banner_section_text_slide2' => 'Comprehensive services for the treatment of ear diseases, and the treatment of acute and chronic infections, along with providing accurate consultations ',
 
 
 
@@ -381,8 +417,8 @@ return [
     'Features_btn' => 'Read More',
 
     'keywords_nose_diseases' => 'Dr. Anas Abu Shama | Consultant of Ear, Nose, and Throat Surgery and Rhinoplasty | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Madinah Al-Munawwarah Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | Nose Diseases | Nasal Congestion Treatment | Sinus Infection | Causes of Nosebleeds | Loss of Smell Symptoms | Nasal Polyps Removal | Deviated Septum Surgery | Sinus Headache Treatment | Smell Disorder Treatment | Chronic Sinusitis Treatment | Turbinate Reduction Procedure | Deviated Septum Surgery | Nasal Obstruction Removal | Pediatric ENT Care',
-'keywords_ear_diseases' => 'Dr. Anas Abu Shamleh | Consultant in Ear, Nose, and Throat Surgery and Rhinoplasty | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Al-Madina Al-Munawara Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | Ear Diseases | Ear Infection Treatment | Causes of Hearing Loss | Earwax Removal | Ear Pain Symptoms | Ear Canal Infection Treatment | Middle Ear Infection Symptoms | Outer Ear Infection Treatment | Auditory Nerve Inflammation Symptoms | Irritated Ear Treatment | Hearing Loss Treatment in Children | Auditory Nerve Inflammation | Ear and Head Infections | Pediatric ENT Care | Hearing Loss Treatment in the Elderly',
-'keywords_throat_diseases' => 'Dr. Anas Abu Shamleh | Consultant in Ear, Nose, and Throat Surgery and Rhinoplasty | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Al-Madina Al-Munawara Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | Throat Diseases | Treatment of Sore Throat | Tonsillitis Treatment | Causes of Chronic Cough | Throat Cancer Diagnosis | Laryngitis Treatment | Vocal Cord Nodules | Symptoms of Throat Ulcers | Gastroesophageal Reflux Disease | Throat Abscess Treatment | Vocal Cord Tumors | Treatment of Throat Polyps | Chronic Throat Irritation | Antibiotics for Sore Throat | Tonsil Stones Removal | Causes of Throat Discomfort | Vocal Cord Paralysis',
+    'keywords_ear_diseases' => 'Dr. Anas Abu Shamleh | Consultant in Ear, Nose, and Throat Surgery and Rhinoplasty | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Al-Madina Al-Munawara Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | Ear Diseases | Ear Infection Treatment | Causes of Hearing Loss | Earwax Removal | Ear Pain Symptoms | Ear Canal Infection Treatment | Middle Ear Infection Symptoms | Outer Ear Infection Treatment | Auditory Nerve Inflammation Symptoms | Irritated Ear Treatment | Hearing Loss Treatment in Children | Auditory Nerve Inflammation | Ear and Head Infections | Pediatric ENT Care | Hearing Loss Treatment in the Elderly',
+    'keywords_throat_diseases' => 'Dr. Anas Abu Shamleh | Consultant in Ear, Nose, and Throat Surgery and Rhinoplasty | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Al-Madina Al-Munawara Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | Throat Diseases | Treatment of Sore Throat | Tonsillitis Treatment | Causes of Chronic Cough | Throat Cancer Diagnosis | Laryngitis Treatment | Vocal Cord Nodules | Symptoms of Throat Ulcers | Gastroesophageal Reflux Disease | Throat Abscess Treatment | Vocal Cord Tumors | Treatment of Throat Polyps | Chronic Throat Irritation | Antibiotics for Sore Throat | Tonsil Stones Removal | Causes of Throat Discomfort | Vocal Cord Paralysis',
     'keywords_home_blog' => 'Dr. Anas Abu Shamleh | Consultant in ENT and Nasal Surgery | Best ENT Specialist in Amman, Jordan, Jabal Al-Nasr, Madinah Street | ENT Doctor in Amman, Jordan | Ear, Nose, and Throat Diseases | ENT Diseases and Treatments with Dr. Anas Abu Shamleh | Best Treatment Methods for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh | Diagnosis and Treatment of Ear, Nose, and Throat Issues at Dr. Anas Abu Shamleh\'s Clinic | Treatment for Hearing Loss and Ear Infections with Dr. Anas Abu Shamleh | Effective Solutions for Nasal Blockage and Sinus Infections with Dr. Anas Abu Shamleh | Medical Consultations for Voice, Ear, and Nose Issues at Dr. Anas Abu Shamleh\'s Clinic | Causes and Treatment of Breathing Problems Due to Nasal and Throat Issues with Dr. Anas Abu Shamleh | Methods for Treating Middle and Outer Ear Infections at Dr. Anas Abu Shamleh\'s Clinic | Comprehensive Care for Ear, Nose, and Throat Problems with ENT Specialist Dr. Anas Abu Shamleh | Treatment for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh | Nasal Cosmetic Surgery with Dr. Anas Abu Shamleh | Nasal Aesthetics in Amman with Dr. Anas Abu Shamleh | Best Nasal Cosmetic Surgeon in Jordan | Laser Treatment for Nasal Problems with Dr. Anas Abu Shamleh | Non-Surgical Nasal Cosmetic Surgery at Dr. Anas Abu Shamleh\'s Clinic | Medical Consultation for Nasal Aesthetics with Nasal Cosmetic Surgeon Dr. Anas Abu Shamleh | Nasal Cosmetic Results in Amman with Dr. Anas Abu Shamleh | Repair of Nasal Deformities After Accidents with Dr. Anas Abu Shamleh | Nasal Cosmetic Surgery for Aesthetic and Medical Purposes at Dr. Anas Abu Shamleh\'s Clinic | Improving Nasal Appearance Without Surgery with Dr. Anas Abu Shamleh | Endoscopic Nasal and Sinus Cosmetic Surgery with Dr. Anas Abu Shamleh | Best ENT Doctor in Amman, Jordan | Dr. Anas Abu Shamleh, ENT Specialist in Jabal Al-Nasr | Dr. Anas Abu Shamleh\'s ENT Clinic on Madinah Street, Specialized Eye Hospital | ENT Specialist in Amman, Jordan | Dr. Anas Abu Shamleh, Nasal Cosmetic Surgeon in Jordan | Improving Nasal, Ear, and Throat Function with Dr. Anas Abu Shamleh | Advanced Treatments for Nasal, Ear, and Throat Infections with Dr. Anas Abu Shamleh | Medical Consultations for Breathing Problems and Infections of the Nose, Ear, and Throat',    ###==========================================================================================================###
 
     ###==========================================================================================================###
@@ -645,19 +681,19 @@ Nosebleeds,',
 
     'To_Know_More' => 'To Know More',
     'Email' => 'Email',
-    'Location'=>'Location',
+    'Location' => 'Location',
     'View_Map' => 'View Map',
     'west_amman_location' => 'West Amman',
     'east_amman_location' => 'East Amman ',
-    'contct_title'=> 'We leave the choice to our dear patients to contact us in any way that suits them from the following options or by visiting us at the clinic at the address provided below.',
-'View_All' => 'View All',
+    'contct_title' => 'We leave the choice to our dear patients to contact us in any way that suits them from the following options or by visiting us at the clinic at the address provided below.',
+    'View_All' => 'View All',
 
-'footer_title_dr' => 'Dr. Anas Abu Shamleh',
-'footer_title_specialty2' => 'and Rhinoplasty Surgery',
-'footer_title_specialty' => 'Specialist in Otolaryngology and Rhinoplasty Surgery',
-'blog_subTitle' => 'Latest specialized medical articles and advice in the field of ear, nose, and throat from Dr. Anas Abu Shamleh, best ENT (ear, nose, and throat) specialist in Amman, Jordan, helping you gain a better understanding of your health and available treatment solutions.',
-'Before&After_subTitle' => 'Explore the results of rhinoplasty through photos showing noticeable changes before and after the procedure, and learn about the improvements that can be achieved thanks to the expertise of Dr. Anas Abu Shamleh, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty in this field.',
-'FAQ_subTitle'=>'Explore the frequently asked questions about our ear, nose, and throat procedures with Dr. Anas Abu Shamleh, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. Here you will find comprehensive answers to common issues, treatments, surgeries, and cosmetic procedures, helping you obtain the information you need and addressing any questions you may have.',
-'privacy_subTitle'=>'Learn how your personal data and information security are protected at Dr. Anas Abu Shamlehs clinic, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. We are committed to safeguarding your privacy and explaining how we use your personal information.',
-'terms_subTitle'=>'Learn about the terms and conditions that govern your use of our website and services at Dr. Anas Abu Shamlehs clinic, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. Please read these terms carefully to ensure you fully understand your rights and responsibilities when using our site.',
+    'footer_title_dr' => 'Dr. Anas Abu Shamleh',
+    'footer_title_specialty2' => 'and Rhinoplasty Surgery',
+    'footer_title_specialty' => 'Specialist in Otolaryngology and Rhinoplasty Surgery',
+    'blog_subTitle' => 'Latest specialized medical articles and advice in the field of ear, nose, and throat from Dr. Anas Abu Shamleh, best ENT (ear, nose, and throat) specialist in Amman, Jordan, helping you gain a better understanding of your health and available treatment solutions.',
+    'Before&After_subTitle' => 'Explore the results of rhinoplasty through photos showing noticeable changes before and after the procedure, and learn about the improvements that can be achieved thanks to the expertise of Dr. Anas Abu Shamleh, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty in this field.',
+    'FAQ_subTitle' => 'Explore the frequently asked questions about our ear, nose, and throat procedures with Dr. Anas Abu Shamleh, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. Here you will find comprehensive answers to common issues, treatments, surgeries, and cosmetic procedures, helping you obtain the information you need and addressing any questions you may have.',
+    'privacy_subTitle' => 'Learn how your personal data and information security are protected at Dr. Anas Abu Shamlehs clinic, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. We are committed to safeguarding your privacy and explaining how we use your personal information.',
+    'terms_subTitle' => 'Learn about the terms and conditions that govern your use of our website and services at Dr. Anas Abu Shamlehs clinic, the leading consultant in ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty. Please read these terms carefully to ensure you fully understand your rights and responsibilities when using our site.',
 ];

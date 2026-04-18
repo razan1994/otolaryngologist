@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\AboutUs;
+use App\Models\Appointment;
+use App\Models\AppointmentType;
 use App\Models\Blogs;
 use App\Models\ContactUsRequest;
 use App\Models\Faq;
@@ -20,6 +22,8 @@ use Illuminate\Routing\Controller;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use App\Models\WorkDay;
+use App\Models\BlockedDate;
 
 class FrontendController extends Controller
 {
@@ -35,9 +39,8 @@ class FrontendController extends Controller
         $treatments = Treatment::latest()->get();
         $blogs = Blogs::where('status', 1)->limit(3)->get();
         $seo_operation = SeoOperation::where('page_name', 'Welcome')->get()->first();
-        // return   $blogs;
-        return view('Front/welcome', compact('about', 'services', 'services1', 'treatments', 'blogs', 'seo_operation', 'photos'));
-
+        $appointmentTypes = AppointmentType::where('status', 1)->get();
+        return view('Front/welcome', compact('about', 'services', 'services1', 'treatments', 'blogs', 'seo_operation', 'photos', 'appointmentTypes'));
     }
 
     public function ServiceDetails(Route $route, $aliasname)
@@ -56,7 +59,6 @@ class FrontendController extends Controller
         } else {
             return redirect()->back()->with('danger', 'Blog Not Found !!!');
         }
-
     }
     public function PrivacyPolicy()
     {
@@ -64,9 +66,6 @@ class FrontendController extends Controller
         $privacy = PrivacyPolicy::get()->first();
         // return   $privacy;
         return view('Front/privacy-policy', compact('seo_operation', 'privacy'));
-
-
-
     }
 
     public function TermsAndConditions()
@@ -75,9 +74,6 @@ class FrontendController extends Controller
         $term_and_conditions = TermAndCondition::get()->first();
         // return   $privacy;
         return view('Front/terms', compact('seo_operation', 'term_and_conditions'));
-
-
-
     }
     public function Gallary()
     {
@@ -102,7 +98,6 @@ class FrontendController extends Controller
         $faqs = Faq::get();
         // return   $faqs;
         return view('Front/FAQ', compact('seo_operation', 'faqs'));
-
     }
     public function Dranas()
     {
@@ -112,9 +107,6 @@ class FrontendController extends Controller
         $seo_operation = SeoOperation::where('page_name', 'About Dr')->get()->first();
         // return   $blogs;
         return view('Front/About/dranas', compact('about', 'services', 'seo_operation'));
-
-
-
     }
 
     public function ContactUs()
@@ -176,9 +168,6 @@ class FrontendController extends Controller
         $seo_operation = SeoOperation::where('page_name', 'About Clinic')->get()->first();
         // return   $blogs;
         return view('Front/About/aboutClinic', compact('about', 'seo_operation'));
-
-
-
     }
     public function Blogs()
     {
@@ -258,7 +247,6 @@ class FrontendController extends Controller
         } else {
             return redirect()->back()->with('danger', 'Gallery Not Found !!!');
         }
-
     }
 
     public function Treatments()
@@ -266,7 +254,7 @@ class FrontendController extends Controller
         $seo_operation = SeoOperation::where('page_name', 'Treatments')->first();
         $treatments = Treatment::where('status', 1)->paginate(8);
 
-        return view('Front/treatments', compact('seo_operation', 'treatments', ));
+        return view('Front/treatments', compact('seo_operation', 'treatments',));
     }
 
 
@@ -305,6 +293,44 @@ class FrontendController extends Controller
         }
     }
 
+    /**
+     * Show available and unavailable dates for the booking calendar.
+     */
+    // public function bookingCalendarAvailability()
+    // {
+    //     $today = now()->toDateString();
 
+    //     $workDays = WorkDay::where('status', 1)
+    //         ->get(['day', 'from_time', 'to_time', 'slot_duration']);
 
+    //     $blockedDates = BlockedDate::where('date', '>=', $today)
+    //         ->get(['date', 'is_full_day', 'from_time', 'to_time', 'reason'])
+    //         ->map(function ($blocked) {
+    //             return [
+    //                 'date' => $blocked->date instanceof \Carbon\Carbon ? $blocked->date->format('Y-m-d') : $blocked->date,
+    //                 'is_full_day' => $blocked->is_full_day,
+    //                 'from_time' => $blocked->from_time,
+    //                 'to_time' => $blocked->to_time,
+    //                 'reason' => $blocked->reason,
+    //             ];
+    //         });
+
+    //     // Block time slots for all appointments except cancelled ones
+    //     $appointments = Appointment::where('appointment_date', '>=', $today)
+    //         ->whereIn('status', ['pending', 'confirmed', 'attended', 'not_attended'])
+    //         ->get(['appointment_date', 'start_time', 'end_time'])
+    //         ->map(function ($appointment) {
+    //             return [
+    //                 'appointment_date' => $appointment->appointment_date instanceof \Carbon\Carbon ? $appointment->appointment_date->format('Y-m-d') : $appointment->appointment_date,
+    //                 'start_time' => $appointment->start_time,
+    //                 'end_time' => $appointment->end_time,
+    //             ];
+    //         });
+
+    //     return response()->json([
+    //         'work_days' => $workDays,
+    //         'blocked_dates' => $blockedDates,
+    //         'appointments' => $appointments,
+    //     ]);
+    // }
 }
