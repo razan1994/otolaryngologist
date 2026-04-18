@@ -5,7 +5,7 @@
 
     <?php
     $treatments = App\Models\Treatment::latest()->take(5)->get();
-    $contacts=App\Models\ContactUs::first();
+    $contacts = App\Models\ContactUs::first();
     ?>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E83HWT4Z13"></script>
@@ -804,7 +804,7 @@
 
 
 
-    <!--  Main jQuery  -->
+ <!--  Main jQuery  -->
     <script src="{{ asset('front_end_style/assets/js/jquery-3.6.0.min.js') }}"></script>
     <!-- Popper and Bootstrap JS -->
     <script src="{{ asset('front_end_style/assets/js/popper.min.js') }}"></script>
@@ -815,66 +815,73 @@
     <script src="{{ asset('front_end_style/assets/js/slick.js') }}"></script>
     <!-- Swiper slider JS -->
     <script src="{{ asset('front_end_style/assets/js/swiper-bundle.min.js') }}"></script>
-
-
     <script src="{{ asset('front_end_style/assets/js/waypoints.min.js') }}"></script>
     <!-- main js  -->
     <script src="{{ asset('front_end_style/assets/js/main.js') }}"></script>
 
-    <!-- Before After plugin (removed duplicate jQuery - using 3.6.0 loaded above) -->
+    <!-- Before After plugin -->
     <script src="https://cdn.jsdelivr.net/npm/before-after-js/dist/before-after.min.js"></script>
+
+    <!-- Splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             if (typeof $('.before-after').beforeAfter === 'function') {
                 $('.before-after').beforeAfter();
             }
         });
-
-        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Splide
-            new Splide('#splide', {
-                type: 'loop',
-                perPage: 2,
-                gap: '10px',
-                pagination: false,
-                autoplay: true,
-                interval: 5000,
-                pauseOnHover: true,
-                breakpoints: {
-                    1024: {
-                        perPage: 2,
-                    },
-                    768: {
-                        perPage: 1,
-                    }
-                }
-            }).mount();
-
-
-            document.querySelectorAll(".wrapper").forEach(wrapper => {
-                const slider = wrapper.querySelector(".slider input");
-                const img = wrapper.querySelector(".images .img-2");
-                const dragLine = wrapper.querySelector(".slider .drag-line");
-
-                slider.oninput = () => {
-                    let sliderVal = slider.value;
-                    dragLine.style.left = sliderVal + "%";
-                    img.style.width = sliderVal + "%";
-                };
-            });
-        });
     </script>
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     if (!sessionStorage.getItem('booking_popup_shown')) {
-        //         sessionStorage.setItem('booking_popup_shown', '1');
 
-        //         setTimeout(function() {
-        //             openBookingPopup();
-        //         }, 300);
-        //     }
-        // });
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const splideEl = document.getElementById('splide');
+
+            if (splideEl && typeof Splide !== 'undefined') {
+                new Splide('#splide', {
+                    type: 'loop',
+                    perPage: 2,
+                    gap: '10px',
+                    pagination: false,
+                    autoplay: true,
+                    interval: 5000,
+                    pauseOnHover: true,
+                    breakpoints: {
+                        1024: {
+                            perPage: 2,
+                        },
+                        768: {
+                            perPage: 1,
+                        }
+                    }
+                }).mount();
+            }
+
+            document.querySelectorAll('.wrapper').forEach(wrapper => {
+                const slider = wrapper.querySelector('.slider input');
+                const img = wrapper.querySelector('.images .img-2');
+                const dragLine = wrapper.querySelector('.slider .drag-line');
+
+                if (slider && img && dragLine) {
+                    slider.oninput = () => {
+                        let sliderVal = slider.value;
+                        dragLine.style.left = sliderVal + '%';
+                        img.style.width = sliderVal + '%';
+                    };
+                }
+            });
+
+            // Auto open booking popup if needed
+            /*
+            if (!sessionStorage.getItem('booking_popup_shown')) {
+                sessionStorage.setItem('booking_popup_shown', '1');
+
+                setTimeout(function () {
+                    openBookingPopup();
+                }, 300);
+            }
+            */
+        });
     </script>
 
     <!-- Home blogs Features -->
@@ -884,20 +891,17 @@
             var allMoreContent = document.querySelectorAll('.more-content');
             var allReadMoreLinks = document.querySelectorAll('.read-more');
 
-
-            allMoreContent.forEach(function(content) {
+            allMoreContent.forEach(function (content) {
                 if (content !== element.previousElementSibling) {
                     content.style.display = 'none';
                 }
             });
 
-
-            allReadMoreLinks.forEach(function(link) {
+            allReadMoreLinks.forEach(function (link) {
                 if (link !== element) {
                     link.innerText = isEnglish ? "Read More" : "اقرأ المزيد";
                 }
             });
-
 
             var content = element.previousElementSibling;
             if (content.style.display === "none") {
@@ -912,10 +916,9 @@
 
     <!-- Home blog -->
     <script>
-        function toggleContent(element) {
+        function toggleSingleContent(element) {
             var isEnglish = "{{ Config::get('app.locale') == 'en' }}";
             var content = element.previousElementSibling;
-
 
             if (content.style.display === "none") {
                 content.style.display = "block";
@@ -926,6 +929,58 @@
             }
         }
     </script>
+
+    <script>
+        window.closeConsultSection = function () {
+            var section = document.getElementById('consultSection');
+            var whatsappBtn = document.getElementById('whatsappButton');
+
+            if (section) {
+                section.style.display = 'none';
+            }
+
+            if (whatsappBtn) {
+                whatsappBtn.style.display = 'flex';
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var openBookingBtn = document.getElementById('openBookingPopup');
+            var consultSection = document.getElementById('consultSection');
+            var whatsappBtn = document.getElementById('whatsappButton');
+
+            if (consultSection && consultSection.style.display !== 'none') {
+                if (whatsappBtn) whatsappBtn.style.display = 'none';
+            }
+
+            if (openBookingBtn) {
+                openBookingBtn.addEventListener('click', function () {
+                    if (typeof closeConsultSection === 'function') {
+                        closeConsultSection();
+                    } else {
+                        var section = document.getElementById('consultSection');
+                        if (section) section.style.display = 'none';
+                        if (whatsappBtn) whatsappBtn.style.display = 'flex';
+                    }
+                });
+            }
+        });
+    </script>
+
+
+    <script>
+    // document.addEventListener('DOMContentLoaded', function() {
+    // if (!sessionStorage.getItem('booking_popup_shown')) {
+    // sessionStorage.setItem('booking_popup_shown', '1');
+
+    // setTimeout(function() {
+    // openBookingPopup();
+    // }, 300);
+    // }
+    // });
+    </script>
+
+
     <script>
         window.closeConsultSection = function() {
             var section = document.getElementById('consultSection');
@@ -1108,7 +1163,8 @@
                     workDays = result.work_days.map(dayObj => {
                         if (typeof dayObj.day === 'string') {
                             return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
-                                    'Saturday']
+                                    'Saturday'
+                                ]
                                 .indexOf(dayObj.day);
                         }
                         return dayObj.day;
@@ -1201,17 +1257,16 @@
 
             calendarContainer.innerHTML = '';
 
-            const monthNames = currentLocale === 'ar-EG' ?
-                ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
-                    'ديسمبر'
-                ] :
-                ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
-                    'November', 'December'
-                ];
+            const monthNames = currentLocale === 'ar-EG' ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو',
+                'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
+                'ديسمبر'
+            ] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                'November', 'December'
+            ];
 
-            const dayNames = currentLocale === 'ar-EG' ?
-                ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'] :
-                ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const dayNames = currentLocale === 'ar-EG' ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة',
+                'السبت'
+            ] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
             monthLabel.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
@@ -1589,7 +1644,7 @@
 
                     const appointmentTypeSelect = document.getElementById('appointmentType');
                     const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value :
-                    null;
+                        null;
 
                     if (!appointmentTypeId) {
                         if (formError) {
@@ -1691,7 +1746,7 @@
                         renderCalendar(currentDate);
 
                         if (selectedTime?.date && hasTimeSlots(selectedTime.date) && !
-                        isMobileBooking()) {
+                            isMobileBooking()) {
                             selectedDate = selectedTime.date;
                             renderTimeSlots(selectedTime.date);
                             showDesktopTimesVisibility();
