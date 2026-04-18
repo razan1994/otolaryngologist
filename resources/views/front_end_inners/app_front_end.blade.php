@@ -2,6 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
+
+    <?php
+    $treatments = App\Models\Treatment::latest()->take(5)->get();
+    $contacts=App\Models\ContactUs::first();
+    ?>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E83HWT4Z13"></script>
     <script>
@@ -14,15 +19,6 @@
 
         gtag('config', 'G-E83HWT4Z13');
     </script>
-
-
-    <?php
-    $lang = app()->getLocale() == 'ar' ? 'assets_rtl' : 'assets';
-    $val = app()->getLocale() == 'ar' ? '.rtl' : '';
-
-    $treatments = App\Models\Treatment::latest()->take(5)->get();
-    $contacts = App\Models\ContactUs::first();
-    ?>
 
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -47,82 +43,40 @@
     <meta name="author" content="dranasabushamleh">
     <meta property="og:title" content="@yield('meta_title')">
     <meta property="og:description" content="@yield('meta_desc')">
-    <meta propert="og:keywords" content="@yield('meta_keywords')">
+    <meta property="og:keywords" content="@yield('meta_keywords')">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
 
-    @yield('canonical')
+    <!-- Bootstrap CSS -->
+    <link href="{{ asset('front_end_style/assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Bootstrap Icon CSS -->
+    <link href="{{ asset('front_end_style/assets/css/bootstrap-icons.css') }}" rel="stylesheet">
+    <!-- Fontawesome all CSS -->
+    <link href="{{ asset('front_end_style/assets/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('front_end_style/assets/css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ asset('front_end_style/assets/css/animate.min.css') }}" rel="stylesheet">
+    <!--  FancyBox CSS  -->
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/jquery.fancybox.min.css') }}">
 
-    @if (Config::get('app.locale') == 'en')
-        <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link href="{{ asset('front_end_style/assets/css/fontawesome.min.css') }}" rel="stylesheet">
+    <!-- box icon css -->
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/boxicons.min.css') }}">
+    <!-- slider CSS -->
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick-theme.css') }}">
 
-        <!-- Bootstrap CSS -->
-        <link href="{{ asset('front_end_style/assets/css/bootstrap.min.css') }}" rel="stylesheet">
-        <!-- Bootstrap Icon CSS -->
-        <link href="{{ asset('front_end_style/assets/css/bootstrap-icons.css') }}" rel="stylesheet">
-        <!-- Fontawesome all CSS -->
-        <link href="{{ asset('front_end_style/assets/css/all.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('front_end_style/assets/css/nice-select.css') }}" rel="stylesheet">
-        <link href="{{ asset('front_end_style/assets/css/animate.min.css') }}" rel="stylesheet">
-        <!--  FancyBox CSS  -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/jquery.fancybox.min.css') }}">
 
-        <!-- Fontawesome CSS -->
-        <link href="{{ asset('front_end_style/assets/css/fontawesome.min.css') }}" rel="stylesheet">
-        <!-- box icon css -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/boxicons.min.css') }}">
-        <!-- slider CSS -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/swiper-bundle.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick-theme.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick.css') }}">
-        <!--  Style CSS  -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick.css') }}">
+    <!--  Style CSS  -->
 
-        <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
 
-        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
+    <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
 
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
-    @elseif (Config::get('app.locale') == 'ar')
-        <script src="https://app.sprintful.com/widget/v1.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <!-- Bootstrap CSS -->
-        <link href="{{ asset('front_end_style/assets_rtl/css/bootstrap.rtl.min.css') }}" rel="stylesheet">
-        <!-- Bootstrap Icon CSS -->
-        <link href="{{ asset('front_end_style/assets_rtl/css/bootstrap-icons.css') }}" rel="stylesheet">
-        <!-- Fontawesome all CSS -->
-        <link href="{{ asset('front_end_style/assets_rtl/css/all.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('front_end_style/assets_rtl/css/nice-select.css') }}" rel="stylesheet">
-        <link href="{{ asset('front_end_style/assets_rtl/css/animate.min.css') }}" rel="stylesheet">
-        <!--  FancyBox CSS  -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/jquery.fancybox.min.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-        <link href="{{ asset('front_end_style/assets_rtl/css/fontawesome.min.css') }}" rel="stylesheet">
-        <!-- box icon css -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/boxicons.min.css') }}">
-        <!-- slider CSS -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/swiper-bundle.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/slick-theme.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/slick.css') }}">
-        <!--  Style CSS  -->
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets_rtl/css/style-rtl.css') }}">
-        <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
-
-        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-    @endif
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- search console -->
     <meta name="google-site-verification" content="cHvVWecmNPDa8dEPTPTUw-etBdtLKKLj4GYnAX-83Bc" />
@@ -590,8 +544,7 @@
                                         </div>
 
                                         <h2 class="success-title">{{ __('front_end.booking_confirmed_title') }}</h2>
-                                        <p class="success-message">{{ __('front_end.booking_confirmed_message') }}
-                                        </p>
+                                        <p class="success-message">{{ __('front_end.booking_confirmed_message') }}</p>
 
                                         <div class="success-details">
                                             <div class="success-detail-row">
@@ -612,14 +565,12 @@
                                             </div>
 
                                             <div class="success-detail-row">
-                                                <span
-                                                    class="detail-label">{{ __('front_end.booking_email') }}:</span>
+                                                <span class="detail-label">{{ __('front_end.booking_email') }}:</span>
                                                 <span class="detail-value" id="successEmail">-</span>
                                             </div>
 
                                             <div class="success-detail-row">
-                                                <span
-                                                    class="detail-label">{{ __('front_end.booking_phone') }}:</span>
+                                                <span class="detail-label">{{ __('front_end.booking_phone') }}:</span>
                                                 <span class="detail-value" id="successPhone">-</span>
                                             </div>
 
@@ -879,9 +830,7 @@
             }
         });
 
-        <
-        script src = "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js" >
-    </script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize Splide
@@ -917,15 +866,15 @@
             });
         });
     </script>
-    // document.addEventListener('DOMContentLoaded', function() {
-    // if (!sessionStorage.getItem('booking_popup_shown')) {
-    // sessionStorage.setItem('booking_popup_shown', '1');
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     if (!sessionStorage.getItem('booking_popup_shown')) {
+        //         sessionStorage.setItem('booking_popup_shown', '1');
 
-    // setTimeout(function() {
-    // openBookingPopup();
-    // }, 300);
-    // }
-    // });
+        //         setTimeout(function() {
+        //             openBookingPopup();
+        //         }, 300);
+        //     }
+        // });
     </script>
 
     <!-- Home blogs Features -->
@@ -1159,8 +1108,7 @@
                     workDays = result.work_days.map(dayObj => {
                         if (typeof dayObj.day === 'string') {
                             return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
-                                    'Saturday'
-                                ]
+                                    'Saturday']
                                 .indexOf(dayObj.day);
                         }
                         return dayObj.day;
@@ -1253,16 +1201,17 @@
 
             calendarContainer.innerHTML = '';
 
-            const monthNames = currentLocale === 'ar-EG' ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو',
-                'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
-                'ديسمبر'
-            ] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
-                'November', 'December'
-            ];
+            const monthNames = currentLocale === 'ar-EG' ?
+                ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
+                    'ديسمبر'
+                ] :
+                ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                    'November', 'December'
+                ];
 
-            const dayNames = currentLocale === 'ar-EG' ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة',
-                'السبت'
-            ] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const dayNames = currentLocale === 'ar-EG' ?
+                ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'] :
+                ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
             monthLabel.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
@@ -1640,7 +1589,7 @@
 
                     const appointmentTypeSelect = document.getElementById('appointmentType');
                     const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value :
-                        null;
+                    null;
 
                     if (!appointmentTypeId) {
                         if (formError) {
@@ -1742,7 +1691,7 @@
                         renderCalendar(currentDate);
 
                         if (selectedTime?.date && hasTimeSlots(selectedTime.date) && !
-                            isMobileBooking()) {
+                        isMobileBooking()) {
                             selectedDate = selectedTime.date;
                             renderTimeSlots(selectedTime.date);
                             showDesktopTimesVisibility();
