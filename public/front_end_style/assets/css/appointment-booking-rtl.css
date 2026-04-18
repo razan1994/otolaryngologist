@@ -17,6 +17,7 @@
     padding: 20px;
     overflow: auto;
     box-sizing: border-box;
+    animation: booking-fade-in 0.4s ease;
 }
 
 .booking-modal-overlay.active {
@@ -70,7 +71,7 @@
 }
 
 .booking-body {
-    padding: 28px 32px;
+    padding: 32px 30px;
     flex: 1 1 auto;
     min-height: 0;
     overflow: hidden;
@@ -97,6 +98,7 @@
 }
 
 #stepDateTime,
+#stepSelectTime,
 #stepEnterDetails,
 #stepSuccess {
     flex: 1 1 auto;
@@ -105,8 +107,7 @@
 }
 
 .booking-step-title {
-    margin: 0 0
-    2px;
+    margin: 0 0 2px;
     text-align: right;
     font-size: 20px;
     font-weight: 700;
@@ -146,8 +147,13 @@
     flex: 1 1 58%;
 }
 
+.booking-calendar-side-full {
+    flex: 1 1 100%;
+    width: 100%;
+}
+
 .booking-times-side {
-    flex: 1 1 42%;
+    flex: 1 1 45%;
     min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
@@ -322,10 +328,11 @@
 
 .selected-date-heading {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     color: #13324b;
     margin: 8px 0 18px;
     min-height: 28px;
+    text-align: center;
 }
 
 .time-slots-list {
@@ -738,15 +745,6 @@ select.form-control {
         width: 100%;
         max-width: 760px;
         min-width: 0;
-        background: #ffffff;
-        position: relative;
-        overflow: hidden;
-        font-family: "El Messiri", sans-serif !important;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        border-radius: 16px;
         height: min(650px, 92vh);
         max-height: min(650px, 92vh);
     }
@@ -787,14 +785,21 @@ select.form-control {
         padding: 10px;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
     }
 
     .booking-modal-card {
         width: 100%;
         max-width: 100%;
+        height: auto;
+        max-height: calc(100dvh - 20px);
+        min-height: 0;
+        border-radius: 18px;
+    }
+
+    .booking-modal-card.mobile-full-height {
         height: calc(100dvh - 20px);
         max-height: calc(100dvh - 20px);
-        border-radius: 18px;
     }
 
     .booking-close {
@@ -814,22 +819,32 @@ select.form-control {
     .booking-step-title {
         font-size: 18px;
         margin-bottom: 18px;
+        text-align: center;
     }
 
     .booking-title {
         font-size: 20px;
+        padding-inline-end: 28px;
     }
 
     .booking-content-layout,
     .booking-content-layout.show-times {
         flex-direction: column;
-        gap: 18px;
+        gap: 16px;
     }
 
     .booking-calendar-side,
     .booking-times-side {
         width: 100%;
         flex: 1 1 auto;
+    }
+
+    .booking-times-side {
+        display: none !important;
+    }
+
+    #stepSelectTime .time-slots-list {
+        margin-top: 8px;
     }
 
     .booking-month-nav {
@@ -853,6 +868,7 @@ select.form-control {
         column-gap: 6px;
         row-gap: 10px;
         padding: 0 2px;
+        margin-bottom: 14px;
     }
 
     .calendar-day-name {
@@ -869,23 +885,44 @@ select.form-control {
         height: 36px;
     }
 
-    .time-slot-row.active {
+    .selected-date-heading {
+        text-align: center;
+        font-size: 17px;
+        margin: 4px 0 16px;
+    }
+
+    .time-slot-row {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .time-slot-row.active {
+        grid-template-columns: 1fr 1fr;
     }
 
     .time-next-btn {
-        display: block;
-        opacity: 1;
-        transform: none;
+        display: none;
+        opacity: 0;
+        transform: translateX(40px);
         position: relative;
         z-index: 2;
         pointer-events: auto;
+        transition:
+            opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .time-slot-row.active .time-next-btn {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+        animation: nextBtnSlideIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .time-slot-btn,
     .time-next-btn {
-        height: 48px;
-        font-size: 14px;
+        height: 50px;
+        font-size: 15px;
     }
 
     .form-row-grid {
@@ -923,13 +960,14 @@ select.form-control {
     }
 
     .booking-modal-card {
-        height: calc(100dvh - 16px);
+        height: auto;
         max-height: calc(100dvh - 16px);
         border-radius: 16px;
     }
 
-    .booking-header {
-        padding: 16px 14px;
+    .booking-modal-card.mobile-full-height {
+        height: calc(100dvh - 16px);
+        max-height: calc(100dvh - 16px);
     }
 
     .booking-body {
@@ -1026,20 +1064,4 @@ select.form-control {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
-}
-
-input::placeholder,
-textarea::placeholder {
-    direction: rtl;
-    text-align: right;
-}
-
-input:placeholder-shown {
-    direction: rtl;
-    text-align: right;
-}
-
-input:not(:placeholder-shown) {
-    direction: rtl;
-    text-align: right;
 }
