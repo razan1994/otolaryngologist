@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\BookingAvailabilityController;
 use App\Http\Controllers\Backend\Admin\AboutUsController;
 use App\Http\Controllers\Backend\Admin\AdminDashboardController;
 use App\Http\Controllers\Backend\Admin\Auth\AdminLoginController;
