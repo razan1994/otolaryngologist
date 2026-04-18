@@ -6175,7 +6175,7 @@ header.style-2 .nav-right::after {
 
 @media only screen and (min-width: 1920px) {
     .article-card .article-card-content h5 a {
-        margin-right: 129px;
+        margin-right: 0 !important;
     }
 }
 
