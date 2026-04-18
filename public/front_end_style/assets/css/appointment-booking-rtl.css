@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    overflow: auto;
+    overflow-y: auto;
     box-sizing: border-box;
     animation: booking-fade-in 0.4s ease;
 }
@@ -91,10 +91,6 @@
     overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
-}
-
-.booking-step::-webkit-scrollbar {
-    display: none;
 }
 
 #stepDateTime,
@@ -740,6 +736,16 @@ select.form-control {
     background: #0d3f43;
 }
 
+@media (min-width: 769px) {
+    .booking-step::-webkit-scrollbar {
+        display: none;
+    }
+
+    .booking-step {
+        scrollbar-width: none;
+    }
+}
+
 @media (min-width: 1200px) {
     .booking-modal-card {
         width: 100%;
@@ -785,7 +791,7 @@ select.form-control {
         padding: 10px;
         align-items: center;
         justify-content: center;
-        overflow: scroll;
+        overflow-y: auto;
     }
 
     .booking-modal-card {
@@ -814,6 +820,25 @@ select.form-control {
 
     .booking-body {
         padding: 16px;
+    }
+
+    .booking-step {
+        scrollbar-width: thin;
+        -ms-overflow-style: auto;
+    }
+
+    .booking-step::-webkit-scrollbar {
+        display: block;
+        width: 4px;
+    }
+
+    .booking-step::-webkit-scrollbar-thumb {
+        background: #125258;
+        border-radius: 4px;
+    }
+
+    .booking-step::-webkit-scrollbar-track {
+        background: transparent;
     }
 
     .booking-step-title {
@@ -878,7 +903,6 @@ select.form-control {
     .calendar-date {
         width: 36px;
         height: 36px;
-        font-size: 14px;
     }
 
     .calendar-empty {
