@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\ContactUs;
 use App\Models\Service;
+use App\Models\Treatment;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         session()->put('locale', 'ar');
 
-        $treatments = \App\Models\Treatment::latest()->take(5)->get();
-        $contacts = \App\Models\ContactUs::first();
+        $treatments = Treatment::latest()->limit(5)->get();
+        $contacts = ContactUs::first();
         view()->share([
             'treatments' => $treatments,
             'contacts' => $contacts,

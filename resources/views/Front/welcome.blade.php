@@ -858,7 +858,7 @@
     <!-- Start Video section -->
     <div class="full-video-banner">
         <video class="banner-video" autoplay muted loop playsinline preload="metadata">
-            <source src="{{ asset('front_end_style/assets/videos/banner-video1.webm') }}" type="video/mp4">
+            <source src="{{ asset('front_end_style/assets/videos/banner-video1.mp4') }}" type="video/mp4">
             <p>الدكتور أنس أبو شملة - اختصاصي أنف وأذن وحنجرة معتمد في الأردن, خبير في علاج أمراض الأذن والأنف والحنجرة, عضو
                 جمعية
                 الجراحين الأردنيين ونقابة الأطباء الأردنية, آفضل دكتور أنف أذن وحنجرة في عمان الأردن

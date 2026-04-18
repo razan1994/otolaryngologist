@@ -200,7 +200,7 @@ return [
     'book_now' => 'احجز الآن',
 
     // ترجمات نافذة الحجز
-    'booking_modal_title' => 'احجز موعدك الان',
+    'booking_modal_title' => 'احجز موعدك الآن مع الدكتور أنس أبو شملة',
     'booking_select_date_time' => 'اختر التاريخ والوقت',
     'booking_time_zone' => 'المنطقة الزمنية',
     'booking_jordan_time' => 'توقيت الأردن',

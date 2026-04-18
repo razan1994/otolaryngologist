@@ -22,9 +22,6 @@ use Illuminate\Routing\Controller;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
-use App\Models\WorkDay;
-use App\Models\BlockedDate;
-
 class FrontendController extends Controller
 {
     public function welcome()
