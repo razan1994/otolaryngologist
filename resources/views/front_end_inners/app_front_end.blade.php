@@ -341,12 +341,12 @@
                             </div>
 
                             <div class="booking-body">
-                                <!-- Step 1: Date & Time -->
+                                <!-- Step 1: Date -->
                                 <div id="stepDateTime" class="booking-step">
                                     <h3 class="booking-step-title">{{ __('front_end.booking_select_date_time') }}</h3>
 
                                     <div class="booking-content-layout" id="bookingContentLayout">
-                                        <div class="booking-calendar-side">
+                                        <div class="booking-calendar-side booking-calendar-side-full">
                                             <div class="booking-month-nav">
                                                 <button type="button" class="month-arrow month-arrow-left"
                                                     id="calPrevMonth" aria-label="Previous month">
@@ -377,16 +377,37 @@
                                             </div>
                                         </div>
 
+                                        <!-- Desktop Time Slots -->
                                         <div class="booking-times-side" id="selectedDateWrap">
-                                            {{-- <div class="selected-date-heading" id="selectedDateTitle">
+                                            <div class="selected-date-heading" id="selectedDateTitleDesktop">
                                                 {{ __('front_end.booking_select_date') }}
-                                            </div> --}}
-                                            <div id="timeSlotsContainer" class="time-slots-list"></div>
+                                            </div>
+                                            <div id="timeSlotsContainerDesktop" class="time-slots-list"></div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Step 2: Details -->
+                                <!-- Step 2: Time (Mobile only) -->
+                                <div id="stepSelectTime" class="booking-step" style="display:none;">
+                                    <div class="booking-back-btn" id="backToCalendar">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span>{{ __('front_end.booking_back') }}</span>
+                                    </div>
+
+                                    <h3 class="booking-step-title">{{ __('front_end.booking_select_date_time') }}</h3>
+
+                                    <div class="selected-date-heading" id="selectedDateTitle">
+                                        {{ __('front_end.booking_select_date') }}
+                                    </div>
+
+                                    <div id="timeSlotsContainer" class="time-slots-list"></div>
+                                </div>
+
+                                <!-- Step 3: Details -->
                                 <div id="stepEnterDetails" class="booking-step" style="display:none;">
                                     <div class="booking-back-btn" id="backToDateTime">
                                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -415,7 +436,6 @@
                                         </div>
 
                                         <div class="form-row-grid">
-
                                             <div class="form-group">
                                                 <label for="fullName">
                                                     {{ __('front_end.booking_name') }}
@@ -449,7 +469,6 @@
                                                     placeholder="{{ __('front_end.booking_phone_placeholder') }}">
                                             </div>
 
-                                            <!-- ===== Appointment Type Dropdown ===== -->
                                             <div class="form-group">
                                                 <label for="appointmentType">
                                                     {{ __('front_end.booking_appointment_type') }}
@@ -507,7 +526,7 @@
                                     </form>
                                 </div>
 
-                                <!-- Step 3: Success -->
+                                <!-- Step 4: Success -->
                                 <div id="stepSuccess" class="booking-step" style="display:none;">
                                     <div class="success-container">
                                         <div class="success-icon">
@@ -778,45 +797,7 @@
     </footer>
     <!-- End Footer section section -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Splide only if the element exists
-            const splideElement = document.querySelector('#splide');
-            if (splideElement) {
-                new Splide('#splide', {
-                    type: 'loop',
-                    perPage: 2,
-                    gap: '10px',
-                    pagination: false,
-                    autoplay: true,
-                    interval: 5000,
-                    pauseOnHover: true,
-                    breakpoints: {
-                        1024: {
-                            perPage: 2,
-                        },
-                        768: {
-                            perPage: 1,
-                        }
-                    }
-                }).mount();
-            }
 
-
-            document.querySelectorAll(".wrapper").forEach(wrapper => {
-                const slider = wrapper.querySelector(".slider input");
-                const img = wrapper.querySelector(".images .img-2");
-                const dragLine = wrapper.querySelector(".slider .drag-line");
-
-                slider.oninput = () => {
-                    let sliderVal = slider.value;
-                    dragLine.style.left = sliderVal + "%";
-                    img.style.width = sliderVal + "%";
-                };
-            });
-        });
-    </script>
 
     <!--  Main jQuery  -->
     <script src="{{ asset('front_end_style/assets/js/jquery-3.6.0.min.js') }}"></script>
@@ -851,7 +832,8 @@
                     openBookingPopup();
                 }, 300);
             }
-        });2
+        });
+        2
     </script>
 
     <!-- Home blogs Features -->
@@ -938,10 +920,12 @@
 
     <script>
         let bookingModal;
+        let bookingModalCard;
         let closeBookingBtn;
         let closeSuccessBtn;
 
         let stepDateTime;
+        let stepSelectTime;
         let stepEnterDetails;
         let stepSuccess;
 
@@ -952,9 +936,12 @@
         let nextMonthBtn;
 
         let selectedDateTitle;
+        let selectedDateTitleDesktop;
         let timeSlotsContainer;
+        let timeSlotsContainerDesktop;
         let bookingDetailsForm;
         let backToDateTimeBtn;
+        let backToCalendarBtn;
 
         let jordanTimeEl;
 
@@ -972,6 +959,10 @@
 
         const currentLocale = "{{ app()->getLocale() }}" === 'ar' ? 'ar-EG' : 'en-US';
         const atText = "{{ __('front_end.at') }}";
+
+        function isMobileBooking() {
+            return window.innerWidth <= 768;
+        }
 
         function openBookingPopup(e) {
             if (e) e.preventDefault();
@@ -1018,26 +1009,41 @@
         }
 
         function resetStepScroll() {
-            const timesSide = document.getElementById('selectedDateWrap');
+            const selectedDateWrap = document.getElementById('selectedDateWrap');
             const successDetails = document.querySelector('.success-details');
 
             if (stepDateTime) stepDateTime.scrollTop = 0;
+            if (stepSelectTime) stepSelectTime.scrollTop = 0;
             if (stepEnterDetails) stepEnterDetails.scrollTop = 0;
             if (stepSuccess) stepSuccess.scrollTop = 0;
-            if (timesSide) timesSide.scrollTop = 0;
+            if (selectedDateWrap) selectedDateWrap.scrollTop = 0;
             if (successDetails) successDetails.scrollTop = 0;
         }
 
         function showStep(stepName) {
-            if (!stepDateTime || !stepEnterDetails || !stepSuccess) return;
+            if (!stepDateTime || !stepSelectTime || !stepEnterDetails || !stepSuccess) return;
 
             stepDateTime.style.display = 'none';
+            stepSelectTime.style.display = 'none';
             stepEnterDetails.style.display = 'none';
             stepSuccess.style.display = 'none';
 
             if (stepName === 'date') stepDateTime.style.display = 'flex';
+            if (stepName === 'time') stepSelectTime.style.display = 'flex';
             if (stepName === 'details') stepEnterDetails.style.display = 'flex';
             if (stepName === 'success') stepSuccess.style.display = 'flex';
+
+            if (bookingModalCard && isMobileBooking()) {
+                if (stepName === 'date') {
+                    bookingModalCard.classList.remove('mobile-full-height');
+                } else {
+                    bookingModalCard.classList.add('mobile-full-height');
+                }
+            }
+
+            if (bookingModalCard && !isMobileBooking()) {
+                bookingModalCard.classList.remove('mobile-full-height');
+            }
 
             resetStepScroll();
         }
@@ -1061,8 +1067,7 @@
                     workDays = result.work_days.map(dayObj => {
                         if (typeof dayObj.day === 'string') {
                             return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
-                                    'Saturday'
-                                ]
+                                    'Saturday']
                                 .indexOf(dayObj.day);
                         }
                         return dayObj.day;
@@ -1121,21 +1126,51 @@
             return Array.isArray(apiData.time_slots[dateKey]) && apiData.time_slots[dateKey].length > 0;
         }
 
+        function updateSelectedDateTitles(dayDate) {
+            const formattedDate = dayDate.toLocaleDateString(currentLocale, {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            if (selectedDateTitle) {
+                selectedDateTitle.textContent = formattedDate;
+            }
+
+            if (selectedDateTitleDesktop) {
+                selectedDateTitleDesktop.textContent = formattedDate;
+            }
+        }
+
+        function clearDesktopTimesVisibility() {
+            if (bookingContentLayout) {
+                bookingContentLayout.classList.remove('show-times');
+            }
+        }
+
+        function showDesktopTimesVisibility() {
+            if (bookingContentLayout && !isMobileBooking()) {
+                bookingContentLayout.classList.add('show-times');
+            }
+        }
+
         function renderCalendar(date) {
             if (!calendarContainer || !monthLabel) return;
 
             calendarContainer.innerHTML = '';
 
-            const monthNames = currentLocale === 'ar-EG' ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو',
-                'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
-                'ديسمبر'
-            ] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
-                'November', 'December'
-            ];
+            const monthNames = currentLocale === 'ar-EG' ?
+                ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
+                    'ديسمبر'
+                ] :
+                ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                    'November', 'December'
+                ];
 
-            const dayNames = currentLocale === 'ar-EG' ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة',
-                'السبت'
-            ] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const dayNames = currentLocale === 'ar-EG' ?
+                ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'] :
+                ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
             monthLabel.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
@@ -1184,19 +1219,15 @@
 
                         dateEl.classList.add('selected');
                         selectedDate = dateKey;
+                        selectedTime = null;
+
+                        updateSelectedDateTitles(dayDate);
                         renderTimeSlots(dateKey);
 
-                        if (selectedDateTitle) {
-                            selectedDateTitle.textContent = dayDate.toLocaleDateString(currentLocale, {
-                                weekday: 'long',
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric'
-                            });
-                        }
-
-                        if (bookingContentLayout) {
-                            bookingContentLayout.classList.add('show-times');
+                        if (isMobileBooking()) {
+                            showStep('time');
+                        } else {
+                            showDesktopTimesVisibility();
                         }
 
                         resetStepScroll();
@@ -1209,87 +1240,114 @@
             }
         }
 
-        function renderTimeSlots(dateKey) {
-            if (!timeSlotsContainer) return;
+        function buildTimeSlotRow(slot, dateKey, isDesktop) {
+            const row = document.createElement('div');
+            row.className = 'time-slot-row';
 
-            timeSlotsContainer.innerHTML = '';
+            const timeBtn = document.createElement('button');
+            timeBtn.type = 'button';
+            timeBtn.className = 'time-slot-btn';
+            timeBtn.textContent = `${slot.start_time.substring(0, 5)} - ${slot.end_time.substring(0, 5)}`;
+
+            const nextBtn = document.createElement('button');
+            nextBtn.type = 'button';
+            nextBtn.className = 'time-next-btn';
+            nextBtn.textContent = "{{ __('front_end.booking_next') }}";
+
+            function clearSelections() {
+                document.querySelectorAll('.time-slot-row').forEach(r => r.classList.remove('active'));
+                document.querySelectorAll('.time-slot-btn').forEach(btn => btn.classList.remove('selected'));
+            }
+
+            function selectThisTime() {
+                clearSelections();
+                row.classList.add('active');
+                timeBtn.classList.add('selected');
+
+                selectedTime = {
+                    date: dateKey,
+                    start_time: slot.start_time,
+                    end_time: slot.end_time
+                };
+            }
+
+            function goToDetailsStep() {
+                if (!selectedTime) {
+                    selectThisTime();
+                }
+
+                const [year, month, day] = selectedTime.date.split('-').map(Number);
+                const appointmentDate = new Date(year, month - 1, day);
+
+                const dateStr = appointmentDate.toLocaleDateString(currentLocale, {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                const timeStr = `${selectedTime.start_time.substring(0, 5)} - ${selectedTime.end_time.substring(0, 5)}`;
+                const summaryDateTime = document.getElementById('summaryDateTime');
+
+                if (summaryDateTime) {
+                    summaryDateTime.textContent = `${dateStr} ${atText} ${timeStr}`;
+                }
+
+                showStep('details');
+            }
+
+            timeBtn.addEventListener('click', function() {
+                selectThisTime();
+            });
+
+            nextBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                selectThisTime();
+                goToDetailsStep();
+            });
+
+            row.appendChild(timeBtn);
+            row.appendChild(nextBtn);
+
+            return row;
+        }
+
+        function renderTimeSlots(dateKey) {
+            if (timeSlotsContainer) {
+                timeSlotsContainer.innerHTML = '';
+            }
+
+            if (timeSlotsContainerDesktop) {
+                timeSlotsContainerDesktop.innerHTML = '';
+            }
+
             selectedTime = null;
 
             const slots = apiData.time_slots[dateKey] || [];
 
             if (!slots.length) {
-                timeSlotsContainer.innerHTML = `<div class="no-times-msg">No time slots available.</div>`;
+                const emptyHtml = `<div class="no-times-msg">No time slots available.</div>`;
+
+                if (timeSlotsContainer) {
+                    timeSlotsContainer.innerHTML = emptyHtml;
+                }
+
+                if (timeSlotsContainerDesktop) {
+                    timeSlotsContainerDesktop.innerHTML = emptyHtml;
+                }
+
                 return;
             }
 
             slots.forEach((slot) => {
-                const row = document.createElement('div');
-                row.className = 'time-slot-row';
-
-                const timeBtn = document.createElement('button');
-                timeBtn.type = 'button';
-                timeBtn.className = 'time-slot-btn';
-                timeBtn.textContent = `${slot.start_time.substring(0, 5)} - ${slot.end_time.substring(0, 5)}`;
-
-                const nextBtn = document.createElement('button');
-                nextBtn.type = 'button';
-                nextBtn.className = 'time-next-btn';
-                nextBtn.textContent = "{{ __('front_end.booking_next') }}";
-
-                function selectThisTime() {
-                    document.querySelectorAll('.time-slot-row').forEach(r => r.classList.remove('active'));
-                    document.querySelectorAll('.time-slot-btn').forEach(btn => btn.classList.remove('selected'));
-
-                    row.classList.add('active');
-                    timeBtn.classList.add('selected');
-
-                    selectedTime = {
-                        date: dateKey,
-                        start_time: slot.start_time,
-                        end_time: slot.end_time
-                    };
+                if (timeSlotsContainer) {
+                    timeSlotsContainer.appendChild(buildTimeSlotRow(slot, dateKey, false));
                 }
 
-                function goToDetailsStep() {
-                    if (!selectedTime) {
-                        selectThisTime();
-                    }
-
-                    const [year, month, day] = selectedTime.date.split('-').map(Number);
-                    const appointmentDate = new Date(year, month - 1, day);
-
-                    const dateStr = appointmentDate.toLocaleDateString(currentLocale, {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
-
-                    const timeStr =
-                        `${selectedTime.start_time.substring(0, 5)} - ${selectedTime.end_time.substring(0, 5)}`;
-                    const summaryDateTime = document.getElementById('summaryDateTime');
-
-                    if (summaryDateTime) {
-                        summaryDateTime.textContent = `${dateStr} ${atText} ${timeStr}`;
-                    }
-
-                    showStep('details');
+                if (timeSlotsContainerDesktop) {
+                    timeSlotsContainerDesktop.appendChild(buildTimeSlotRow(slot, dateKey, true));
                 }
-
-                timeBtn.addEventListener('click', function() {
-                    selectThisTime();
-                });
-
-                nextBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    selectThisTime();
-                    goToDetailsStep();
-                });
-
-                row.appendChild(timeBtn);
-                row.appendChild(nextBtn);
-                timeSlotsContainer.appendChild(row);
             });
         }
 
@@ -1301,12 +1359,22 @@
                 selectedDateTitle.textContent = `{{ __('front_end.booking_select_date') }}`;
             }
 
+            if (selectedDateTitleDesktop) {
+                selectedDateTitleDesktop.textContent = `{{ __('front_end.booking_select_date') }}`;
+            }
+
             if (timeSlotsContainer) {
                 timeSlotsContainer.innerHTML = '';
             }
 
-            if (bookingContentLayout) {
-                bookingContentLayout.classList.remove('show-times');
+            if (timeSlotsContainerDesktop) {
+                timeSlotsContainerDesktop.innerHTML = '';
+            }
+
+            clearDesktopTimesVisibility();
+
+            if (bookingModalCard) {
+                bookingModalCard.classList.remove('mobile-full-height');
             }
 
             const formError = document.getElementById('formError');
@@ -1342,10 +1410,12 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             bookingModal = document.getElementById('customBookingModal');
+            bookingModalCard = document.querySelector('.booking-modal-card');
             closeBookingBtn = document.getElementById('closeBookingPopup');
             closeSuccessBtn = document.getElementById('closeSuccess');
 
             stepDateTime = document.getElementById('stepDateTime');
+            stepSelectTime = document.getElementById('stepSelectTime');
             stepEnterDetails = document.getElementById('stepEnterDetails');
             stepSuccess = document.getElementById('stepSuccess');
 
@@ -1356,9 +1426,12 @@
             nextMonthBtn = document.getElementById('calNextMonth');
 
             selectedDateTitle = document.getElementById('selectedDateTitle');
+            selectedDateTitleDesktop = document.getElementById('selectedDateTitleDesktop');
             timeSlotsContainer = document.getElementById('timeSlotsContainer');
+            timeSlotsContainerDesktop = document.getElementById('timeSlotsContainerDesktop');
             bookingDetailsForm = document.getElementById('bookingDetailsForm');
             backToDateTimeBtn = document.getElementById('backToDateTime');
+            backToCalendarBtn = document.getElementById('backToCalendar');
 
             jordanTimeEl = document.getElementById('jordanTime');
 
@@ -1385,6 +1458,11 @@
                 prevMonthBtn.addEventListener('click', function() {
                     currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
                     renderCalendar(currentDate);
+
+                    if (selectedDate && !isMobileBooking()) {
+                        showDesktopTimesVisibility();
+                    }
+
                     resetStepScroll();
                 });
             }
@@ -1393,15 +1471,49 @@
                 nextMonthBtn.addEventListener('click', function() {
                     currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
                     renderCalendar(currentDate);
+
+                    if (selectedDate && !isMobileBooking()) {
+                        showDesktopTimesVisibility();
+                    }
+
                     resetStepScroll();
+                });
+            }
+
+            if (backToCalendarBtn) {
+                backToCalendarBtn.addEventListener('click', function() {
+                    showStep('date');
                 });
             }
 
             if (backToDateTimeBtn) {
                 backToDateTimeBtn.addEventListener('click', function() {
-                    showStep('date');
+                    if (isMobileBooking()) {
+                        showStep('time');
+                    } else {
+                        showStep('date');
+                        if (selectedDate) {
+                            showDesktopTimesVisibility();
+                        }
+                    }
                 });
             }
+
+            window.addEventListener('resize', function() {
+                if (!bookingModal || !bookingModal.classList.contains('active')) return;
+
+                if (isMobileBooking()) {
+                    clearDesktopTimesVisibility();
+                } else {
+                    if (selectedDate) {
+                        showDesktopTimesVisibility();
+                        renderTimeSlots(selectedDate);
+                    }
+                    if (bookingModalCard) {
+                        bookingModalCard.classList.remove('mobile-full-height');
+                    }
+                }
+            });
 
             if (bookingDetailsForm) {
                 bookingDetailsForm.addEventListener('submit', async function(e) {
@@ -1436,7 +1548,7 @@
 
                     const appointmentTypeSelect = document.getElementById('appointmentType');
                     const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value :
-                        null;
+                    null;
 
                     if (!appointmentTypeId) {
                         if (formError) {
@@ -1537,21 +1649,33 @@
 
                         renderCalendar(currentDate);
 
-                        if (selectedTime?.date && hasTimeSlots(selectedTime.date)) {
+                        if (selectedTime?.date && hasTimeSlots(selectedTime.date) && !
+                        isMobileBooking()) {
                             selectedDate = selectedTime.date;
                             renderTimeSlots(selectedTime.date);
+                            showDesktopTimesVisibility();
                         } else {
                             selectedDate = null;
+
                             if (selectedDateTitle) {
                                 selectedDateTitle.textContent =
                                     `{{ __('front_end.booking_select_date') }}`;
                             }
+
+                            if (selectedDateTitleDesktop) {
+                                selectedDateTitleDesktop.textContent =
+                                    `{{ __('front_end.booking_select_date') }}`;
+                            }
+
                             if (timeSlotsContainer) {
                                 timeSlotsContainer.innerHTML = '';
                             }
-                            if (bookingContentLayout) {
-                                bookingContentLayout.classList.remove('show-times');
+
+                            if (timeSlotsContainerDesktop) {
+                                timeSlotsContainerDesktop.innerHTML = '';
                             }
+
+                            clearDesktopTimesVisibility();
                         }
 
                         bookingDetailsForm.reset();
