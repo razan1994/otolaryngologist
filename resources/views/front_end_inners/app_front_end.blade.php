@@ -73,11 +73,6 @@
 
 
     <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
-
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- search console -->
     <meta name="google-site-verification" content="cHvVWecmNPDa8dEPTPTUw-etBdtLKKLj4GYnAX-83Bc" />
 
@@ -434,35 +429,30 @@
                                     </div>
 
                                     <form id="bookingDetailsForm" class="booking-details-form">
-                                        <div class="form-row-grid">
-                                            <div class="form-group">
-                                                <input type="text" name="website" value=""
-                                                    autocomplete="off" tabindex="-1"
-                                                    style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;">
-                                            </div>
-                                        </div>
+                                        <input type="text" name="website" value="" autocomplete="off"
+                                            tabindex="-1"
+                                            style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;">
 
-
-                                            <div class="form-group">
-                                                <label for="fullName">
-                                                    {{ __('front_end.booking_name') }}
-                                                    <span class="required">*</span>
-                                                </label>
-                                                <input type="text" id="fullName" name="full_name"
-                                                    class="form-control"
-                                                    placeholder="{{ __('front_end.booking_name_placeholder') }}"
-                                                    required>
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="fullName">
+                                                {{ __('front_end.booking_name') }}
+                                                <span class="required">*</span>
+                                            </label>
+                                            <input type="text" id="fullName" name="full_name"
+                                                class="form-control"
+                                                placeholder="{{ __('front_end.booking_name_placeholder') }}" required>
                                         </div>
 
                                         <div class="form-row-grid">
                                             <div class="form-group">
-                                                <label for="phone">{{ __('front_end.booking_phone') }}
+                                                <label for="phone">
+                                                    {{ __('front_end.booking_phone') }}
                                                     <span class="required">*</span>
                                                 </label>
                                                 <input type="tel" id="phone" name="phone"
                                                     class="form-control"
-                                                    placeholder="{{ __('front_end.booking_phone_placeholder') }}">
+                                                    placeholder="{{ __('front_end.booking_phone_placeholder') }}"
+                                                    required>
                                             </div>
 
                                             <div class="form-group">
@@ -474,7 +464,6 @@
                                                 <div class="custom-select-wrapper">
                                                     <select id="appointmentType" name="appointment_type_id"
                                                         class="form-control" required>
-
                                                         @if (isset($appointmentTypes))
                                                             @foreach ($appointmentTypes as $type)
                                                                 <option value="{{ $type->id }}">
