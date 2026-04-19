@@ -105,10 +105,12 @@
         @include('front_end_inners.includes.en_include')
         <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/appointment-booking.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/inline-booking.css') }}">
     @else
         @include('front_end_inners.includes.ar_include')
         <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style-rtl.css') }}">
         <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/appointment-booking-rtl.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/inline-booking-rtl.css') }}">
     @endif
     <!-- End Include Files -->
 
@@ -608,102 +610,6 @@
 
 
     @yield('content')
-
-    <!-- WhatsApp Floating Button -->
-    <div class="whatsapp-float" id="whatsappButton" style="display: none; left: 40px; right: auto;">
-        <a href="https://wa.me/{{ str_replace([' ', '+', '-', '(', ')'], '', $contacts->phone) }}" target="_blank"
-            title="{{ Config::get('app.locale') == 'ar' ? 'تواصل معنا عبر واتساب' : 'Chat with us on WhatsApp' }}">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            {{ Config::get('app.locale') == 'ar' ? 'left: 40px;' : 'right: 40px;' }} background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #128c7e;
-            transform: scale(1.1);
-            box-shadow: 2px 2px 8px #666;
-        }
-
-        .whatsapp-float a {
-            color: #FFF;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        .whatsapp-float i {
-            font-size: 30px;
-            line-height: 60px;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                {{ Config::get('app.locale') == 'ar' ? 'left: 20px;' : 'right: 20px;' }} font-size: 25px;
-            }
-
-            .whatsapp-float i {
-                font-size: 25px;
-                line-height: 50px;
-            }
-        }
-
-        /* Hide on very small screens to avoid interference */
-        @media (max-width: 480px) {
-            .whatsapp-float {
-                width: 45px;
-                height: 45px;
-                bottom: 15px;
-                {{ Config::get('app.locale') == 'ar' ? 'left: 15px;' : 'right: 15px;' }}
-            }
-
-            .whatsapp-float i {
-                font-size: 20px;
-                line-height: 45px;
-            }
-        }
-    </style>
-
     <!-- Start Footer section section -->
     <footer class="footer-section style-2">
         <div class="container">
@@ -804,7 +710,7 @@
 
 
 
- <!--  Main jQuery  -->
+    <!--  Main jQuery  -->
     <script src="{{ asset('front_end_style/assets/js/jquery-3.6.0.min.js') }}"></script>
     <!-- Popper and Bootstrap JS -->
     <script src="{{ asset('front_end_style/assets/js/popper.min.js') }}"></script>
@@ -823,7 +729,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const splideEl = document.getElementById('splide');
 
             if (splideEl && typeof Splide !== 'undefined') {
@@ -880,13 +786,13 @@
             var allMoreContent = document.querySelectorAll('.more-content');
             var allReadMoreLinks = document.querySelectorAll('.read-more');
 
-            allMoreContent.forEach(function (content) {
+            allMoreContent.forEach(function(content) {
                 if (content !== element.previousElementSibling) {
                     content.style.display = 'none';
                 }
             });
 
-            allReadMoreLinks.forEach(function (link) {
+            allReadMoreLinks.forEach(function(link) {
                 if (link !== element) {
                     link.innerText = isEnglish ? "Read More" : "اقرأ المزيد";
                 }
@@ -920,53 +826,38 @@
     </script>
 
     <script>
-        window.closeConsultSection = function () {
-            var section = document.getElementById('consultSection');
-            var whatsappBtn = document.getElementById('whatsappButton');
+        const ONE_HOUR = 60 * 60 * 1000;
 
-            if (section) {
-                section.style.display = 'none';
+        function closeConsultSection() {
+            const consultSection = document.getElementById('consultSection');
+            if (!consultSection) return;
+
+            consultSection.classList.remove('show');
+            sessionStorage.setItem('consultClosedAt', Date.now().toString());
+        }
+
+        function checkConsultSection() {
+            const consultSection = document.getElementById('consultSection');
+            if (!consultSection) return;
+
+            const closedAt = sessionStorage.getItem('consultClosedAt');
+
+            if (!closedAt) {
+                consultSection.classList.add('show');
+                return;
             }
 
-            if (whatsappBtn) {
-                whatsappBtn.style.display = 'flex';
+            const closedTime = parseInt(closedAt, 10);
+            const now = Date.now();
+
+            if (now - closedTime >= ONE_HOUR) {
+                consultSection.classList.add('show');
+            } else {
+                consultSection.classList.remove('show');
             }
-        };
+        }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            var openBookingBtn = document.getElementById('openBookingPopup');
-            var consultSection = document.getElementById('consultSection');
-            var whatsappBtn = document.getElementById('whatsappButton');
-
-            if (consultSection && consultSection.style.display !== 'none') {
-                if (whatsappBtn) whatsappBtn.style.display = 'none';
-            }
-
-            if (openBookingBtn) {
-                openBookingBtn.addEventListener('click', function () {
-                    if (typeof closeConsultSection === 'function') {
-                        closeConsultSection();
-                    } else {
-                        var section = document.getElementById('consultSection');
-                        if (section) section.style.display = 'none';
-                        if (whatsappBtn) whatsappBtn.style.display = 'flex';
-                    }
-                });
-            }
-        });
-    </script>
-
-
-    <script>
-    // document.addEventListener('DOMContentLoaded', function() {
-    // if (!sessionStorage.getItem('booking_popup_shown')) {
-    // sessionStorage.setItem('booking_popup_shown', '1');
-
-    // setTimeout(function() {
-    // openBookingPopup();
-    // }, 300);
-    // }
-    // });
+        document.addEventListener('DOMContentLoaded', checkConsultSection);
     </script>
 
 
@@ -1784,8 +1675,6 @@
             }
         });
     </script>
-
-
 
 </body>
 

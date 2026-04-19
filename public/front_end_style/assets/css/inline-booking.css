@@ -1,0 +1,691 @@
+:root {
+    --booking-primary: #125258;
+    --booking-primary-hover: #0f4549;
+    --booking-border: #dce8ea;
+    --booking-border-strong: #e7eff0;
+    --booking-soft-bg: #f8fcfc;
+    --booking-soft-bg-2: #f4fbfb;
+    --booking-text: #125258;
+    --booking-muted: #5f7275;
+    --booking-radius-sm: 12px;
+    --booking-radius-md: 16px;
+    --booking-radius-lg: 20px;
+    --booking-shadow: 0 14px 45px rgba(18, 82, 88, 0.10);
+}
+
+.inline-booking-section {
+    padding: 40px 0;
+    font-family: "El Messiri", sans-serif !important;
+}
+
+.inline-booking-section .inline-booking-shell {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.inline-booking-section .inline-booking-card {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    overflow: hidden;
+    box-shadow: var(--booking-shadow);
+    border: 1px solid var(--booking-border-strong);
+    font-family: "El Messiri", sans-serif !important;
+}
+
+.inline-booking-section .inline-booking-side {
+    border-inline-end: 1px solid var(--booking-border-strong);
+}
+
+.inline-booking-section .inline-booking-side-inner {
+    padding: 22px;
+    height: 100%;
+}
+
+.inline-booking-section .inline-booking-top-head h2 {
+    margin: 0 0 8px;
+    font-size: 21px;
+    line-height: 1.4;
+    color: var(--booking-text);
+    font-weight: 800;
+}
+
+.inline-booking-section .inline-booking-top-head p {
+    margin: 0 0 20px;
+    color: var(--booking-muted);
+    font-size: 14px;
+}
+
+.inline-booking-section .inline-booking-profile-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.inline-booking-section .inline-booking-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.inline-booking-section .inline-booking-info h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: var(--booking-text);
+    font-weight: 800;
+}
+
+.inline-booking-section .inline-booking-info .doctor-speciality,
+.inline-booking-section .inline-booking-info .doctor-reviews,
+.inline-booking-section .inline-booking-info .doctor-booking-note {
+    color: var(--booking-muted);
+    font-size: 14px;
+}
+
+.inline-booking-section .inline-booking-info .doctor-booking-note {
+    margin: 12px 0 0;
+    line-height: 1.8;
+}
+
+.inline-booking-section .doctor-rating {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.inline-booking-section .doctor-main-book-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    min-width: 160px;
+    height: 46px;
+    padding: 0 20px;
+    border-radius: 12px;
+    background: var(--booking-primary);
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none !important;
+    transition: 0.25s ease;
+}
+
+.inline-booking-section .doctor-main-book-btn:hover {
+    background: var(--booking-primary-hover);
+    color: #fff !important;
+}
+
+.inline-booking-section .inline-booking-main {
+    padding: 22px;
+}
+
+.inline-booking-section .inline-booking-header {
+    margin-bottom: 18px;
+}
+
+.inline-booking-section .inline-booking-title {
+    margin: 0;
+    color: var(--booking-text);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.inline-booking-section .inline-booking-content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-items: stretch;
+    transition: all 0.35s ease;
+}
+
+.inline-booking-section .inline-calendar-panel,
+.inline-booking-section .inline-times-panel,
+.inline-booking-section #inlineStepEnterDetails,
+.inline-booking-section .inline-success-container {
+    border: 1px solid var(--booking-border-strong);
+    background: #fff;
+}
+
+.inline-booking-section .inline-calendar-panel {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+    transition: all 0.35s ease;
+}
+
+.inline-booking-section .inline-times-panel {
+    display: none;
+    opacity: 0;
+    transform: translateX(-20px);
+    padding: 16px;
+    transition: all 0.35s ease;
+    height: 520px;
+    overflow: hidden;
+}
+
+.inline-booking-section .inline-booking-content-layout.show-times {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 20px;
+    align-items: start;
+}
+
+.inline-booking-section .inline-booking-content-layout.show-times .inline-calendar-panel {
+    order: 1;
+}
+
+.inline-booking-section .inline-booking-content-layout.show-times .inline-times-panel {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transform: translateX(0);
+    order: 2;
+    min-height: 100%;
+}
+
+.inline-booking-section .inline-times-panel-head {
+    flex: 0 0 auto;
+    min-height: 54px;
+}
+
+.inline-booking-section .inline-times-panel-head h3 {
+    margin: 0 0 8px;
+    color: var(--booking-text);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.inline-booking-section .inline-times-scroll {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-inline-end: 4px;
+    min-height: 0;
+    max-height: calc(520px - 70px);
+    scroll-behavior: smooth;
+}
+
+.inline-booking-section .inline-times-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.inline-booking-section .inline-times-scroll::-webkit-scrollbar-thumb {
+    background: rgba(18, 82, 88, 0.25);
+    border-radius: 999px;
+}
+
+.inline-booking-section .booking-month-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.inline-booking-section .month-label {
+    font-size: 18px;
+    color: var(--booking-text);
+    font-weight: 800;
+    text-align: center;
+    font-family: "El Messiri", sans-serif !important;
+}
+
+.inline-booking-section .month-arrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--booking-border);
+    background: #fff;
+    color: var(--booking-primary);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.inline-booking-section .month-arrow:hover {
+    background: var(--booking-primary);
+    color: #fff;
+    border-color: var(--booking-primary);
+}
+
+.inline-booking-section .booking-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.inline-booking-section .calendar-day-name {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #7d9194;
+    padding: 8px 2px;
+    font-family: "El Messiri", sans-serif !important;
+}
+
+.inline-booking-section .calendar-empty {
+    height: 46px;
+}
+
+.inline-booking-section .calendar-date {
+    height: 46px;
+    border: 1px solid #e1ebec;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    font-weight: 700;
+    font-size: 14px;
+    color: #8a9a9d;
+    background: #f9fcfc;
+    transition: 0.25s ease;
+}
+
+.inline-booking-section .calendar-date.available {
+    cursor: pointer;
+    color: var(--booking-primary);
+    background: #fff;
+}
+
+.inline-booking-section .calendar-date.available:hover {
+    border-color: var(--booking-primary);
+    transform: translateY(-1px);
+}
+
+.inline-booking-section .calendar-date.selected {
+    background: var(--booking-primary);
+    color: #fff;
+    border-color: var(--booking-primary);
+}
+
+.inline-booking-section .calendar-date.muted {
+    opacity: 0.45;
+}
+
+.inline-booking-section .inline-timezone-row {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #edf4f4;
+}
+
+.inline-booking-section .booking-timezone {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--booking-muted);
+    font-weight: 600;
+    font-size: 13px;
+    font-family: "El Messiri", sans-serif !important;
+}
+
+.inline-booking-section .selected-date-heading {
+    margin-bottom: 12px;
+    color: var(--booking-text);
+    font-weight: 700;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.inline-booking-section .time-slots-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inline-booking-section .time-slot-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inline-booking-section .time-slot-btn,
+.inline-booking-section .time-next-btn {
+    width: 100%;
+    min-height: 42px;
+    border-radius: 12px;
+    border: 1px solid var(--booking-border);
+    background: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.inline-booking-section .time-slot-btn {
+    color: var(--booking-primary);
+}
+
+.inline-booking-section .time-next-btn {
+    background: var(--booking-primary);
+    border-color: var(--booking-primary);
+    color: #fff;
+}
+
+.inline-booking-section .time-slot-btn:hover {
+    border-color: var(--booking-primary);
+}
+
+.inline-booking-section .time-next-btn:hover {
+    background: var(--booking-primary-hover);
+    border-color: var(--booking-primary-hover);
+}
+
+.inline-booking-section .time-slot-row.active .time-slot-btn,
+.inline-booking-section .time-slot-btn.selected {
+    border-color: var(--booking-primary);
+    background: #eef8f8;
+    color: var(--booking-primary);
+}
+
+.inline-booking-section .no-times-msg {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #f6fbfb;
+    color: #6f8487;
+    border: 1px dashed #d7e6e8;
+    font-size: 14px;
+}
+
+.inline-booking-section .inline-step-title {
+    margin: 0 0 16px;
+    font-size: 20px;
+    color: var(--booking-text);
+    font-weight: 800;
+}
+
+.inline-booking-section #inlineStepEnterDetails,
+.inline-booking-section .inline-success-container {
+    padding: 20px;
+}
+
+.inline-booking-section .booking-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: var(--booking-primary);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.inline-booking-section .booking-summary {
+    margin-bottom: 18px;
+    border: 1px solid var(--booking-border);
+    background: var(--booking-soft-bg);
+    border-radius: 14px;
+    padding: 14px 16px;
+}
+
+.inline-booking-section .summary-datetime {
+    color: var(--booking-text);
+    font-weight: 700;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.inline-booking-section .form-row-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.inline-booking-section .form-group {
+    margin-bottom: 14px;
+}
+
+.inline-booking-section .form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 700;
+    color: var(--booking-text);
+    font-size: 14px;
+}
+
+.inline-booking-section .required {
+    color: #d9534f;
+}
+
+.inline-booking-section .form-control {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--booking-border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    background: #fff;
+    font-size: 14px;
+    transition: 0.2s ease;
+    box-shadow: none;
+}
+
+.inline-booking-section textarea.form-control {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.inline-booking-section .form-control:focus {
+    outline: none;
+    border-color: var(--booking-primary);
+    box-shadow: 0 0 0 3px rgba(18, 82, 88, 0.08);
+}
+
+.inline-booking-section .location-display {
+    min-height: 44px;
+    border: 1px solid var(--booking-border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--booking-muted);
+    background: #fbfdfd;
+    font-size: 14px;
+}
+
+.inline-booking-section .btn-schedule-event,
+.inline-booking-section .btn-close-success {
+    min-width: 160px;
+    min-height: 46px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--booking-primary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.inline-booking-section .btn-schedule-event:hover,
+.inline-booking-section .btn-close-success:hover {
+    background: var(--booking-primary-hover);
+}
+
+.inline-booking-section .form-error,
+.inline-booking-section .form-success {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.inline-booking-section .form-error {
+    background: #fff3f3;
+    color: #b42318;
+    border: 1px solid #f3c7c7;
+}
+
+.inline-booking-section .form-success {
+    background: #f2fcf7;
+    color: #067647;
+    border: 1px solid #b7ebcc;
+}
+
+.inline-booking-section .success-container {
+    text-align: center;
+}
+
+.inline-booking-section .success-title {
+    margin: 16px 0 8px;
+    color: var(--booking-text);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.inline-booking-section .success-message {
+    margin: 0 0 18px;
+    color: var(--booking-muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.inline-booking-section .success-details {
+    text-align: start;
+    margin-bottom: 22px;
+    border: 1px solid var(--booking-border-strong);
+    border-radius: 14px;
+    padding: 14px;
+    background: #fbfdfd;
+}
+
+.inline-booking-section .success-detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 9px 0;
+    border-bottom: 1px solid #edf4f4;
+}
+
+.inline-booking-section .success-detail-row:last-child {
+    border-bottom: 0;
+}
+
+.inline-booking-section .detail-label {
+    color: var(--booking-muted);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.inline-booking-section .detail-value {
+    color: var(--booking-text);
+    font-weight: 800;
+    text-align: end;
+    font-size: 14px;
+}
+
+@media (max-width: 1199px) {
+    .inline-booking-section .inline-booking-card {
+        grid-template-columns: 320px 1fr;
+    }
+}
+
+@media (max-width: 991px) {
+    .inline-booking-section .inline-booking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .inline-booking-section .inline-booking-side {
+        border-inline-end: 0;
+        border-bottom: 1px solid var(--booking-border-strong);
+    }
+
+    .inline-booking-section .inline-booking-main,
+    .inline-booking-section .inline-booking-side-inner {
+        padding: 20px;
+    }
+
+    .inline-booking-section .inline-booking-step {
+        min-height: auto;
+    }
+
+    .inline-booking-section .inline-booking-content-layout.show-times {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .inline-booking-section .inline-booking-content-layout.show-times .inline-calendar-panel,
+    .inline-booking-section .inline-booking-content-layout.show-times .inline-times-panel {
+        order: unset;
+    }
+
+    .inline-booking-section .inline-times-panel {
+        height: auto;
+    }
+
+    .inline-booking-section .inline-times-scroll {
+        max-height: none;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 767px) {
+    .inline-booking-section {
+        padding: 28px 0;
+    }
+
+    .inline-booking-section .inline-booking-shell {
+        max-width: 100%;
+    }
+
+    /* .inline-booking-section .inline-booking-card {
+        border-radius: 18px;
+    } */
+
+    .inline-booking-section .inline-booking-top-head h2,
+    .inline-booking-section .inline-booking-title,
+    .inline-booking-section .success-title {
+        font-size: 20px;
+    }
+
+    .inline-booking-section .inline-booking-image img {
+        height: 350px;
+    }
+
+    .inline-booking-section .inline-calendar-panel,
+    .inline-booking-section #inlineStepEnterDetails,
+    .inline-booking-section .inline-success-container {
+        padding: 14px;
+    }
+
+    .inline-booking-section .inline-times-panel {
+        display: none !important;
+    }
+
+    .inline-booking-section .booking-calendar {
+        gap: 6px;
+    }
+
+    .inline-booking-section .calendar-date,
+    .inline-booking-section .calendar-empty {
+        height: 42px;
+    }
+
+    .inline-booking-section .calendar-day-name {
+        font-size: 10px;
+        padding: 6px 2px;
+    }
+
+    .inline-booking-section .month-label {
+        font-size: 16px;
+    }
+
+    .inline-booking-section .form-row-grid,
+    .inline-booking-section .success-detail-row {
+        grid-template-columns: 1fr;
+    }
+
+    .inline-booking-section .success-detail-row {
+        align-items: flex-start;
+    }
+
+    .inline-booking-section .detail-value {
+        text-align: start;
+    }
+
+    .inline-booking-section .time-slot-btn,
+    .inline-booking-section .time-next-btn,
+    .inline-booking-section .form-control,
+    .inline-booking-section .btn-schedule-event,
+    .inline-booking-section .btn-close-success,
+    .inline-booking-section .doctor-main-book-btn {
+        font-size: 13px;
+    }
+}

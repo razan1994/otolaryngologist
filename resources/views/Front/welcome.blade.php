@@ -878,9 +878,11 @@
     </div>
     <!-- End Video section -->
 
+    <x-booking-section :appointment-types="$appointmentTypes" />
+
 
     <!-- Start Blogs Features section -->
-    <div class="blog-masonary-section mt-110 mb-110">
+    <div class="blog-masonary-section mt-70 mb-70">
         <div class="container-xl container-fluid">
             <div class="blog-masonary mb-80">
                 <div class="row justify-content-center g-4 mb-50">

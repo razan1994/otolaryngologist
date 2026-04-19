@@ -1,3 +1,4 @@
+
 <?php
 
 return [
@@ -241,7 +242,26 @@ return [
     'booking_phone_placeholder' => 'Enter your phone number',
     'at' => 'at',
 
-
+    'booking_with_doctor' => 'Book your appointment with Dr. Anas Abu Shamleh',
+    'doctor_specialty' => 'Consultant in ENT, Sinus Endoscopy, and Rhinoplasty',
+    'booking_note' => 'Book your appointment now in quick and easy steps—choose an available time and enter your details to complete the booking.',
+    'booking_select_time' => 'Select Time',
+    'full_name' => 'Full Name *',
+    'enter_full_name' => 'Enter your full name',
+    'email' => 'Email *',
+    'enter_email' => 'example@email.com',
+    'phone' => 'Phone Number *',
+    'appointment_type' => 'Appointment Type *',
+    'location' => 'Location',
+    'notes' => 'Notes (optional)',
+    'enter_notes' => 'Any additional details',
+    'confirm_booking' => 'Confirm Booking',
+    'booking_success' => 'Booking Confirmed!',
+    'booking_success_message' => 'We will contact you soon to confirm the details.',
+    'booking_ref' => 'Booking Ref:',
+    'booking_datetime' => 'Date & Time:',
+    'booking_type' => 'Appointment:',
+    'done' => 'Done',
 
 
     'banner_section_text_slide1' => 'Dr. Anas Abu Shamleh treats all nasal and sinus diseases, in addition to performing all surgical and cosmetic procedures with exceptional expertise',
