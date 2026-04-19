@@ -703,7 +703,7 @@ return [
     'enter_email' => 'example@email.com',
     'phone' => 'رقم الهاتف *',
     'appointment_type' => 'نوع الموعد *',
-    'location' => 'الموقع',
+    'location' => 'موقع العيادة *',
     'notes' => 'ملاحظات (اختياري)',
     'enter_notes' => 'أي تفاصيل إضافية',
     'confirm_booking' => 'تأكيد الحجز',
