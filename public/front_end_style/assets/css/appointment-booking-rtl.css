@@ -1110,14 +1110,13 @@ select.form-control {
     }
 }
 
-.inline-booking-section .form-control,
-.inline-booking-section textarea.form-control {
+.form-control,textarea.form-control {
     text-align: right;
     direction: rtl;
 }
 
-.inline-booking-section .form-control::placeholder,
-.inline-booking-section textarea.form-control::placeholder {
+.form-control::placeholder,
+textarea.form-control::placeholder {
     text-align: right;
     direction: rtl;
 }
