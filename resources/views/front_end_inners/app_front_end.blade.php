@@ -442,7 +442,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-row-grid">
+
                                             <div class="form-group">
                                                 <label for="fullName">
                                                     {{ __('front_end.booking_name') }}
@@ -453,18 +453,7 @@
                                                     placeholder="{{ __('front_end.booking_name_placeholder') }}"
                                                     required>
                                             </div>
-
-                                            <div class="form-group">
-                                                <label for="email">
-                                                    {{ __('front_end.booking_email') }}
-                                                    <span class="required">*</span>
-                                                </label>
-                                                <input type="email" id="email" name="email"
-                                                    class="form-control"
-                                                    placeholder="{{ __('front_end.booking_email_placeholder') }}"
-                                                    required>
-                                            </div>
-                                        </div>
+                                       
 
                                         <div class="form-row-grid">
                                             <div class="form-group">
@@ -564,11 +553,6 @@
                                             <div class="success-detail-row">
                                                 <span class="detail-label">{{ __('front_end.booking_name') }}:</span>
                                                 <span class="detail-value" id="successName">-</span>
-                                            </div>
-
-                                            <div class="success-detail-row">
-                                                <span class="detail-label">{{ __('front_end.booking_email') }}:</span>
-                                                <span class="detail-value" id="successEmail">-</span>
                                             </div>
 
                                             <div class="success-detail-row">
@@ -1538,7 +1522,6 @@
                     const formData = {
                         first_name: firstName,
                         last_name: lastName,
-                        email: document.getElementById('email').value,
                         phone: document.getElementById('phone').value,
                         appointment_date: selectedTime.date,
                         start_time: selectedTime.start_time,
@@ -1600,9 +1583,7 @@
                         document.getElementById('successDateTime').textContent =
                             `${dateStr} ${atText} ${timeStr}`;
                         document.getElementById('successName').textContent = fullName;
-                        document.getElementById('successEmail').textContent = formData.email;
                         document.getElementById('successPhone').textContent = formData.phone;
-
                         const appointmentTypeName = appointmentTypeSelect.options[appointmentTypeSelect
                             .selectedIndex].text;
                         document.getElementById('successAppointmentType').textContent =

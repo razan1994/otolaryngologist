@@ -17,7 +17,6 @@ return new class extends Migration
 
             $table->string('first_name');
             $table->string('last_name')->nullable();
-            $table->string('email');
             $table->string('phone')->nullable();
             $table->string('country_key')->nullable();
 
@@ -44,7 +43,7 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->index(['appointment_date', 'start_time']);
-            $table->index(['email']);
+
         });
     }
 

@@ -31,7 +31,6 @@ class AppointmentController extends Controller
         $validator = Validator::make($request->all(), [
             'first_name' => 'required|string|max:255',
             'last_name' => 'nullable|string|max:255',
-            'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:20',
             'appointment_date' => 'required|date|after_or_equal:today',
             'start_time' => 'required|date_format:H:i:s',
@@ -138,7 +137,6 @@ class AppointmentController extends Controller
                     'appointment_type_id' => $request->appointment_type_id,
                     'first_name' => $request->first_name,
                     'last_name' => $request->last_name,
-                    'email' => $request->email,
                     'phone' => $request->phone,
                     'country_key' => $request->country_key,
                     'appointment_date' => $date,

@@ -35,7 +35,6 @@ class BookingAvailabilityController extends Controller
             })
             ->values();
 
-        // Only block slots for these statuses
         $blockedStatuses = ['pending', 'confirmed', 'attended'];
         $appointments = Appointment::where('appointment_date', '>=', $today)
             ->whereIn('status', $blockedStatuses)

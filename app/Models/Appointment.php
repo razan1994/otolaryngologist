@@ -14,7 +14,6 @@ class Appointment extends Model
         'appointment_type_id',
         'first_name',
         'last_name',
-        'email',
         'phone',
         'country_key',
         'appointment_date',

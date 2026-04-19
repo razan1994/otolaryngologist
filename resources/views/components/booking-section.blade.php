@@ -111,18 +111,12 @@
                             </div>
 
                             <form id="inlineBookingDetailsForm" class="booking-details-form">
-                                <div class="form-row-grid">
-                                    <div class="form-group">
-                                        <label>{{ __('front_end.full_name') }}</label>
-                                        <input type="text" name="full_name" class="form-control" id="inlineFullName"
-                                            placeholder="{{ __('front_end.enter_full_name') }}" required>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label>{{ __('front_end.email') }}</label>
-                                        <input type="email" name="email" class="form-control" id="inlineEmail"
-                                            placeholder="{{ __('front_end.enter_email') }}" required>
-                                    </div>
+                                <div class="form-group">
+                                    <label>{{ __('front_end.full_name') }}</label>
+                                    <input type="text" name="full_name" class="form-control" id="inlineFullName"
+                                        placeholder="{{ __('front_end.enter_full_name') }}" required>
+
                                 </div>
 
                                 <div class="form-row-grid">
@@ -196,11 +190,6 @@
                                     <div class="success-detail-row">
                                         <span class="detail-label">{{ __('front_end.booking_name') }}</span>
                                         <span class="detail-value" id="inlineSuccessName">-</span>
-                                    </div>
-
-                                    <div class="success-detail-row">
-                                        <span class="detail-label">{{ __('front_end.booking_email') }}</span>
-                                        <span class="detail-value" id="inlineSuccessEmail">-</span>
                                     </div>
 
                                     <div class="success-detail-row">
@@ -461,17 +450,16 @@
 
             calendarContainer.innerHTML = '';
 
-            const monthNames = currentLocale === 'ar-EG' ?
-                ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر',
-                    'نوفمبر', 'ديسمبر'
-                ] :
-                ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-                    'October', 'November', 'December'
-                ];
+            const monthNames = currentLocale === 'ar-EG' ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
+                'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر',
+                'نوفمبر', 'ديسمبر'
+            ] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                'October', 'November', 'December'
+            ];
 
-            const dayNames = currentLocale === 'ar-EG' ?
-                ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'] :
-                ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const dayNames = currentLocale === 'ar-EG' ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس',
+                'الجمعة', 'السبت'
+            ] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
             monthLabel.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
@@ -566,7 +554,7 @@
             function clearSelections() {
                 bookingModal.querySelectorAll('.time-slot-row').forEach(r => r.classList.remove('active'));
                 bookingModal.querySelectorAll('.time-slot-btn').forEach(btn => btn.classList.remove(
-                'selected'));
+                    'selected'));
             }
 
             function selectThisTime() {
@@ -691,6 +679,7 @@
         if (closeSuccessBtn) {
             closeSuccessBtn.addEventListener('click', function() {
                 resetBookingModal();
+
             });
         }
 
@@ -787,7 +776,7 @@
 
                 const appointmentTypeSelect = document.getElementById('inlineAppointmentType');
                 const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value :
-                null;
+                    null;
 
                 if (!appointmentTypeId) {
                     if (formError) {
@@ -802,7 +791,6 @@
                 const formData = {
                     first_name: firstName,
                     last_name: lastName,
-                    email: document.getElementById('inlineEmail').value,
                     phone: document.getElementById('inlinePhone').value,
                     appointment_date: selectedTime.date,
                     start_time: selectedTime.start_time,
@@ -864,7 +852,6 @@
                     document.getElementById('inlineSuccessDateTime').textContent =
                         `${dateStr} ${atText} ${timeStr}`;
                     document.getElementById('inlineSuccessName').textContent = fullName;
-                    document.getElementById('inlineSuccessEmail').textContent = formData.email;
                     document.getElementById('inlineSuccessPhone').textContent = formData.phone;
 
                     const appointmentTypeName = appointmentTypeSelect.options[appointmentTypeSelect
