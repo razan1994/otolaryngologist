@@ -235,8 +235,8 @@
 .inline-booking-section .month-arrow {
     width: 40px;
     height: 40px;
-    border: 1px solid var(--booking-border);
-    background: #fff;
+    border: 1px solid #125258;
+    background: #e7eff0;
     color: var(--booking-primary);
     border-radius: 10px;
     cursor: pointer;

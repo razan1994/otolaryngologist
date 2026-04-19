@@ -15760,7 +15760,7 @@ strong {
   background-color: #FFFFFF;
   color: #0A5768;
   border: none;
-  font-size: 20px;
+  font-size: 18px;
   height: 45px;
   padding: 0 40px;
   display: flex;
@@ -15770,6 +15770,7 @@ strong {
   border-radius: 5px;
   min-width: 160px;
   font-family: var(--font-Jost);
+  font-weight: bold;
 }
 
 .appointment-button:hover {
@@ -15797,7 +15798,6 @@ strong {
 @media (max-width: 768px) {
   .consult-content {
     flex-direction: column;
-    padding-top: 25px;
   }
 
 
@@ -15808,7 +15808,7 @@ strong {
   }
 
   .consult-text {
-    order: 2; 
+    order: 2;
     margin-top: 8px;
   }
 

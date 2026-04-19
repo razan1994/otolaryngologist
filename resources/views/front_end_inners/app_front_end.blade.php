@@ -876,7 +876,6 @@
             var openBookingBtn = document.getElementById('openBookingPopup');
             var consultSection = document.getElementById('consultSection');
             var whatsappBtn = document.getElementById('whatsappButton');
-            // Hide WhatsApp button initially if consultSection is visible
             if (consultSection && consultSection.style.display !== 'none') {
                 if (whatsappBtn) whatsappBtn.style.display = 'none';
             }

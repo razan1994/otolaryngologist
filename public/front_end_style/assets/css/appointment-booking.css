@@ -253,28 +253,46 @@
 }
 
 .calendar-date {
-    width: 42px;
-    height: 42px;
-    margin: 0 auto;
+    height: 46px;
+    border: 1px solid #e1ebec;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    font-weight: 600;
-    color: #8a9a9d;
-    border-radius: 12px;
     cursor: default;
-    position: relative;
-    transition: 0.2s ease;
-    border: 1px solid transparent;
+    font-weight: 700;
+    font-size: 14px;
+    color: #8a9a9d;
+    background: #f9fcfc;
+    transition: 0.25s ease;
+
 }
 
 .calendar-date.available {
-    color: #125258;
     cursor: pointer;
-    font-weight: 700;
-    background: #d4ebec;
-    border: 1px solid #d4ebec;
+    color: var(--booking-primary);
+    background: #fff;
+}
+
+.calendar-date.available:hover {
+    border-color: var(--booking-primary);
+    transform: translateY(-1px);
+}
+
+.calendar-date.selected {
+    background: var(--booking-primary);
+    color: #fff;
+    border-color: var(--booking-primary);
+}
+
+.calendar-date.muted {
+    opacity: 0.45;
+}
+
+.calendar-date.available {
+    cursor: pointer;
+    color: #125258;
+    background: #fff;
 }
 
 .calendar-date.available:hover {
@@ -284,9 +302,8 @@
 }
 
 .calendar-date.selected {
-    background: #eef8f8;
-    color: #125258;
-    font-weight: 700;
+    background: #125258;
+    color: #fff;
     border-color: #125258;
 }
 
@@ -379,9 +396,9 @@
 }
 
 .time-slot-btn.selected {
-    background: #125258;
-    border-color: #125258;
-    color: #fff;
+    border: 1px solid #dce8ea;
+    background: #fff;
+    color: #125258;
 }
 
 .time-next-btn {

@@ -129,7 +129,7 @@
                                     <div class="form-group">
                                         <label>{{ __('front_end.phone') }}</label>
                                         <input type="tel" name="phone" class="form-control" id="inlinePhone"
-                                            placeholder="07XXXXXXXX">
+                                            placeholder="{{ __('front_end.booking_phone_placeholder') }}">
                                     </div>
 
                                     <div class="form-group">

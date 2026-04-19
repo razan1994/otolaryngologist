@@ -10,7 +10,7 @@
     --booking-radius-sm: 12px;
     --booking-radius-md: 16px;
     --booking-radius-lg: 20px;
-    --booking-shadow: 0 14px 45px rgba(18, 82, 88, 0.10);
+    --booking-shadow: 0 14px 45px rgba(18, 82, 88, 0.1);
 }
 
 .inline-booking-section {
@@ -168,11 +168,15 @@
     align-items: start;
 }
 
-.inline-booking-section .inline-booking-content-layout.show-times .inline-calendar-panel {
+.inline-booking-section
+    .inline-booking-content-layout.show-times
+    .inline-calendar-panel {
     order: 1;
 }
 
-.inline-booking-section .inline-booking-content-layout.show-times .inline-times-panel {
+.inline-booking-section
+    .inline-booking-content-layout.show-times
+    .inline-times-panel {
     display: flex;
     flex-direction: column;
     opacity: 1;
@@ -231,8 +235,8 @@
 .inline-booking-section .month-arrow {
     width: 40px;
     height: 40px;
-    border: 1px solid var(--booking-border);
-    background: #fff;
+    border: 1px solid #125258;
+    background: #e7eff0;
     color: var(--booking-primary);
     border-radius: 10px;
     cursor: pointer;
@@ -601,8 +605,12 @@
         gap: 16px;
     }
 
-    .inline-booking-section .inline-booking-content-layout.show-times .inline-calendar-panel,
-    .inline-booking-section .inline-booking-content-layout.show-times .inline-times-panel {
+    .inline-booking-section
+        .inline-booking-content-layout.show-times
+        .inline-calendar-panel,
+    .inline-booking-section
+        .inline-booking-content-layout.show-times
+        .inline-times-panel {
         order: unset;
     }
 

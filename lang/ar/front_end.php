@@ -198,9 +198,8 @@ return [
     'ContactUs_error_name' => 'من فضلك أدخل',
     'book_your_appointment_now' => 'احجز موعدك الآن',
     'book_text' => 'احجز موعدك الآن مع الدكتور أنس أبو شملة استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف',
-    'book_now' => 'احجز الآن',
+    'book_now' => 'احجــــز الآن',
 
-    // ترجمات نافذة الحجز
     'booking_modal_title' => 'احجز موعدك الآن مع الدكتور أنس أبو شملة',
     'booking_select_date_time' => 'اختر التاريخ والوقت',
     'booking_time_zone' => 'المنطقة الزمنية',
@@ -212,7 +211,7 @@ return [
     'booking_email' => 'البريد الإلكتروني',
     'booking_phone' => 'رقم الهاتف',
     'booking_appointment_type' => 'نوع الموعد',
-    'booking_location' => 'الموقع',
+    'booking_location' => 'موقع العيادة',
     'booking_location_address' => 'عبدون، خلف الملكية الأردنية، فوق صيدلية روحي',
     'booking_notes' => 'ملاحظات إضافية (اختياري)',
     'booking_notes_placeholder' => 'أدخل أي ملاحظات أو طلبات خاصة لديك',

@@ -252,7 +252,7 @@ return [
     'enter_email' => 'example@email.com',
     'phone' => 'Phone Number *',
     'appointment_type' => 'Appointment Type *',
-    'location' => 'Location',
+    'location' => 'Clinic Location',
     'notes' => 'Notes (optional)',
     'enter_notes' => 'Any additional details',
     'confirm_booking' => 'Confirm Booking',
