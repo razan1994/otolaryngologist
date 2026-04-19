@@ -453,7 +453,7 @@
                                                     placeholder="{{ __('front_end.booking_name_placeholder') }}"
                                                     required>
                                             </div>
-                                       
+                                        </div>
 
                                         <div class="form-row-grid">
                                             <div class="form-group">
