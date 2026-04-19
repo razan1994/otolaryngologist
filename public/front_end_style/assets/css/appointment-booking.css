@@ -838,13 +838,16 @@ select.form-control {
     }
 
     .booking-step {
-        scrollbar-width: thin;
-        -ms-overflow-style: auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
     .booking-step::-webkit-scrollbar {
-        display: block;
-        width: 4px;
+        display: none; /* Chrome / Safari */
+        width: 0;
+        height: 0;
     }
 
     .booking-step::-webkit-scrollbar-thumb {
