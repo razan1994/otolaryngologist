@@ -15636,7 +15636,6 @@ Testimonial-Section Css
 
 
 /*# Home blog */
-
 .newsletter-content {
     text-align: justify;
     max-width: 800px;
@@ -15727,7 +15726,7 @@ strong {
   bottom: 0;
   width: 100%;
   background-color: #0A5768;
-  padding: 12px;
+  padding: 30px;
   color: #FFFFFF;
   align-items: center;
   justify-content: center;
@@ -15753,6 +15752,7 @@ strong {
   width: 100%;
   position: relative;
   text-align: center;
+  gap: 5px;
 }
 
 /* Button */
@@ -15760,12 +15760,15 @@ strong {
   background-color: #FFFFFF;
   color: #0A5768;
   border: none;
-  padding: 10px 40px;
-  font-size: 16px;
+  font-size: 20px;
+  height: 45px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   border-radius: 5px;
   min-width: 160px;
-  text-align: center;
   font-family: var(--font-Jost);
 }
 
@@ -15782,7 +15785,7 @@ strong {
 /* Close button */
 .close-button {
   position: absolute;
-  left: 10px;
+  right: 10px;
   top: 10px;
   color: #FFFFFF;
   font-size: 24px;
@@ -15790,24 +15793,30 @@ strong {
   cursor: pointer;
 }
 
-/* 🔥 الحل للموبايل */
+/* Mobile */
 @media (max-width: 768px) {
   .consult-content {
-    flex-direction: column; /* يخلي الزر تحت النص */
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    padding-top: 25px;
   }
+
 
   .appointment-button {
-    width: 100%; /* optional لو بدك ياه full width */
+    order: 1;
+    width: 100%;
     max-width: 250px;
   }
-/*
-  .consult-text {
-    margin-bottom: 10px;
-  } */
-}
 
+  .consult-text {
+    order: 2; 
+    margin-top: 8px;
+  }
+
+  .close-button {
+    top: 5px;
+    right: 15px;
+  }
+}
 
 
 
