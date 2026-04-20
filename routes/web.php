@@ -24,7 +24,8 @@ use App\Http\Controllers\Backend\Admin\TreatmentController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\SupportTicketController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Mail\TestEmail;
+use Illuminate\Support\Facades\Mail;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -66,9 +67,19 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     // Route::get('Front/terms', function () {
     //     return view('terms');
     // });
-
+ // ================== Test Email ==================
+            Route::get('/send-test-email', function () {
+                $emailContent = (object)[
+                    'subject' => 'Hello from Aljeel',
+                    'desc_ar' => 'test message from Aljeel '
+                ];
+                Mail::to('rznjamal@gmail.com')->send(new TestEmail($emailContent, null));
+                return 'Successfully sent';
+            });
 
 });
+
+
 
 
 Route::get('/dashboard', function () {
