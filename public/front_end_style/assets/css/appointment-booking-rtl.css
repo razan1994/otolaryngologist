@@ -276,7 +276,7 @@
 
 .calendar-date {
     height: 46px;
-    border: 1px solid #e1ebec;
+    border: 1px solid #932121;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -291,7 +291,7 @@
 
 .calendar-date.available {
     cursor: pointer;
-    color: var(--booking-primary);
+    color: #932121;
     background: #fff;
 }
 
