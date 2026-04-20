@@ -16,6 +16,15 @@
             <tr style="background: #f0f4fa; color: #125258;">
                 <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Full Name</th>
                 <td style="padding: 10px 14px;">{{ trim(($first_name ?? '') . ' ' . ($last_name ?? '')) }}</td>
+            </tr>
+            <tr style="background: #f0f4fa; color: #125258;">
+                <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Phone</th>
+                <td style="padding: 10px 14px;">{{ $phone }}</td>
+            </tr>
+            <tr style="background: #f0f4fa; color: #125258;">
+                <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Appointment Date</th>
+                <td style="padding: 10px 14px;">{{ $appointment_date }}</td>
+            </tr>
             <tr>
                 <th style="text-align:left; padding: 10px 14px; font-size: 1rem; background: #f9f9f9; color: #125258;">Appointment Time</th>
                 <td style="padding: 10px 14px; background: #f9f9f9;">
@@ -25,15 +34,6 @@
                     @endphp
                     {{ $start }} - {{ $end }}
                 </td>
-            </tr>
-            </tr>
-            <tr style="background: #f0f4fa; color: #125258;">
-                <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Appointment Date</th>
-                <td style="padding: 10px 14px;">{{ $appointment_date }}</td>
-            </tr>
-            <tr style="background: #f9f9f9; color: #125258;">
-                <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Appointment Time</th>
-                <td style="padding: 10px 14px;">{{ $start_time }} - {{ $end_time }}</td>
             </tr>
             <tr style="background: #f9f9f9; color: #125258;">
                 <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Notes</th>
