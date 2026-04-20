@@ -70,8 +70,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
  // ================== Test Email ==================
             Route::get('/send-test-email', function () {
                 $emailContent = (object)[
-                    'subject' => 'Hello from Aljeel',
-                    'desc_ar' => 'test message from Aljeel '
+                    'subject' => 'Hello from otolaryngologist.com',
+                    'desc_ar' => 'test message from otolaryngologist.com',
                 ];
                 Mail::to('rznjamal@gmail.com')->send(new TestEmail($emailContent, null));
                 return 'Successfully sent';
