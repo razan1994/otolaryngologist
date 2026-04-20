@@ -223,7 +223,7 @@ return [
     'booking_phone' => 'Phone',
     'booking_appointment_type' => 'Appointment Type',
     'booking_location' => 'Location',
-    'booking_location_address' => 'Abdoun, behind Royal Jordanian, above Rouhi Pharmacy',
+    'booking_location_address' => 'Amman, Fifth Circle, Abdul Karim Mar’i Complex',
     'booking_notes' => 'Additional notes (optional)',
     'booking_notes_placeholder' => 'Enter any notes or special requests you have',
     'booking_schedule_button' => 'Schedule Booking',

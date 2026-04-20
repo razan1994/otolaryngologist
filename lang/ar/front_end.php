@@ -211,7 +211,7 @@ return [
     'booking_phone' => 'رقم الهاتف',
     'booking_appointment_type' => 'نوع الموعد',
     'booking_location' => 'موقع العيادة',
-    'booking_location_address' => 'عبدون، خلف الملكية الأردنية، فوق صيدلية روحي',
+    'booking_location_address' => 'عمان، الدوار الخامس، مجمع عبد الكريم مرعي',
     'booking_notes' => 'ملاحظات إضافية (اختياري)',
     'booking_notes_placeholder' => 'أدخل أي ملاحظات أو طلبات خاصة لديك',
     'booking_schedule_button' => 'تأكيد الحجز',
