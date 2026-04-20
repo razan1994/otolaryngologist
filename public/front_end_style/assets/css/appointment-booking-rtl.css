@@ -1,32 +1,3 @@
-@font-face {
-    font-family: "ElMessiri";
-    src: url("/fonts/ElMessiri-Bold.woff2") format("woff2");
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "ElMessiri";
-    src:
-        url("/fonts/ElMessiri-Regular.woff2") format("woff2"),
-        url("/fonts/ElMessiri-Regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "ElMessiri";
-    src:
-        url("/fonts/ElMessiri-SemiBold.woff2") format("woff2"),
-        url("/fonts/ElMessiri-SemiBold.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "ElMessiri";
-    src: url("/fonts/ElMessiri-Medium.woff2") format("woff2");
-    font-weight: 500;
-}
 
 .calendar-date.unavailable {
     background: #f8d7da;

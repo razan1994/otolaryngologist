@@ -26,7 +26,8 @@
                 <td style="padding: 10px 14px;">{{ $appointment_date }}</td>
             </tr>
             <tr>
-                <th style="text-align:left; padding: 10px 14px; font-size: 1rem; background: #f9f9f9; color: #125258;">Appointment Time</th>
+                <th style="text-align:left; padding: 10px 14px; font-size: 1rem;
+                background: #f9f9f9; color: #125258;">Appointment Time</th>
                 <td style="padding: 10px 14px; background: #f9f9f9;">
                     @php
                         $start = $start_time ? date('h:i A', strtotime($start_time)) : '';

@@ -46,6 +46,8 @@
     <meta property="og:keywords" content="@yield('meta_keywords')">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
 
     <!-- Bootstrap CSS -->
