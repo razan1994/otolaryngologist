@@ -73,7 +73,7 @@
 
 .inline-booking-section .inline-booking-top-head h2 {
     margin: 0 0 8px;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.4;
     color: var(--booking-text);
     font-weight: 800;
@@ -670,7 +670,7 @@
     .inline-booking-section .inline-booking-top-head h2,
     .inline-booking-section .inline-booking-title,
     .inline-booking-section .success-title {
-        font-size: 19px;
+        font-size: 17px !important;
     }
 
     .inline-booking-section .inline-booking-image img {
