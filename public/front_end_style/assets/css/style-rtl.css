@@ -16,6 +16,7 @@
   font-style: normal;
 }
 
+/* SemiBold */
 @font-face {
   font-family: 'ElMessiri';
   src: url('/fonts/ElMessiri-SemiBold.woff2') format('woff2'),
