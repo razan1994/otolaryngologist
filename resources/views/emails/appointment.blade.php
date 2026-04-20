@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>{{ $subject ?? 'Appointment Details' }}</title>
 </head>
-<body style="background: #fbf8f1; color: #212121; font-family: Arial, 'Jost', sans-serif; margin: 0; padding: 0;">
+<body style="color: #212121; font-family: Arial, 'Jost', sans-serif; margin: 0; padding: 0;">
     <div style="max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(18,82,88,0.07); padding: 32px; border: 1px solid #e6e6e6;">
         <div style="text-align: center; margin-bottom: 24px;">
             <img src='{{ asset('front_end_style/assets/img/home1/logo.png') }}' alt="Logo" style="max-width: 180px; margin-bottom: 12px;">
@@ -16,26 +16,32 @@
             <tr style="background: #f0f4fa; color: #125258;">
                 <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Full Name</th>
                 <td style="padding: 10px 14px;">{{ trim(($first_name ?? '') . ' ' . ($last_name ?? '')) }}</td>
-            </tr>
             <tr>
-                <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Phone</th>
-                <td style="padding: 10px 14px;">{{ $phone }}</td>
+                <th style="text-align:left; padding: 10px 14px; font-size: 1rem; background: #f9f9f9; color: #125258;">Appointment Time</th>
+                <td style="padding: 10px 14px; background: #f9f9f9;">
+                    @php
+                        $start = $start_time ? date('h:i A', strtotime($start_time)) : '';
+                        $end = $end_time ? date('h:i A', strtotime($end_time)) : '';
+                    @endphp
+                    {{ $start }} - {{ $end }}
+                </td>
             </tr>
-            <tr>
+            </tr>
+            <tr style="background: #f0f4fa; color: #125258;">
                 <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Appointment Date</th>
                 <td style="padding: 10px 14px;">{{ $appointment_date }}</td>
             </tr>
-            <tr>
-                <th style="text-align:left; padding: 10px 14px; font-size: 1rem; background: #f9f9f9; color: #125258;">Appointment Time</th>
-                <td style="padding: 10px 14px; background: #f9f9f9;">{{ $start_time }} - {{ $end_time }}</td>
+            <tr style="background: #f9f9f9; color: #125258;">
+                <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Appointment Time</th>
+                <td style="padding: 10px 14px;">{{ $start_time }} - {{ $end_time }}</td>
             </tr>
-            <tr>
-                <th style="text-align:left; padding: 10px 14px; font-size: 1rem; background: #f9f9f9; color: #125258;">Notes</th>
-                <td style="padding: 10px 14px; background: #f9f9f9;">{{ $notes }}</td>
+            <tr style="background: #f9f9f9; color: #125258;">
+                <th style="text-align:left; padding: 10px 14px; font-size: 1rem;">Notes</th>
+                <td style="padding: 10px 14px;">{{ $notes }}</td>
             </tr>
         </table>
         <div style="text-align: center; color: #888; font-size: 0.95em; margin-top: 32px;">
-            &copy; {{ date('Y') }} {{ config('app.name', 'otolaryngologist.com') }}. All rights reserved.
+            &copy; {{ date('Y') }} {{ config('otolaryngologist.com') }}. All rights reserved.
         </div>
     </div>
 </body>
