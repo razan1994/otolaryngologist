@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\AppointmentEmail;
+use App\Mail\TestEmail;
 use App\Models\BlockedDate;
 use App\Models\WorkDay;
 use Illuminate\Http\Request;
@@ -150,21 +150,22 @@ class AppointmentController extends Controller
                 ]);
             });
 
-            // Send email with all appointment data using custom template
+            // Send email with all appointment data
             try {
                 $emailData = [
                     'subject' => 'New Appointment Scheduled',
-                    'first_name' => $appointment->first_name,
-                    'last_name' => $appointment->last_name,
-                    'phone' => $appointment->phone,
-                    'country_key' => $appointment->country_key,
-                    'appointment_date' => $appointment->appointment_date,
-                    'start_time' => $appointment->start_time,
-                    'end_time' => $appointment->end_time,
-                    'notes' => $appointment->notes,
+                    'desc_ar' =>
+                        "First Name: {$appointment->first_name}\n" .
+                        "Last Name: {$appointment->last_name}\n" .
+                        "Phone: {$appointment->phone}\n" .
+                        "Country Key: {$appointment->country_key}\n" .
+                        "Appointment Date: {$appointment->appointment_date}\n" .
+                        "Start Time: {$appointment->start_time}\n" .
+                        "End Time: {$appointment->end_time}\n" .
+                        "Notes: {$appointment->notes}"
                 ];
                 Mail::to(config('mail.from.address'))
-                    ->send(new AppointmentEmail($emailData));
+                    ->send(new TestEmail((object)$emailData, null));
             } catch (\Throwable $e) {
                 // Optionally log or handle email sending failure
             }
