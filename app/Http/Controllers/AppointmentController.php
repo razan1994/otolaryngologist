@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestEmail;
 use App\Models\BlockedDate;
 use App\Models\WorkDay;
 use Illuminate\Http\Request;
@@ -76,7 +78,7 @@ class AppointmentController extends Controller
                     ], 409));
                 }
 
-                $blockedDates = BlockedDate::whereDate('date', $date)
+                $blockedDates = BlockedDate::where('date', $date)
                     ->whereNull('deleted_at')
                     ->get();
 
@@ -147,6 +149,26 @@ class AppointmentController extends Controller
                     'status' => 'pending',
                 ]);
             });
+
+            // Send email with all appointment data
+            try {
+                $emailData = [
+                    'subject' => 'New Appointment Scheduled',
+                    'desc_ar' =>
+                        "First Name: {$appointment->first_name}\n" .
+                        "Last Name: {$appointment->last_name}\n" .
+                        "Phone: {$appointment->phone}\n" .
+                        "Country Key: {$appointment->country_key}\n" .
+                        "Appointment Date: {$appointment->appointment_date}\n" .
+                        "Start Time: {$appointment->start_time}\n" .
+                        "End Time: {$appointment->end_time}\n" .
+                        "Notes: {$appointment->notes}"
+                ];
+                Mail::to(config('mail.from.address'))
+                    ->send(new TestEmail((object)$emailData, null));
+            } catch (\Throwable $e) {
+                // Optionally log or handle email sending failure
+            }
 
             return response()->json([
                 'success' => true,
