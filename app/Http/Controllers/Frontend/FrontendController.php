@@ -297,5 +297,5 @@ class FrontendController extends Controller
         return view('Front.book-appointment', compact('seo_operation', 'appointmentTypes'));
     }
 
-
+ 
 }

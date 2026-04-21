@@ -71,12 +71,14 @@
 
 
     <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick.css') }}">
-    <!--  Style CSS  -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.2/build/css/intlTelInput.css">
 
 
     <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
     <!-- search console -->
     <meta name="google-site-verification" content="cHvVWecmNPDa8dEPTPTUw-etBdtLKKLj4GYnAX-83Bc" />
+
 
     <!-- Google Tag Manager -->
     <script>
@@ -446,16 +448,15 @@
                                         </div>
 
                                         <div class="form-row-grid">
-                                            <div class="form-group">
-                                                <label for="phone">
-                                                    {{ __('front_end.booking_phone') }}
-                                                    <span class="required">*</span>
-                                                </label>
-                                                <input type="tel" id="phone" name="phone"
-                                                    class="form-control"
-                                                    placeholder="{{ __('front_end.booking_phone_placeholder') }}"
-                                                    required>
-                                            </div>
+                                            <div class="form-group phone-ltr">
+    <label for="phone">
+        {{ __('front_end.booking_phone') }}
+        <span class="required">*</span>
+    </label>
+    <input type="tel" id="phone" class="form-control"
+        placeholder="{{ __('front_end.booking_phone_placeholder') }}" required>
+    <input type="hidden" id="fullPhone" name="phone">
+</div>
 
                                             <div class="form-group">
                                                 <label for="appointmentType">
@@ -671,7 +672,7 @@
                     <div
                         class="col-lg-12 d-flex flex-md-row flex-column align-items-center justify-content-md-between justify-content-center flex-wrap gap-3">
                         <div class="footer-left">
-                            <p> <a href="https://smartzone-jo.com" target="_blank">
+                            <p> <a href="https://otolaryngologist-jo.com" target="_blank">
                                     {{ __('front_end.footer_website') }}{{ __('front_end.footer_website1') }}</a>
                             </p>
                         </div>
@@ -682,8 +683,6 @@
         </div>
     </footer>
     <!-- End Footer section section -->
-
-
 
     <!--  Main jQuery  -->
     <script src="{{ asset('front_end_style/assets/js/jquery-3.6.0.min.js') }}"></script>
@@ -702,6 +701,8 @@
 
     <!-- Splide -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.2/build/js/intlTelInput.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -894,6 +895,7 @@
         let backToCalendarBtn;
 
         let jordanTimeEl;
+        let iti;
 
         let currentDate = new Date();
         currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
@@ -1017,8 +1019,7 @@
                     workDays = result.work_days.map(dayObj => {
                         if (typeof dayObj.day === 'string') {
                             return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
-                                    'Saturday'
-                                ]
+                                    'Saturday']
                                 .indexOf(dayObj.day);
                         }
                         return dayObj.day;
@@ -1111,16 +1112,17 @@
 
             calendarContainer.innerHTML = '';
 
-            const monthNames = currentLocale === 'ar-EG' ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو',
-                'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
-                'ديسمبر'
-            ] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
-                'November', 'December'
-            ];
+            const monthNames = currentLocale === 'ar-EG' ?
+                ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
+                    'ديسمبر'
+                ] :
+                ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                    'November', 'December'
+                ];
 
-            const dayNames = currentLocale === 'ar-EG' ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة',
-                'السبت'
-            ] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const dayNames = currentLocale === 'ar-EG' ?
+                ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'] :
+                ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
             monthLabel.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
@@ -1301,6 +1303,29 @@
             });
         }
 
+        function updateFullPhoneInputValue() {
+            const phoneInput = document.getElementById('phone');
+            const fullPhoneInput = document.getElementById('fullPhone');
+
+            if (!phoneInput || !fullPhoneInput) return;
+
+            let rawPhone = phoneInput.value.trim().replace(/[^\d]/g, '');
+            let dialCode = '';
+
+            if (iti) {
+                const countryData = iti.getSelectedCountryData();
+                if (countryData && countryData.dialCode) {
+                    dialCode = countryData.dialCode;
+                }
+            }
+
+            if (rawPhone.startsWith('0')) {
+                rawPhone = rawPhone.substring(1);
+            }
+
+            fullPhoneInput.value = rawPhone ? `+${dialCode}${rawPhone}` : '';
+        }
+
         function resetBookingModal() {
             selectedDate = null;
             selectedTime = null;
@@ -1331,6 +1356,8 @@
             const formSuccess = document.getElementById('formSuccess');
             const appointmentTypeSelect = document.getElementById('appointmentType');
             const summaryDateTime = document.getElementById('summaryDateTime');
+            const fullPhoneInput = document.getElementById('fullPhone');
+            const phoneInput = document.getElementById('phone');
 
             if (formError) {
                 formError.style.display = 'none';
@@ -1352,6 +1379,18 @@
 
             if (appointmentTypeSelect) {
                 appointmentTypeSelect.selectedIndex = 0;
+            }
+
+            if (phoneInput) {
+                phoneInput.value = '';
+            }
+
+            if (iti) {
+                iti.setCountry('jo');
+            }
+
+            if (fullPhoneInput) {
+                fullPhoneInput.value = '';
             }
 
             renderCalendar(currentDate);
@@ -1384,6 +1423,24 @@
             backToCalendarBtn = document.getElementById('backToCalendar');
 
             jordanTimeEl = document.getElementById('jordanTime');
+
+            const phoneInput = document.getElementById('phone');
+            const fullPhoneInput = document.getElementById('fullPhone');
+
+            if (phoneInput && window.intlTelInput) {
+                iti = window.intlTelInput(phoneInput, {
+                    initialCountry: "jo",
+                    preferredCountries: ["jo", "ps", "sa", "ae", "qa", "kw", "eg"],
+                    separateDialCode: true,
+                    nationalMode: true,
+                    autoPlaceholder: "polite",
+                    formatOnDisplay: false,
+                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.2/build/js/utils.js"
+                });
+
+                phoneInput.addEventListener('input', updateFullPhoneInputValue);
+                phoneInput.addEventListener('countrychange', updateFullPhoneInputValue);
+            }
 
             updateJordanTime();
             setInterval(updateJordanTime, 30000);
@@ -1498,7 +1555,7 @@
 
                     const appointmentTypeSelect = document.getElementById('appointmentType');
                     const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value :
-                        null;
+                    null;
 
                     if (!appointmentTypeId) {
                         if (formError) {
@@ -1510,10 +1567,39 @@
                         return;
                     }
 
+                    let rawPhone = phoneInput ? phoneInput.value.trim() : '';
+                    rawPhone = rawPhone.replace(/[^\d]/g, '');
+
+                    let dialCode = '';
+                    if (iti) {
+                        const countryData = iti.getSelectedCountryData();
+                        dialCode = countryData && countryData.dialCode ? countryData.dialCode : '';
+                    }
+
+                    if (rawPhone.startsWith('0')) {
+                        rawPhone = rawPhone.substring(1);
+                    }
+
+                    let finalPhone = dialCode ? `+${dialCode}${rawPhone}` : rawPhone;
+
+                    if (!rawPhone || rawPhone.length < 8) {
+                        if (formError) {
+                            formError.textContent = 'Please enter a valid phone number.';
+                            formError.style.display = 'block';
+                        }
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = '{{ __('front_end.booking_schedule_button') }}';
+                        return;
+                    }
+
+                    if (fullPhoneInput) {
+                        fullPhoneInput.value = finalPhone;
+                    }
+
                     const formData = {
                         first_name: firstName,
                         last_name: lastName,
-                        phone: document.getElementById('phone').value,
+                        phone: finalPhone,
                         appointment_date: selectedTime.date,
                         start_time: selectedTime.start_time,
                         end_time: selectedTime.end_time,
@@ -1575,6 +1661,7 @@
                             `${dateStr} ${atText} ${timeStr}`;
                         document.getElementById('successName').textContent = fullName;
                         document.getElementById('successPhone').textContent = formData.phone;
+
                         const appointmentTypeName = appointmentTypeSelect.options[appointmentTypeSelect
                             .selectedIndex].text;
                         document.getElementById('successAppointmentType').textContent =
@@ -1597,7 +1684,7 @@
                         renderCalendar(currentDate);
 
                         if (selectedTime?.date && hasTimeSlots(selectedTime.date) && !
-                            isMobileBooking()) {
+                        isMobileBooking()) {
                             selectedDate = selectedTime.date;
                             renderTimeSlots(selectedTime.date);
                             showDesktopTimesVisibility();
@@ -1626,8 +1713,21 @@
                         }
 
                         bookingDetailsForm.reset();
+
                         if (appointmentTypeSelect) {
                             appointmentTypeSelect.selectedIndex = 0;
+                        }
+
+                        if (phoneInput) {
+                            phoneInput.value = '';
+                        }
+
+                        if (iti) {
+                            iti.setCountry('jo');
+                        }
+
+                        if (fullPhoneInput) {
+                            fullPhoneInput.value = '';
                         }
 
                         showStep('success');

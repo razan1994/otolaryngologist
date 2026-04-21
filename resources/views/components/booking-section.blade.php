@@ -120,11 +120,12 @@
                                 </div>
 
                                 <div class="form-row-grid">
-                                    <div class="form-group">
-                                        <label>{{ __('front_end.phone') }}</label>
-                                        <input type="tel" name="phone" class="form-control" id="inlinePhone"
-                                            placeholder="{{ __('front_end.booking_phone_placeholder') }}">
-                                    </div>
+                                    <div class="form-group phone-ltr">
+    <label>{{ __('front_end.phone') }}</label>
+    <input type="tel" class="form-control" id="inlinePhone"
+        placeholder="{{ __('front_end.booking_phone_placeholder') }}">
+    <input type="hidden" id="inlineFullPhone" name="phone">
+</div>
 
                                     <div class="form-group">
                                         <label>{{ __('front_end.appointment_type') }}</label>
@@ -254,6 +255,10 @@
         const timesPanel = document.getElementById('inlineTimesPanel');
         const timesScroll = document.getElementById('inlineTimesScroll');
 
+        const inlinePhoneInput = document.getElementById('inlinePhone');
+        const inlineFullPhoneInput = document.getElementById('inlineFullPhone');
+        let inlineIti;
+
         let currentDate = new Date();
         currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
 
@@ -356,9 +361,8 @@
                 if (Array.isArray(result.work_days)) {
                     workDays = result.work_days.map(dayObj => {
                         if (typeof dayObj.day === 'string') {
-                            return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-                                'Friday', 'Saturday'
-                            ].indexOf(dayObj.day);
+                            return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+                                .indexOf(dayObj.day);
                         }
                         return dayObj.day;
                     }).filter(day => day !== -1);
@@ -450,16 +454,13 @@
 
             calendarContainer.innerHTML = '';
 
-            const monthNames = currentLocale === 'ar-EG' ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
-                'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر',
-                'نوفمبر', 'ديسمبر'
-            ] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-                'October', 'November', 'December'
-            ];
+            const monthNames = currentLocale === 'ar-EG'
+                ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر']
+                : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-            const dayNames = currentLocale === 'ar-EG' ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس',
-                'الجمعة', 'السبت'
-            ] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const dayNames = currentLocale === 'ar-EG'
+                ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت']
+                : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
             monthLabel.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
@@ -553,8 +554,7 @@
 
             function clearSelections() {
                 bookingModal.querySelectorAll('.time-slot-row').forEach(r => r.classList.remove('active'));
-                bookingModal.querySelectorAll('.time-slot-btn').forEach(btn => btn.classList.remove(
-                    'selected'));
+                bookingModal.querySelectorAll('.time-slot-btn').forEach(btn => btn.classList.remove('selected'));
             }
 
             function selectThisTime() {
@@ -582,8 +582,7 @@
                     day: 'numeric'
                 });
 
-                const timeStr =
-                    `${selectedTime.start_time.substring(0, 5)} - ${selectedTime.end_time.substring(0, 5)}`;
+                const timeStr = `${selectedTime.start_time.substring(0, 5)} - ${selectedTime.end_time.substring(0, 5)}`;
                 const summaryDateTime = document.getElementById('inlineSummaryDateTime');
 
                 if (summaryDateTime) {
@@ -636,13 +635,32 @@
             setTimeout(syncTimesPanelHeight, 60);
         }
 
+        function updateInlineFullPhoneInputValue() {
+            if (!inlinePhoneInput || !inlineFullPhoneInput) return;
+
+            let rawPhone = inlinePhoneInput.value.trim().replace(/[^\d]/g, '');
+            let dialCode = '';
+
+            if (inlineIti) {
+                const countryData = inlineIti.getSelectedCountryData();
+                if (countryData && countryData.dialCode) {
+                    dialCode = countryData.dialCode;
+                }
+            }
+
+            if (rawPhone.startsWith('0')) {
+                rawPhone = rawPhone.substring(1);
+            }
+
+            inlineFullPhoneInput.value = rawPhone ? `+${dialCode}${rawPhone}` : '';
+        }
+
         function resetBookingModal() {
             selectedDate = null;
             selectedTime = null;
 
             if (selectedDateTitle) selectedDateTitle.textContent = `{{ __('front_end.booking_select_date') }}`;
-            if (selectedDateTitleDesktop) selectedDateTitleDesktop.textContent =
-                `{{ __('front_end.booking_select_date') }}`;
+            if (selectedDateTitleDesktop) selectedDateTitleDesktop.textContent = `{{ __('front_end.booking_select_date') }}`;
 
             if (timeSlotsContainer) timeSlotsContainer.innerHTML = '';
             if (timeSlotsContainerDesktop) timeSlotsContainerDesktop.innerHTML = '';
@@ -669,8 +687,35 @@
             if (bookingDetailsForm) bookingDetailsForm.reset();
             if (appointmentTypeSelect) appointmentTypeSelect.selectedIndex = 0;
 
+            if (inlinePhoneInput) {
+                inlinePhoneInput.value = '';
+            }
+
+            if (inlineFullPhoneInput) {
+                inlineFullPhoneInput.value = '';
+            }
+
+            if (inlineIti) {
+                inlineIti.setCountry('jo');
+            }
+
             renderCalendar(currentDate);
             showStep('date');
+        }
+
+        if (inlinePhoneInput && window.intlTelInput) {
+            inlineIti = window.intlTelInput(inlinePhoneInput, {
+                initialCountry: "jo",
+                preferredCountries: ["jo", "ps", "sa", "ae", "qa", "kw", "eg"],
+                separateDialCode: true,
+                nationalMode: true,
+                autoPlaceholder: "polite",
+                formatOnDisplay: false,
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.2/build/js/utils.js"
+            });
+
+            inlinePhoneInput.addEventListener('input', updateInlineFullPhoneInputValue);
+            inlinePhoneInput.addEventListener('countrychange', updateInlineFullPhoneInputValue);
         }
 
         updateJordanTime();
@@ -679,7 +724,6 @@
         if (closeSuccessBtn) {
             closeSuccessBtn.addEventListener('click', function() {
                 resetBookingModal();
-
             });
         }
 
@@ -775,8 +819,7 @@
                 const lastName = nameParts.slice(1).join(' ') || '';
 
                 const appointmentTypeSelect = document.getElementById('inlineAppointmentType');
-                const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value :
-                    null;
+                const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value : null;
 
                 if (!appointmentTypeId) {
                     if (formError) {
@@ -788,10 +831,39 @@
                     return;
                 }
 
+                let rawPhone = inlinePhoneInput ? inlinePhoneInput.value.trim() : '';
+                rawPhone = rawPhone.replace(/[^\d]/g, '');
+
+                let dialCode = '';
+                if (inlineIti) {
+                    const countryData = inlineIti.getSelectedCountryData();
+                    dialCode = countryData && countryData.dialCode ? countryData.dialCode : '';
+                }
+
+                if (rawPhone.startsWith('0')) {
+                    rawPhone = rawPhone.substring(1);
+                }
+
+                let finalPhone = dialCode ? `+${dialCode}${rawPhone}` : rawPhone;
+
+                if (!rawPhone || rawPhone.length < 8) {
+                    if (formError) {
+                        formError.textContent = 'Please enter a valid phone number.';
+                        formError.style.display = 'block';
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '{{ __('front_end.booking_schedule_button') }}';
+                    return;
+                }
+
+                if (inlineFullPhoneInput) {
+                    inlineFullPhoneInput.value = finalPhone;
+                }
+
                 const formData = {
                     first_name: firstName,
                     last_name: lastName,
-                    phone: document.getElementById('inlinePhone').value,
+                    phone: finalPhone,
                     appointment_date: selectedTime.date,
                     start_time: selectedTime.start_time,
                     end_time: selectedTime.end_time,
@@ -805,9 +877,7 @@
                         headers: {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector(
-                                    'meta[name="csrf-token"]')?.getAttribute('content') ||
-                                ''
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
                         },
                         body: JSON.stringify(formData)
                     });
@@ -833,8 +903,7 @@
                         return;
                     }
 
-                    document.getElementById('inlineSuccessBookingRef').textContent = result
-                        .booking_reference || 'N/A';
+                    document.getElementById('inlineSuccessBookingRef').textContent = result.booking_reference || 'N/A';
 
                     const [year, month, day] = formData.appointment_date.split('-').map(Number);
                     const appointmentDate = new Date(year, month - 1, day);
@@ -846,26 +915,20 @@
                         day: 'numeric'
                     });
 
-                    const timeStr =
-                        `${formData.start_time.substring(0, 5)} - ${formData.end_time.substring(0, 5)}`;
+                    const timeStr = `${formData.start_time.substring(0, 5)} - ${formData.end_time.substring(0, 5)}`;
 
-                    document.getElementById('inlineSuccessDateTime').textContent =
-                        `${dateStr} ${atText} ${timeStr}`;
+                    document.getElementById('inlineSuccessDateTime').textContent = `${dateStr} ${atText} ${timeStr}`;
                     document.getElementById('inlineSuccessName').textContent = fullName;
                     document.getElementById('inlineSuccessPhone').textContent = formData.phone;
 
-                    const appointmentTypeName = appointmentTypeSelect.options[appointmentTypeSelect
-                        .selectedIndex].text;
-                    document.getElementById('inlineSuccessAppointmentType').textContent =
-                        appointmentTypeName;
+                    const appointmentTypeName = appointmentTypeSelect.options[appointmentTypeSelect.selectedIndex].text;
+                    document.getElementById('inlineSuccessAppointmentType').textContent = appointmentTypeName;
 
                     await fetchAvailability();
 
                     if (apiData.time_slots[selectedTime.date]) {
-                        apiData.time_slots[selectedTime.date] = apiData.time_slots[selectedTime
-                            .date].filter(slot =>
-                            !(slot.start_time === selectedTime.start_time && slot.end_time ===
-                                selectedTime.end_time)
+                        apiData.time_slots[selectedTime.date] = apiData.time_slots[selectedTime.date].filter(slot =>
+                            !(slot.start_time === selectedTime.start_time && slot.end_time === selectedTime.end_time)
                         );
 
                         if (apiData.time_slots[selectedTime.date].length === 0) {
@@ -875,6 +938,18 @@
 
                     bookingDetailsForm.reset();
                     if (appointmentTypeSelect) appointmentTypeSelect.selectedIndex = 0;
+
+                    if (inlinePhoneInput) {
+                        inlinePhoneInput.value = '';
+                    }
+
+                    if (inlineFullPhoneInput) {
+                        inlineFullPhoneInput.value = '';
+                    }
+
+                    if (inlineIti) {
+                        inlineIti.setCountry('jo');
+                    }
 
                     showStep('success');
                 } catch (error) {
