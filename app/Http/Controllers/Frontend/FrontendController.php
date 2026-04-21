@@ -290,44 +290,12 @@ class FrontendController extends Controller
         }
     }
 
-    /**
-     * Show available and unavailable dates for the booking calendar.
-     */
-    // public function bookingCalendarAvailability()
-    // {
-    //     $today = now()->toDateString();
+    public function Appointment()
+    {
+        $seo_operation = SeoOperation::where('page_name', 'Appointment')->first();
+        $appointmentTypes = AppointmentType::where('status', 1)->get();
+        return view('Front.book-appointment', compact('seo_operation', 'appointmentTypes'));
+    }
 
-    //     $workDays = WorkDay::where('status', 1)
-    //         ->get(['day', 'from_time', 'to_time', 'slot_duration']);
 
-    //     $blockedDates = BlockedDate::where('date', '>=', $today)
-    //         ->get(['date', 'is_full_day', 'from_time', 'to_time', 'reason'])
-    //         ->map(function ($blocked) {
-    //             return [
-    //                 'date' => $blocked->date instanceof \Carbon\Carbon ? $blocked->date->format('Y-m-d') : $blocked->date,
-    //                 'is_full_day' => $blocked->is_full_day,
-    //                 'from_time' => $blocked->from_time,
-    //                 'to_time' => $blocked->to_time,
-    //                 'reason' => $blocked->reason,
-    //             ];
-    //         });
-
-    //     // Block time slots for all appointments except cancelled ones
-    //     $appointments = Appointment::where('appointment_date', '>=', $today)
-    //         ->whereIn('status', ['pending', 'confirmed', 'attended', 'not_attended'])
-    //         ->get(['appointment_date', 'start_time', 'end_time'])
-    //         ->map(function ($appointment) {
-    //             return [
-    //                 'appointment_date' => $appointment->appointment_date instanceof \Carbon\Carbon ? $appointment->appointment_date->format('Y-m-d') : $appointment->appointment_date,
-    //                 'start_time' => $appointment->start_time,
-    //                 'end_time' => $appointment->end_time,
-    //             ];
-    //         });
-
-    //     return response()->json([
-    //         'work_days' => $workDays,
-    //         'blocked_dates' => $blockedDates,
-    //         'appointments' => $appointments,
-    //     ]);
-    // }
 }

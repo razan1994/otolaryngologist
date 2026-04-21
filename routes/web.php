@@ -57,6 +57,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/' . str_replace(' ', '-', trans('front_end.PrivacyPolicy_Privacy')), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
     Route::get('/' . str_replace(' ', '-', trans('front_end.Eardisease_AllServices')) . '/{alias_name}', [FrontendController::class, 'ServiceDetails'])->name('services-details');
     Route::get('/' . str_replace(' ', '-', trans('front_end.footer_terms')), [FrontendController::class, 'TermsAndConditions'])->name('Terms&Conditions');
+    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Appointment')), [FrontendController::class, 'Appointment'])->name('appointment');
 
 
 
