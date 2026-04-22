@@ -30,31 +30,25 @@
 @endsection
 
 @section('canonical')
-    @if ($blogs->currentPage() == 1)
-        @if (Config::get('app.locale') == 'en')
-            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="x-default" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar" />
-        @else
-            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية" hreflang="ar" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="en" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs" hreflang="x-default" />
-        @endif
-    @else
-        @if (Config::get('app.locale') == 'en')
-            <link rel="canonical" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}" hreflang="en" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}" hreflang="x-default" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" hreflang="ar" />
-        @else
-            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/مقالة-طبية?page={{ $blogs->currentPage() }}" hreflang="ar" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}" hreflang="en" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/blogs?page={{ $blogs->currentPage() }}" hreflang="x-default" />
-        @endif
-    @endif
+    @php
+        $page = $blogs->currentPage();
+
+        $enUrl = $page > 1
+            ? 'https://www.otolaryngologist-jo.com/en/blogs?page=' . $page
+            : 'https://www.otolaryngologist-jo.com/en/blogs';
+
+        $arUrl = $page > 1
+            ? 'https://www.otolaryngologist-jo.com/ar/مقالة-طبية?page=' . $page
+            : 'https://www.otolaryngologist-jo.com/ar/مقالة-طبية';
+
+        $canonicalUrl = Config::get('app.locale') == 'en' ? $enUrl : $arUrl;
+        $xDefaultUrl = $enUrl;
+    @endphp
+
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="en-JO" />
+    <link rel="alternate" href="{{ $arUrl }}" hreflang="ar-JO" />
+    <link rel="alternate" href="{{ $xDefaultUrl }}" hreflang="x-default" />
 @endsection
 
 @section('content')
@@ -101,7 +95,7 @@
                 <div class="section-title2 style-2">
                     <h3>{{ __('front_end.footer_Blogs') }}</h3>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-10">
                     <div class="about-us-wrapper">
                         <p><strong>{{ __('front_end.blog_subTitle') }}</strong></p>
                     </div>

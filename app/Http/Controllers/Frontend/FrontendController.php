@@ -249,7 +249,7 @@ class FrontendController extends Controller
     public function Treatments()
     {
         $seo_operation = SeoOperation::where('page_name', 'Treatments')->first();
-        $treatments = Treatment::where('status', 1)->paginate(8);
+        $treatments = Treatment::where('status', 1)->orderBy('created_at', 'asc')->paginate(8);
 
         return view('Front/treatments', compact('seo_operation', 'treatments',));
     }
@@ -297,5 +297,5 @@ class FrontendController extends Controller
         return view('Front.book-appointment', compact('seo_operation', 'appointmentTypes'));
     }
 
- 
+
 }

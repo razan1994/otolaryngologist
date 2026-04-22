@@ -15,15 +15,16 @@
 
 
 @section('canonical')
-    @if (Config::get('app.locale') == 'en')
-        <link rel="canonical" href="https://otolaryngologist-jo.com/en/FAQ" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/FAQ" hreflang="en-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/الاسئلة-المقترحة" hreflang="ar-jo" />
-    @else
-        <link rel="canonical" href="https://otolaryngologist-jo.com/ar/الاسئلة-المقترحة" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/الاسئلة-المقترحة" hreflang="ar-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/FAQ" hreflang="en-jo" />
-    @endif
+    @php
+        $enUrl = 'https://www.otolaryngologist-jo.com/en/FAQ';
+        $arUrl = 'https://www.otolaryngologist-jo.com/ar/الاسئلة-المقترحة';
+        $canonicalUrl = Config::get('app.locale') == 'en' ? $enUrl : $arUrl;
+    @endphp
+
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="en-JO" />
+    <link rel="alternate" href="{{ $arUrl }}" hreflang="ar-JO" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="x-default" />
 @endsection
 
 

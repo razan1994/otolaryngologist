@@ -18,21 +18,17 @@
 
 
 @section('canonical')
-    @if (Config::get('app.locale') == 'en')
-        <link rel="canonical" href="https://otolaryngologist-jo.com/en/Before&After/{{ $news_blog->alias_name_en }}" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After/{{ $news_blog->alias_name_en }}"
-            hreflang="en-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد/{{ $news_blog->alias_name_ar }}"
-            hreflang="ar-jo" />
-    @else
-        <link rel="canonical" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد/{{ $news_blog->alias_name_ar }}" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/قبل-و-بعد/{{ $news_blog->alias_name_ar }}"
-            hreflang="ar-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Before&After/{{ $news_blog->alias_name_en }}"
-            hreflang="en-jo" />
-    @endif
-@endsection
+    @php
+        $enUrl = 'https://www.otolaryngologist-jo.com/en/Before&After/' . $news_blog->alias_name_en;
+        $arUrl = 'https://www.otolaryngologist-jo.com/ar/قبل-و-بعد/' . $news_blog->alias_name_ar;
+        $canonicalUrl = Config::get('app.locale') == 'en' ? $enUrl : $arUrl;
+    @endphp
 
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="en-JO" />
+    <link rel="alternate" href="{{ $arUrl }}" hreflang="ar-JO" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="x-default" />
+@endsection
 
 @section('h1_val')
     {{ $news_blog?->h1_val }}
@@ -584,7 +580,7 @@
                 <div class="section-title2 style-2">
                     <h3>{{ $news_blog->title }}</h3>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-10">
                     <div class="about-us-wrapper">
                         <p><strong>{{ __('front_end.Before&After_subTitle') }}</strong></p>
                     </div>

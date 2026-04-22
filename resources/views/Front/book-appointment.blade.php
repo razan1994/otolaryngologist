@@ -15,15 +15,16 @@
 
 
 @section('canonical')
-    @if (Config::get('app.locale') == 'en')
-        <link rel="canonical" href="https://otolaryngologist-jo.com/en/Appointment" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Appointment" hreflang="en-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/احجز-موعدك" hreflang="ar-jo" />
-    @else
-        <link rel="canonical" href="https://otolaryngologist-jo.com/ar/احجز-موعدك" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/احجز-موعدك" hreflang="ar-jo" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Appointment" hreflang="en-jo" />
-    @endif
+    @php
+        $enUrl = 'https://www.otolaryngologist-jo.com/en/Appointment';
+        $arUrl = 'https://www.otolaryngologist-jo.com/ar/احجز-موعدك';
+        $canonicalUrl = Config::get('app.locale') == 'en' ? $enUrl : $arUrl;
+    @endphp
+
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="en-JO" />
+    <link rel="alternate" href="{{ $arUrl }}" hreflang="ar-JO" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="x-default" />
 @endsection
 
 
@@ -40,8 +41,7 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a
-                            href="{{ route('welcome') }}">{{ __('front_end.nav_home') }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('welcome') }}">{{ __('front_end.nav_home') }}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ __('front_end.appointment_booking_title') }}
                     </li>
                 </ol>

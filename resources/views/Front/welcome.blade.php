@@ -15,16 +15,16 @@
 
 
 @section('canonical')
+    <link rel="canonical" href="{{ url()->current() }}" />
+
     @if (Config::get('app.locale') == 'en')
-        <link rel="canonical" href="https://otolaryngologist-jo.com/en" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="en" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="x-default" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar" hreflang="ar" />
+        <link rel="alternate" href="https://www.otolaryngologist-jo.com/en" hreflang="en-JO" />
+        <link rel="alternate" href="https://www.otolaryngologist-jo.com/ar" hreflang="ar-JO" />
+        <link rel="alternate" href="https://www.otolaryngologist-jo.com/en" hreflang="x-default" />
     @else
-        <link rel="canonical" href="https://otolaryngologist-jo.com/ar" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar" hreflang="ar" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="en" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en" hreflang="x-default" />
+        <link rel="alternate" href="https://www.otolaryngologist-jo.com/ar" hreflang="ar-JO" />
+        <link rel="alternate" href="https://www.otolaryngologist-jo.com/en" hreflang="en-JO" />
+        <link rel="alternate" href="https://www.otolaryngologist-jo.com/en" hreflang="x-default" />
     @endif
 @endsection
 

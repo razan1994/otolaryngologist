@@ -30,31 +30,25 @@
 @endsection
 
 @section('canonical')
-    @if ($treatments->currentPage() == 1)
-        @if (Config::get('app.locale') == 'en')
-            <link rel="canonical" href="https://otolaryngologist-jo.com/en/Treatments" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="en" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="x-default" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات" hreflang="ar" />
-        @else
-            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/العلاجات" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات" hreflang="ar" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="en" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments" hreflang="x-default" />
-        @endif
-    @else
-        @if (Config::get('app.locale') == 'en')
-            <link rel="canonical" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="en" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="x-default" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات?page={{ $treatments->currentPage() }}" hreflang="ar" />
-        @else
-            <link rel="canonical" href="https://otolaryngologist-jo.com/ar/العلاجات?page={{ $treatments->currentPage() }}" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/ar/العلاجات?page={{ $treatments->currentPage() }}" hreflang="ar" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="en" />
-            <link rel="alternate" href="https://otolaryngologist-jo.com/en/Treatments?page={{ $treatments->currentPage() }}" hreflang="x-default" />
-        @endif
-    @endif
+    @php
+        $page = $treatments->currentPage();
+
+        $hreflangEnUrl = $page > 1
+            ? 'https://www.otolaryngologist-jo.com/en/Treatments?page=' . $page
+            : 'https://www.otolaryngologist-jo.com/en/Treatments';
+
+        $hreflangArUrl = $page > 1
+            ? 'https://www.otolaryngologist-jo.com/ar/العلاجات?page=' . $page
+            : 'https://www.otolaryngologist-jo.com/ar/العلاجات';
+
+        $canonicalUrl = Config::get('app.locale') == 'en' ? $hreflangEnUrl : $hreflangArUrl;
+        $xDefaultUrl = $hreflangEnUrl;
+    @endphp
+
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
+    <link rel="alternate" href="{{ $hreflangEnUrl }}" hreflang="en-JO" />
+    <link rel="alternate" href="{{ $hreflangArUrl }}" hreflang="ar-JO" />
+    <link rel="alternate" href="{{ $xDefaultUrl }}" hreflang="x-default" />
 @endsection
 
 
@@ -66,119 +60,6 @@
 @endsection
 
 
-<style>
-    .custom-row-spacing {
-        margin-bottom: 20px;
-    }
-
-    .wrapper {
-        position: relative;
-        height: 500px;
-        width: 750px;
-        overflow: hidden;
-        background: #fff;
-        border: 7px solid #fff;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .wrapper .images {
-        height: 100%;
-        width: 100%;
-        display: flex;
-    }
-
-    .wrapper .images .img-1,
-    .wrapper .images .img-2 {
-        height: 100%;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .wrapper .images .img-2 {
-        position: absolute;
-        width: 50%;
-    }
-
-    .wrapper .slider {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 99;
-    }
-
-    .wrapper .slider input {
-        width: 100%;
-        outline: none;
-        background: none;
-        -webkit-appearance: none;
-    }
-
-    .slider input::-webkit-slider-thumb {
-        height: 486px;
-        width: 3px;
-        background: none;
-        -webkit-appearance: none;
-        cursor: col-resize;
-    }
-
-    .slider .drag-line {
-        width: 3px;
-        height: 486px;
-        position: absolute;
-        left: 50%;
-        pointer-events: none;
-    }
-
-    .slider .drag-line::before,
-    .slider .drag-line::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 222px;
-        background: #fff;
-    }
-
-    .slider .drag-line::before {
-        top: 0;
-    }
-
-    .slider .drag-line::after {
-        bottom: 0;
-    }
-
-    .slider .drag-line span {
-        height: 42px;
-        width: 42px;
-        border: 3px solid #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .slider .drag-line span::before,
-    .slider .drag-line span::after {
-        position: absolute;
-        content: "";
-        top: 50%;
-        border: 10px solid transparent;
-        border-bottom-width: 0px;
-        border-right-width: 0px;
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    .slider .drag-line span::before {
-        left: 40%;
-        border-left-color: #fff;
-    }
-
-    .slider .drag-line span::after {
-        left: 60%;
-        border-top-color: #fff;
-    }
-</style>
 @section('content')
 
 
@@ -213,7 +94,7 @@
         <div class="about-us-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
                         <div class="section-title2 style-2">
                             <h3>{{ __('front_end.nav_Treatments') }}</h3>
                         </div>

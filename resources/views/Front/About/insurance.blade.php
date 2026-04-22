@@ -15,17 +15,16 @@
 
 
 @section('canonical')
-    @if (Config::get('app.locale') == 'en')
-        <link rel="canonical" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="en" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="x-default" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة" hreflang="ar" />
-    @else
-        <link rel="canonical" href="https://otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة" hreflang="ar" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="en" />
-        <link rel="alternate" href="https://otolaryngologist-jo.com/en/Certified-Insurance-Companies" hreflang="x-default" />
-    @endif
+    @php
+        $enUrl = 'https://www.otolaryngologist-jo.com/en/Certified-Insurance-Companies';
+        $arUrl = 'https://www.otolaryngologist-jo.com/ar/شركات-التأمين-المعتمدة';
+        $canonicalUrl = Config::get('app.locale') == 'en' ? $enUrl : $arUrl;
+    @endphp
+
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="en-JO" />
+    <link rel="alternate" href="{{ $arUrl }}" hreflang="ar-JO" />
+    <link rel="alternate" href="{{ $enUrl }}" hreflang="x-default" />
 @endsection
 
 
@@ -80,7 +79,7 @@ Dr. Anas Abushamleh - Board-Certified ENT Specialist in Jordan, Expert in Treati
                     <div class="section-title2 style-2">
                         <h3>{{ __('front_end.nav_Certified') }}</h3>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
                         <div class="about-us-wrapper">
                             <p><strong>{{ __('front_end.Insurance_Certified1') }}</strong></p>
                         </div>
