@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\AboutUs;
-use App\Models\Appointment;
 use App\Models\AppointmentType;
 use App\Models\Blogs;
 use App\Models\ContactUsRequest;
@@ -33,7 +32,7 @@ class FrontendController extends Controller
         $sliders = Slider::where('status', 1)->get();
         $services = Service::get();
         $services1 = Service::latest()->limit(3)->get();
-        $treatments = Treatment::latest()->get();
+        $treatments = Treatment::orderBy('created_at', 'asc')->get();
         $blogs = Blogs::where('status', 1)->limit(3)->get();
         $seo_operation = SeoOperation::where('page_name', 'Welcome')->get()->first();
         $appointmentTypes = AppointmentType::where('status', 1)->get();
