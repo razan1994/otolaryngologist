@@ -15,13 +15,13 @@
 
 
 @section('canonical')
-    <link rel="canonical" href="{{ url()->current() }}" />
-
     @if (Config::get('app.locale') == 'en')
+        <link rel="canonical" href="https://www.otolaryngologist-jo.com/en" />
         <link rel="alternate" href="https://www.otolaryngologist-jo.com/en" hreflang="en-JO" />
         <link rel="alternate" href="https://www.otolaryngologist-jo.com/ar" hreflang="ar-JO" />
         <link rel="alternate" href="https://www.otolaryngologist-jo.com/en" hreflang="x-default" />
     @else
+        <link rel="canonical" href="https://www.otolaryngologist-jo.com/ar" />
         <link rel="alternate" href="https://www.otolaryngologist-jo.com/ar" hreflang="ar-JO" />
         <link rel="alternate" href="https://www.otolaryngologist-jo.com/en" hreflang="en-JO" />
         <link rel="alternate" href="https://www.otolaryngologist-jo.com/en" hreflang="x-default" />
