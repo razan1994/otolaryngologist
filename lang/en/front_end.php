@@ -12,7 +12,7 @@ return [
     'nav_Certified' => 'Certified Insurance Companies',
     'nav_Treatments' => 'Treatments',
     'nav_Blogs' => 'Blogs',
-    'nav_Gallery' => 'Before&After',
+    'nav_Gallery' => 'before-after',
     'nav_ContactUs' => 'Contact us',
     'nav_Expert' => 'Expert care for your ear, nose and throat.',
     'nav_OurTreatments' => 'Our Treatments',

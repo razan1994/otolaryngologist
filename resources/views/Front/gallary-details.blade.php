@@ -19,7 +19,7 @@
 
 @section('canonical')
     @php
-        $enUrl = 'https://www.otolaryngologist-jo.com/en/Before&After/' . $news_blog->alias_name_en;
+        $enUrl = 'https://www.otolaryngologist-jo.com/en/before-after/' . $news_blog->alias_name_en;
         $arUrl = 'https://www.otolaryngologist-jo.com/ar/قبل-و-بعد/' . $news_blog->alias_name_ar;
         $canonicalUrl = Config::get('app.locale') == 'en' ? $enUrl : $arUrl;
     @endphp

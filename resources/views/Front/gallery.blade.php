@@ -38,8 +38,8 @@
 
         $enUrl =
             $page > 1
-                ? 'https://www.otolaryngologist-jo.com/en/Before&After?page=' . $page
-                : 'https://www.otolaryngologist-jo.com/en/Before&After';
+                ? 'https://www.otolaryngologist-jo.com/en/before-after?page=' . $page
+                : 'https://www.otolaryngologist-jo.com/en/before-after';
 
         $arUrl =
             $page > 1
@@ -55,7 +55,6 @@
     <link rel="alternate" href="{{ $arUrl }}" hreflang="ar-JO" />
     <link rel="alternate" href="{{ $xDefaultUrl }}" hreflang="x-default" />
 @endsection
-
 
 @section('h1_val')
     {{ $seo_operation?->h1_val }}
