@@ -39,26 +39,43 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+], function () {
 
     Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.ContactUs_Contact')), [FrontendController::class, 'ContactUs'])->name('ContactUs');
-    Route::post('/contactUsRequest1', [FrontendController::class, 'contactUsRequest1'])->name('contactUsRequest1');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Dr_Anas')), [FrontendController::class, 'Dranas'])->name('dranas');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.footer_OurClinic')), [FrontendController::class, 'Clinic'])->name('aboutClinic');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.Insurance_Certified')), [FrontendController::class, 'Insurance'])->name('insurance');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Treatments')), [FrontendController::class, 'Treatments'])->name('treatments');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.ourTreatments_Treatments')) . '/{aliasname}', [FrontendController::class, 'TreatmentsDetails'])->name('treatments-details');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Gallery')), [FrontendController::class, 'Gallary'])->name('gallery');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.seo_Blogs')), [FrontendController::class, 'Blogs'])->name('blogs');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.seo_Blogs')) . '/{aliasname}', [FrontendController::class, 'BlogDetails'])->name('blog-details');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Gallery')) . '/{aliasname}', [FrontendController::class, 'GallaryDetails'])->name('gallery-details');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.seo_FAQ')), [FrontendController::class, 'FAQ'])->name('FAQ');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.PrivacyPolicy_Privacy')), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.Eardisease_AllServices')) . '/{alias_name}', [FrontendController::class, 'ServiceDetails'])->name('services-details');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.footer_terms')), [FrontendController::class, 'TermsAndConditions'])->name('Terms&Conditions');
-    Route::get('/' . str_replace(' ', '-', trans('front_end.nav_Appointment')), [FrontendController::class, 'Appointment'])->name('appointment');
 
+    Route::get(trans('front_end.route_contact_us'), [FrontendController::class, 'ContactUs'])->name('ContactUs');
+    Route::post('/contactUsRequest1', [FrontendController::class, 'contactUsRequest1'])->name('contactUsRequest1');
+
+    Route::get(trans('front_end.route_dr_anas'), [FrontendController::class, 'Dranas'])->name('dranas');
+
+    Route::get(trans('front_end.route_our_clinic'), [FrontendController::class, 'Clinic'])->name('aboutClinic');
+
+    Route::get(trans('front_end.route_insurance'), [FrontendController::class, 'Insurance'])->name('insurance');
+
+    Route::get(trans('front_end.route_treatments'), [FrontendController::class, 'Treatments'])->name('treatments');
+
+    Route::get(trans('front_end.route_our_treatments') . '/{aliasname}', [FrontendController::class, 'TreatmentsDetails'])->name('treatments-details');
+
+    Route::get(trans('front_end.route_gallery'), [FrontendController::class, 'Gallary'])->name('gallery');
+
+    Route::get(trans('front_end.route_gallery') . '/{aliasname}', [FrontendController::class, 'GallaryDetails'])->name('gallery-details');
+
+    Route::get(trans('front_end.route_blogs'), [FrontendController::class, 'Blogs'])->name('blogs');
+
+    Route::get(trans('front_end.route_blogs') . '/{aliasname}', [FrontendController::class, 'BlogDetails'])->name('blog-details');
+
+    Route::get(trans('front_end.route_faq'), [FrontendController::class, 'FAQ'])->name('FAQ');
+
+    Route::get(trans('front_end.route_privacy_policy'), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
+
+    Route::get(trans('front_end.route_services') . '/{alias_name}', [FrontendController::class, 'ServiceDetails'])->name('services-details');
+
+    Route::get(trans('front_end.route_terms'), [FrontendController::class, 'TermsAndConditions'])->name('Terms&Conditions');
+
+    Route::get(trans('front_end.route_appointment'), [FrontendController::class, 'Appointment'])->name('appointment');
 
 
 
