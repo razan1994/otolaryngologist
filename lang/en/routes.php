@@ -1,3 +1,5 @@
+<?php
+
 return [
     'contact_us' => 'contact-us',
     'dr_anas' => 'Dr-Anas-Abu-Shamla',
