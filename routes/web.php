@@ -44,37 +44,61 @@ Route::group([
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
 ], function () {
 
+    ##################################################
+    # 🔥 REDIRECTS (OLD → NEW)
+    ##################################################
+
+    // Before&After
+    Route::redirect('Before&After', 'before-after', 301);
+    Route::redirect('Before&After/{any}', 'before-after/{any}', 301)->where('any', '.*');
+
+    // Contact (space / capital)
+    Route::redirect('Contact Us', 'contact-us', 301);
+    Route::redirect('Contact-Us', 'contact-us', 301);
+
+    // Arabic wrong contact
+    Route::redirect('بنا اتصل', 'اتصل-بنا', 301);
+
+    // Appointment
+    Route::redirect('Appointment', 'appointment-booking', 301);
+
+    ##################################################
+    # 🔥 MAIN ROUTES
+    ##################################################
+
     Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
 
-    Route::get(trans('routes.contact_us'), [FrontendController::class, 'ContactUs'])->name('ContactUs');
+    Route::get(LaravelLocalization::transRoute('routes.contact_us'), [FrontendController::class, 'ContactUs'])->name('ContactUs');
 
     Route::post('/contactUsRequest1', [FrontendController::class, 'contactUsRequest1'])->name('contactUsRequest1');
 
-    Route::get(trans('routes.dr_anas'), [FrontendController::class, 'Dranas'])->name('dranas');
+    Route::get(LaravelLocalization::transRoute('routes.dr_anas'), [FrontendController::class, 'Dranas'])->name('dranas');
 
-    Route::get(trans('routes.our_clinic'), [FrontendController::class, 'Clinic'])->name('aboutClinic');
+    Route::get(LaravelLocalization::transRoute('routes.our_clinic'), [FrontendController::class, 'Clinic'])->name('aboutClinic');
 
-    Route::get(trans('routes.insurance'), [FrontendController::class, 'Insurance'])->name('insurance');
+    Route::get(LaravelLocalization::transRoute('routes.insurance'), [FrontendController::class, 'Insurance'])->name('insurance');
 
-    Route::get(trans('routes.treatments'), [FrontendController::class, 'Treatments'])->name('treatments');
+    Route::get(LaravelLocalization::transRoute('routes.treatments'), [FrontendController::class, 'Treatments'])->name('treatments');
 
-    Route::get(trans('routes.our_treatments') . '/{aliasname}', [FrontendController::class, 'TreatmentsDetails'])->name('treatments-details');
+    Route::get(LaravelLocalization::transRoute('routes.our_treatments') . '/{aliasname}', [FrontendController::class, 'TreatmentsDetails'])->name('treatments-details');
 
-    Route::get(trans('routes.gallery'), [FrontendController::class, 'Gallary'])->name('gallery');
+    Route::get(LaravelLocalization::transRoute('routes.gallery'), [FrontendController::class, 'Gallary'])->name('gallery');
 
-    Route::get(trans('routes.gallery') . '/{aliasname}', [FrontendController::class, 'GallaryDetails'])->name('gallery-details');
+    Route::get(LaravelLocalization::transRoute('routes.gallery') . '/{aliasname}', [FrontendController::class, 'GallaryDetails'])->name('gallery-details');
 
-    Route::get(trans('routes.blogs'), [FrontendController::class, 'Blogs'])->name('blogs');
+    Route::get(LaravelLocalization::transRoute('routes.blogs'), [FrontendController::class, 'Blogs'])->name('blogs');
 
-    Route::get(trans('routes.blogs') . '/{aliasname}', [FrontendController::class, 'BlogDetails'])->name('blog-details');
+    Route::get(LaravelLocalization::transRoute('routes.blogs') . '/{aliasname}', [FrontendController::class, 'BlogDetails'])->name('blog-details');
 
-    Route::get(trans('routes.faq'), [FrontendController::class, 'FAQ'])->name('FAQ');
+    Route::get(LaravelLocalization::transRoute('routes.faq'), [FrontendController::class, 'FAQ'])->name('FAQ');
 
-    Route::get(trans('routes.privacy_policy'), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
+    Route::get(LaravelLocalization::transRoute('routes.privacy_policy'), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
 
-    Route::get(trans('routes.terms'), [FrontendController::class, 'TermsAndConditions'])->name('terms');
+    Route::get(LaravelLocalization::transRoute('routes.terms'), [FrontendController::class, 'TermsAndConditions'])->name('terms');
 
-    Route::get(trans('routes.appointment'), [FrontendController::class, 'Appointment'])->name('appointment');
+    Route::get(LaravelLocalization::transRoute('routes.appointment'), [FrontendController::class, 'Appointment'])->name('appointment');
+
+
 
 
 
