@@ -659,8 +659,8 @@
                                 <li><a href="{{ route('blogs') }}">{{ __('front_end.footer_Blogs') }}</a></li>
                                 <li><a href="{{ route('gallery') }}">{{ __('front_end.footer_Gallery') }}</a></li>
                                 <li><a
-                                        href="{{ route('Terms&Conditions') }}">{{ __('front_end.footer_terms') }}</a>
-                                </li>
+                                        href="{{ route('terms') }}">{{ __('front_end.footer_terms') }}</a>
+                                    </li>
                             </ul>
                         </div>
                     </div>
