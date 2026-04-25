@@ -46,36 +46,35 @@ Route::group([
 
     Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
 
-    Route::get(trans('front_end.ContactUs_Contact'), [FrontendController::class, 'ContactUs'])->name('ContactUs');
+    Route::get(trans('routes.contact_us'), [FrontendController::class, 'ContactUs'])->name('ContactUs');
+
     Route::post('/contactUsRequest1', [FrontendController::class, 'contactUsRequest1'])->name('contactUsRequest1');
 
-    Route::get(trans('front_end.nav_Dr_Anas'), [FrontendController::class, 'Dranas'])->name('dranas');
+    Route::get(trans('routes.dr_anas'), [FrontendController::class, 'Dranas'])->name('dranas');
 
-    Route::get(trans('front_end.footer_OurClinic'), [FrontendController::class, 'Clinic'])->name('aboutClinic');
+    Route::get(trans('routes.our_clinic'), [FrontendController::class, 'Clinic'])->name('aboutClinic');
 
-    Route::get(trans('front_end.Insurance_Certified'), [FrontendController::class, 'Insurance'])->name('insurance');
+    Route::get(trans('routes.insurance'), [FrontendController::class, 'Insurance'])->name('insurance');
 
-    Route::get(trans('front_end.nav_Treatments'), [FrontendController::class, 'Treatments'])->name('treatments');
+    Route::get(trans('routes.treatments'), [FrontendController::class, 'Treatments'])->name('treatments');
 
-    Route::get(trans('front_end.ourTreatments_Treatments') . '/{aliasname}', [FrontendController::class, 'TreatmentsDetails'])->name('treatments-details');
+    Route::get(trans('routes.our_treatments') . '/{aliasname}', [FrontendController::class, 'TreatmentsDetails'])->name('treatments-details');
 
-    Route::get(trans('front_end.nav_Gallery'), [FrontendController::class, 'Gallary'])->name('gallery');
+    Route::get(trans('routes.gallery'), [FrontendController::class, 'Gallary'])->name('gallery');
 
-    Route::get(trans('front_end.nav_Gallery') . '/{aliasname}', [FrontendController::class, 'GallaryDetails'])->name('gallery-details');
+    Route::get(trans('routes.gallery') . '/{aliasname}', [FrontendController::class, 'GallaryDetails'])->name('gallery-details');
 
-    Route::get(trans('front_end.seo_Blogs'), [FrontendController::class, 'Blogs'])->name('blogs');
+    Route::get(trans('routes.blogs'), [FrontendController::class, 'Blogs'])->name('blogs');
 
-    Route::get(trans('front_end.seo_Blogs') . '/{aliasname}', [FrontendController::class, 'BlogDetails'])->name('blog-details');
+    Route::get(trans('routes.blogs') . '/{aliasname}', [FrontendController::class, 'BlogDetails'])->name('blog-details');
 
-    Route::get(trans('front_end.seo_FAQ'), [FrontendController::class, 'FAQ'])->name('FAQ');
+    Route::get(trans('routes.faq'), [FrontendController::class, 'FAQ'])->name('FAQ');
 
-    Route::get(trans('front_end.PrivacyPolicy_Privacy'), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
+    Route::get(trans('routes.privacy_policy'), [FrontendController::class, 'PrivacyPolicy'])->name('privacy-policy');
 
-    Route::get(trans('front_end.Eardisease_AllServices') . '/{alias_name}', [FrontendController::class, 'ServiceDetails'])->name('services-details');
+    Route::get(trans('routes.terms'), [FrontendController::class, 'TermsAndConditions'])->name('terms');
 
-    Route::get(trans('front_end.footer_terms'), [FrontendController::class, 'TermsAndConditions'])->name('Terms&Conditions');
-
-    Route::get(trans('front_end.nav_Appointment'), [FrontendController::class, 'Appointment'])->name('appointment');
+    Route::get(trans('routes.appointment'), [FrontendController::class, 'Appointment'])->name('appointment');
 
 
 
