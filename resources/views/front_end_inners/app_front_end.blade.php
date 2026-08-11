@@ -113,7 +113,170 @@
     @endif
     <!-- End Include Files -->
 
+    <style>
+        .qr-booking-section {
+            position: relative;
+        }
 
+        .qr-booking-card {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f7fbfa 0%, #ffffff 55%, rgba(18, 82, 88, .10) 100%);
+            border: 1px solid rgba(18, 82, 88, .18);
+            padding: 55px 45px;
+            box-shadow: 0 25px 70px rgba(18, 82, 88, .10);
+        }
+
+        .qr-booking-card::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            background: rgba(18, 82, 88, .08);
+            border-radius: 50%;
+            top: -90px;
+            right: -80px;
+        }
+
+        .qr-booking-card::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(18, 82, 88, .18);
+            border-radius: 50%;
+            bottom: -70px;
+            left: -50px;
+        }
+
+        .qr-doctor-wrap {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+        }
+
+        .qr-doctor-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 35px 10px 0;
+            background: var(--primary-color1);
+            border-radius: 45% 45% 20px 20px;
+            opacity: .10;
+            z-index: -1;
+        }
+
+        .qr-doctor-img {
+            max-height: 410px;
+            object-fit: contain;
+            filter: drop-shadow(0 25px 35px rgba(18, 82, 88, .18));
+        }
+
+        .qr-booking-content {
+            position: relative;
+            z-index: 2;
+            text-align: right;
+        }
+
+        .qr-subtitle {
+            display: inline-block;
+            color: var(--primary-color1);
+            border: 1px solid rgba(18, 82, 88, .25);
+            padding: 7px 18px;
+            border-radius: 100px;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .qr-booking-content h2 {
+            font-size: 40px;
+            line-height: 1.35;
+            margin-bottom: 18px;
+            color: var(--primary-color1);
+        }
+
+        .qr-booking-content p {
+            color: #4d4d4d;
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .qr-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .qr-steps span {
+            background: #fff;
+            color: var(--primary-color1);
+            border: 1px solid rgba(18, 82, 88, .18);
+            padding: 9px 14px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .qr-code-box {
+            position: relative;
+            z-index: 2;
+            background: var(--white-color);
+            border: 1px solid var(--primary-color1);
+            padding: 18px;
+            box-shadow: 0 18px 45px rgba(18, 82, 88, .14);
+        }
+
+        .qr-code-img {
+            width: 190px;
+            height: 190px;
+            object-fit: contain;
+        }
+
+        .qr-code-box small {
+            display: block;
+            margin-top: 12px;
+            color: var(--primary-color1);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 991px) {
+            .qr-booking-card {
+                padding: 40px 25px;
+                text-align: center;
+            }
+
+            .qr-booking-content {
+                text-align: center;
+            }
+
+            .qr-booking-content h2 {
+                font-size: 31px;
+            }
+
+            .qr-steps {
+                justify-content: center;
+            }
+
+            .qr-doctor-img {
+                max-height: 340px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .qr-booking-card {
+                padding: 30px 18px;
+            }
+
+            .qr-booking-content h2 {
+                font-size: 26px;
+            }
+
+            .qr-code-img {
+                width: 165px;
+                height: 165px;
+            }
+        }
+    </style>
 
 </head>
 
@@ -345,8 +508,21 @@
                             <div class="booking-header">
                                 <h2 class="booking-title">{{ __('front_end.booking_modal_title') }}</h2>
                             </div>
+                            <div id="bookingAlert" class="booking-alert">
+
+                                <div class="booking-alert-text">
+                                    <strong>⚠️ يرجى العلم:</strong>
+                                    الحجز الإلكتروني متاح فقط لعيادة عبدون.
+                                    أما عيادة النصر الطبية فبنظام الانتظار
+                                    <br>
+                                    أيام السبت، الاثنين، والأربعاء
+                                    من الساعة 6:00 م حتى 10:00 م.
+                                </div>
+                            </div>
 
                             <div class="booking-body">
+
+
                                 <!-- Step 1: Date -->
                                 <div id="stepDateTime" class="booking-step">
                                     <h3 class="booking-step-title">{{ __('front_end.booking_select_date_time') }}</h3>
@@ -369,9 +545,13 @@
 
                                             <div class="booking-calendar" id="calendlyCalendar"></div>
 
+
+
                                             <div class="booking-timezone-title">
                                                 {{ __('front_end.booking_time_zone') }}
                                             </div>
+
+
 
                                             <div class="booking-timezone">
                                                 <span class="booking-globe">🌐</span>
@@ -449,14 +629,15 @@
 
                                         <div class="form-row-grid">
                                             <div class="form-group phone-ltr">
-    <label for="phone">
-        {{ __('front_end.booking_phone') }}
-        <span class="required">*</span>
-    </label>
-    <input type="tel" id="phone" class="form-control"
-        placeholder="{{ __('front_end.booking_phone_placeholder') }}" required>
-    <input type="hidden" id="fullPhone" name="phone">
-</div>
+                                                <label for="phone">
+                                                    {{ __('front_end.booking_phone') }}
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <input type="tel" id="phone" class="form-control"
+                                                    placeholder="{{ __('front_end.booking_phone_placeholder') }}"
+                                                    required>
+                                                <input type="hidden" id="fullPhone" name="phone">
+                                            </div>
 
                                             <div class="form-group">
                                                 <label for="appointmentType">
@@ -658,9 +839,8 @@
                                 <li><a href="{{ route('FAQ') }}">{{ __('front_end.footer_FAQ') }}</a></li>
                                 <li><a href="{{ route('blogs') }}">{{ __('front_end.footer_Blogs') }}</a></li>
                                 <li><a href="{{ route('gallery') }}">{{ __('front_end.footer_Gallery') }}</a></li>
-                                <li><a
-                                        href="{{ route('terms') }}">{{ __('front_end.footer_terms') }}</a>
-                                    </li>
+                                <li><a href="{{ route('terms') }}">{{ __('front_end.footer_terms') }}</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1019,7 +1199,8 @@
                     workDays = result.work_days.map(dayObj => {
                         if (typeof dayObj.day === 'string') {
                             return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
-                                    'Saturday']
+                                    'Saturday'
+                                ]
                                 .indexOf(dayObj.day);
                         }
                         return dayObj.day;
@@ -1112,17 +1293,16 @@
 
             calendarContainer.innerHTML = '';
 
-            const monthNames = currentLocale === 'ar-EG' ?
-                ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
-                    'ديسمبر'
-                ] :
-                ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
-                    'November', 'December'
-                ];
+            const monthNames = currentLocale === 'ar-EG' ? ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو',
+                'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر',
+                'ديسمبر'
+            ] : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+                'November', 'December'
+            ];
 
-            const dayNames = currentLocale === 'ar-EG' ?
-                ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'] :
-                ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const dayNames = currentLocale === 'ar-EG' ? ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة',
+                'السبت'
+            ] : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
             monthLabel.textContent = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
@@ -1555,7 +1735,7 @@
 
                     const appointmentTypeSelect = document.getElementById('appointmentType');
                     const appointmentTypeId = appointmentTypeSelect ? appointmentTypeSelect.value :
-                    null;
+                        null;
 
                     if (!appointmentTypeId) {
                         if (formError) {
@@ -1684,7 +1864,7 @@
                         renderCalendar(currentDate);
 
                         if (selectedTime?.date && hasTimeSlots(selectedTime.date) && !
-                        isMobileBooking()) {
+                            isMobileBooking()) {
                             selectedDate = selectedTime.date;
                             renderTimeSlots(selectedTime.date);
                             showDesktopTimesVisibility();

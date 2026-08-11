@@ -21,6 +21,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+
 class FrontendController extends Controller
 {
     public function welcome()
@@ -167,12 +168,27 @@ class FrontendController extends Controller
     }
     public function Blogs()
     {
+        // Prevent duplicate SEO URL: ?page=1
+        if (request()->has('page') && (int) request('page') === 1) {
+            return redirect()->to(request()->url(), 301);
+        }
 
-        $blogs = Blogs::where('status', 1)->paginate(6);
-        $recentBlogs = Blogs::where('status', 1)->orderBy('created_at', 'desc')->take(3)->get();
+        $blogs = Blogs::where('status', 1)
+            ->orderBy('created_at', 'desc')
+            ->paginate(6);
 
-        $seo_operation = SeoOperation::where('page_name', 'Blogs')->get()->first();
-        return view('Front.blogs', compact('blogs', 'seo_operation', 'recentBlogs'));
+        $recentBlogs = Blogs::where('status', 1)
+            ->orderBy('created_at', 'desc')
+            ->take(3)
+            ->get();
+
+        $seo_operation = SeoOperation::where('page_name', 'Blogs')->first();
+
+        return view('Front.blogs', compact(
+            'blogs',
+            'seo_operation',
+            'recentBlogs'
+        ));
     }
 
 
@@ -295,6 +311,4 @@ class FrontendController extends Controller
         $appointmentTypes = AppointmentType::where('status', 1)->get();
         return view('Front.book-appointment', compact('seo_operation', 'appointmentTypes'));
     }
-
-
 }

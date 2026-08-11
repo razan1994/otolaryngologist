@@ -44,9 +44,6 @@ Route::group([
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
 ], function () {
 
-    ##################################################
-    # 🔥 REDIRECTS (OLD → NEW)
-    ##################################################
 
     // Before&After
     Route::redirect('Before&After', 'before-after', 301);
@@ -62,9 +59,6 @@ Route::group([
     // Appointment
     Route::redirect('Appointment', 'appointment-booking', 301);
 
-    ##################################################
-    # 🔥 MAIN ROUTES
-    ##################################################
 
     Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
 

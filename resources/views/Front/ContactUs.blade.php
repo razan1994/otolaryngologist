@@ -35,12 +35,324 @@
     {{ $seo_operation?->h2_val }}
 @endsection
 
+<style>
+   .qr-premium-section {
+    position: relative;
+}
+
+.qr-premium-card {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 60px;
+    border-radius: 34px;
+    border: 1px solid rgba(18, 82, 88, .18);
+    background:
+        radial-gradient(circle at 82% 18%, rgba(18, 82, 88, .18), transparent 26%),
+        radial-gradient(circle at 12% 90%, rgba(194, 154, 91, .20), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #f8fbfa 42%, #eaf5f3 100%);
+    box-shadow: 0 45px 120px rgba(18, 82, 88, .18);
+}
+
+.qr-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: .18;
+    background-image:
+        linear-gradient(rgba(18,82,88,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(18,82,88,.12) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+}
+
+.qr-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(18px);
+    opacity: .55;
+    animation: qrFloat 7s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 210px;
+    height: 210px;
+    background: rgba(18, 82, 88, .20);
+    top: -70px;
+    right: 12%;
+}
+
+.orb-2 {
+    width: 160px;
+    height: 160px;
+    background: rgba(194, 154, 91, .22);
+    bottom: -55px;
+    left: 8%;
+    animation-delay: 1.5s;
+}
+
+.qr-premium-content {
+    position: relative;
+    z-index: 3;
+    text-align: right;
+}
+
+.qr-premium-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    color: var(--primary-color1);
+    background: rgba(255, 255, 255, .75);
+    border: 1px solid rgba(18, 82, 88, .18);
+    box-shadow: 0 10px 30px rgba(18, 82, 88, .10);
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.qr-premium-badge i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c29a5b;
+    box-shadow: 0 0 0 8px rgba(194, 154, 91, .15);
+}
+
+.qr-premium-content h2 {
+    font-size: 48px;
+    line-height: 1.35;
+    color: var(--primary-color1);
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.qr-premium-content h2 span {
+    display: block;
+    color: #c29a5b;
+}
+
+.qr-premium-content p {
+    color: #4c5b5c;
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+.qr-premium-btn {
+    border-radius: 999px;
+    padding-inline: 34px;
+    box-shadow: 0 18px 38px rgba(18, 82, 88, .25);
+}
+
+.qr-premium-scan {
+    position: relative;
+    z-index: 4;
+    padding: 28px 22px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, .78);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(18, 82, 88, .18);
+    box-shadow: 0 28px 75px rgba(18, 82, 88, .18);
+    animation: qrCardFloat 5s ease-in-out infinite;
+}
+
+.qr-card-title {
+    color: var(--primary-color1);
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.qr-premium-frame {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: auto;
+    padding: 16px;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: inset 0 0 0 1px rgba(18, 82, 88, .10);
+    overflow: hidden;
+}
+
+.qr-premium-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-corner {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-color: #c29a5b;
+    z-index: 3;
+}
+
+.top-left {
+    top: 8px;
+    left: 8px;
+    border-top: 4px solid;
+    border-left: 4px solid;
+}
+
+.top-right {
+    top: 8px;
+    right: 8px;
+    border-top: 4px solid;
+    border-right: 4px solid;
+}
+
+.bottom-left {
+    bottom: 8px;
+    left: 8px;
+    border-bottom: 4px solid;
+    border-left: 4px solid;
+}
+
+.bottom-right {
+    bottom: 8px;
+    right: 8px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+}
+
+.qr-laser {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 22px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c29a5b, transparent);
+    box-shadow: 0 0 22px rgba(194, 154, 91, .75);
+    z-index: 4;
+    animation: qrScan 2.7s ease-in-out infinite;
+}
+
+.qr-premium-scan p {
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: #566;
+    font-weight: 700;
+}
+
+.qr-doctor-wrap {
+    position: relative;
+    z-index: 3;
+    min-height: 430px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.doctor-halo {
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    bottom: 5px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, rgba(255,255,255,.95) 0%, rgba(18,82,88,.13) 62%, transparent 70%);
+    box-shadow: 0 30px 80px rgba(18, 82, 88, .16);
+}
+
+.doctor-ring {
+    position: absolute;
+    width: 355px;
+    height: 355px;
+    bottom: 20px;
+    border-radius: 50%;
+    border: 1px dashed rgba(18, 82, 88, .32);
+    animation: qrRotate 20s linear infinite;
+}
+
+.qr-doctor-img {
+    position: relative;
+    z-index: 4;
+    max-height: 430px;
+    object-fit: contain;
+    filter: drop-shadow(0 35px 45px rgba(18, 82, 88, .25));
+    animation: qrDoctorFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes qrScan {
+    0% { top: 22px; opacity: .1; }
+    15% { opacity: 1; }
+    50% { top: 194px; opacity: 1; }
+    100% { top: 22px; opacity: .1; }
+}
+
+@keyframes qrDoctorFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+
+@keyframes qrCardFloat {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-12px) rotate(-1deg); }
+}
+
+@keyframes qrRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes qrFloat {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(18px, -18px); }
+}
+
+@media (max-width: 991px) {
+    .qr-premium-card {
+        padding: 50px 28px;
+        border-radius: 26px;
+    }
+
+    .qr-premium-content {
+        text-align: center;
+    }
+
+    .qr-premium-content h2 {
+        font-size: 34px;
+    }
+
+    .qr-doctor-wrap {
+        min-height: 350px;
+    }
+
+    .qr-doctor-img {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .qr-premium-card {
+        padding: 38px 18px;
+    }
+
+    .qr-premium-content h2 {
+        font-size: 28px;
+    }
+
+    .qr-premium-frame {
+        width: 185px;
+        height: 185px;
+    }
+
+    .doctor-halo {
+        width: 300px;
+        height: 300px;
+    }
+
+    .doctor-ring {
+        width: 275px;
+        height: 275px;
+    }
+}
+</style>
 
 <?php
 $contacts = App\Models\ContactUs::first();
 ?>
-
-
 
 
 @section('content')
@@ -57,38 +369,6 @@ $contacts = App\Models\ContactUs::first();
     </div>
     <!-- End Breadcrumb Section section -->
 
-
-    <!-- Start About Us Banner Section -->
-    <div class="about-us-banner mt-40  mb-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-us-thumb hover-img mb-60">
-                        <img alt="عيادة الدكتور أنس أبوشملة, خدمات شاملة في الأذن والأنف والحنجرة, أفضل استشاري جراحات الأنف والأذن والحنجرة والجيوب الأنفية بالمنظار وتجميل الأنف في عمان الأردن, طرق التواصل مع عيادة الدكتور أنس أبو شملة, اتصل بنا
-, معلومات الاتصال, نموذج الاتصال, استفسر عن خدماتنا, خريطة الموقع وعنواننا, Dr. Anas Abu Shamleh Clinic, comprehensive services in ear, nose, and throat, the best consultant for ear, nose, and throat surgery, endoscopic sinus surgery, and rhinoplasty in Amman, Jordan, ways to contact Dr. Anas Abu Shamleh Clinic, contact us, contact information, contact form, inquire about our services, site map and our address
-"
-                            loading="lazy"
-                            src="{{ asset('front_end_style/assets/img/inner-page/about-us-banner-img.png') }}">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Start About Us Content Section section -->
-        <div class="about-us-content">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title2 style-2">
-                        <h3>{{ __('front_end.nav_ContactUs') }}</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End About Us Content Section section -->
-    </div>
-    <!-- End About Us Banner Section -->
 
 
     <div class="contact-page mb-110">
@@ -276,6 +556,73 @@ $contacts = App\Models\ContactUs::first();
         </div>
     </div>
 
+
+    <section class="qr-premium-section mb-110">
+        <div class="container">
+            <div class="qr-premium-card">
+
+                <span class="qr-orb orb-1"></span>
+                <span class="qr-orb orb-2"></span>
+                <span class="qr-pattern"></span>
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-3 text-center order-lg-1 order-3">
+                        <div class="qr-premium-scan">
+                            <div class="qr-card-title">Scan To Book</div>
+
+                            <div class="qr-premium-frame">
+                                <span class="qr-corner top-left"></span>
+                                <span class="qr-corner top-right"></span>
+                                <span class="qr-corner bottom-left"></span>
+                                <span class="qr-corner bottom-right"></span>
+                                <span class="qr-laser"></span>
+
+                                <img src="{{ asset('front_end_style/assets/img/booking-qr.png') }}"
+                                    alt="Booking QR Code">
+                            </div>
+
+                            <p>امسح الرمز للحجز مباشرة</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 order-lg-2 order-1">
+                        <div class="qr-premium-content">
+                            <span class="qr-premium-badge">
+                                <i></i>
+                                حجز سريع ومباشر
+                            </span>
+
+                            <h2>
+                                احجز موعدك بثواني
+                                <span>من خلال QR Code</span>
+                            </h2>
+
+                            <p>
+                                امسح الرمز بكاميرا الهاتف وانتقل مباشرة إلى صفحة الحجز
+                                لاختيار الموعد المناسب بكل سهولة.
+                            </p>
+
+                            <a href="#appointment-form" class="primary-btn1 qr-premium-btn">
+                                انتقل لصفحة الحجز
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 text-center order-lg-3 order-2">
+                        <div class="qr-doctor-wrap">
+                            <span class="doctor-halo"></span>
+                            <span class="doctor-ring"></span>
+
+                            <img src="{{ asset('front_end_style/assets/img/drcartoon.png') }}" alt="Dr. Anas Abu Shamleh"
+                                class="qr-doctor-img">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Start Instagram section section -->
     <div class="instagram-section mb-110 mt-110">
