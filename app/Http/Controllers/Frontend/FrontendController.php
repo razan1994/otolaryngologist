@@ -74,12 +74,21 @@ class FrontendController extends Controller
     }
     public function Gallary()
     {
+        // Prevent duplicate SEO URL: ?page=1
+        if (request()->has('page') && (int) request('page') === 1) {
+            return redirect()->to(request()->url(), 301);
+        }
 
-        $photos = Photo::where('status', 1)->paginate(12);
+        $photos = Photo::where('status', 1)
+            ->orderBy('created_at', 'desc')
+            ->paginate(12);
 
-        $seo_operation = SeoOperation::where('page_name', 'Gallery')->get()->first();
-        // return $photos;
-        return view('Front/gallery', compact('photos', 'seo_operation'));
+        $seo_operation = SeoOperation::where('page_name', 'Gallery')->first();
+
+        return view('Front/gallery', compact(
+            'photos',
+            'seo_operation'
+        ));
     }
     public function Insurance()
     {
@@ -263,10 +272,21 @@ class FrontendController extends Controller
 
     public function Treatments()
     {
-        $seo_operation = SeoOperation::where('page_name', 'Treatments')->first();
-        $treatments = Treatment::where('status', 1)->orderBy('created_at', 'asc')->paginate(8);
+        // Prevent duplicate SEO URL: ?page=1
+        if (request()->has('page') && (int) request('page') === 1) {
+            return redirect()->to(request()->url(), 301);
+        }
 
-        return view('Front/treatments', compact('seo_operation', 'treatments',));
+        $seo_operation = SeoOperation::where('page_name', 'Treatments')->first();
+
+        $treatments = Treatment::where('status', 1)
+            ->orderBy('created_at', 'asc')
+            ->paginate(8);
+
+        return view('Front/treatments', compact(
+            'seo_operation',
+            'treatments'
+        ));
     }
 
 
