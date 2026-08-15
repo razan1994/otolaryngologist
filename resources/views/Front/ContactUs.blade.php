@@ -557,72 +557,7 @@ $contacts = App\Models\ContactUs::first();
     </div>
 
 
-    <section class="qr-premium-section mb-110">
-        <div class="container">
-            <div class="qr-premium-card">
 
-                <span class="qr-orb orb-1"></span>
-                <span class="qr-orb orb-2"></span>
-                <span class="qr-pattern"></span>
-
-                <div class="row align-items-center g-5">
-
-                    <div class="col-lg-3 text-center order-lg-1 order-3">
-                        <div class="qr-premium-scan">
-                            <div class="qr-card-title">Scan To Book</div>
-
-                            <div class="qr-premium-frame">
-                                <span class="qr-corner top-left"></span>
-                                <span class="qr-corner top-right"></span>
-                                <span class="qr-corner bottom-left"></span>
-                                <span class="qr-corner bottom-right"></span>
-                                <span class="qr-laser"></span>
-
-                                <img src="{{ asset('front_end_style/assets/img/booking-qr.png') }}"
-                                    alt="Booking QR Code">
-                            </div>
-
-                            <p>امسح الرمز للحجز مباشرة</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 order-lg-2 order-1">
-                        <div class="qr-premium-content">
-                            <span class="qr-premium-badge">
-                                <i></i>
-                                حجز سريع ومباشر
-                            </span>
-
-                            <h2>
-                                احجز موعدك بثواني
-                                <span>من خلال QR Code</span>
-                            </h2>
-
-                            <p>
-                                امسح الرمز بكاميرا الهاتف وانتقل مباشرة إلى صفحة الحجز
-                                لاختيار الموعد المناسب بكل سهولة.
-                            </p>
-
-                            <a href="#appointment-form" class="primary-btn1 qr-premium-btn">
-                                انتقل لصفحة الحجز
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5 text-center order-lg-3 order-2">
-                        <div class="qr-doctor-wrap">
-                            <span class="doctor-halo"></span>
-                            <span class="doctor-ring"></span>
-
-                            <img src="{{ asset('front_end_style/assets/img/drcartoon.png') }}" alt="Dr. Anas Abu Shamleh"
-                                class="qr-doctor-img">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Start Instagram section section -->
     <div class="instagram-section mb-110 mt-110">
