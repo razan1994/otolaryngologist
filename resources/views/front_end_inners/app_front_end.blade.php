@@ -70,7 +70,7 @@
 
     <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick.min.css') }}">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.2/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.2/build/css/intlTelInput.min.css">
 
 
     <link rel="icon" href="{{ asset('front_end_style/assets/img/favicon.png') }}" type="image/gif">
@@ -875,7 +875,8 @@
     <script src="{{ asset('front_end_style/assets/js/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('front_end_style/assets/js/waypoints.min.js') }}"></script>
     <!-- main js  -->
-    <script src="{{ asset('front_end_style/assets/js/main.js') }}"></script>
+    {{-- <script src="{{ asset('front_end_style/assets/js/main.js') }}"></script> --}}
+    <script src="{{ asset('front_end_style/assets/js/main.min.js') }}"></script>
 
     <!-- Splide -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
