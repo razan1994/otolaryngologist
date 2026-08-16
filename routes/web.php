@@ -120,6 +120,11 @@ Route::get('/ar/مقالة-طبية/الشفة-الارنبية', function () {
     );
 });
 
+Route::permanentRedirect(
+    '/en/blogs/cleft-lip',
+    '/en/blogs/Cleft-Lip-Causes,-Complications-and-Best-Age-for-Treatment'
+);
+
 
 
 
