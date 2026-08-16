@@ -53,24 +53,22 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('front_end_style/assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Bootstrap Icon CSS -->
-    <link href="{{ asset('front_end_style/assets/css/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('front_end_style/assets/css/bootstrap-icons.min.css') }}" rel="stylesheet">
     <!-- Fontawesome all CSS -->
     <link href="{{ asset('front_end_style/assets/css/all.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('front_end_style/assets/css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ asset('front_end_style/assets/css/nice-select.min.css') }}" rel="stylesheet">
     <link href="{{ asset('front_end_style/assets/css/animate.min.css') }}" rel="stylesheet">
     <!--  FancyBox CSS  -->
     <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/jquery.fancybox.min.css') }}">
 
-    <!-- Fontawesome CSS -->
-    <link href="{{ asset('front_end_style/assets/css/fontawesome.min.css') }}" rel="stylesheet">
     <!-- box icon css -->
     <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/boxicons.min.css') }}">
     <!-- slider CSS -->
     <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick-theme.min.css') }}">
 
 
-    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/slick.min.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.2/build/css/intlTelInput.css">
 
@@ -102,14 +100,14 @@
     <!-- Include Files -->
     @if (Config::get('app.locale') == 'en')
         @include('front_end_inners.includes.en_include')
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/appointment-booking.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/inline-booking.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/appointment-booking.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/inline-booking.min.css') }}">
     @else
         @include('front_end_inners.includes.ar_include')
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style-rtl.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/appointment-booking-rtl.css') }}">
-        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/inline-booking-rtl.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/style-rtl.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/appointment-booking-rtl.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('front_end_style/assets/css/inline-booking-rtl.min.css') }}">
     @endif
     <!-- End Include Files -->
 
