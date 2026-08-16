@@ -304,41 +304,16 @@
 
     <!-- Social Icons Section -->
     <div class="icon-bar">
-
-        <!-- Booking -->
-        <a href="javascript:void(0)" class="calendar" onclick="openBookingPopup(event)"
-            aria-label="Book Appointment">
+        <a href="#" class="calendar" onclick="openBookingPopup(event)"><i class="fas fa-calendar-alt"></i></a>
+        {{-- <a href="https://wa.me/962790098884" class="whatsapp"><i class="fab fa-whatsapp"></i></a> --}}
+        <a href="https://web.facebook.com/ENTDoctorJordan" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/dr.anasabushamleh/" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+        <!-- Calendar Icon for Booking -->
+        {{-- <a href="#" class="calendar" title="Book Appointment" onclick="openBookingPopup(event)">
             <i class="fas fa-calendar-alt"></i>
-        </a>
-
-        <!-- WhatsApp -->
-        <button type="button" class="whatsapp" onclick="openWhatsApp()" aria-label="Contact us on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </button>
-
-        <!-- Facebook -->
-        <a href="https://web.facebook.com/ENTDoctorJordan" class="facebook" target="_blank"
-            rel="noopener noreferrer nofollow" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/dr.anasabushamleh/" class="instagram" target="_blank"
-            rel="noopener noreferrer nofollow" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-
+        </a> --}}
     </div>
-
-    <script>
-        function openWhatsApp() {
-            window.open(
-                'https://wa.me/962790098884',
-                '_blank',
-                'noopener,noreferrer'
-            );
-        }
-    </script>
 
 
     <!-- top bar Section -->
