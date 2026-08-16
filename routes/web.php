@@ -59,21 +59,6 @@ Route::group([
     // Appointment
     Route::redirect('Appointment', 'appointment-booking', 301);
 
-
-    Route::permanentRedirect(
-        '/ar/مقالة-طبية/الشفة-الارنبية',
-        '/ar/مقالة-طبية/الشفة-الأرنبية-أسبابها-ومضاعفاتها-والعمر-المناسب-لعلاجها'
-    );
-
-
-    Route::get('/en/blogs/cleft-lip', function () {
-        return redirect()->away(
-            'https://otolaryngologist-jo.com/en/blogs/Cleft-Lip-Causes,-Complications-and-Best-Age-for-Treatment',
-            301
-        );
-    });
-
-
     Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
 
     Route::get(LaravelLocalization::transRoute('routes.contact_us'), [FrontendController::class, 'ContactUs'])->name('ContactUs');
