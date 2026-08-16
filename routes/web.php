@@ -102,16 +102,19 @@ Route::group([
     // Route::get('Front/terms', function () {
     //     return view('terms');
     // });
- // ================== Test Email ==================
-            Route::get('/send-test-email', function () {
-                $emailContent = (object)[
-                    'subject' => 'Hello from otolaryngologist.com',
-                    'desc_ar' => 'test message from otolaryngologist.com',
-                ];
-                Mail::to('rznjamal@gmail.com')->send(new TestEmail($emailContent, null));
-                return 'Successfully sent';
-            });
+    // ================== Test Email ==================
+    Route::get('/send-test-email', function () {
+        $emailContent = (object)[
+            'subject' => 'Hello from otolaryngologist.com',
+            'desc_ar' => 'test message from otolaryngologist.com',
+        ];
+        Mail::to('rznjamal@gmail.com')->send(new TestEmail($emailContent, null));
+        return 'Successfully sent';
+    });
+});
 
+Route::get('/ar/مقالة-طبية/الشفة-الارنبية', function () {
+    return redirect('/ar/مقالة-طبية/الشفة-الأرنبية-أسبابها-ومضاعفاتها-والعمر-المناسب-لعلاجها', 301);
 });
 
 
