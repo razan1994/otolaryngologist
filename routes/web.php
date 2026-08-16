@@ -60,6 +60,19 @@ Route::group([
     Route::redirect('Appointment', 'appointment-booking', 301);
 
 
+    Route::get('/ar/مقالة-طبية/الشفة-الارنبية', function () {
+        return redirect()->to(
+            '/ar/مقالة-طبية/الشفة-الأرنبية-أسبابها-ومضاعفاتها-والعمر-المناسب-لعلاجها',
+            301
+        );
+    });
+
+    Route::permanentRedirect(
+        '/en/blogs/cleft-lip',
+        '/en/blogs/Cleft-Lip-Causes,-Complications-and-Best-Age-for-Treatment'
+    );
+
+
     Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
 
     Route::get(LaravelLocalization::transRoute('routes.contact_us'), [FrontendController::class, 'ContactUs'])->name('ContactUs');
@@ -113,17 +126,6 @@ Route::group([
     });
 });
 
-Route::get('/ar/مقالة-طبية/الشفة-الارنبية', function () {
-    return redirect()->to(
-        '/ar/مقالة-طبية/الشفة-الأرنبية-أسبابها-ومضاعفاتها-والعمر-المناسب-لعلاجها',
-        301
-    );
-});
-
-Route::permanentRedirect(
-    '/en/blogs/cleft-lip',
-    '/en/blogs/Cleft-Lip-Causes,-Complications-and-Best-Age-for-Treatment'
-);
 
 
 
