@@ -62,7 +62,7 @@
 @section('h2_val')
     {{ $seo_operation?->h2_val }}
 @endsection
-
+@push('styles')
 <style>
     /* Premium Modern Before & After Showcase */
     .premium-showcase-wrapper {
@@ -635,7 +635,7 @@
         padding: 20px;
     }
 </style>
-
+@endpush
 @section('content')
     <div class="breadcrumb-section">
         <div class="container">

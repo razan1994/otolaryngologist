@@ -15,6 +15,7 @@
 @endsection
 {{-- SEO SECTION --}}
 
+@push('styles')
 <style>
     #blog-content ul {
         padding: 0;
@@ -25,7 +26,7 @@
         color: var(--primary-color1);
     }
 </style>
-
+@endpush
 
 @section('canonical')
     @php

@@ -77,6 +77,8 @@
     <!-- search console -->
     <meta name="google-site-verification" content="cHvVWecmNPDa8dEPTPTUw-etBdtLKKLj4GYnAX-83Bc" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
     <!-- Google Tag Manager -->
     <script>
@@ -275,7 +277,7 @@
             }
         }
     </style>
-
+    @stack('styles')
 </head>
 
 <body class="style-2">
@@ -864,6 +866,7 @@
 
     <!--  Main jQuery  -->
     <script src="{{ asset('front_end_style/assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Popper and Bootstrap JS -->
     <script src="{{ asset('front_end_style/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('front_end_style/assets/js/jquery.nice-select.min.js') }}"></script>
@@ -1925,6 +1928,27 @@
             }
         });
     </script>
+
+    @if (session('success') || session('error') || $errors->any())
+        <script>
+            toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                newestOnTop: true,
+                positionClass: 'toast-top-right',
+                timeOut: 5000,
+                extendedTimeOut: 1000
+            };
+
+            @if (session('success'))
+                toastr.success(@json(session('success')));
+            @elseif (session('error'))
+                toastr.error(@json(session('error')));
+            @else
+                toastr.error(@json($errors->first()));
+            @endif
+        </script>
+    @endif
 
 </body>
 

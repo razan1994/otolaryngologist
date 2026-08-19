@@ -125,46 +125,86 @@ class FrontendController extends Controller
     // ==========================================================================
     // ======================== Contact Details Function ========================
     // ==========================================================================
+
     public function contactUsRequest1(Route $route, Request $request)
     {
         try {
-            $created_data = [
-                'full_name' => $request->full_name,
-                'email' => $request->email,
-                'subject' => $request->subject,
-                'phone' => $request->phone,
-                'message' => $request->message,
-            ];
 
-            // Start the transaction
-            DB::transaction(function () use ($created_data) {
-                ContactUsRequest::create($created_data);
+            // Honeypot spam protection
+            if ($request->filled('website')) {
+                return redirect()
+                    ->back()
+                    ->withInput([])
+                    ->with('error', 'Spam detected.');
+            }
+
+            // Validation
+            $validatedData = $request->validate([
+                'full_name' => 'required|string|max:255',
+                'subject'   => 'required|string|max:255',
+                'phone'     => 'required|string|max:20',
+                'message'   => 'required|string|max:1000',
+            ]);
+
+            // Make sure message is UTF-8
+            $validatedData['message'] = mb_convert_encoding(
+                $validatedData['message'],
+                'UTF-8',
+                'UTF-8'
+            );
+
+            // Save contact request
+            DB::transaction(function () use ($validatedData) {
+                ContactUsRequest::create($validatedData);
             });
 
-            return redirect()->back()->with('success', 'is done');
-            // return "good";
+            // Success notification
+            return redirect()
+                ->back()
+                ->with(
+                    'success',
+                    app()->getLocale() === 'ar'
+                        ? 'تم إرسال طلبكم بنجاح، وسيتم التواصل معكم في أقرب وقت ممكن.'
+                        : 'Your request has been submitted successfully. We will contact you as soon as possible'
+                );
+        } catch (\Illuminate\Validation\ValidationException $e) {
+
+            // Let Laravel handle validation normally
+            throw $e;
         } catch (\Throwable $th) {
+
             $function_name = $route->getActionName();
-            $check_old_errors = new SupportTicket();
-            $check_old_errors = $check_old_errors->select('*')->where([
-                'error_location' => $th->getFile(),
+
+            $check_old_errors = SupportTicket::where([
+                'error_location'    => $th->getFile(),
                 'error_description' => $th->getMessage(),
-                'function_name' => $function_name,
-                'error_line' => $th->getLine(),
+                'function_name'     => $function_name,
+                'error_line'        => $th->getLine(),
             ])->get();
 
             if ($check_old_errors->count() == 0) {
+
                 $new_error_ticket = SupportTicket::create([
-                    'error_location' => $th->getFile(),
+                    'error_location'    => $th->getFile(),
                     'error_description' => $th->getMessage(),
-                    'function_name' => $function_name,
-                    'error_line' => $th->getLine(),
+                    'function_name'     => $function_name,
+                    'error_line'        => $th->getLine(),
                 ]);
+
                 $end_error_ticket = $new_error_ticket;
             } else {
+
                 $end_error_ticket = $check_old_errors->first();
             }
-            return view('errors.support_tickets', compact('th', 'function_name', 'end_error_ticket'));
+
+            return view(
+                'errors.support_tickets',
+                compact(
+                    'th',
+                    'function_name',
+                    'end_error_ticket'
+                )
+            );
         }
     }
     public function Clinic()

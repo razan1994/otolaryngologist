@@ -36,505 +36,505 @@
 @section('h2_val')
     {{ $news_blog?->h2_val }}
 @endsection
-
-<style>
-    /* Premium Modern Before & After Showcase */
-    .premium-showcase-wrapper {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto 10px;
-        padding: 20px;
-    }
-
-    .showcase-container {
-        position: relative;
-        padding: 8px;
-        overflow: hidden;
-    }
-
-    .showcase-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-size: 300% 300%;
-        opacity: 0;
-        animation: premiumGradient 6s ease-in-out infinite;
-        z-index: -1;
-    }
-
-    .showcase-container:hover {
-        transform: translateY(-8px) scale(1.02);
-    }
-
-    .showcase-container:hover::before {
-        opacity: 1;
-    }
-
-    .image-frame {
-        position: relative;
-        height: 500px;
-        overflow: hidden;
-        background: #000;
-    }
-
-    .before-image-layer,
-    .after-image-layer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .before-image-layer {
-        z-index: 1;
-    }
-
-    .after-image-layer {
-        z-index: 2;
-        clip-path: circle(0% at 50% 50%);
-        animation: circularReveal 6s infinite ease-in-out;
-    }
-
-    .morphing-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-        opacity: 0;
-        animation: morphingPulse 6s infinite ease-in-out;
-    }
-
-    .sparkle-effect {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 4;
-        pointer-events: none;
-    }
-
-    .sparkle-effect::before,
-    .sparkle-effect::after {
-        content: '✨';
-        position: absolute;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 20px;
-        animation: sparkleFloat 4s infinite ease-in-out;
-    }
-
-    .sparkle-effect::before {
-        top: 20%;
-        left: 15%;
-        animation-delay: -1s;
-    }
-
-    .sparkle-effect::after {
-        top: 70%;
-        right: 20%;
-        animation-delay: -3s;
-    }
-
-    .floating-badges {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        right: 20px;
-        display: flex;
-        justify-content: space-between;
-        z-index: 5;
-    }
-
-    .badge-item {
-        display: inline-flex;
-        align-items: center;
-        padding: 8px 16px;
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 20px;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-    }
-
-    .badge-text {
-        color: #333;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .before-badge {
-        background: rgba(255, 255, 255, 0.8);
-        ;
-        color: black;
-        animation: floatBadgeBefore 6s infinite ease-in-out;
-    }
-
-    .after-badge {
-        background: rgba(255, 255, 255, 0.8);
-        ;
-        color: black;
-        animation: floatBadgeAfter 6s infinite ease-in-out;
-    }
-
-    .before-badge .badge-text {
-        color: black;
-    }
-
-    .after-badge .badge-text {
-        color: black;
-    }
-
-    .badge-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .timeline-indicator {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 60px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
-        display: flex;
-        align-items: center;
-        padding: 0 30px;
-        z-index: 5;
-    }
-
-    .timeline-track {
-        position: relative;
-        width: 100%;
-        height: 6px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 3px;
-        overflow: hidden;
-    }
-
-    .timeline-progress {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        background: linear-gradient(90deg, #42aeb9, #42aeb9);
-        border-radius: 3px;
-        width: 0%;
-        animation: timelineProgress 6s infinite ease-in-out;
-    }
-
-    .timeline-thumb {
-        position: absolute;
-        top: -6px;
-        left: 0;
-        width: 18px;
-        height: 18px;
-        background: linear-gradient(45deg, #42aeb9, #42aeb9);
-        border: 3px solid white;
-        border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        animation: timelineThumb 6s infinite ease-in-out;
-    }
-
-    /* Premium Keyframe Animations */
-    @keyframes premiumGradient {
-
-        0%,
-        100% {
-            background-position: 0% 50%;
-        }
-
-        50% {
-            background-position: 100% 50%;
-        }
-    }
-
-    @keyframes circularReveal {
-        0% {
-            clip-path: circle(0% at 50% 50%);
-        }
-
-        15% {
-            clip-path: circle(0% at 50% 50%);
-        }
-
-        50% {
-            clip-path: circle(70% at 50% 50%);
-        }
-
-        85% {
-            clip-path: circle(70% at 50% 50%);
-        }
-
-        100% {
-            clip-path: circle(0% at 50% 50%);
-        }
-    }
-
-    @keyframes morphingPulse {
-
-        0%,
-        100% {
-            opacity: 0;
-            transform: scale(1);
-        }
-
-        25% {
-            opacity: 0.3;
-            transform: scale(1.05);
-        }
-
-        50% {
-            opacity: 0.6;
-            transform: scale(1.1);
-        }
-
-        75% {
-            opacity: 0.3;
-            transform: scale(1.05);
-        }
-    }
-
-    @keyframes sparkleFloat {
-
-        0%,
-        100% {
-            transform: translateY(0px) rotate(0deg);
-            opacity: 0;
-        }
-
-        25% {
-            transform: translateY(-10px) rotate(90deg);
-            opacity: 1;
-        }
-
-        50% {
-            transform: translateY(-20px) rotate(180deg);
-            opacity: 0.8;
-        }
-
-        75% {
-            transform: translateY(-10px) rotate(270deg);
-            opacity: 1;
-        }
-    }
-
-    @keyframes floatBadgeBefore {
-        0% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-
-        25% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-
-        50% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        75% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-    }
-
-    @keyframes floatBadgeAfter {
-        0% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        25% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-
-        50% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-
-        75% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-
-        100% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-    }
-
-    @keyframes timelineProgress {
-        0% {
-            width: 0%;
-        }
-
-        50% {
+@push('styles')
+    <style>
+        /* Premium Modern Before & After Showcase */
+        .premium-showcase-wrapper {
+            position: relative;
             width: 100%;
-        }
-
-        100% {
-            width: 0%;
-        }
-    }
-
-    @keyframes timelineThumb {
-        0% {
-            left: 0%;
-            transform: scale(1);
-        }
-
-        25% {
-            transform: scale(1.2);
-        }
-
-        50% {
-            left: calc(100% - 18px);
-            transform: scale(1);
-        }
-
-        75% {
-            transform: scale(1.2);
-        }
-
-        100% {
-            left: 0%;
-            transform: scale(1);
-        }
-    }
-
-
-
-    /* Premium Mobile Responsive */
-    @media (max-width: 768px) {
-        .premium-showcase-wrapper {
-            padding: 15px;
             max-width: 100%;
-            margin-bottom: 20px;
+            margin: 0 auto 10px;
+            padding: 20px;
         }
 
         .showcase-container {
-            padding: 6px;
+            position: relative;
+            padding: 8px;
+            overflow: hidden;
+        }
+
+        .showcase-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: 300% 300%;
+            opacity: 0;
+            animation: premiumGradient 6s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        .showcase-container:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .showcase-container:hover::before {
+            opacity: 1;
         }
 
         .image-frame {
-            height: 350px;
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            background: #000;
         }
 
-        .floating-badges {
-            top: 15px;
-            left: 15px;
-            right: 15px;
+        .before-image-layer,
+        .after-image-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .badge-item {
-            padding: 10px 14px;
+        .before-image-layer {
+            z-index: 1;
         }
 
-        .badge-text {
-            font-size: 11px;
+        .after-image-layer {
+            z-index: 2;
+            clip-path: circle(0% at 50% 50%);
+            animation: circularReveal 6s infinite ease-in-out;
         }
 
-        .timeline-indicator {
-            padding: 0 20px;
-            height: 50px;
+        .morphing-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            opacity: 0;
+            animation: morphingPulse 6s infinite ease-in-out;
         }
 
-        .timeline-thumb {
-            width: 16px;
-            height: 16px;
-            top: -5px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .premium-showcase-wrapper {
-            padding: 10px;
-            max-width: 100%;
-            margin-bottom: 15px;
-        }
-
-        .showcase-container {
-            padding: 4px;
-        }
-
-        .image-frame {
-            height: 300px;
-        }
-
-        .floating-badges {
-            top: 12px;
-            left: 12px;
-            right: 12px;
-        }
-
-        .badge-item {
-            padding: 8px 12px;
-        }
-
-        .badge-icon {
-            width: 14px;
-            height: 14px;
-        }
-
-        .badge-text {
-            font-size: 10px;
-        }
-
-        .timeline-indicator {
-            padding: 0 15px;
-            height: 45px;
-        }
-
-        .timeline-thumb {
-            width: 14px;
-            height: 14px;
-            top: -4px;
+        .sparkle-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            pointer-events: none;
         }
 
         .sparkle-effect::before,
         .sparkle-effect::after {
-            font-size: 16px;
+            content: '✨';
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 20px;
+            animation: sparkleFloat 4s infinite ease-in-out;
         }
-    }
 
-    /* Pause animations on hover */
-    .premium-showcase-wrapper:hover .after-image-layer,
-    .premium-showcase-wrapper:hover .morphing-overlay,
-    .premium-showcase-wrapper:hover .before-badge,
-    .premium-showcase-wrapper:hover .after-badge,
-    .premium-showcase-wrapper:hover .timeline-progress,
-    .premium-showcase-wrapper:hover .timeline-thumb,
-    .premium-showcase-wrapper:hover .sparkle-effect::before,
-    .premium-showcase-wrapper:hover .sparkle-effect::after {
-        animation-play-state: paused;
-    }
-</style>
+        .sparkle-effect::before {
+            top: 20%;
+            left: 15%;
+            animation-delay: -1s;
+        }
 
+        .sparkle-effect::after {
+            top: 70%;
+            right: 20%;
+            animation-delay: -3s;
+        }
+
+        .floating-badges {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 5;
+        }
+
+        .badge-item {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .badge-text {
+            color: #333;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .before-badge {
+            background: rgba(255, 255, 255, 0.8);
+            ;
+            color: black;
+            animation: floatBadgeBefore 6s infinite ease-in-out;
+        }
+
+        .after-badge {
+            background: rgba(255, 255, 255, 0.8);
+            ;
+            color: black;
+            animation: floatBadgeAfter 6s infinite ease-in-out;
+        }
+
+        .before-badge .badge-text {
+            color: black;
+        }
+
+        .after-badge .badge-text {
+            color: black;
+        }
+
+        .badge-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-indicator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            z-index: 5;
+        }
+
+        .timeline-track {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #42aeb9, #42aeb9);
+            border-radius: 3px;
+            width: 0%;
+            animation: timelineProgress 6s infinite ease-in-out;
+        }
+
+        .timeline-thumb {
+            position: absolute;
+            top: -6px;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(45deg, #42aeb9, #42aeb9);
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: timelineThumb 6s infinite ease-in-out;
+        }
+
+        /* Premium Keyframe Animations */
+        @keyframes premiumGradient {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes circularReveal {
+            0% {
+                clip-path: circle(0% at 50% 50%);
+            }
+
+            15% {
+                clip-path: circle(0% at 50% 50%);
+            }
+
+            50% {
+                clip-path: circle(70% at 50% 50%);
+            }
+
+            85% {
+                clip-path: circle(70% at 50% 50%);
+            }
+
+            100% {
+                clip-path: circle(0% at 50% 50%);
+            }
+        }
+
+        @keyframes morphingPulse {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            25% {
+                opacity: 0.3;
+                transform: scale(1.05);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.1);
+            }
+
+            75% {
+                opacity: 0.3;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes sparkleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+
+            25% {
+                transform: translateY(-10px) rotate(90deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.8;
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(270deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatBadgeBefore {
+            0% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+            50% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            75% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes floatBadgeAfter {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+            75% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes timelineProgress {
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 100%;
+            }
+
+            100% {
+                width: 0%;
+            }
+        }
+
+        @keyframes timelineThumb {
+            0% {
+                left: 0%;
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.2);
+            }
+
+            50% {
+                left: calc(100% - 18px);
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                left: 0%;
+                transform: scale(1);
+            }
+        }
+
+
+
+        /* Premium Mobile Responsive */
+        @media (max-width: 768px) {
+            .premium-showcase-wrapper {
+                padding: 15px;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .showcase-container {
+                padding: 6px;
+            }
+
+            .image-frame {
+                height: 350px;
+            }
+
+            .floating-badges {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+            }
+
+            .badge-item {
+                padding: 10px 14px;
+            }
+
+            .badge-text {
+                font-size: 11px;
+            }
+
+            .timeline-indicator {
+                padding: 0 20px;
+                height: 50px;
+            }
+
+            .timeline-thumb {
+                width: 16px;
+                height: 16px;
+                top: -5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .premium-showcase-wrapper {
+                padding: 10px;
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .showcase-container {
+                padding: 4px;
+            }
+
+            .image-frame {
+                height: 300px;
+            }
+
+            .floating-badges {
+                top: 12px;
+                left: 12px;
+                right: 12px;
+            }
+
+            .badge-item {
+                padding: 8px 12px;
+            }
+
+            .badge-icon {
+                width: 14px;
+                height: 14px;
+            }
+
+            .badge-text {
+                font-size: 10px;
+            }
+
+            .timeline-indicator {
+                padding: 0 15px;
+                height: 45px;
+            }
+
+            .timeline-thumb {
+                width: 14px;
+                height: 14px;
+                top: -4px;
+            }
+
+            .sparkle-effect::before,
+            .sparkle-effect::after {
+                font-size: 16px;
+            }
+        }
+
+        /* Pause animations on hover */
+        .premium-showcase-wrapper:hover .after-image-layer,
+        .premium-showcase-wrapper:hover .morphing-overlay,
+        .premium-showcase-wrapper:hover .before-badge,
+        .premium-showcase-wrapper:hover .after-badge,
+        .premium-showcase-wrapper:hover .timeline-progress,
+        .premium-showcase-wrapper:hover .timeline-thumb,
+        .premium-showcase-wrapper:hover .sparkle-effect::before,
+        .premium-showcase-wrapper:hover .sparkle-effect::after {
+            animation-play-state: paused;
+        }
+    </style>
+@endpush
 @section('content')
 @section('h1_val')
     {{ $news_blog?->h1_val }}
